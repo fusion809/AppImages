@@ -6,12 +6,15 @@
 
 set +e
 
-URL="https://atom.io/download/deb"
+URL="https://github.com/fusion809/atom-custom/releases/download/v1.10.0/atom-1.10.0-amd64.deb"
 echo $URL
 
-APP=Atom
+APP=atom-bleeding
 
+# get the desktop file
 mkdir -p ./$APP/$APP.AppDir/usr/bin
+cp ./atom.desktop ./$APP/$APP.AppDir
+
 cd ./$APP
 
 wget -c --trust-server-names "$URL"
@@ -29,10 +32,6 @@ cp ./usr/share/pixmaps/atom.png .
 # mkdir -p ./usr/share/metainfo/
 # wget -q "..." -O ./usr/share/metainfo/atom.appdata.xml
 
-# Get desktop file
-cp ./usr/share/applications/atom.desktop .
-sed -i -e "s|/usr/share/atom/||g" atom.desktop
-
 # Remove launcher and move in place
 # TODO: Replace this by something cleaner
 rm usr/bin/atom
@@ -42,7 +41,6 @@ mv usr/share/atom/* usr/bin/
 XAPP=atom
 wget -O ./usr/bin/$XAPP.wrapper https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration
 chmod a+x ./usr/bin/$XAPP.wrapper
-sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $XAPP.desktop
 
 # Figure out $VERSION
 VERSION=$(grep -r "atom@" ./usr/share/doc/atom/copyright | cut -d " " -f 2 | cut -d "@" -f 2)

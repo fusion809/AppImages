@@ -1,0 +1,347 @@
+########################################################################
+# TODO:
+# j-b on #videolan:
+# Ubuntu 14.04 is the oldest version supported by VLC 3
+# <j-b> use extras/tools;
+# <j-b> use contribs (for alsa)
+# <j-b> use contribs with --disable to disable bluray
+# <j-b> don't disable cddb
+# <j-b> don't compile with gcc 4.9 but 6.1
+# <j-b> don't build with Qt4, but qith qt5
+# <j-b> once this is done, we can retalk :0
+########################################################################
+
+# The below was meant to be run on Ubuntu 12.04.5 but as stated above this is not supported by VLC
+
+# I have successfully built VLC on EC2 using
+# https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-c4fb82a4
+# c3.2xlarge = 8 CPUs
+# Run there with:
+# sudo su
+# wget -c https://github.com/probonopd/AppImages/raw/master/recipes/vlc3/Recipe
+# bash -ex Recipe
+# Make sure to delete the cloud instance after building in order not to incur additional cost
+
+sudo apt-get update
+sudo apt-get -y install git build-essential pkg-config autoconf libxcb-shm0-dev libxcb-xv0-dev libxcb-composite0-dev libxcb-randr0-dev libqt4-dev libxcb1-dev 
+# Don't use ubuntu libtool
+
+########################################################################
+# Install newer versions of some build-time dependencies
+# "Contrib" does not seem to build these for me, should it?
+########################################################################
+
+# Workaround for:
+# Getting warning about outdated gettext
+# Update gettext to 0.19.6
+cd /usr/src
+wget -c -T 10 ftp://ftp.gnu.org/gnu/gettext/gettext-0.19.6.tar.gz
+tar xvf gettext-0.19.6.tar.gz
+cd gettext-0.19.6
+./configure --prefix=/usr --libdir=/usr/lib64
+make -j 16 && make install
+
+# Workaround for:
+# configure: error: No package 'alsa' found. alsa-lib 1.0.24 or later required.
+# sudo apt-get -y install libasound2-dev
+# does not seem to be sufficient
+cd /usr/src
+wget -c -T 10 ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.0.24.1.tar.bz2
+tar xvf alsa-lib-1.0.24.1.tar.bz2
+cd alsa-lib-1.0.24.1
+./configure --prefix=/usr --libdir=/usr/lib64
+make -j 16 && make install
+
+########################################################################
+# Get VLC
+########################################################################
+
+cd /
+git clone git://git.videolan.org/vlc.git --depth 1
+cd vlc
+
+########################################################################
+# To-be-built packages: autoconf automake cmake yasm ragel protoc ant
+########################################################################
+
+# Workaround for:
+# Connecting to cmake.org (cmake.org)|66.194.253.19|:443... connected.
+# ERROR: no certificate subject alternative name matches
+# 	requested host name `cmake.org'.
+# To connect to cmake.org insecurely, use `--no-check-certificate'.
+echo "check_certificate = off" > $HOME/.wgetrc
+
+export PATH=/vlc/extras/tools/build/bin:$PATH
+export LD_LIBRARY_PATH=/vlc/extras/tools/build/bin:$LD_LIBRARY_PATH
+cd extras/tools/
+./bootstrap
+make -j 16
+# make
+# make
+# make
+# make
+# make
+# make
+# Why do I have to run make repeatedly on Trusty but not on Precise or Xenial?
+
+cd ../..
+
+# Did I get "You are ready to build VLC and its contribs"?
+# Only then proceed.
+
+########################################################################
+# Bootstrap
+########################################################################
+
+./bootstrap
+
+# Did I get "Successfully bootstrapped"?
+# Only then proceed.
+
+########################################################################
+# The "Contrib" method.
+# If the libraries are not provided by your distribution, 
+# you may be better off linking VLC with them statically. 
+########################################################################
+
+cd contrib
+mkdir native
+cd native
+
+export CFLAGS=-fPIC # Does this help against "relocation R_X86_64_32S against `zcalloc'"?
+
+../bootstrap
+
+# Workaround needed for:
+# mkdir -p -- /vlc/contrib/x86_64-linux-gnu/share/aclocal && cd cddb && autoreconf -fiv -I/vlc/contrib/x86_64-linux-gnu/share/aclocal
+# autoreconf: Entering directory `.'
+# autoreconf: configure.ac: not using Gettext
+# autoreconf: running: aclocal -I /vlc/contrib/x86_64-linux-gnu/share/aclocal --force 
+# configure.ac:133: warning: macro 'AM_ICONV' not found in library
+# ...
+# autoreconf: running: /vlc/extras/tools/build/bin/autoconf --include=/vlc/contrib/x86_64-linux-gnu/share/aclocal --force
+# configure.ac:23: error: possibly undefined macro: AM_GNU_GETTEXT_VERSION
+#       If this token and others are legitimate, please use m4_pattern_allow.
+#       See the Autoconf documentation.
+# configure.ac:133: error: possibly undefined macro: AM_ICONV
+# autoreconf: /vlc/extras/tools/build/bin/autoconf failed with exit status: 1
+# make: *** [.cddb] Error 1
+# 
+# gettext --version
+# gettext (GNU gettext-runtime) 0.19.6
+#
+# For now, disable cddb
+
+# Disable bluray because it depends on java which is large (can enable it later again)
+sed -i -e 's|PKGS_DISABLE := |PKGS_DISABLE := bluray caca cddb|g' config.mak 
+
+# Workaround for:
+# libtool issues
+# If the following is happening, then uninstall the system-provided libtool 
+# and make sure that libtool gets built by extras/tools above and that this
+# version is used
+# autoreconf: running: /vlc/extras/tools/build/bin/autoconf 
+#       --include=/vlc/contrib/x86_64-linux-gnu/share/aclocal --force
+# configure.in:74: error: possibly undefined macro: AC_DISABLE_SHARED
+#       If this token and others are legitimate, please use m4_pattern_allow.
+#       See the Autoconf documentation.
+# configure.in:75: error: possibly undefined macro: AC_LIBTOOL_WIN32_DLL
+# 
+# autoreconf: /vlc/extras/tools/build/bin/autoconf failed with exit status: 1
+# make: *** [.a52] Error 1
+
+########################################################################
+# Build VLC itself
+########################################################################
+
+# According to 
+# https://mailman.videolan.org/pipermail/vlc-devel/2016-May/107520.html
+# "XVideo is not a problem because XVideo is dead"
+# hence disabling it
+
+
+# Workaround for:
+# "configure: error: Package requirements (xcb >= 1.6) were not met:
+# No package 'xcb' found".
+# Found this path with:
+# find /usr/ | grep xcb.pc
+export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig/:/usr/share/pkgconfig/:/vlc/contrib/x86_64-linux-gnu/lib/pkgconfig/:/usr/lib64/pkgconfig/
+
+# Should say:
+# "vlc aliases : cvlc rvlc qvlc svlc"
+# Don't proceed if qvlc is not listed.
+
+make -j 16
+
+# Workaround for:
+# CCLD libvlccore.la
+# /usr/bin/ld: ../compat/.libs/libcompat.a(timespec_get.o): 
+# relocation R_X86_64_PC32 against undefined symbol 
+# `clock_gettime@@GLIBC_2.2.5' can not be used when making 
+# a shared object; recompile with -fPIC
+# /usr/bin/ld: final link failed: Bad value
+# Use "CFLAGS=-fPIC ./configure" when building libz
+############# The following is hopefully no longer needed
+# sudo apt-get -y install libz-dev
+# rm /vlc/contrib/x86_64-linux-gnu/lib/libz.a
+
+# Workaround needed for:
+# /usr/include/c++/4.6/bits/atomic_2.h:458:7: note: C++0x 'constexpr' only available with -std=c++0x or -std=gnu++0x
+# In file included from ../include/vlc_atomic.h:221:0,
+#                  from demux/adaptive/playlist/../plumbing/CommandsQueue.hpp:25,
+#                  from demux/adaptive/playlist/../plumbing/FakeESOut.hpp:23,
+#                  from demux/adaptive/playlist/../Streams.hpp:30,
+#                  from demux/adaptive/playlist/BasePeriod.cpp:31:
+# /usr/include/c++/4.6/atomic:68:5: error: 'constexpr' does not name a type
+# /usr/include/c++/4.6/atomic:68:5: note: C++0x 'constexpr' only available with -std=c++0x or -std=gnu++0x
+sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get --yes install gcc-4.9 g++-4.9
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9 
+
+# Workaround for:
+# checking for desktop-file-validate... desktop-file-validate
+# checking for c11-gcc... no
+# checking for c11... no
+# checking for c99-gcc... no
+# checking for c99... no
+# configure: error: Cannot find native C99 compiler: please define BUILDCC.
+# BUILDCC="/usr/bin/gcc -std=gnu99" ./configure ...
+
+# Workaround for:
+# make[2]: Entering directory `/vlc/src'
+#   CC       fourcc_gen
+# /bin/bash: c99-gcc: command not found
+# (As per GNU guidelines) GCC ignores its argv[0]. You need a script here
+# https://mailman.videolan.org/pipermail/vlc-devel/2016-May/107533.html
+echo > /usr/bin/c99-gcc <<\EOF
+#!/bin/bash
+gcc -std=gnu99 "$@"
+EOF
+chmod a+x /usr/bin/c99-gcc
+
+# Workaround for:
+# g++: error: /usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu/crti.o: No such file or directory
+# Do NOT do: sudo apt-get --yes remove gcc g++ gcc-4.6 c++-4.6 
+
+# Workaround for:
+# In file included from /usr/include/c++/4.9/atomic:38:0,
+#                  from ../include/vlc_atomic.h:221,
+#                  from demux/adaptive/playlist/../plumbing/CommandsQueue.hpp:25,
+#                  from demux/adaptive/playlist/../plumbing/FakeESOut.hpp:23,
+#                  from demux/adaptive/playlist/../Streams.hpp:30,
+#                  from demux/adaptive/playlist/BasePeriod.cpp:31:
+# /usr/include/c++/4.9/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support is currently experimental, and must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+rm -rf /usr/bin/g++
+cat > /usr/bin/g++ <<\EOF
+#!/bin/bash
+/usr/bin/g++-4.9 -std=c++11 "$@"
+EOF
+chmod a+x /usr/bin/g++
+
+# Workaround for:
+# make[4]: Entering directory `/vlc/modules'
+#  CCLD     libgnutls_plugin.la
+# *** Warning: Linking the shared library libgnutls_plugin.la against the
+# *** static library /vlc/contrib/x86_64-linux-gnu/lib/libz.a is not portable!
+# /usr/bin/ld: /vlc/contrib/x86_64-linux-gnu/lib/libz.a(deflate.o): relocation R_X86_64_32S against `zcalloc' can not be used when making a shared object; recompile with -fPIC
+# /vlc/contrib/x86_64-linux-gnu/lib/libz.a: could not read symbols: Bad value
+# collect2: error: ld returned 1 exit status
+##########
+# Rebuild libz with (this worked; hopefully the CFLAGS=-fPIC above makes this unneccessary) :
+# cd /vlc/contrib/native/zlib
+# CFLAGS=-fPIC ./configure
+# make -j 16
+# make install
+# cp /usr/local/lib/libz.* /vlc/contrib/x86_64-linux-gnu/lib/
+# cd -
+##########
+
+# Workaround for (FIXME):
+# In file included from ../include/vlc_common.h:895:0,
+#                  from demux/mkv/mkv.hpp:38,
+#                  from demux/mkv/util.cpp:24:
+# demux/mkv/util.cpp: In function 'void handle_real_audio(demux_t*, mkv_track_t*, block_t*, mtime_t)':
+# demux/mkv/util.cpp:192:79: error: expected ')' before 'PRId64'
+#              msg_Dbg( p_demux, "discard non-key preroll block in track %d at%" PRId64,
+# For now use Ubuntu 14.04 which does not have this issue or upgrade libc6-dev (which we really want to avoid; FIXME)
+sed -i -e 's|precise|trusty|'g /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get -y --force-yes install libc6-dev libpulse-dev
+
+cd ../..
+
+# Workaround for:
+# Does not find protoc
+export PATH=/vlc/extras/tools/build/bin/:$PATH
+
+BUILDCC="/usr/bin/gcc -std=gnu99" ./configure --enable-pulse --disable-chromaprint --disable-ncurses --disable-cddb --prefix=/usr
+
+make -j 16
+
+APP=VLC
+make install DESTDIR=/$APP/$APP.AppDir
+
+########################################################################
+# Build complete
+# Now creating the AppDir
+########################################################################
+
+LOWERAPP=${APP,,} 
+cd /$APP/
+
+wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+. ./functions.sh
+
+cd $APP.AppDir
+
+export ARCH=x86_64
+
+cp usr/share/icons/hicolor/128x128/apps/vlc.png .
+
+get_apprun
+
+cp ./usr/share/applications/vlc.desktop .
+sed -i -e "s|Exec=.*|Exec=vlc|g" vlc.desktop
+
+rm -rf usr/share/icons/hicolor/48x48/
+
+mkdir -p ./usr/lib/qt4
+cp -r /usr/lib/x86_64-linux-gnu/qt4/plugins/ ./usr/lib/qt4/
+
+export LD_LIBRARY_PATH=./usr/lib/:$LD_LIBRARY_PATH
+
+copy_deps ; copy_deps ; copy_deps # Three runs to ensure we catch indirect ones
+move_lib
+delete_blacklisted
+
+# We don't bundle the developer stuff
+rm -rf usr/include || true
+rm -rf usr/lib/cmake || true
+rm -rf usr/lib/pkgconfig || true
+rm -rf rm -rf ./usr/share/doc/vlc/libvlc/ || true
+find /VLC/VLC.AppDir/usr/lib/ -name '*.la' | xargs -i rm {}
+strip usr/bin/* usr/lib/* usr/lib/vlc/plugins/*/* || true
+
+get_desktopintegration vlc
+
+GLIBC_NEEDED=$(find . -type f -executable -exec strings {} \; | grep ^GLIBC_2 | sed s/GLIBC_//g | sort --version-sort | uniq | tail -n 1)
+VERSION=3.0.0.git$(cat /vlc/src/revision.txt).glibc$GLIBC_NEEDED # FIXME
+
+cd ..
+
+########################################################################
+# AppDir complete
+# Now packaging it as an AppImage
+########################################################################
+
+generate_appimage
+
+########################################################################
+# Upload the AppDir
+########################################################################
+
+transfer ../out/*
+
+# Try to power down Amazon AWS (no guarantees; need to check for yourself!)
+grep -r compute.internal /etc/resolv.conf && halt

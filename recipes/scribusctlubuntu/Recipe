@@ -1,0 +1,56 @@
+# This runs on Travis-CI Ubuntu
+# Inspired by https://github.com/HOST-Oman/scribus/blob/ctl/.travis.yml
+
+git_pull_rebase_helper()
+{
+  git reset --hard HEAD
+  git pull
+}
+
+sudo apt-get update -qq
+sudo apt-get install -y build-essential libc6-dev cmake libboost-python-dev libcups2-dev libhunspell-dev \
+libhyphen-dev liblcms2-dev libpodofo-dev libtiff-dev libxml2-dev \
+python-all-dev zlib1g-dev qtbase5-dev qtdeclarative5-dev libqt5opengl5-dev \
+qttools5-dev qttools5-dev-tools libgraphicsmagick++1-dev \
+libopenscenegraph-dev libpoppler-dev libcairo2-dev libwpg-dev libmspub-dev \
+libcdr-dev libvisio-dev
+
+  # Upgrade autoconf to 2.65 for librevenge-0.0.1
+  wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.65.tar.bz2
+  tar xf autoconf-2.65.tar.bz2 
+  cd autoconf-*
+  ./configure --prefix=/usr
+  make
+  sudo make install
+  cd ..
+  
+  sudo ln -sf /usr/share/pkgconfig /usr/lib/pkgconfig
+
+  # Workaround for:
+  # checking for CPPUNIT... no
+  # configure: error: Package requirements (cppunit) were not met:
+  # TO BE FOUND (FIXME)
+
+  if [ ! -d librevenge ] ; then
+    git clone git://git.code.sf.net/p/libwpd/librevenge librevenge
+  fi
+  cd librevenge*
+  git_pull_rebase_helper
+  ./autogen.sh
+  ./configure --prefix=/usr --enable-static --disable-shared
+  make
+  sudo make install
+  cd ..
+
+ldconfig
+
+git clone -b ctl https://github.com/HOST-Oman/scribus.git --depth 1
+
+cd scribus/
+
+export NPROC=8;
+cmake . -DCMAKE_INSTALL_PREFIX:PATH=Scribus.AppDir/usr -DWANT_HUNSPELL=1 -DWITH_PODOFO=1 -DWANT_GRAPHICSMAGICK=1 -DWANT_DEBUG=0 -DWANT_SVNVERSION=0 -DWANT_GUI_LANG=en_US -DWANT_NOEXAMPLES=1 -DWANT_NOTEMPLATES=1
+make -j"$NPROC"
+make install
+
+ls Scribus.AppDir/usr

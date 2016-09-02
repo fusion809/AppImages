@@ -1,0 +1,143 @@
+# Example for a Qt4 application
+
+# Now we are inside CentOS 6
+grep -r "CentOS release 6" /etc/redhat-release || exit 1
+
+# Determine which architecture should be built
+if [[ "$(/bin/arch)" = "i686" ||  "$(/bin/arch)" = "x86_64" ]] ; then
+	ARCH=$(/bin/arch)
+else
+	echo "Architecture could not be determined"
+	exit 1
+fi
+
+git_pull_rebase_helper()
+{
+	git reset --hard HEAD
+        git pull
+}
+
+if [ -z "$NO_DOWNLOAD" ] ; then
+
+# Workaround for:
+# cannot find -lstdc++_nonshared
+# Force-install devtoolset-2-libstdc++-devel i686
+if [ ! -e /opt/rh/devtoolset-2/root/usr/lib/gcc/i686-redhat-linux ] ; then
+  cd /
+  wget http://people.centos.org/~tru/devtools-2/6/i386/RPMS/devtoolset-2-libstdc++-devel-4.8.2-15.el6.i686.rpm -O - | rpm2cpio | cpio -idm
+  cd -
+fi
+
+# Workaround for:
+# checking for QT4... no
+# configure: error: Qt4 not found
+# We need at least Qt 4.8, hence we get it from kde.repo
+wget http://kdeforge.unl.edu/apt/kde-redhat/epel/kde.repo -O /etc/yum.repos.d/kde.repo
+
+# Some packages (e.g. ffmpeg) are not in the official repository, but can be installed from the rpmfusion repository
+
+yum localinstall -y --nogpgcheck http://download1.rpmfusion.org/free/el/updates/6/i386/rpmfusion-free-release-6-1.noarch.rpm http://download1.rpmfusion.org/nonfree/el/updates/6/i386/rpmfusion-nonfree-release-6-1.noarch.rpm
+
+sudo yum -y install ffmpeg-devel qt4-devel alsa-lib-devel pulseaudio-libs-devel jack-audio-connection-kit-devel \
+gcc make gcc-c++ glibc-devel.i686 libgcc.i686 libX11-devel libX11-devel.i686 libXext-devel libXext-devel.i686 \
+libXfixes-devel libXfixes-devel.i686 mesa-libGL-devel mesa-libGL-devel.i686 mesa-libGLU-devel mesa-libGLU-devel.i686 mesa-libGLU-devel.x86_64 qt4
+
+# Workaround for:
+# Global.h:50: error: variable or field 'atomic_thread_fence_replacement' declared void
+# We need at least GCC 4.4 for atomic support, hence we use devtoolset-2
+sudo wget http://people.centos.org/tru/devtools-2/devtools-2.repo -O /etc/yum.repos.d/devtools-2.repo
+sudo yum -y install devtoolset-2-gcc devtoolset-2-gcc-c++ devtoolset-2-binutils
+
+fi # if [ -z "$NO_DOWNLOAD" ]
+
+. /opt/rh/devtoolset-2/enable
+
+git clone https://github.com/MaartenBaert/ssr.git
+
+if [ ! -d ssr ] ; then
+  git clone https://github.com/MaartenBaert/ssr.git
+fi
+cd ssr/
+git_pull_rebase_helper
+
+# We build as root
+sed -i -e 's/root/xroot/g' simple-build-and-install 
+
+# We want another prefix, /app
+sed -i -e 's|prefix=/usr|prefix=/app/usr|g' simple-build-and-install
+
+./simple-build-and-install
+
+# Workaround for:
+# /opt/rh/devtoolset-2/root/usr/libexec/gcc/x86_64-redhat-linux/4.8.2/ld: cannot find -lQtCore
+# But:
+# pkg-config --list-all | grep QtCore
+# QtCore                     Qtcore - Qtcore Library
+# Found the issue with:
+# ld -lQtCore --verbose
+# Turns out /usr/lib64/libQtCore.so was missing, as the qt4 package was not installed
+
+VERSION=$(git describe | sed -e 's/-/./g')
+
+cd /app
+
+mkdir usr/lib
+
+# Copy in the direct dependencies
+ldd usr/bin/simplescreenrecorder | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' usr/lib || true
+
+# Copy in the indirect dependencies
+FILES=$(find . -type f -executable)
+for FILE in $FILES ; do
+  ldd "${FILE}" | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' usr/lib || true
+done
+
+cp ./usr/share/applications/simplescreenrecorder.desktop .
+cp ./usr/share/icons/hicolor/scalable/apps/simplescreenrecorder.svg .
+
+# Workaround for:
+# ./lib/libc.so.6: version `GLIBC_2.14' not found (required by /usr/lib64/libogg.so.0)
+rm usr/lib/libc.so.6
+
+# Workaround for:
+# relocation error: ./lib/libpthread.so.0: symbol __vdso_clock_gettime, version GLIBC_PRIVATE not defined in file libc.so.6 with link time reference
+rm usr/lib/libpthread.so.0
+
+# Workaround for:
+# relocation error: ./lib/librt.so.1: symbol __vdso_clock_gettime, version GLIBC_PRIVATE not defined in file libc.so.6 with link time reference
+rm usr/lib/librt.so.1
+
+# Workaround for:
+# Segmentation fault (core dumped)
+# Delete potentially dangerous libraries
+rm -f usr/lib/libstdc* usr/lib/libgobject* usr/lib/libc.so.* || true
+rm -f usr/lib/libglib-* usr/lib/libgthread-*  usr/lib/libuuid.so.1  usr/lib/libdl.so.2  || true
+
+# Do NOT delete libX* because otherwise on Ubuntu 11.04:
+# loaded library "Xcursor"
+
+if [ -z "$NO_DOWNLOAD" ] ; then
+  wget https://github.com/probonopd/AppImageKit/releases/download/5/AppRun # 64-bit
+  chmod a+rwx AppRun
+fi
+
+cd ..
+
+if [ -z "$NO_DOWNLOAD" ] ; then
+  wget -c https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant # 64-bit
+  chmod a+x AppImageAssistant 
+fi # if [ -z "$NO_DOWNLOAD" ] ; then
+
+APP=SimpleScreenRecorder
+if [[ "$ARCH" = "x86_64" ]] ; then
+	AI=$APP"-"$VERSION"-x86_64.AppImage"
+fi
+if [[ "$ARCH" = "i686" ]] ; then
+	AI=$APP"-"$VERSION"-i386.AppImage"
+fi
+
+echo $AI
+
+rm -rf out/$AI
+mkdir -p out/ || true
+./AppImageAssistant app/ out/$AI

@@ -1,0 +1,53 @@
+#!/bin/bash -x
+
+set +e
+
+APP=LibreOffice
+# VERSION=$(wget "http://www.libreoffice.org/download/libreoffice-fresh/" -O - | grep -o -e "/dl/src/.*/all/" | cut -d "/" -f 4 | head -n 1)
+# OOODOWNLOADLINK="http://download.documentfoundation.org/libreoffice/stable/"$VERSION"/deb/x86_64/LibreOffice_"$VERSION"_Linux_x86-64_deb.tar.gz"
+VERSION="5.2.0.3"
+OOODOWNLOADLINK="http://download.documentfoundation.org/libreoffice/testing/5.2.0/deb/x86_64/LibreOffice_5.2.0.3_Linux_x86-64_deb.tar.gz"
+mkdir -p ./$APP/$APP.AppDir
+cd ./$APP
+
+wget -c "$OOODOWNLOADLINK"
+
+tar xfvz *.tar.gz
+# rm *.tar.gz
+
+cd $APP.AppDir/
+
+find ../ -name *.deb -exec dpkg -x \{\} . \;
+
+find . -name startcenter.desktop -exec cp \{\} . \;
+
+find -name *startcenter.png -path *hicolor*48x48* -exec cp \{\} . \;
+
+BINARY=$(cat *.desktop | grep "Exec=" | head -n 1 | cut -d "=" -f 2 | cut -d " " -f 1)
+
+# sed -i -e 's|/opt|../opt|g' ./usr/bin/$BINARY
+mkdir -p usr/bin/
+cd usr/bin/
+rm ./$BINARY
+find ../../opt -name soffice -path *program* -exec ln -s \{\} ./$BINARY \;
+cd ../../
+
+wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
+chmod a+x ./AppRun
+
+# The following is a real dirty hack to stay under the Bintray 250 MB file size limit 
+# We are deleting some of the largest Python binary libraries
+# Hopefully no Python macros are crashing because of this
+# TODO: Find something else to strip away or get better compression or get Bintray
+# to lift the filesize limit
+find . -name _ssl.cpython* -exec rm {} \; || true
+find . -name _decimal.cpython* -exec rm {} \; || true
+find . -name _hashlib.cpython* -exec rm {} \; || true
+
+cd ..
+
+mkdir -p ../out
+wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # 64-bit
+chmod a+x AppImageAssistant
+rm ../out/$APP"-"$VERSION"-x86_64.AppImage" || true
+./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-x86_64.AppImage"

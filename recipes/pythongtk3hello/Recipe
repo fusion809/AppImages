@@ -1,0 +1,106 @@
+# This is a very simple example on how to bundle a Python application as an AppImage
+# using virtualenv and AppImageKit using Ubuntu
+# NOTE: Please test the resulting AppImage on your target systems and copy in any additional
+# libraries and/or dependencies that might be missing on your target system(s).
+
+########################################################################
+# Get virtualenv on the target system
+########################################################################
+
+sudo apt-get update
+sudo apt-get -y install python-virtualenv
+
+########################################################################
+# Source some helper functions
+########################################################################
+
+wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+. ./functions.sh
+
+########################################################################
+# Create the AppDir
+########################################################################
+
+APP=PythonGTK3Hello
+LOWERAPP=${APP,,} 
+
+mkdir -p $APP/$APP.AppDir/
+
+cd $APP/
+
+cd $APP.AppDir/
+
+########################################################################
+# Create a virtualenv inside the AppDir
+########################################################################
+
+virtualenv usr
+
+# Install python dependencies into the virtualenv
+# ./usr/bin/pip install ...
+
+# The following ones cannot be installed using pip
+mkdir -p usr/share/pyshared/
+mkdir -p usr/lib/python2.7/site-packages
+cp -r /usr/lib/python2.7/dist-packages/gi usr/lib/python2.7/site-packages/
+cp -r /usr/lib/python2.7/dist-packages/gobject/ usr/lib/python2.7/site-packages/
+cp -r /usr/lib/python2.7/dist-packages/glib/ usr/lib/python2.7/site-packages/
+
+########################################################################
+# "Install" a simple sample app in the AppDir
+########################################################################
+
+mkdir -p usr/bin/
+cat > usr/bin/$LOWERAPP <<\EOF
+#!/usr/bin/env python
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+win = Gtk.Window()
+win.connect("delete-event", Gtk.main_quit)
+win.show_all()
+Gtk.main()
+EOF
+chmod a+x usr/bin/$LOWERAPP
+
+########################################################################
+# Finalize the AppDir
+########################################################################
+
+get_apprun
+
+cat > $LOWERAPP.desktop <<EOF
+[Desktop Entry]
+Name=$APP
+Exec=$LOWERAPP
+Icon=$LOWERAPP
+Comment=A hello world app written in GTK3 and Python
+EOF
+
+# Make the AppImage ask to "install" itself into the menu
+get_desktopintegration $LOWERAPP
+
+cp /usr/share/icons/hicolor/256x256/apps/logview.png $LOWERAPP.png
+
+########################################################################
+# Bundle dependencies
+########################################################################
+
+copy_deps ; copy_deps ; copy_deps
+
+delete_blacklisted
+move_lib
+
+VERSION=1
+ARCH=$(arch)
+
+########################################################################
+# Package the AppDir as an AppImage
+########################################################################
+
+# At this point, you should be able to run the application by executing
+# ./AppRun
+
+cd ..
+
+generate_appimage

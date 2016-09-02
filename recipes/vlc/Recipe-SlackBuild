@@ -1,0 +1,131 @@
+#!/bin/bash
+
+# This recipe does not build from source, but rather uses a very special
+# Slackware build which is geared toward what we need already.
+# We could also do that is done in vlc.SlackBuild ourselves instead.
+#
+# Or build on CentOS 6 like described here:
+# http://linuxsysconfig.com/2013/04/compile-latest-ffmpeg-and-vlc-on-centos-6/
+# http://moritz.in/vlc-on-uberspace/
+# https://wiki.videolan.org/UnixCompile/
+#
+# Citation from ./usr/doc/vlc-*/vlc.SlackBuild:
+# NOTE: this SlackBuild is a monster - it tries to wrap all dependencies to
+# vlc into the resulting package by building these deps as static libraries
+# and then in the final stage linking vlc against all the static libraries.
+# The resulting package has all the vlc functionality and does not depend on
+# any software that is not present in a standard full install of Slackware.
+# This makes my package quite different from all the other vlc builds that are
+# floating around on the Internet.
+#
+# However, see the footer of this file that shows that there are 
+# some dependencies that cannot be assumed to be present everywhere (FIXME)
+
+if [[ "x$ARCH" == "x" ]] ; then
+  ARCH="x86_64"
+fi
+
+APP=vlc
+
+mkdir -p $APP/$APP.AppDir
+
+cd $APP
+
+if [[ "$ARCH" = "x86_64" ]] ; then
+  FILE=$(wget "http://www.slackware.com/~alien/slackbuilds/vlc/pkg64/current/?C=S;O=D" -q -O - | grep txz | head -n 1 | cut -d '"' -f 8)
+  wget -c http://www.slackware.com/~alien/slackbuilds/vlc/pkg64/current/$FILE
+fi
+if [[ "$ARCH" = "i686" ]] ; then
+  FILE=$(wget "http://www.slackware.com/~alien/slackbuilds/vlc/pkg/current/?C=S;O=D" -q -O - | grep txz | head -n 1 | cut -d '"' -f 8)
+  wget -c http://www.slackware.com/~alien/slackbuilds/vlc/pkg/current/$FILE
+fi
+
+cd $APP.AppDir/
+
+tar xf ../vlc-*
+
+cd usr/ ; find . -type f -executable -exec sed -i -e 's|/usr|././|g' {} \; ; cd ..
+cp ./usr/share/applications/vlc.desktop .
+
+# Taken from install/doinst.sh
+( cd usr/lib* ; rm -rf libvlc.so.5 )
+( cd usr/lib* ; ln -sf libvlc.so.5.5.0 libvlc.so.5 )
+( cd usr/lib*/vlc ; rm -rf libvlc_vdpau.so )
+( cd usr/lib*/vlc ; ln -sf libvlc_vdpau.so.0.0.0 libvlc_vdpau.so )
+( cd usr/lib*/vlc ; rm -rf libvlc_vdpau.so.0 )
+( cd usr/lib*/vlc ; ln -sf libvlc_vdpau.so.0.0.0 libvlc_vdpau.so.0 )
+( cd usr/lib* ; rm -rf libvlccore.so )
+( cd usr/lib* ; ln -sf libvlccore.so.8.0.0 libvlccore.so )
+( cd usr/lib* ; rm -rf libvlccore.so.8 )
+( cd usr/lib* ; ln -sf libvlccore.so.8.0.0 libvlccore.so.8 )
+( cd usr/lib* ; rm -rf libvlc.so )
+( cd usr/lib* ; ln -sf libvlc.so.5.5.0 libvlc.so )
+
+if [ -e usr/lib64 ] ; then
+  ln -s lib64/ usr/lib
+fi 
+
+wget https://github.com/probonopd/AppImageKit/releases/download/5/AppRun # 64-bit
+chmod a+x ./AppRun
+
+cd ..
+
+wget https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant # 64-bit
+chmod a+x ./AppImageAssistant
+
+VERSION=$(strings ./$APP.AppDir/usr/lib/libvlccore.so.* | grep "^[0-9]\.[0-9]\." | head -n 1 | sed -e 's/-/./g')
+echo $VERSION
+
+if [[ "$ARCH" = "x86_64" ]] ; then
+	APPIMAGE=$APP"-"$VERSION"-x86_64.AppImage"
+fi
+if [[ "$ARCH" = "i686" ]] ; then
+	APPIMAGE=$APP"-"$VERSION"-i386.AppImage"
+fi
+
+mkdir -p ../out/
+./AppImageAssistant ./$APP.AppDir ../out/$APPIMAGE
+
+# Test what we have produced and watch its verbose output
+../out/$APPIMAGE -vv --version
+
+exit 0
+
+================================================
+
+# Run like this with -vv to see the plugins load and miss their dependencies
+Downloads/vlc-2.2.1.0.ga425c42-x86_64.AppImage -vv 2>&1 | grep cannot | cut -d "(" -f 2 | cut -d ":" -f 1 | sort | uniq
+ 
+# FIXME
+# On Ubuntu 12.04.5 LTS:
+
+root@ubuntu:/tmp/.mount_pDGzHU/usr# find . -type f -executable -exec ldd {} \; 2>&1 | grep "=> not found" | sort | uniq
+	liba52.so.0 => not found
+	libcrypto.so.1 => not found
+	libgcrypt.so.20 => not found
+	libGLEW.so.1.10 => not found
+	libglut.so.3 => not found
+	libgnutls.so.30 => not found
+	libgstapp-1.0.so.0 => not found
+	libgstbase-1.0.so.0 => not found
+	libgstreamer-1.0.so.0 => not found
+	libgstvideo-1.0.so.0 => not found
+	libharfbuzz.so.0 => not found
+	libhogweed.so.4 => not found
+	libjpeg.so.62 => not found
+	libmad.so.0 => not found
+	libnettle.so.6 => not found
+	libpng16.so.16 => not found
+	libSDL_image-1.2.so.0 => not found
+	libssl.so.1 => not found
+	libtiff.so.5 => not found
+	libvga.so.1 => not found
+	libxcb-composite.so.0 => not found
+	libxcb-dri3.so.0 => not found
+	libxcb-keysyms.so.1 => not found
+	libxcb-present.so.0 => not found
+	libxcb-randr.so.0 => not found
+	libxcb-sync.so.1 => not found
+	libxcb-xv.so.0 => not found
+	libxshmfence.so.1 => not found
+

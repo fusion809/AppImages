@@ -1,0 +1,58 @@
+# TODO - check why Qt is not working yet
+######################################################
+
+wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+. ./functions.sh
+
+APP=SqliteBrowser
+LOWERAPP="${APP,,}"
+
+sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser
+sudo apt-get update
+
+sudo apt-get -y install $LOWERAPP
+
+mkdir -p $APP/$APP.AppDir
+cd $APP/$APP.AppDir
+find /var/cache/apt/archives/*$LOWERAPP* -exec dpkg -x {} . \; || true
+
+cp ./usr/share/applications/$LOWERAPP.desktop .
+sed -i -e 's|Name=.*|Name='$APP'|g' $LOWERAPP.desktop # We really want the name of the App there and not some random crap
+
+rm -rf ./usr/share/icons/48x48/apps || true
+cp usr/share/icons/128x128/apps/$LOWERAPP.png . || true
+cp usr/share/icons/256x256/apps/$LOWERAPP.png . || true
+
+get_apprun
+
+# Copy in the indirect dependencies
+copy_deps ; copy_deps # Two runs to ensure we catch indirect ones
+
+# Qt plugins are not automatically copied in, so we have to do it manually
+if [ -e ./usr/lib/x86_64-linux-gnu/libQt5Core.so.5 ] ; then
+  cp -r /usr/lib/x86_64-linux-gnu/qt5 ./usr/lib/x86_64-linux-gnu/
+  cp $(ldconfig -p | grep libEGL.so.1 | cut -d ">" -f 2 | xargs) ./usr/lib/ # Otherwise F23 cannot load the Qt platform plugin "xcb"
+fi
+
+# Copy in the indirect Qt dependencies too
+copy_deps
+
+# The following lines can be removed once AppRun covers these paths, too
+mv lib/x86_64-linux-gnu/* usr/lib/x86_64-linux-gnu/ || true
+mv lib/* usr/lib/ || true
+
+delete_blacklisted
+
+patch_usr
+VER1=$(find /var/cache/apt/archives/ -name $LOWERAPP"_"* | head -n 1 | cut -d "~" -f 1 | cut -d "_" -f 2 | cut -d "-" -f 1)
+GLIBC_NEEDED=$(glibc_needed)
+VERSION=$VER1.glibc$GLIBC_NEEDED
+echo $VERSION
+
+get_desktopintegration $LOWERAPP
+
+# Go out of AppImage
+cd ..
+
+ARCH="x86_64"
+generate_appimage

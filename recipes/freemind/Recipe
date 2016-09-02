@@ -1,0 +1,73 @@
+#!/bin/bash -x
+
+# This is an example of a Java application.
+
+set +e
+
+APP=FreeMind
+LOWERAPP=${APP,,} 
+
+mkdir -p ./$APP/$APP.AppDir/usr/bin
+cd ./$APP
+
+# Get Java
+wget -c --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jre-8u66-linux-x64.tar.gz
+
+# Get FreeMind 
+URL="http://downloads.sourceforge.net/project/freemind/freemind/1.0.1/freemind-bin-max-1.0.1.zip"
+wget -c "$URL"
+
+cd $APP.AppDir/usr
+
+unzip ../../freemind-*.zip
+find . -name "*.exe" -exec rm {} \;
+chmod a+x freemind.sh
+
+mkdir bin
+cd bin
+mv ../freemind.sh .
+
+cd ../..
+
+# Install java
+tar xf ../jre*
+( mkdir -p usr/bin ; cd usr/bin ; ln -s ../../jre*/bin/java . )
+
+# Write desktop file
+cat > $LOWERAPP.desktop <<\EOF
+[Desktop Entry]
+Version=1.0
+Name=FreeMind
+Exec=freemind.sh
+Terminal=false
+Icon=freemind
+Type=Application
+MimeType=application/x-freemind;
+Categories=Office;
+GenericName=FreeMind
+Comment=A free mind mapping tool
+EOF
+
+wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
+chmod a+x ./AppRun
+
+# Add desktop integration
+XAPP=freemind.sh
+wget -O ./usr/bin/$XAPP.wrapper https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration
+chmod a+x ./usr/bin/$XAPP.wrapper
+sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $LOWERAPP.desktop
+
+# Get version
+VERSION=$(ls ../freemind*.zip | cut -d "-" -f 4 | sed -e 's|.zip||g')
+
+# Move icon into place
+wget -c "http://t2.gstatic.com/images?q=tbn:ANd9GcTHxEdwvl5T_99IMX8DWhZuxf-eCkBHLXG9MdUSMlvyWiK8OHWO-pad" -O $LOWERAPP.png
+
+# Go out of AppImage
+cd ..
+
+wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (64-bit)
+chmod a+x ./AppImageAssistant
+mkdir -p ../out
+rm ../out/$APP"-"$VERSION"-x86_64.AppImage" || true
+./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-x86_64.AppImage"

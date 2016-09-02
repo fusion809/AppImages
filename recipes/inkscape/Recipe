@@ -1,0 +1,350 @@
+#!/bin/bash
+
+# Compile Inkscape and bundle it as an AppImage on CentOS 6.7
+# By Simon Peter 4/2016
+# This script is supposed to run inside a CentOS 6.7 environment. On a Ubuntu host machine, I used
+# the following commands set up a CentOS 6.7 environment; you can use your own chroot method of choice instead
+# or just boot the CentOS-6.7-x86_64-LiveCD.iso in a virtual machine and run this script inside there.
+# 
+# wget https://github.com/probonopd/AppImageKit/raw/master/AppImageAssistant.AppDir/testappimage
+# sudo bash testappimage CentOS-6.7-x86_64-LiveCD.iso bash
+# wget https://github.com/probonopd/AppImages/raw/master/recipes/inkscape/Recipe
+# bash -ex Recipe
+
+###########################################
+
+# Comment this if you want to build the Docker image (FIXME: determine automatically)
+# export DO_NOT_BUILD_DEPENDENCIES=1
+
+# TODO: move to a library function
+git_pull_rebase_helper()
+{
+	git reset --hard HEAD
+        git pull
+}
+
+# Determine which architecture should be built
+if [[ "$(/bin/arch)" = "i686" ||  "$(/bin/arch)" = "x86_64" ]] ; then
+	ARCH=$(/bin/arch)
+else
+	echo "Architecture could not be determined"
+	exit 1
+fi
+
+# Workaround for:
+# Requested 'cairomm-1.0 >= 1.9.8' but version of cairomm is 1.8.0
+# Requested 'glibmm-2.4 >= 2.28' but version of glibmm is 2.22.1
+# This is because .pc files have been installed in /usr/lib rather than /usr/lib64
+export PKG_CONFIG_PATH=/usr/lib/pkgconfig/
+
+echo "DO_NOT_BUILD_DEPENDENCIES: $DO_NOT_BUILD_DEPENDENCIES"
+if [ -z "$DO_NOT_BUILD_DEPENDENCIES" ] ; then
+
+mkdir -p dependencies
+cd dependencies/
+
+yum -y install git tar wget bzip2 make which libtool gcc-c++ gtk2-devel pango-devel gcc intltool lcms lcms-devel gsl gsl-devel libxml2-devel libxslt-devel popt-devel poppler-devel
+# ImageMagick-devel ImageMagick ImageMagick-c++-devel ImageMagick-c++
+
+# Update autoconf to 2.69, Inkscape needs newer one than what comes with CentOS 6.7
+wget -c -T 10 http://ftp.gnu.org/gnu/autoconf/autoconf-2.69.tar.gz
+tar xf autoconf-2.69.tar.gz
+cd autoconf-2.69
+./configure --prefix=/usr
+make && sudo make install
+cd ..
+
+# Workaround for:
+# Requested 'cairo >= 1.10' but version of cairo is 1.8.8
+cd /etc/yum.repos.d/
+wget http://ftp5.gwdg.de/pub/opensuse/repositories/home:/Kakumba/RedHat_RHEL-6/home:Kakumba.repo
+yum -y install cairo-devel libcairo2
+cd -
+
+# Workaround for:
+# error: 'size_t' does not name a type
+# when compiling gtkmm
+wget -c http://ftp.gnome.org/pub/GNOME/sources/libsigc++/2.2/libsigc++-2.2.9.tar.bz2
+tar xf libsigc++-2.2.9.tar.bz2
+cd libsigc++-2.2.9
+./configure --prefix=/usr --enable-static --disable-shared
+make
+make install
+cd ..
+
+# Workaround for:
+# Requested 'cairomm-1.0 >= 1.9.8' but version of cairomm is 1.8.0
+wget -c http://cairographics.org/releases/cairomm-1.10.0.tar.gz
+tar xf cairomm-*.tar.gz
+cd cairomm-*
+./configure --prefix=/usr --enable-static --disable-shared
+make
+make install
+cd ..
+
+# Workaround for:
+# When compiling glibmm,
+# extra_defs_gen/generate_defs_gio.cc:25:34: fatal error: 
+# gio/gsettingsbackend.h: No such file or directory
+# Workaround for:
+# error: unpacking of archive failed: cpio: cap_set_file
+# https://github.com/docker/hub-feedback/issues/461
+# Inside Docker we cannot install the following RPMs properly, so doing a crude workaround (" || true")
+rpm -ivh ftp://fr2.rpmfind.net/linux/sourceforge/f/fu/fuduntu-el/el6/current/UNSTABLE/RPMS/glibc-common-2.15-60.el6.x86_64.rpm ftp://fr2.rpmfind.net/linux/sourceforge/f/fu/fuduntu-el/el6/current/UNSTABLE/RPMS/glibc-2.15-60.el6.x86_64.rpm ftp://fr2.rpmfind.net/linux/sourceforge/f/fu/fuduntu-el/el6/current/UNSTABLE/RPMS/glib2-devel-2.35.8-1.el6.x86_64.rpm ftp://fr2.rpmfind.net/linux/sourceforge/f/fu/fuduntu-el/el6/current/UNSTABLE/RPMS/glib2-2.35.8-1.el6.x86_64.rpm --replacefiles || true
+# wget ftp://fr2.rpmfind.net/linux/sourceforge/f/fu/fuduntu-el/el6/current/UNSTABLE/RPMS/glibc-common-2.15-60.el6.x86_64.rpm ftp://fr2.rpmfind.net/linux/sourceforge/f/fu/fuduntu-el/el6/current/UNSTABLE/RPMS/glibc-2.15-60.el6.x86_64.rpm ftp://fr2.rpmfind.net/linux/sourceforge/f/fu/fuduntu-el/el6/current/UNSTABLE/RPMS/glib2-devel-2.35.8-1.el6.x86_64.rpm ftp://fr2.rpmfind.net/linux/sourceforge/f/fu/fuduntu-el/el6/current/UNSTABLE/RPMS/glib2-2.35.8-1.el6.x86_64.rpm
+# find glib2*.rpm -exec  sh -c "rpm2cpio {} | cpio -idmv" \;
+
+# Workaround for:
+# Requested 'glibmm-2.4 >= 2.28' but version of glibmm is 2.22.1
+wget -c http://ftp.gnome.org/pub/gnome/sources/glibmm/2.28/glibmm-2.28.0.tar.bz2
+tar xf glibmm-2.28.0.tar.bz2
+cd glibmm-2.28.0
+./configure --prefix=/usr --enable-static --disable-shared
+make
+make install
+cd ..
+
+# Workaround for:
+# configure: error: *** A compiler with support for C++11 language features is required.
+wget http://people.centos.org/tru/devtools-2/devtools-2.repo -O /etc/yum.repos.d/devtools-2.repo
+yum -y install devtoolset-2-gcc devtoolset-2-gcc-c++ devtoolset-2-binutils
+. /opt/rh/devtoolset-2/enable 
+
+# Workaround for:
+# Requested 'pangomm-1.4 >= 2.27.1'
+# when compiling gtkmm-2.24.0
+yum -y remove pangomm || true
+wget https://github.com/GNOME/mm-common/archive/0.9.10.tar.gz
+tar xf 0.9.10.tar.gz
+cd mm-common-0.9.10/
+./autogen.sh
+./configure --prefix=/usr --enable-static --disable-shared
+make USE_NETWORK=yes
+make install
+cd ..
+wget -c http://ftp.gnome.org/pub/GNOME/sources/pangomm/2.28/pangomm-2.28.0.tar.bz2
+tar xf pangomm-2.28.0.tar.bz2
+cd pangomm-2.28.0
+./configure --prefix=/usr --enable-static --disable-shared
+make
+make install
+cd ..
+
+# Workaround for:
+# configure: error: Package requirements (atk >= 1.12 glibmm-2.4 >= 2.24) were not met
+# when compiling atkmm
+##### Hint from the Internet: So after uninstalling glib2 2.30, I reactivated 2.28, 
+#installed pkgconfig and then atk built just fine - https://trac.macports.org/ticket/32203
+# We patch away -DG_DISABLE_DEPRECATED for now
+wget -c http://ftp.gnome.org/pub/GNOME/sources/atk/1.22/atk-1.22.0.tar.bz2
+tar xf atk-*.tar.bz2
+cd atk-*
+sed -i -e 's|-DG_DISABLE_DEPRECATED||g' ./atk/Makefile.in
+sed -i -e 's|-DG_DISABLE_DEPRECATED||g' ./atk/Makefile.am
+sed -i -e 's|-DG_DISABLE_DEPRECATED||g' ./tests/Makefile.in
+sed -i -e 's|-DG_DISABLE_DEPRECATED||g' ./tests/Makefile.am
+./configure --prefix=/usr --enable-static --disable-shared
+make
+make install
+cd ..
+
+# Workaround for:
+# Requested 'atkmm-1.6 >= 2.22.2'
+wget -c http://ftp.gnome.org/pub/GNOME/sources/atkmm/2.22/atkmm-2.22.5.tar.bz2
+tar xf atkmm-2.22.5.tar.bz2
+cd atkmm-2.22.5
+./configure --prefix=/usr --enable-static --disable-shared
+make
+make install
+cd ..
+
+# C++ Interfaces for GTK+ and GNOME
+# Use the same version as gtk+ (2.24 on el6.7)
+# Workaround for:
+# Can't open perl script "/usr/share/glibmm-2.4/doctool/doc-install.pl": No such file or directory
+# https://bugs.launchpad.net/ubuntu/+source/gtkmm2.4/+bug/765992
+# Use 
+wget -c http://ftp.gnome.org/pub/GNOME/sources/gtkmm/2.24/gtkmm-2.24.1.tar.bz2
+tar xf gtkmm-*.tar.bz2
+cd gtkmm-*
+./configure --prefix=/usr --enable-static --disable-shared
+make
+make install
+cd ..
+
+# Inkscape trunk needs the following too
+yum -y remove gc || true
+wget -c http://hboehm.info/gc/gc_source/gc-7.2f.tar.gz
+tar xf gc-*.tar.gz
+cd gc-*
+./configure --prefix=/usr --enable-static --disable-shared
+make
+make install
+cd ..
+
+# Newer version of boost is needed for Inkscape trunk
+yum -y remove boost-devel || true
+wget -c https://sourceforge.net/projects/boost/files/boost/1.50.0/boost_1_50_0.tar.bz2/download
+tar xf download
+cd boost_*
+./bootstrap.sh
+./b2 install --prefix=/usr || true # ...failed updating 58 targets... doesn't seem to matter but need " || true"
+cd ..
+
+cd .. # go out of dependencies
+
+# Build AppImageKit
+if [ ! -d AppImageKit ] ; then
+  git clone https://github.com/probonopd/AppImageKit.git
+fi
+cd AppImageKit/
+git_pull_rebase_helper
+./build.sh
+cd ..
+
+fi # if [ -z "$DO_NOT_BUILD_DEPENDENCIES" ]
+
+. /opt/rh/devtoolset-2/enable 
+
+# Get Inkscape
+
+# Latest released version
+# URL=$(wget -q "https://inkscape.org/cs/download/source/" -O - | grep tar.bz2 | head -n 1 | cut -d '"' -f 2)
+# wget -c "$URL"
+# tar xf inkscape*.tar.bz2
+# cd inkscape-*
+
+# Or the development version from bzr:lp (it's dog slow) as long as they have not moved to GitHub yet
+# As per #inkscape-devel this is the only way to get the release number
+# yum -y install bzr
+# if [ -d inkscape ] ; then
+#   cd inkscape
+#   bzr update
+# else
+#   bzr checkout lp:inkscape inkscape
+#   cd inkscape
+# fi
+
+# Get Inkscape
+if [ ! -d /inkscape ] ; then
+	git clone  --depth 1 https://github.com/inkscape/inkscape.git /inkscape
+fi
+cd /inkscape/
+git_pull_rebase_helper
+REVISION=$(wget -q "https://github.com/inkscape/inkscape/commits/master" -O - | grep 'class="message"' | head -n 1 | cut -d ">" -f 2 | cut -d ":" -f 1)
+
+cd ./inkscape-launchpad
+
+./autogen.sh || true
+
+# Workaround for:
+# error: unknown type name 'G_CONST_RETURN'
+# when compiling Inkscape
+# This is because GLib has deprecated the macro G_CONST_RETURN
+# https://forums.gentoo.org/viewtopic-p-6829424.html#6829424
+sed -i -e 's|-DG_DISABLE_DEPRECATED||g' configure
+sed -i -e 's|-DGTK_DISABLE_DEPRECATED||g' configure
+# Possibly also needed?
+sed -i -e 's|-DGLIBMM_DISABLE_DEPRECATED||g' configure
+sed -i -e 's|-DGDKMM_DISABLE_DEPRECATED||g' configure
+sed -i -e 's|-DGTKMM_DISABLE_DEPRECATED||g' configure
+
+./configure --prefix=/AppDir/usr --enable-binreloc
+# Try to patch in the revision number so that it shows up in the About box
+echo "namespace Inkscape { char const *version_string = \"0.91 r$REVISION\"; }" > src/inkscape-version.cpp
+# Or we could try to patch the Makefile
+make -j8
+make install
+
+# Note that because Inkscape uses binreloc, we do not need to binary-patch the executable
+# because binreloc makes paths relative rather than absolute
+# https://github.com/datenwolf/binreloc
+
+############## Compilation and installation succeeded ############## 
+
+cd /AppDir/
+
+# Strip executables; greatly reduces AppImage size
+find . -type f -executable -exec strip {} \;
+
+# Copy dependency libraries
+mkdir -p ./usr/lib
+ldd usr/bin/inkscape | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./usr/lib || true
+
+# Delete blacklisted files; TODO: Move to a library function
+BLACKLISTED_FILES=$(wget -q https://github.com/probonopd/AppImages/raw/master/excludelist -O - | sed '/^\s*$/d' | sed '/^#.*$/d')
+echo $BLACKLISTED_FILES
+for FILE in $BLACKLISTED_FILES ; do
+  FOUND=$(find . -type f -name "${FILE}" 2>/dev/null)
+  if [ ! -z "$FOUND" ] ; then
+    echo "Deleting blacklisted ${FOUND}"
+    rm -f "${FOUND}"
+  fi
+done
+
+wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
+chmod a+x ./AppRun
+
+VER1=$(./usr/bin/inkscape --version | cut -d " " -f 2)
+VER2=$(./usr/bin/inkscape --version | cut -d " " -f 3)
+GLIBC_NEEDED=$(find . -type f -executable -exec strings {} \; | grep ^GLIBC_2 | sed s/GLIBC_//g | sort --version-sort | uniq | tail -n 1)
+VERSION=$VER1.$VER2.glibc$GLIBC_NEEDED
+echo $VERSION
+
+# Workaround for: https://launchpad.net/bugs/1545771
+# error: file contains group "Drawing Shortcut Group", but groups extending the format should start with "X-"
+cat > inkscape.desktop <<\EOF
+[Desktop Entry]
+Version=1.0
+Name=Inkscape
+GenericName=Vector Graphics Editor
+X-GNOME-FullName=Inkscape Vector Graphics Editor
+Comment=Create and edit Scalable Vector Graphics images
+Type=Application
+Categories=Graphics;VectorGraphics;GTK;
+MimeType=image/svg+xml;image/svg+xml-compressed;application/vnd.corel-draw;application/pdf;application/postscript;image/x-eps;application/illustrator;
+Exec=inkscape %F
+TryExec=inkscape
+Terminal=false
+StartupNotify=true
+Icon=inkscape
+X-Ayatana-Desktop-Shortcuts=Drawing
+EOF
+
+cp ./usr/share/icons/hicolor/256x256/apps/inkscape.png .
+
+# AppImageAssistant picks up too small icon if we leave these in (FIXME)
+rm -rf usr/share/icons/hicolor/16x16/ usr/share/icons/hicolor/22x22/ usr/share/icons/hicolor/24x24/ usr/share/icons/hicolor/32x32/ usr/share/icons/hicolor/48x48/
+
+APP=Inkscape
+
+# Add desktop integration
+XAPP=inkscape
+wget -O ./usr/bin/$XAPP.wrapper https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration
+chmod a+x ./usr/bin/$XAPP.wrapper
+sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $XAPP.desktop
+
+# Go out of AppImage
+cd ..
+
+if [[ "$ARCH" = "x86_64" ]] ; then
+	APPIMAGE=$APP"-"$VERSION"-x86_64.AppImage"
+fi
+if [[ "$ARCH" = "i686" ]] ; then
+	APPIMAGE=$APP"-"$VERSION"-i386.AppImage"
+fi
+
+# Put this script into the AppImage for debugging
+# FIXME: The follwing line does not work
+# cp $(readlink --canonicalize $0) ./$APP.AppDir/$APP.recipe
+
+mkdir -p ../out
+
+rm -f ../out/*.AppImage || true
+
+# Convert the AppDir into an AppImage
+rm -rf $APPIMAGE
+../AppImageKit/AppImageAssistant.AppDir/package ./AppDir/ ../out/$APPIMAGE
+
+chmod a+rwx ../out/$APPIMAGE # So that we can edit the AppImage outside of the Docker container
+ls -lh ../out/$APPIMAGE

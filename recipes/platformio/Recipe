@@ -1,0 +1,79 @@
+#!/bin/bash -x
+
+#################################################################
+# THIS IS A WORK IN PROGRESS - NOT WORKING AS INTENDED YET
+#################################################################
+
+set +e
+
+URL="https://sourceforge.net/projects/platformio-storage/files/ide-bundles/platformio-atom-linux-amd64.deb/download"
+echo $URL
+URL2="http://downloads.sourceforge.net/project/platformio-storage/ide-bundles/platformio-atom-ide-deps.tar.gz"
+echo $URL2
+
+APP=PlatformIO
+
+mkdir -p ./$APP/$APP.AppDir/usr/bin
+cd ./$APP
+
+wget -c --trust-server-names "$URL" "$URL2" "$URL3"
+
+cd $APP.AppDir/
+dpkg -x ../platformio*deb .
+
+mkdir ./packages
+( cd packages/ , tar xf ../../platformio-atom-ide-deps.tar.gz )
+
+# Write a custom AppRun file that does things slightly differently
+cat > AppRun <<\EOF
+#!/bin/sh
+HERE=$(dirname $(readlink -f "${0}"))
+export ATOM_HOME="$HOME/.platformio_ide"
+
+export PATH="$HERE/packages/platformio-ide/penv/bin/":$PATH
+if [ ! -d "$ATOM_HOME/packages" ]; then
+  mkdir -p "$ATOM_HOME/packages/"
+fi
+ln -sf "$HERE/packages"/* "$ATOM_HOME/packages/"
+"$HERE/usr/bin/atom" $@
+# TODO: Remove the symlinks created above
+EOF
+chmod a+x AppRun
+
+# Move icon into place so that AppImageAssistant finds them
+cp ./usr/share/pixmaps/atom.png .
+
+# TODO: Get appdata
+# mkdir -p ./usr/share/metainfo/
+# wget -q "..." -O ./usr/share/metainfo/atom.appdata.xml
+
+# Get desktop file
+cp ./usr/share/applications/atom.desktop .
+sed -i -e "s|/usr/share/atom/||g" atom.desktop
+
+# Remove launcher and move in place
+# TODO: Replace this by something cleaner
+rm usr/bin/atom
+mv usr/share/atom/* usr/bin/
+
+# Add desktop integration
+XAPP=atom
+wget -O ./usr/bin/$XAPP.wrapper https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration
+chmod a+x ./usr/bin/$XAPP.wrapper
+sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $XAPP.desktop
+
+./usr/bin/resources/app/apm/bin/apm install platformio-ide
+mv $HOME/.atom/packages/platformio-ide ./packages/
+
+# Figure out $VERSION
+VERSION=$(grep -r "atom@" ./usr/share/doc/atom/copyright | cut -d " " -f 2 | cut -d "@" -f 2)
+echo $VERSION
+
+# Go out of AppImage
+cd ..
+
+wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (64-bit)
+chmod a+x ./AppImageAssistant
+mkdir -p ../out
+rm ../out/$APP"-"$VERSION"-x86_64.AppImage" || true
+./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-x86_64.AppImage"

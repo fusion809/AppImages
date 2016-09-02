@@ -1,0 +1,65 @@
+#!/bin/bash
+
+# A "hello world" recipe
+# This is just a proof-of-concept, in reality you should use a proper "recipe" script 
+# to create proper AppDirs in order to ensure binary compatibility of your AppImages. 
+# See the documentation and the other recipes for details and for examples on how to 
+# bundle real-world software such as LibreOffice, Google Chrome, and others as AppImages.
+
+export APP=leafpad
+
+mkdir -p $APP/$APP.AppDir
+cd $APP
+
+# Note we are using a really old binary so that it runs hopefully everywhere
+# ALso note this is a very simplistic example as we assume this package has no dependencies
+# that are not part of the base system - unlike most other packages
+URL=http://ftp.rz.tu-bs.de/pub/mirror/ubuntu-packages/pool/universe/l/leafpad/leafpad_0.8.17-2_amd64.deb
+wget -c "${URL}"
+
+cd $APP.AppDir
+dpkg -x ../$APP_*.deb .
+
+# Copy icon and desktop file in place
+cp ./usr/share/icons/hicolor/scalable/apps/$APP.svg .
+cp ./usr/share/applications/$APP.desktop .
+
+# Add desktop integration
+wget -O ./usr/bin/$APP.wrapper https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration
+chmod a+x ./usr/bin/$APP.wrapper
+sed -i -e "s|Exec=$APP |Exec=$APP.wrapper |g" $APP.desktop
+
+# Put in AppRun file
+wget -c https://github.com/probonopd/AppImageKit/releases/download/5/AppRun # 64-bit
+chmod a+x AppRun
+
+###############################################################
+# Experimental autorun support
+###############################################################
+cat > autorun.inf <<EOF
+[AutoRun]
+label=$APP
+icon=.DirIcon
+[Content] 
+MusicFiles=false 
+PictureFiles=false 
+VideoFiles=false
+EOF
+
+cat > autorun.sh <<\EOF
+HERE="$(dirname "$(readlink -f "${0}")")"
+exec "${HERE}/AppRun" "$@"
+EOF
+chmod a+x autorun.sh
+###############################################################
+
+cd ..
+
+VERSION=$(echo $URL | cut -d "_" -f 2 | cut -d "-" -f 1 | head -n 1 | xargs)
+
+wget -c https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant # 64-bit
+chmod a+x AppImageAssistant
+
+mkdir -p ../out
+rm ../out/Leafpad-$VERSION-x86_64.AppImage || true
+./AppImageAssistant $APP.AppDir ../out/Leafpad-$VERSION-x86_64.AppImage

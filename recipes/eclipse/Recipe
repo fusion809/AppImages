@@ -6,7 +6,10 @@
 APP=Eclipse
 LOWERAPP=${APP,,}
 
+cp icon.xpm $APP/$APP.AppDir/eclipse.xpm
+
 mkdir -p $APP/$APP.AppDir/usr/bin
+mkdir -p $APP/$APP.AppDir/usr/lib
 
 cd $APP/
 
@@ -17,8 +20,7 @@ cd $APP.AppDir/
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
 chmod a+x ./AppRun
 
-tar xf ../eclipse-*.tar.gz
-( mkdir -p usr/bin ; cd usr/bin; ln -s ../../eclipse/eclipse .)
+bsdtar -xf ../eclipse-*.tar.gz -C usr/lib
 
 cat > $LOWERAPP.desktop <<EOF
 [Desktop Entry]
@@ -31,9 +33,13 @@ Categories=Development;IDE;
 Terminal=false
 EOF
 
-cp *.*/bin/$LOWERAPP.png .
+cat > usr/bin/$LOWERAPP <<EOF
+#!/bin/sh
+export ECLIPSE_HOME=../lib/eclipse
+exec ${ECLIPSE_HOME}/eclipse "$@"
+EOF
 
-VERSION=$(ls ../$LOWERAPP*-* | cut -d - -f 2 | sed 's|.tar.gz||g')
+VERSION=4.6.0
 echo $VERSION
 
 # Do not add desktop integration since it comes with its own

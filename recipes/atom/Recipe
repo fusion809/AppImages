@@ -6,21 +6,18 @@
 
 set +e
 
-URL="https://github.com/fusion809/atom-custom/releases/download/v1.10.0/atom-1.10.0-amd64.deb"
+URL="https://atom.io/download/deb"
 echo $URL
 
-APP=atom-bleeding
+APP=Atom
 
-# get the desktop file
 mkdir -p ./$APP/$APP.AppDir/usr/bin
-cp ./atom.desktop ./$APP/$APP.AppDir
-
 cd ./$APP
 
-wget -c --trust-server-names "$URL"
+wget -cO- "$URL" > atom-amd64.deb
 
 cd $APP.AppDir/
-dpkg -x ../atom*deb* .
+dpkg -x ../atom-amd64.deb .
 
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
 chmod a+x ./AppRun
@@ -32,6 +29,12 @@ cp ./usr/share/pixmaps/atom.png .
 # mkdir -p ./usr/share/metainfo/
 # wget -q "..." -O ./usr/share/metainfo/atom.appdata.xml
 
+# Get desktop file
+cp ./usr/share/applications/atom.desktop .
+sed -i -e "s|/usr/share/atom/||g" atom.desktop
+sed -i -e 's|MimeType=text/plain;|MimeType=application/javascript;application/json;application/x-desktop;application/x-httpd-eruby;application/x-httpd-php;application/x-httpd-php3;application/x-httpd-php4;application/x-httpd-php5;application/x-ruby;application/x-bash;application/x-csh;application/x-sh;application/x-zsh;application/x-shellscript;application/x-sql;application/x-tcl;application/xhtml+xml;application/xml;application/xml-dtd;application/xslt+xml;text/coffeescript;text/css;text/html;text/plain;text/xml;text/xml-dtd;text/x-bash;text/x-c++;text/x-c++hdr;text/x-c++src;text/x-c;text/x-chdr;text/x-csh;text/x-csrc;text/x-dsrc;text/x-diff;text/x-go;text/x-java;text/x-java-source;text/x-makefile;text/x-markdown;text/x-objc;text/x-perl;text/x-php;text/x-python;text/x-ruby;text/x-sh;text/x-zsh;text/yaml;inode/directory;|g' \
+    -e 's/GNOME;//g' atom.desktop
+
 # Remove launcher and move in place
 # TODO: Replace this by something cleaner
 rm usr/bin/atom
@@ -41,6 +44,7 @@ mv usr/share/atom/* usr/bin/
 XAPP=atom
 wget -O ./usr/bin/$XAPP.wrapper https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration
 chmod a+x ./usr/bin/$XAPP.wrapper
+sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $XAPP.desktop
 
 # Figure out $VERSION
 VERSION=$(grep -r "atom@" ./usr/share/doc/atom/copyright | cut -d " " -f 2 | cut -d "@" -f 2)

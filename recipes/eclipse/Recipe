@@ -31,8 +31,8 @@ cat > $APP.desktop <<EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=$APP
-Icon=$APP
+Name=Eclipse
+Icon=$LAPP
 Exec=$APP.wrapper
 Categories=Development;IDE;
 Terminal=false

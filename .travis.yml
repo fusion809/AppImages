@@ -1,5 +1,5 @@
 sudo: required
-dist: trusty
+dist: xenial
 addons:
   apt:
     packages:
@@ -10,7 +10,7 @@ services:
 - docker
 
 env:
-  - RECIPE=leafpad
+  - RECIPE=atom
 
 script:
 - bash travis.sh $RECIPE

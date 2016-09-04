@@ -4,25 +4,26 @@
 # This application comes with a JRE.
 
 APP="eclipse-cpp"
+LAPP=${APP//-cpp/}
 VERSION=4.6.0
 echo $VERSION
 
 mkdir -p $APP/$APP.AppDir/usr/bin
 
-wget -cO- https://worldvectorlogo.com/logos/eclipse-11.svg > $APP/$APP.AppDir/$APP.svg
+wget -cO- https://worldvectorlogo.com/logos/$LAPP-11.svg > $APP/$APP.AppDir/$LAPP.svg
 
 cd $APP/
 
-wget -c "http://mirror.internode.on.net/pub/eclipse/technology/epp/downloads/release/neon/R/eclipse-cpp-neon-R-linux-gtk-x86_64.tar.gz"
+wget -c "http://mirror.internode.on.net/pub/$LAPP/technology/epp/downloads/release/neon/R/$LAPP-cpp-neon-R-linux-gtk-x86_64.tar.gz"
 
 cd $APP.AppDir/
 
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
 chmod a+x ./AppRun
 
-bsdtar -xf ../eclipse-*.tar.gz -C usr
-cp -r usr/eclipse/* usr/bin
-rm -rf usr/eclipse
+bsdtar -xf ../$LAPP-*.tar.gz -C usr
+cp -r usr/$LAPP/* usr/bin
+rm -rf usr/$LAPP
 
 mv usr/bin/eclipse usr/bin/eclipse-cpp
 

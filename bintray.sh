@@ -11,13 +11,13 @@ FILE="$1"
 [ -f "$FILE" ] || { echo "File '$FILE' doesn't exist"; exit; }
 
 PCK_NAME="$(basename "$1")"
-BINTRAY_USER="${BINTRAY_USER:-probono}"
+BINTRAY_USER="${BINTRAY_USER:-fusion809}"
 BINTRAY_API_KEY="$BINTRAY_API_KEY" # env
 BINTRAY_REPO="${BINTRAY_REPO:-AppImages}"
 BINTRAY_REPO_OWNER="${BINTRAY_REPO_OWNER:-$BINTRAY_USER}" # owner and user not always the same
-WEBSITE_URL="${WEBSITE_URL:-http://appimage.org}"
-ISSUE_TRACKER_URL="${ISSUE_TRACKER_URL:-https://github.com/probonopd/AppImages/issues}"
-VCS_URL="${VCS_URL:-https://github.com/probonopd/AppImages.git}" # Mandatory for packages in free Bintray repos
+WEBSITE_URL="${WEBSITE_URL:-https://github.com/fusion809/AppImages}"
+ISSUE_TRACKER_URL="${ISSUE_TRACKER_URL:-https://github.com/fusion809/AppImages/issues}"
+VCS_URL="${VCS_URL:-https://github.com/fusion809/AppImages.git}" # Mandatory for packages in free Bintray repos
 
 # Figure out whether we should use sudo
 SUDO=''

@@ -6,12 +6,11 @@ addons:
     - bsdtar
     - curl
     - zsync
-    - wget
 services:
 - docker
 
 env:
-  - RECIPE=atom
+  - RECIPE=eclipse
 
 script:
 - bash travis.sh $RECIPE

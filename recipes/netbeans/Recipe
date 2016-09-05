@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# This is an example for packaging a Java application as an AppImage.
+# This application comes with a JRE.
+
+APP="netbeans"
+VERSION=8.1
+LVER=201510222201
+echo $VERSION
+
+mkdir -p $APP/$APP.AppDir/usr/bin
+
+cd $APP/
+
+wget -c "http://download.netbeans.org/netbeans/8.1/final/zip/$APP-$VERSION-$LVER.zip"
+
+cd $APP.AppDir/
+
+wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
+chmod a+x ./AppRun
+
+bsdtar -xf ../$APP-$VERSION-$LVER.zip -C usr
+cp -r usr/$APP/* usr/
+rm -rf usr/$APP
+cp usr/$APP/nb/netbeans.png .
+
+cat > $APP.desktop <<EOF
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=$APP
+Icon=$APP
+Exec=$APP.wrapper
+Categories=Development;IDE;Java;C++;C;PHP
+Terminal=false
+EOF
+
+# Move out of $APPDIR
+wget -O ./usr/bin/$APP.wrapper https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration
+chmod a+x ./usr/bin/$APP.wrapper
+cd ..
+
+wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (64-bit)
+chmod a+x ./AppImageAssistant
+rm -rf ../out
+mkdir -p ../out
+./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-x86_64.AppImage"

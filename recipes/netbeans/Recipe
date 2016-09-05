@@ -35,6 +35,14 @@ Categories=Development;IDE;Java;C++;C;PHP
 Terminal=false
 EOF
 
+find usr \
+  -name "docs" -exec rm -rf '{}' \; \
+  -or -name "*.exe" -exec rm '{}' \; \
+  -or -name "*.pdf" -exec rm '{}' \; \
+  -or -name "*.png" -exec rm '{}' \; \
+  -or -name "locale" -exec rm -rf '{}' \; \
+  -or -name "*.zip" -exec rm '{}' +
+
 # Move out of $APPDIR
 wget -O ./usr/bin/$APP.wrapper https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration
 chmod a+x ./usr/bin/$APP.wrapper

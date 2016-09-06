@@ -22,9 +22,9 @@ wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # 
 chmod a+x ./AppRun
 
 bsdtar -xf ../$APP-$VERSION-$LVER.zip -C usr
-cp -r usr/$APP/* usr/
+cp -r usr/$APP/* usr
 rm -rf usr/$APP
-cp usr/$APP/nb/netbeans.png .
+cp usr/nb/netbeans.png .
 
 # Install java
 tar xf ../jre*
@@ -34,7 +34,7 @@ cat > $APP.desktop <<EOF
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=$APP
+Name=NetBeans
 Icon=$APP
 Exec=$APP.wrapper
 Categories=Development;IDE;

@@ -6,7 +6,6 @@
 APP="eclipse-cpp"
 LAPP=${APP//-cpp/}
 VERSION=4.6.0
-echo $VERSION
 
 mkdir -p $APP/$APP.AppDir/usr/bin
 
@@ -15,6 +14,9 @@ wget -cO- https://worldvectorlogo.com/logos/$LAPP-11.svg > $APP/$APP.AppDir/$LAP
 cd $APP/
 
 wget -c "http://mirror.internode.on.net/pub/$LAPP/technology/epp/downloads/release/neon/R/$LAPP-cpp-neon-R-linux-gtk-x86_64.tar.gz"
+
+# Get Java
+wget -c --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jre-8u66-linux-x64.tar.gz
 
 cd $APP.AppDir/
 
@@ -26,6 +28,10 @@ cp -r usr/$LAPP/* usr/bin
 rm -rf usr/$LAPP
 
 mv usr/bin/eclipse usr/bin/eclipse-cpp
+
+# Install java
+tar xf ../jre*
+( cd ./eclipse-* ; mkdir -p jre ; cd jre ; mv ../../jre* ./jre )
 
 cat > $APP.desktop <<EOF
 [Desktop Entry]

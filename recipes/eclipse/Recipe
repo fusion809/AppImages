@@ -7,9 +7,9 @@ APP="eclipse-cpp"
 LAPP=${APP//-cpp/}
 VERSION=4.6.0
 
+rm -rf $APP/$APP.AppDir
+rm -rf out
 mkdir -p $APP/$APP.AppDir/usr/bin
-
-cp $APP/$APP.AppDir/usr/bin/plugins/org.eclipse.epp.package.cpp_*/eclipse256.png > $APP/$APP.AppDir/$LAPP.png
 
 cd $APP/
 
@@ -43,6 +43,8 @@ Exec=$APP.wrapper
 Categories=Development;IDE;C;C++
 Terminal=false
 EOF
+
+cp usr/bin/plugins/org.eclipse.epp.package.cpp_*/eclipse256.png > ../$LAPP.png
 
 find usr \
   -name "*.html" -exec rm '{}' \; \

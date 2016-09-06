@@ -44,7 +44,7 @@ Categories=Development;IDE;C;C++
 Terminal=false
 EOF
 
-cp usr/bin/plugins/org.eclipse.epp.package.cpp_*/eclipse256.png > ../$LAPP.png
+cp usr/bin/plugins/org.eclipse.epp.package.cpp_*/eclipse256.png > $LAPP.png
 
 find usr \
   -name "*.html" -exec rm '{}' \; \

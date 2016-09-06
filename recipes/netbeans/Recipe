@@ -13,6 +13,8 @@ mkdir -p $APP/$APP.AppDir/usr/bin
 cd $APP/
 
 wget -c "http://download.netbeans.org/netbeans/8.1/final/zip/$APP-$VERSION-$LVER.zip"
+# Get Java
+wget -c --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jre-8u66-linux-x64.tar.gz
 
 cd $APP.AppDir/
 
@@ -23,6 +25,10 @@ bsdtar -xf ../$APP-$VERSION-$LVER.zip -C usr
 cp -r usr/$APP/* usr/
 rm -rf usr/$APP
 cp usr/$APP/nb/netbeans.png .
+
+# Install java
+tar xf ../jre*
+( cd ./netbeans-* ; mkdir -p jre ; cd jre ; mv ../../jre* ./jre )
 
 cat > $APP.desktop <<EOF
 [Desktop Entry]

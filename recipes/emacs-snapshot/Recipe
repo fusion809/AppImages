@@ -6,17 +6,13 @@
 
 set +e
 
-APP=Emacs
-LOWERAPP=${APP,,}
-VERSION="25.1"
-URL="https://github.com/fusion809/emacs/releases/download/v25.1/emacs_25.1-1_amd64.deb"
+APP="emacs-snapshot"
+LOWERAPP="emacs-snapshot"
 rm -rf ./$APP/$APP.AppDir
 
 mkdir -p ./$APP/$APP.AppDir/usr/bin
 mkdir -p ./$APP/$APP.AppDir/usr/lib
 cd ./$APP
-
-wget -c "$URL"
 
 wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
@@ -29,9 +25,8 @@ deb http://ppa.launchpad.net/ubuntu-elisp/ppa/ubuntu xenial main
 
 apt-get $OPTIONS update
 
-URLS=$(apt-get $OPTIONS -y install --print-uris emacs24 | cut -d "'" -f 2 | grep -e "^http" | grep -v "emacs")
+URLS=$(apt-get $OPTIONS -y install --print-uris $APP | cut -d "'" -f 2 | grep -e "^http")
 
-printf "URLS is \n:$URLS"
 wget -c $URLS
 
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
@@ -51,13 +46,10 @@ rm -rf ./etc/ ./home/ || true
 # Patching only the executable files seems not to be enough for some apps
 find usr/ -type f -exec sed -i -e "s|/usr|././|g" {} \;
 
-
-wget -O ./usr/bin/$LOWERAPP.wrapper https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration
-chmod a+x ./usr/bin/$LOWERAPP.wrapper
-
 cd ..
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (64-bit)
 chmod a+x ./AppImageAssistant
 mkdir -p ../out
+VERSION="201609240437"
 rm ../out/$APP"-"$VERSION"-x86_64.AppImage" || true
 ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-x86_64.AppImage"

@@ -43,3 +43,10 @@ c40ff5b4-7137-11e6-90ce-ea3bbd5fef6a.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-
 eclipse-cpp
 recipes/netbeans/netbeans
 Emacs
+*.deb
+App*
+excludedeblist
+functions.sh
+sources.list
+status
+tmp

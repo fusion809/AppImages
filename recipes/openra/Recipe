@@ -1,39 +1,36 @@
 #!/bin/bash
 
-# In this case, the upstream project seems to already
+# In this case the upstream project seems to already
 # provide binaries that are supposed to run everywhere,
 # so we merely package these as an AppImage
 
 set +e
 
-APP="emacs-snapshot"
-LOWERAPP="emacs-snapshot"
+APP=OpenRA
+LOWERAPP=${APP,,}
+VERSION="playtest.20160904"
+URL="https://github.com/OpenRA/OpenRA/releases/download/playtest-20160904/openra_${VERSION}_all.deb"
 rm -rf ./$APP/$APP.AppDir
 
 mkdir -p ./$APP/$APP.AppDir/usr/bin
 mkdir -p ./$APP/$APP.AppDir/usr/lib
 cd ./$APP
 
+wget -c "$URL"
+
 wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
 
 generate_status
 
-# Trusty can't be used due to it giving the error:
-# out/emacs-snapshot-201609240437-x86_64.AppImage: ./lib/x86_64-linux-gnu/libgomp.so.1: version `GOMP_4.0' not found (required by
-#/usr/lib/libMagickWand-6.Q16HDRI.so.2)
-#out/emacs-snapshot-201609240437-x86_64.AppImage: ./lib/x86_64-linux-gnu/libgomp.so.1: version `GOMP_4.0' not found (required by
-#/usr/lib/libMagickCore-6.Q16HDRI.so.2)
-#out/emacs-snapshot-201609240437-x86_64.AppImage: ../lib/x86_64-linux-gnu/libgpg-error.so.0: no version information available (re
-#quired by /usr/lib/libgcrypt.so.20)
-echo "deb http://archive.ubuntu.com/ubuntu/ xenial main universe
-deb http://ppa.launchpad.net/ubuntu-elisp/ppa/ubuntu xenial main
+echo "deb http://archive.ubuntu.com/ubuntu/ trusty main universe
 " > sources.list
 
 apt-get $OPTIONS update
 
-URLS=$(apt-get $OPTIONS -y install --print-uris $APP | cut -d "'" -f 2 | grep -e "^http")
+URLS=$(apt-get $OPTIONS -y install --print-uris libopenal1 mono-runtime libmono-system-core4.0-cil libmono-system-drawing4.0-cil libmono-system-data4.0-cil libmono-system-numerics4.0-cil libmono-system-runtime-serialization4.0-cil libmono-system-xml-linq4.0-cil libmono-i18n4.0-all libfreetype6 libc6 libasound2 libgl1-mesa-glx libgl1-mesa-dri xdg-utils zenity liblua5.1-0 | cut -d "'" -f 2 | grep -e "^http" )
 
+printf "URLS is \n:$URLS"
 wget -c $URLS
 
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
@@ -43,7 +40,7 @@ cd ./$APP.AppDir/
 
 find ../*.deb -exec dpkg -x {} . \; || true
 
-cp ../../emacs.desktop .
+get_desktop
 get_icon
 get_apprun
 
@@ -53,10 +50,13 @@ rm -rf ./etc/ ./home/ || true
 # Patching only the executable files seems not to be enough for some apps
 find usr/ -type f -exec sed -i -e "s|/usr|././|g" {} \;
 
+
+wget -O ./usr/bin/$LOWERAPP.wrapper https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration
+chmod a+x ./usr/bin/$LOWERAPP.wrapper
+
 cd ..
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (64-bit)
 chmod a+x ./AppImageAssistant
 mkdir -p ../out
-VERSION="201609240437"
 rm ../out/$APP"-"$VERSION"-x86_64.AppImage" || true
 ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-x86_64.AppImage"

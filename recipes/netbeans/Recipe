@@ -1,61 +1,53 @@
 #!/bin/bash
 
-# This is an example for packaging a Java application as an AppImage.
-# This application comes with a JRE.
+# In this case, the upstream project seems to already
+# provide binaries that are supposed to run everywhere,
+# so we merely package these as an AppImage
+
+set +e
 
 APP="netbeans"
-VERSION=8.1
-LVER=201510222201
+LOWERAPP="netbeans"
+VERSION="8.1"
+rm -rf ./$APP/$APP.AppDir
 
-rm -rf $APP/$APP.AppDir
-mkdir -p $APP/$APP.AppDir/usr/bin
+mkdir -p ./$APP/$APP.AppDir/usr/bin
+mkdir -p ./$APP/$APP.AppDir/usr/lib
+cd ./$APP
 
-cd $APP/
+wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+. ./functions.sh
 
-wget -c "http://download.netbeans.org/netbeans/8.1/final/zip/$APP-$VERSION-$LVER.zip"
-# Get Java
-wget -c --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jre-8u66-linux-x64.tar.gz
+generate_status
 
-cd $APP.AppDir/
+echo "deb http://archive.ubuntu.com/ubuntu/ xenial main universe
+" > sources.list
+
+apt-get $OPTIONS update
+
+URLS=$(apt-get $OPTIONS -y install --print-uris $APP | cut -d "'" -f 2 | grep -e "^http")
+
+wget -c $URLS
 
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
 chmod a+x ./AppRun
 
-bsdtar -xf ../$APP-$VERSION-$LVER.zip -C usr
-cp -r usr/$APP/* usr
-rm -rf usr/$APP
-cp usr/nb/netbeans.png .
+cd ./$APP.AppDir/
 
-# Install java
-tar xf ../jre*
-( cd ./netbeans-* ; mkdir -p jre ; cd jre ; mv ../../jre* ./jre )
+find ../*.deb -exec dpkg -x {} . \; || true
 
-cat > $APP.desktop <<EOF
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=NetBeans
-Icon=$APP
-Exec=$APP.wrapper
-Categories=Development;IDE;
-Terminal=false
-EOF
+cp usr/share/pixmaps/netbeans.xpm ..
+get_apprun
 
-find usr \
-  -name "docs" -exec rm -rf '{}' \; \
-  -or -name "*.exe" -exec rm '{}' \; \
-  -or -name "*.pdf" -exec rm '{}' \; \
-  -or -name "*.png" -exec rm '{}' \; \
-  -or -name "locale" -exec rm -rf '{}' \; \
-  -or -name "*.zip" -exec rm '{}' +
+rm -rf ./etc/ ./home/ || true
 
-# Move out of $APPDIR
-wget -O ./usr/bin/$APP.wrapper https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration
-chmod a+x ./usr/bin/$APP.wrapper
+# patch_usr
+# Patching only the executable files seems not to be enough for some apps
+find usr/ -type f -exec sed -i -e "s|/usr|././|g" {} \;
+
 cd ..
-
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (64-bit)
 chmod a+x ./AppImageAssistant
-rm -rf ../out
 mkdir -p ../out
+rm ../out/$APP"-"$VERSION"-x86_64.AppImage" || true
 ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-x86_64.AppImage"

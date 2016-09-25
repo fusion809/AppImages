@@ -36,7 +36,7 @@ cd ./$APP.AppDir/
 
 find ../*.deb -exec dpkg -x {} . \; || true
 
-cp usr/share/pixmaps/netbeans.xpm ..
+wget -cqO- http://www.file-extensions.org/imgs/app-icon/128/5149/netbeans-icon.png > netbeans.png
 get_apprun
 
 rm -rf ./etc/ ./home/ || true

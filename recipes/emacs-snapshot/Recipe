@@ -25,7 +25,7 @@ deb http://ppa.launchpad.net/ubuntu-elisp/ppa/ubuntu trusty main
 
 apt-get $OPTIONS update
 
-URLS=$(apt-get $OPTIONS -y install --print-uris $APP libmagick++-dev | cut -d "'" -f 2 | grep -e "^http")
+URLS=$(apt-get $OPTIONS -y install --print-uris $APP libgraphicsmagick1-dev libgraphicsmagick++1-dev | cut -d "'" -f 2 | grep -e "^http")
 
 wget -c $URLS
 

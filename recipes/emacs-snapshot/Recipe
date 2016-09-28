@@ -26,13 +26,13 @@ generate_status
 #/usr/lib/libMagickCore-6.Q16HDRI.so.2)
 #out/emacs-snapshot-201609240437-x86_64.AppImage: ../lib/x86_64-linux-gnu/libgpg-error.so.0: no version information available (re
 #quired by /usr/lib/libgcrypt.so.20)
-echo "deb http://archive.ubuntu.com/ubuntu/ xenial main universe
-deb http://ppa.launchpad.net/ubuntu-elisp/ppa/ubuntu xenial main
+echo "deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+deb http://ppa.launchpad.net/ubuntu-elisp/ppa/ubuntu trusty main
 " > sources.list
 
 apt-get $OPTIONS update
 
-URLS=$(apt-get $OPTIONS -y install --print-uris $APP | cut -d "'" -f 2 | grep -e "^http")
+URLS=$(apt-get $OPTIONS -y install --print-uris $APP libmagick++-dev | cut -d "'" -f 2 | grep -e "^http")
 
 wget -c $URLS
 
@@ -57,6 +57,6 @@ cd ..
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (64-bit)
 chmod a+x ./AppImageAssistant
 mkdir -p ../out
-VERSION="201609240437"
+VERSION="201609270836"
 rm ../out/$APP"-"$VERSION"-x86_64.AppImage" || true
 ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-x86_64.AppImage"

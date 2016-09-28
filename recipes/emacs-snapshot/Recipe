@@ -19,13 +19,6 @@ wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./func
 
 generate_status
 
-# Trusty can't be used due to it giving the error:
-# out/emacs-snapshot-201609240437-x86_64.AppImage: ./lib/x86_64-linux-gnu/libgomp.so.1: version `GOMP_4.0' not found (required by
-#/usr/lib/libMagickWand-6.Q16HDRI.so.2)
-#out/emacs-snapshot-201609240437-x86_64.AppImage: ./lib/x86_64-linux-gnu/libgomp.so.1: version `GOMP_4.0' not found (required by
-#/usr/lib/libMagickCore-6.Q16HDRI.so.2)
-#out/emacs-snapshot-201609240437-x86_64.AppImage: ../lib/x86_64-linux-gnu/libgpg-error.so.0: no version information available (re
-#quired by /usr/lib/libgcrypt.so.20)
 echo "deb http://archive.ubuntu.com/ubuntu/ trusty main universe
 deb http://ppa.launchpad.net/ubuntu-elisp/ppa/ubuntu trusty main
 " > sources.list
@@ -57,6 +50,6 @@ cd ..
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (64-bit)
 chmod a+x ./AppImageAssistant
 mkdir -p ../out
-VERSION="201609270836"
+VERSION="201609270837"
 rm ../out/$APP"-"$VERSION"-x86_64.AppImage" || true
 ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-x86_64.AppImage"

@@ -8,8 +8,8 @@ set +e
 
 APP=OpenRA
 LOWERAPP=${APP,,}
-VERSION="playtest.20160904"
-URL="https://github.com/OpenRA/OpenRA/releases/download/playtest-20160904/openra_${VERSION}_all.deb"
+VERSION="release-20161015"
+URL="https://github.com/OpenRA/OpenRA/releases/download/${VERSION}/openra_${VERSION//-/.}_all.deb"
 rm -rf ./$APP/$APP.AppDir
 
 mkdir -p ./$APP/$APP.AppDir/usr/bin

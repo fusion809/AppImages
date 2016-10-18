@@ -8,7 +8,8 @@ set +e
 
 APP="netbeans"
 LOWERAPP="netbeans"
-VERSION="8.1"
+VERSION="8.2"
+DATE="201609300101"
 rm -rf ./$APP/$APP.AppDir
 
 mkdir -p ./$APP/$APP.AppDir/usr/bin
@@ -20,7 +21,7 @@ wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./func
 
 generate_status
 
-echo "deb http://archive.ubuntu.com/ubuntu/ xenial main universe
+echo "deb http://archive.ubuntu.com/ubuntu/ trusty main universe
 " > sources.list
 
 apt-get $OPTIONS update
@@ -28,6 +29,7 @@ apt-get $OPTIONS update
 URLS=$(apt-get $OPTIONS -y install --print-uris $APP | cut -d "'" -f 2 | grep -e "^http")
 
 wget -c $URLS
+wget -c http://download.netbeans.org/netbeans/$VER/final/zip/netbeans-$VER-$DATE.zip
 
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
 chmod a+x ./AppRun
@@ -35,6 +37,7 @@ chmod a+x ./AppRun
 cd ./$APP.AppDir/
 
 find ../*.deb -exec dpkg -x {} . \; || true
+bsdtar -xf ../netbeans*.zip
 
 wget -cqO- http://www.file-extensions.org/imgs/app-icon/128/5149/netbeans-icon.png > netbeans.png
 get_apprun
@@ -49,5 +52,7 @@ cd ..
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (64-bit)
 chmod a+x ./AppImageAssistant
 mkdir -p ../out
-rm ../out/$APP"-"$VERSION"-x86_64.AppImage" || true
+if [[ -f ../out/$APP"-"$VERSION"-x86_64.AppImage" ]]; then
+  rm $APP"-"$VERSION"-x86_64.AppImage"
+fi
 ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-x86_64.AppImage"

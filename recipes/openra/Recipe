@@ -40,6 +40,9 @@ cd ./$APP.AppDir/
 
 find ../*.deb -exec dpkg -x {} . \; || true
 
+cd usr/bin
+ln -sf mono-sgen mono
+
 get_desktop
 get_icon
 get_apprun
@@ -58,5 +61,7 @@ cd ..
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (64-bit)
 chmod a+x ./AppImageAssistant
 mkdir -p ../out
-rm ../out/$APP"-"$VERSION"-x86_64.AppImage" || true
+if [[ -f ../out/$APP"-"$VERSION"-x86_64.AppImage" ]]; then
+  rm ../out/$APP"-"$VERSION"-x86_64.AppImage" || true
+fi
 ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-x86_64.AppImage"

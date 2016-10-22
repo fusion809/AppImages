@@ -1,4 +1,6 @@
 #!/bin/bash
 HERE="$(dirname "$(readlink -f "${0}")")"
+export LD_LIBRARY_PATH=${HERE}/usr/lib/x86_64-linux-gnu/:$HERE/lib/x86_64-linux-gnu/:$HERE/usr/lib/:${HERE}/lib/:$LD_LIBRARY_PATH:${HERE}/usr/lib/codeblocks
+export PATH=${HERE}/usr/sbin:${HERE}/usr/bin:$PATH
 export CODEBLOCKS_DATA_DIR="${HERE}/usr/share/codeblocks"
 "${HERE}/usr/bin/codeblocks.wrapper" "$@"

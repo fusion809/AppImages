@@ -1,0 +1,34 @@
+app: CodeBlocks
+
+ingredients:
+  package: codeblocks
+  dist: jessie
+  sources:
+    - deb http://debian.mirror.serversaustralia.com.au/debian/ jessie main
+    - deb http://debian.mirror.serversaustralia.com.au/debian/ jessie-backports main
+
+script:
+  - rm -rf ./$APP/$APP.AppDir
+  - mkdir -p ./$APP/$APP.AppDir/usr/bin
+  - mkdir -p ./$APP/$APP.AppDir/usr/lib
+  - cd ./$APP
+  - wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+  - . ./functions.sh
+  - generate_status
+  - apt-get $OPTIONS update
+  - URLS=$(apt-get $OPTIONS -y install --print-uris $LOWERAPP | cut -d "'" -f 2 | grep -e "^http")
+  - wget -c $URLS
+  - wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun"
+  - chmod a+x ./AppRun
+  - cd ./$APP.AppDir/
+  - find ../*.deb -exec dpkg -x {} . \; || true
+  - cp usr/share/applications/codeblocks.desktop .
+  - get_apprun
+  - rm -rf ./etc/ ./home/ || true
+  - find usr/ -type f -exec sed -i -e "s|/usr|././|g" {} \;
+  - cd ..
+  - wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (64-bit)
+  - chmod a+x ./AppImageAssistant
+  - mkdir -p ../out
+  - rm ../out/$APP"-"$VERSION"-x86_64.AppImage" || true
+  - ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-x86_64.AppImage"

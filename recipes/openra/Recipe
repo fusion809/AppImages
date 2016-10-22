@@ -28,7 +28,7 @@ echo "deb http://archive.ubuntu.com/ubuntu/ trusty main universe
 
 apt-get $OPTIONS update
 
-URLS=$(apt-get $OPTIONS -y install --print-uris libopenal1 mono-runtime libmono-system-core4.0-cil libmono-system-drawing4.0-cil libmono-system-data4.0-cil libmono-system-numerics4.0-cil libmono-system-runtime-serialization4.0-cil libmono-system-xml-linq4.0-cil libmono-i18n4.0-all libfreetype6 libc6 libasound2 libgl1-mesa-glx libgl1-mesa-dri xdg-utils zenity liblua5.1-0 | cut -d "'" -f 2 | grep -e "^http" )
+URLS=$(apt-get $OPTIONS -y install --print-uris libopenal1 libmono-corlib2.0-cil mono-runtime libmono-system-core4.0-cil libmono-system-drawing4.0-cil libmono-system-data4.0-cil libmono-system-numerics4.0-cil libmono-system-runtime-serialization4.0-cil libmono-system-xml-linq4.0-cil libmono-i18n4.0-all libfreetype6 libc6 libasound2 libgl1-mesa-glx libgl1-mesa-dri xdg-utils zenity liblua5.1-0 | cut -d "'" -f 2 | grep -e "^http" )
 
 printf "URLS is \n:$URLS"
 wget -c $URLS
@@ -40,8 +40,21 @@ cd ./$APP.AppDir/
 
 find ../*.deb -exec dpkg -x {} . \; || true
 
-cd usr/bin
-ln -sf mono-sgen mono
+cd usr/games
+echo '#!/bin/sh
+cd "././/lib/openra"
+mono --debug OpenRA.Game.exe "$@"
+if [ $? != 0 -a $? != 1 ]
+then
+ZENITY=`which zenity` || echo "OpenRA needs zenity installed to display a graphical error dialog. See ~/.openra. for log files."
+$ZENITY --question --title "OpenRA" --text "OpenRA has encountered a fatal error.
+Log Files are available in ~/.openra." --ok-label "Quit" --cancel-label "View FAQ" || xdg-open https://github.com/OpenRA/OpenRA/wiki/FAQ
+exit 1
+fi' > openra
+chmod +x openra
+cd ../../lib/openra
+ln -sf ../../usr/bin/mono-sgen mono
+cd ../..
 
 get_desktop
 get_icon

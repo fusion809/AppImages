@@ -21,9 +21,7 @@ wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./func
 generate_status
 
 echo "deb http://debian.mirror.serversaustralia.com.au/debian/ jessie main
-deb-src http://debian.mirror.serversaustralia.com.au/debian/ jessie main
 deb http://debian.mirror.serversaustralia.com.au/debian/ jessie-backports main
-deb-src http://debian.mirror.serversaustralia.com.au/debian/ jessie-backports main
 " > sources.list
 
 apt-get $OPTIONS update

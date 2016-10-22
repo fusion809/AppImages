@@ -8,7 +8,7 @@ set +e
 
 APP="netbeans"
 LOWERAPP="netbeans"
-VERSION="8.2"
+VERSION="7.1"
 DATE="201609300101"
 rm -rf ./$APP/$APP.AppDir
 
@@ -21,7 +21,20 @@ wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./func
 
 generate_status
 
-echo "deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+echo "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ trusty main restricted
+deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted
+
+deb http://archive.ubuntu.com/ubuntu/ trusty universe
+deb-src http://archive.ubuntu.com/ubuntu/ trusty universe
+deb http://archive.ubuntu.com/ubuntu/ trusty-updates universe
+deb-src http://archive.ubuntu.com/ubuntu/ trusty-updates universe
+
+deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ trusty-security main restricted
+deb http://archive.ubuntu.com/ubuntu/ trusty-security universe
+deb-src http://archive.ubuntu.com/ubuntu/ trusty-security universe
 " > sources.list
 
 apt-get $OPTIONS update
@@ -29,17 +42,30 @@ apt-get $OPTIONS update
 URLS=$(apt-get $OPTIONS -y install --print-uris $APP | cut -d "'" -f 2 | grep -e "^http")
 
 wget -c $URLS
-wget -c http://download.netbeans.org/netbeans/$VER/final/zip/netbeans-$VER-$DATE.zip
+#wget -c http://download.netbeans.org/netbeans/$VERSION/final/zip/netbeans-$VERSION-$DATE.zip
 
 wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
 chmod a+x ./AppRun
 
 cd ./$APP.AppDir/
 
-find ../*.deb -exec dpkg -x {} . \; || true
-bsdtar -xf ../netbeans*.zip
+find ../*.deb -exec dpkg -x {} . \;
+#bsdtar -xf ../netbeans*.zip -C usr/share
+#cp usr/share/$APP/bin/$APP usr/bin
 
 wget -cqO- http://www.file-extensions.org/imgs/app-icon/128/5149/netbeans-icon.png > netbeans.png
+echo "[Desktop Entry]
+Encoding=UTF-8
+Name=NetBeans IDE
+Comment=The Smarter Way to Code
+Exec=netbeans
+Icon=netbeans
+Categories=Application;Development;Java;IDE
+Version=1.0
+Type=Application
+Terminal=0" > netbeans.desktop
+chmod +x netbeans.desktop
+cp netbeans.desktop usr/share/applications
 get_apprun
 
 rm -rf ./etc/ ./home/ || true

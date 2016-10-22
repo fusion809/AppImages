@@ -2,5 +2,5 @@
 HERE="$(dirname "$(readlink -f "${0}")")"
 export LD_LIBRARY_PATH=${HERE}/usr/lib/
 cd usr/
-export CODEBLOCKS_DATA_DIR="share/codeblocks"
-"bin/codeblocks.wrapper" "$@"
+export CODEBLOCKS_DATA_DIR="${HERE}/usr/share/codeblocks"
+"${HERE}/usr/bin/codeblocks.wrapper" "$@"

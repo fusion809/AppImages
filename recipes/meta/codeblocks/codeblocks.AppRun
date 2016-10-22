@@ -1,0 +1,4 @@
+#!/bin/bash
+HERE="$(dirname "$(readlink -f "${0}")")"
+export CODEBLOCKS_DATA_DIR="${HERE}/usr/share/codeblocks"
+"${HERE}/usr/bin/codeblocks.wrapper" "$@"

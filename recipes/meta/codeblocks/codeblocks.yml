@@ -1,4 +1,5 @@
 app: CodeBlocks
+binpatch: true
 
 ingredients:
   package: codeblocks
@@ -8,5 +9,11 @@ ingredients:
     - deb http://debian.mirror.serversaustralia.com.au/debian/ jessie-backports main
 
 script:
-  - rm AppRun ; wget -c "https://raw.githubusercontent.com/fusion809/AppImages/master/recipes/meta/codeblocks/codeblocks.AppRun" -O AppRun
-  - chmod a+x AppRun
+script:
+  - cat > AppRun <<\EOF
+  - #!/bin/bash
+  - HERE="$(dirname "$(readlink -f "${0}")")"
+  - export LD_LIBRARY_PATH=${HERE}/usr/lib:${HERE}/usr/lib/x86_64-linux-gnu/:${HERE}/usr/lib/codeblocks:${HERE}/lib:${HERE}/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
+  - cd usr/
+  - CODEBLOCKS_DATA_DIR="${HERE}/usr" "${HERE}/usr/bin/codeblocks.wrapper" "$@"
+  - EOF

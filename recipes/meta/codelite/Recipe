@@ -74,7 +74,7 @@ cd ./$APP/
 
 if [ -d "./$APP.AppDir/" ] ; then
   rm -rf ./$APP.AppDir/
-fi 
+fi
 
 if [ ! -e functions.sh ] ; then
   wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
@@ -100,6 +100,7 @@ if [ ! -z "${_ingredients_ghreleases[0]}" ] ; then
 fi
 
 if [ ! -z "${_ingredients_dist}" ] ; then
+  rm status 2>/dev/null || true
   generate_status
   if [ -e sources.list ] ; then
     rm sources.list
@@ -139,7 +140,7 @@ if [ ! -z "${_ingredients_dist}" ] ; then
   fi
 
   apt-get $OPTIONS update || true
-  URLS=$(apt-get $OPTIONS -y install --print-uris "$INSTALL" | cut -d "'" -f 2 | grep -e "^http")
+  URLS=$(apt-get $OPTIONS -y install --print-uris "$INSTALL" ${_ingredients_packages[@]} | cut -d "'" -f 2 | grep -e "^http")
   for URL in $URLS ; do
     if [ ! -f $(basename "$URL") ] ; then
       wget -c $URL
@@ -229,5 +230,17 @@ fi
 # Go out of AppImage
 cd ..
 
-generate_type2_appimage
+# Get the ID of the last successful build on Travis CI
+ID=$(wget -q https://api.travis-ci.org/repos/probonopd/appimagetool/builds -O - | head -n 1 | sed -e 's|}|\n|g' | grep '"result":0' | head -n 1 | sed -e 's|,|\n|g' | grep '"id"' | cut -d ":" -f 2)
+# Get the transfer.sh URL from the logfile of the last successful build on Travis CI
+# Only Travis knows why build ID and job ID don't match and why the above doesn't give both...
+URL=$(wget -q "https://s3.amazonaws.com/archive.travis-ci.org/jobs/$((ID+1))/log.txt" -O - | grep "https://transfer.sh/.*/appimagetool" | tail -n 1 | sed -e 's|\r||g')
+if [ -z "$URL" ] ; then
+  URL=$(wget -q "https://s3.amazonaws.com/archive.travis-ci.org/jobs/$((ID+2))/log.txt" -O - | grep "https://transfer.sh/.*/appimagetool" | tail -n 1 | sed -e 's|\r||g')
+fi
+wget -c "$URL" -O appimagetool
+chmod a+x ./appimagetool
+VERSION=$VERSION ./appimagetool -n --bintray-user $BINTRAY_USER --bintray-repo $BINTRAY_REPO -v ./$APP.AppDir/
+mkdir -p ../out/
+mv *.AppImage* ../out/
 ls -lh ../out/*.AppImage

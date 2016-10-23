@@ -1,12 +1,25 @@
 app: CodeLite
 
 ingredients:
-  package: codelite
   dist: jessie
   sources:
     - deb http://debian.mirror.serversaustralia.com.au/debian/ jessie main
     - deb http://debian.mirror.serversaustralia.com.au/debian/ jessie-backports main
     - deb http://repos.codelite.org/debian/ jessie contrib
+  packages:
+    - codelite
+    - wxcrafter
+  script:
+    - echo "libstdc++-4.9-dev" >> excludedeblist
 
 script:
-  - echo "Comment=A lightweight IDE for C++, Node.js and PHP." >> codelite.desktop
+  - cp ./usr/share/applications/codelite.desktop codelite.desktop
+  - echo "Comment=CodeLite, an open-source, cross-platform C/C++/PHP and Node.js IDE written in C++." >> codelite.desktop
+  - sed -i -e 's/development;programming;/Development;Node.js;C;C++;PHP;/g' codelite.desktop
+  - cat > AppRun <<\EOF
+  - #!/bin/bash
+  - HERE="$(dirname "$(readlink -f "${0}")")"
+  - export LD_LIBRARY_PATH=${HERE}/usr/lib:${HERE}/usr/lib/x86_64-linux-gnu/:${HERE}/usr/lib/x86_64-linux-gnu/codelite:${HERE}/lib:${HERE}/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
+  - cd "${HERE}/usr"
+  - "${HERE}/usr/bin/codelite.wrapper" "$@"
+  - EOF

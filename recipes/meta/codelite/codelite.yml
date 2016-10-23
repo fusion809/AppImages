@@ -1,0 +1,12 @@
+app: CodeLite
+
+ingredients:
+  package: codelite
+  dist: jessie
+  sources:
+    - deb http://debian.mirror.serversaustralia.com.au/debian/ jessie main
+    - deb http://debian.mirror.serversaustralia.com.au/debian/ jessie-backports main
+    - deb http://repos.codelite.org/debian/ jessie contrib
+
+script:
+  - echo "Comment=A lightweight IDE for C++, Node.js and PHP." >> codelite.desktop

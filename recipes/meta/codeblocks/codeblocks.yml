@@ -9,7 +9,6 @@ ingredients:
     - deb http://debian.mirror.serversaustralia.com.au/debian/ jessie-backports main
 
 script:
-script:
   - cat > AppRun <<\EOF
   - #!/bin/bash
   - HERE="$(dirname "$(readlink -f "${0}")")"

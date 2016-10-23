@@ -1,4 +1,5 @@
 app: CodeLite
+binpatch: true
 
 ingredients:
   dist: jessie

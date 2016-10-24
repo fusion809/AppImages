@@ -11,3 +11,5 @@ ingredients:
     - deb https://content.runescape.com/downloads/ubuntu trusty non-free
 
 script:
+  - sed -i -e 's|/usr/bin/||g' runescape-launcher.desktop
+  - cp ./usr/share/icons/hicolor/512x512/apps/runescape.png runescape.png

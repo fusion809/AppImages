@@ -1,0 +1,18 @@
+app: blockify
+
+ingredients:
+  package: blockify
+  dist:    trusty
+  sources:
+    - deb http://au.archive.ubuntu.com/ubuntu/ trusty main universe
+    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-updates universe
+    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-security main restricted
+    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-security universe
+  script:
+    - wget -c "https://github.com/fusion809/blockify-debian/releases/download/v3.6.3/blockify_3.6.3-1_all.deb"
+    - VERSION=3.6.3
+    - cp "blockify_${VERSION}-1_all.deb" "blockify_${VERSION}_amd64.deb"
+
+script:
+  - echo -e '[Desktop Entry]\nName=Blockify\nComment=Blocks Spotify commercials\nExec=blockify-ui\nIcon=blockify.png\nType=Application\nCategories=AudioVideo' > blockify.desktop
+  - cp ./usr/lib/python2.7/dist-packages/blockify/data/icon-red-512.png blockify.png

@@ -1,0 +1,14 @@
+app: messengerfordesktop
+
+ingredients:
+  package: messengerfordesktop
+  dist:    trusty
+  sources:
+    - deb http://au.archive.ubuntu.com/ubuntu/ trusty main universe
+    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-updates universe
+    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-security main restricted
+    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-security universe
+  script:
+    - URL="https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/download/v2.0.1/messengerfordesktop-2.0.1-linux-amd64.deb"
+    - echo $URL | cut -d "." -f 3 | cut -d "_" -f 1 > VERSION
+    - wget -c "$URL"

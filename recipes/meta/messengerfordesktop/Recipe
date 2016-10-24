@@ -240,7 +240,7 @@ if [ -z "$URL" ] ; then
 fi
 wget -c "$URL" -O appimagetool
 chmod a+x ./appimagetool
-VERSION=$VERSION ./appimagetool -n --bintray-user $BINTRAY_USER --bintray-repo $BINTRAY_REPO -v ./$APP.AppDir/
 mkdir -p ../out/
-mv *.AppImage* ../out/
+VERSION=$VERSION ./appimagetool -n --bintray-user $BINTRAY_USER --bintray-repo $BINTRAY_REPO -v ./$APP.AppDir/
+cp Messenger_for_Desktop-1/messengerfordesktop*.AppImage ../out
 ls -lh ../out/*.AppImage

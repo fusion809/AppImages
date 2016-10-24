@@ -1,8 +1,10 @@
 app: messengerfordesktop
 
 ingredients:
-  package: messengerfordesktop
   dist:    trusty
+  packages:
+    - libxss1
+    - messengerfordesktop
   sources:
     - deb http://au.archive.ubuntu.com/ubuntu/ trusty main universe
     - deb http://au.archive.ubuntu.com/ubuntu/ trusty-updates universe

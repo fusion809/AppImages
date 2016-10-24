@@ -13,3 +13,5 @@ ingredients:
 script:
   - sed -i -e 's|/usr/bin/||g' runescape-launcher.desktop
   - cp ./usr/share/icons/hicolor/512x512/apps/runescape.png runescape.png
+  - cp ./usr/share/games/runescape-launcher/runescape ./usr/bin/runescape
+  - sed -i -e 's|/usr/share/games/runescape-launcher/||g' ./usr/bin/runescape-launcher

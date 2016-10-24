@@ -1,0 +1,36 @@
+#########################################################################################################################
+# We are not allowed to redistribute Spotify.AppImage
+# If you would like to see an official Spotify AppImage, vote on
+# https://community.spotify.com/t5/Live-Ideas/Desktop-Other-Linux-Provide-Spotify-Desktop-Client-in-cross/idi-p/1337399
+# and let https://twitter.com/SpotifyCares know
+#########################################################################################################################
+
+app: Spotify
+
+ingredients:
+  package: spotify-client
+  dist: oldstable
+  sources:
+    - deb http://ftp.de.debian.org/debian/ oldstable main
+  script:
+    - DEB=$(wget http://repository.spotify.com/pool/non-free/s/spotify-client/ -O - | grep deb | cut -d ">" -f 2 | cut -d "<" -f 1 | grep amd64.deb | sort --version-sort -r | head -n 1)
+    - URL="http://repository.spotify.com/pool/non-free/s/spotify-client/$DEB"
+    - wget -c "$URL"
+    - ls spotify-client*.deb | cut -d _ -f 2 | sed -e 's|-|.|g' > VERSION
+    - DEB=$(wget -q "http://ftp.us.debian.org/debian/pool/main/g/gconf/" -O - | grep "libgconf-2-4" | head -n 1 | cut -d '"' -f 2)
+    - wget -c "http://ftp.us.debian.org/debian/pool/main/g/gconf/$DEB"
+
+script:
+  - cp ./usr/share/spotify/spotify.desktop .
+  - ( cd usr/bin ; ln -s spotify spotify-client )
+  - sed -i -e 's|^Exec=.*|Exec=spotify-client|g' spotify.desktop
+  - sed -i -e 's|^Icon=.*|Icon=spotify-linux|g' spotify.desktop
+  - ( cd usr/share/icons/hicolor/512x512/apps/; mv spotify-linux-*.png spotify-linux.png )
+  - ( cd usr/share/icons/hicolor/256x256/apps/; mv spotify-linux-*.png spotify-linux.png )
+  - ( cd usr/share/icons/hicolor/128x128/apps/; mv spotify-linux-*.png spotify-linux.png )
+  - ( cd usr/share/icons/hicolor/64x64/apps/; mv spotify-linux-*.png spotify-linux.png )
+  - ( cd usr/share/icons/hicolor/48x48/apps/; mv spotify-linux-*.png spotify-linux.png )
+  - ( cd usr/share/icons/hicolor/32x32/apps/; mv spotify-linux-*.png spotify-linux.png )
+  - ( cd usr/share/icons/hicolor/24x24/apps/; mv spotify-linux-*.png spotify-linux.png )
+  - ( cd usr/share/icons/hicolor/22x22/apps/; mv spotify-linux-*.png spotify-linux.png )
+  - cp ./usr/share/spotify/icons/spotify-linux-256.png spotify-linux.png

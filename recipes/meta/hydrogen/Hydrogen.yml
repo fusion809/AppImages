@@ -1,0 +1,12 @@
+app: Hydrogen
+binpatch: true
+
+ingredients:
+  dist: trusty
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+
+script:
+  - sudo apt-get -y install imagemagick
+  - convert ./usr/share/hydrogen/data/img/gray/h2-icon.svg -resize 256 h2-icon.png
+  - ( cd usr/bin ; ln -s /usr/bin/jackd . )

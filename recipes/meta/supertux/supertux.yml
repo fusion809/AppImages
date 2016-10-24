@@ -1,0 +1,13 @@
+app: supertux2
+
+ingredients:
+  package: supertux2
+  dist:    trusty
+  sources:
+    - deb http://download.opensuse.org/repositories/home:/maths22:/SuperTux/xUbuntu_14.04/ /
+    - deb http://au.archive.ubuntu.com/ubuntu/ trusty main universe
+    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-updates universe
+    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-security main restricted
+    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-security universe
+
+script:

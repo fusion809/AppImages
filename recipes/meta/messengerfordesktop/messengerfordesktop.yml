@@ -9,6 +9,12 @@ ingredients:
     - deb http://au.archive.ubuntu.com/ubuntu/ trusty-security main restricted
     - deb http://au.archive.ubuntu.com/ubuntu/ trusty-security universe
   script:
-    - URL="https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/download/v2.0.1/messengerfordesktop-2.0.1-linux-amd64.deb"
-    - echo $URL | cut -d "." -f 3 | cut -d "_" -f 1 > VERSION
-    - wget -c "$URL"
+    - DEB=$(wget -q https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/ -O - | grep deb | grep href |  head -n 1 | cut -d '"' -f 2)
+    - wget -c "https://github.com/$DEB"
+    - VERSION=$(ls messengerfordesktop-*.deb | cut -d '-' -f 2 | sed -e 's|.deb||g')
+    - cp "messengerfordesktop-${VERSION}-linux-amd64.deb" "messengerfordesktop_${VERSION}_amd64.deb"
+
+script:
+  - cp ./usr/share/applications/messengerfordesktop.desktop messengerfordesktop.desktop
+  - sed -i -e 's|^Exec=.*|Exec=messengerfordesktop|g' messengerfordesktop.desktop
+  - mv opt/messengerfordesktop/* usr/bin/ ; rm -r opt/

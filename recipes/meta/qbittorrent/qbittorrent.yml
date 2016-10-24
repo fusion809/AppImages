@@ -12,4 +12,5 @@ ingredients:
     - qbittorrent-team/qbittorrent-stable
 
 script:
-  - cp ./usr/share/applications/qBittorrent.desktop qbittorrent.desktop
+  - mv ./usr/share/applications/qBittorrent.desktop qbittorrent.desktop
+  - rm qBittorrent.desktop

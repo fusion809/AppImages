@@ -61,3 +61,5 @@ recipes/meta/blockify/blockify
 SuperTux
 supertux2
 qBittorrent
+gvim-gtk2
+gvim-gtk3

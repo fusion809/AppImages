@@ -1,4 +1,5 @@
 app: gvim
+binpatch: true
 
 ingredients:
   package: vim-gtk
@@ -19,7 +20,3 @@ script:
   # Needed due to missing gvim binary that is mentioned in gvim.desktop file
   - cd ./usr/bin
   - ln -sf vim.gtk gvim
-  # needed because vim.gtk calls on /usr/share/vim/syntax/syntax.vim
-  - cd ../share/vim/
-  - mkdir syntax
-  - cp vim80/syntax/syntax.vim syntax/syntax.vim

@@ -1,8 +1,8 @@
-app: gvim
+app: gvim-gtk3
 binpatch: true
 
 ingredients:
-  package: vim-gtk
+  package: vim-gtk3
   dist:    trusty
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ trusty main restricted
@@ -20,3 +20,6 @@ script:
   # Needed due to missing gvim binary that is mentioned in gvim.desktop file
   - cd ./usr/bin
   - ln -sf vim.gtk gvim
+  - cd -
+  - cp ./usr/share/applications/gvim.desktop .
+  - sed -i -e 's/Name=GVim/Name=gvim-gtk3/g' gvim.desktop

@@ -1,0 +1,25 @@
+app: gvim-gtk2
+binpatch: true
+
+ingredients:
+  package: vim-gtk
+  dist:    trusty
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main restricted
+    - deb http://archive.ubuntu.com/ubuntu/ trusty universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-updates universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security universe
+  ppas:
+    - jonathonf/vim
+
+script:
+  # Needed due to missing icon file for gvim
+  - cp ./usr/share/icons/hicolor/scalable/apps/gvim.svg .
+  # Needed due to missing gvim binary that is mentioned in gvim.desktop file
+  - cd ./usr/bin
+  - ln -sf vim.gtk gvim
+  - cd -
+  - cp ./usr/share/applications/gvim.desktop gvim-gtk2.desktop
+  - sed -i -e 's/Name=GVim/Name=gvim-gtk2/g' gvim-gtk2.desktop

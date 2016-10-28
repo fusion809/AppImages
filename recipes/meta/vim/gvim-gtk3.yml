@@ -21,5 +21,5 @@ script:
   - cd ./usr/bin
   - ln -sf vim.gtk gvim
   - cd -
-  - cp ./usr/share/applications/gvim.desktop .
-  - sed -i -e 's/Name=GVim/Name=gvim-gtk3/g' gvim.desktop
+  - cp ./usr/share/applications/gvim.desktop gvim-gtk3.desktop
+  - sed -i -e 's/Name=GVim/Name=gvim-gtk3/g' gvim-gtk3.desktop

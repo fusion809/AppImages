@@ -14,21 +14,24 @@ dictionaries-common
 dpkg
 fontconfig
 fontconfig-config
-gconf2
-gconf2-common
-gconf-service
+# gconf2 # elementary OS 0.4 Loki does NOT have libgconf-2-4
+# gconf2-common # elementary OS 0.4 Loki does NOT have libgconf-2-4
+# gconf-service # elementary OS 0.4 Loki does NOT have libgconf-2-4
 gksu
 glib-networking
 gstreamer1.0-plugins-base
 gstreamer1.0-plugins-good
 gstreamer1.0-plugins-ugly
 gstreamer1.0-pulseaudio
+gtk2-engines-pixbuf
 kde-runtime
 libasound2
 libatk1.0-0
 libc6
+libc6-dev
 libcairo2
 libcups2
+libcurl3-gnutls
 libdbm2
 libdbus-1-3
 libdrm2
@@ -36,20 +39,30 @@ libegl1-mesa
 libfontconfig1
 libgbm1
 libgcc1
-libgconf-2-4
+# libgconf-2-4 # elementary OS 0.4 Loki does NOT have it
 libgdk-pixbuf2.0-0
+libgl1
 libgl1-mesa
+libgl1-mesa-dri
 libgl1-mesa-glx
 libglib2.0-0
 libglu1-mesa
-libgstreamer1.0-0
+# libgnutls26 cannot be expected to be eveywhere, e.g., KDE neon
+# libgpg-error0 gives non-fatal errors on many systems and is low-level, can it be expected to be everywhere?
+libgpg-error0
+___libgstreamer1.0-0
 libgtk2.0-0
 libgtk-3-0
 libnss3
 libpango1.0-0
+libpango-1.0-0
+libpangocairo-1.0-0
+libpangoft2-1.0-0
 libstdc++6
 libtasn1-6
+libwayland-egl1-mesa # e.g., OpenRA
 lsb-base
 mime-support
 passwd
+udev
 uuid-runtime

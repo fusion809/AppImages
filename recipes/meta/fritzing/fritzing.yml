@@ -1,0 +1,41 @@
+# The project provides binaries built with Ubuntu 12.04, which is great
+
+app: Fritzing
+
+ingredients:
+  script:
+    - DLD=$(wget -q "http://fritzing.org/download/?donation=0" -O - | grep AMD | head -n 1 | cut -d '"' -f 2)
+    - wget -c "http://fritzing.org/$DLD"
+    - ls fritzing-*.linux.AMD64.tar.bz2 | cut -d "-" -f 2 | sed -e 's@.linux.AMD64.tar.bz2@@g' > VERSION
+script:
+  - tar xf ../fritzing* -C usr/bin/ --strip 1
+  - mv usr/bin/fritzing.desktop .
+  - sed -i -e 's@^Version=.*@Version=1.0@g' fritzing.desktop # Fix bug in the desktop file
+  - sed -i -e 's@EDA;*@@g' fritzing.desktop # Fix bug in the desktop file
+  - sed -i -e 's@^Exec=.*@Exec=fritzing@g' fritzing.desktop
+  - sed -i -e 's@icons/@@g' fritzing.desktop
+  - sed -i -e 's@Categories=PCB;@@g' fritzing.desktop
+  - sed -i -e 's@.png@@g' fritzing.desktop
+  - ( cd usr/bin ; ln -s Fritzing fritzing )
+  - cp usr/bin/icons/fritzing_icon.png .
+  - mkdir -p usr/share/mime/
+  - mv usr/bin/icons/*.xml usr/share/mime/
+  - mkdir -p usr/share/icons/hicolor/{256x256,128x128}/mimetypes
+  - find usr/bin/icons/ -name *128* -exec mv {} usr/share/icons/hicolor/128x128/mimetypes/ \;
+  - find usr/bin/icons/ -name *256* -exec mv {} usr/share/icons/hicolor/256x256/mimetypes/ \;
+  - mv usr/share/icons/hicolor/128x128/mimetypes/fzb_icon128.png usr/share/icons/hicolor/128x128/mimetypes/application-x-fritzing-fzb.png
+  - mv usr/share/icons/hicolor/128x128/mimetypes/fzbz_icon128.png usr/share/icons/hicolor/128x128/mimetypes/application-x-fritzing-fzbz.png
+  - mv usr/share/icons/hicolor/128x128/mimetypes/fz_icon128.png usr/share/icons/hicolor/128x128/mimetypes/application-x-fritzing-fz.png
+  - mv usr/share/icons/hicolor/128x128/mimetypes/fzm_icon128.png usr/share/icons/hicolor/128x128/mimetypes/application-x-fritzing-fzm.png
+  - mv usr/share/icons/hicolor/128x128/mimetypes/fzp_icon128.png usr/share/icons/hicolor/128x128/mimetypes/application-x-fritzing-fzp.png
+  - mv usr/share/icons/hicolor/128x128/mimetypes/fzpz_icon128.png usr/share/icons/hicolor/128x128/mimetypes/application-x-fritzing-fzpz.png
+  - mv usr/share/icons/hicolor/128x128/mimetypes/fzz_icon128.png usr/share/icons/hicolor/128x128/mimetypes/application-x-fritzing-fzz.png
+  - mv usr/share/icons/hicolor/256x256/mimetypes/fzb_icon256.png usr/share/icons/hicolor/256x256/mimetypes/application-x-fritzing-fzb.png
+  - mv usr/share/icons/hicolor/256x256/mimetypes/fzbz_icon256.png usr/share/icons/hicolor/256x256/mimetypes/application-x-fritzing-fzbz.png
+  - mv usr/share/icons/hicolor/256x256/mimetypes/fz_icon256.png usr/share/icons/hicolor/256x256/mimetypes/application-x-fritzing-fz.png
+  - mv usr/share/icons/hicolor/256x256/mimetypes/fzm_icon256.png usr/share/icons/hicolor/256x256/mimetypes/application-x-fritzing-fzm.png
+  - mv usr/share/icons/hicolor/256x256/mimetypes/fzp_icon256.png usr/share/icons/hicolor/256x256/mimetypes/application-x-fritzing-fzp.png
+  - mv usr/share/icons/hicolor/256x256/mimetypes/fzpz_icon256.png usr/share/icons/hicolor/256x256/mimetypes/application-x-fritzing-fzpz.png
+  - mv usr/share/icons/hicolor/256x256/mimetypes/fzz_icon256.png usr/share/icons/hicolor/256x256/mimetypes/application-x-fritzing-fzz.png
+  - mkdir -p usr/share/appdata/
+  - mv usr/bin/fritzing.appdata.xml usr/share/appdata/

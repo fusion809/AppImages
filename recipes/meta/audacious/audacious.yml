@@ -1,0 +1,9 @@
+app: Audacious
+
+ingredients:
+  package: audacious-plugins audacious
+  dist: trusty
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+  ppas:
+    - webupd8team/unstable

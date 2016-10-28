@@ -1,0 +1,12 @@
+app: Sayonara
+binpatch: true
+
+ingredients:
+  dist: trusty
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe multiverse
+  ppas:
+    - lucioc/sayonara
+
+# App fails playing with
+# Error: Engine: src creation failed

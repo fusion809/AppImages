@@ -1,0 +1,15 @@
+app: Corebird
+binpatch: true
+
+ingredients:
+  dist: trusty
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+  ppas:
+    - ubuntuhandbook1/corebird
+    - gnome3-team/gnome3
+    - gnome3-team/gnome3-staging
+
+script:
+  - cp ./usr/share/applications/org.baedert.corebird.desktop $LOWERAPP.desktop
+  - sed -i -e 's|^Exec=.*|Exec=corebird|g' $LOWERAPP.desktop

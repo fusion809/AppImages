@@ -4,10 +4,10 @@ ingredients:
   package: runescape-launcher
   dist: trusty
   sources:
-    - deb http://au.archive.ubuntu.com/ubuntu/ trusty main universe
-    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-updates universe
-    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-security main restricted
-    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-security universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-updates universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security universe
     - deb https://content.runescape.com/downloads/ubuntu trusty non-free
 
 script:

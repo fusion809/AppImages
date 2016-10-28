@@ -1,0 +1,13 @@
+app: Linphone
+binpatch: true
+
+ingredients:
+  dist: wheezy
+  sources:
+    - deb http://ftp.us.debian.org/debian/ wheezy main
+    - deb https://www.linphone.org/snapshots/debian/ wheezy ./
+  ppas:
+    - linphone/release
+
+script:
+  - cp usr/share/pixmaps/linphone/linphone.png .

@@ -1,13 +1,10 @@
-app: Geany
+app: EncryptPad
 binpatch: true
 
 ingredients:
-  package: geany-*
+  also: encryptpad-cli
   dist: trusty
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
   ppas:
-    - geany-dev/ppa
-
-script:
-  - cp ./usr/share/icons/hicolor/scalable/apps/geany.svg .
+    - nilarimogard/webupd8

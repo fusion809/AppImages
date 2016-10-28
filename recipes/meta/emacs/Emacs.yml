@@ -4,7 +4,7 @@ ingredients:
   package: emacs-snapshot
   dist: trusty
   sources:
-    - deb http://ftp.de.debian.org/debian/ oldstable main
+    - deb http://ftp.au.debian.org/debian/ oldstable main
     - deb http://londo.ganneff.de/ oldstable main
 
 script:

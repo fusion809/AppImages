@@ -6,10 +6,10 @@ ingredients:
     - libxss1
     - messengerfordesktop
   sources:
-    - deb http://au.archive.ubuntu.com/ubuntu/ trusty main universe
-    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-updates universe
-    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-security main restricted
-    - deb http://au.archive.ubuntu.com/ubuntu/ trusty-security universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-updates universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security universe
   script:
     - DEB=$(wget -q https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/ -O - | grep deb | grep href |  head -n 1 | cut -d '"' -f 2)
     - wget -c "https://github.com/$DEB"

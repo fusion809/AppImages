@@ -11,7 +11,7 @@ ingredients:
   package: spotify-client
   dist: oldstable
   sources:
-    - deb http://ftp.de.debian.org/debian/ oldstable main
+    - deb http://ftp.us.debian.org/debian/ oldstable main
   script:
     - DEB=$(wget http://repository.spotify.com/pool/non-free/s/spotify-client/ -O - | grep deb | cut -d ">" -f 2 | cut -d "<" -f 1 | grep amd64.deb | sort --version-sort -r | head -n 1)
     - URL="http://repository.spotify.com/pool/non-free/s/spotify-client/$DEB"

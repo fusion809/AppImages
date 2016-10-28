@@ -3,7 +3,7 @@ binpatch: true
 
 ingredients:
   dist: jessie
-  sources: 
+  sources:
     - deb http://ftp.us.debian.org/debian/ jessie main
     - deb http://download.mono-project.com/repo/debian jessie main
   script:

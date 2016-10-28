@@ -1,10 +1,11 @@
+#!/bin/bash
 # https://ring.cx/en/download/gnu-linux
 
 wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
 
 APP=Ring
-LOWERAPP=${APP,,} 
+LOWERAPP=${APP,,}
 
 sudo sh -c "echo 'deb http://nightly.apt.ring.cx/ubuntu_14.04/ ring main' > /etc/apt/sources.list.d/ring-nightly-man.list"
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys A295D773307D25A33AE72F2F64CD5FA175348F84

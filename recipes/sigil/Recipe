@@ -1,3 +1,4 @@
+#!/bin/bash
 # In this example, we bundle so many libraries (down to glibc)
 # that the resulting AppImage runs even on
 # ubuntu-10.04.1-desktop-amd64.iso
@@ -110,7 +111,7 @@ rm -rf ./usr/lib/x86_64-linux-gnu/dri
 
 # The following does the magic of running the bundled ld-linux-x86-64.so.2
 # so that it can load a newer glibc than what is present on the host system.
-# Crashes if GCONV_PATH is not set to match, and if its location 
+# Crashes if GCONV_PATH is not set to match, and if its location
 # is not on the --library-path.
 
 cat > ./usr/bin/sigil <<\EOF

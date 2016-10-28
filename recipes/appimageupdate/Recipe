@@ -1,3 +1,4 @@
+#!/bin/bash
 # Determine which architecture should be built
 if [[ "$(arch)" = "i686" ||  "$(arch)" = "x86_64" ]] ; then
 	ARCH=$(arch)
@@ -27,7 +28,7 @@ cd ..
 
 if [ -z "$NO_DOWNLOAD" ] ; then
   wget -c https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant # 64-bit
-  chmod a+x AppImageAssistant 
+  chmod a+x AppImageAssistant
 fi # if [ -z "$NO_DOWNLOAD" ] ; then
 
 APP=AppImageUpdate

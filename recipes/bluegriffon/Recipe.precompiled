@@ -1,5 +1,6 @@
+#!/bin/bash
 APP=BlueGriffon
-LOWERAPP=${APP,,} 
+LOWERAPP=${APP,,}
 
 mkdir -p ./$APP/$APP.AppDir/usr
 

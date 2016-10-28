@@ -1,3 +1,4 @@
+#!/bin/bash
 APP=$1 # hexchat
 
 if [ "$APP" == "" ] ; then

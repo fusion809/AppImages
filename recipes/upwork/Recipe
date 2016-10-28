@@ -1,3 +1,4 @@
+#!/bin/bash
 # In this example, we use non-repo .deb
 # Some projects provide raw .deb files without a repository
 # hence we create our own local repository as part of

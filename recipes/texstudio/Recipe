@@ -1,7 +1,8 @@
+#!/bin/bash
 # Integrate texlive into pre-existing TeXstudio AppImage
 
 APP=TeXstudio
-LOWERAPP=${APP,,} 
+LOWERAPP=${APP,,}
 
 mkdir -p ./$APP/$APP.AppDir/usr/bin ./$APP/$APP.AppDir/usr/lib
 cd ./$APP

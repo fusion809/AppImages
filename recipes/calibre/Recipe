@@ -1,8 +1,9 @@
+#!/bin/bash
 # Calibre provides binaries that are very compatible with older systems
 # which is great, so we don't have to compile ourselves
 
 APP=Calibre
-LOWERAPP=${APP,,} 
+LOWERAPP=${APP,,}
 
 mkdir -p ./$APP/$APP.AppDir/usr
 

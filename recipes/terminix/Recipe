@@ -1,12 +1,13 @@
+#!/bin/bash
 # Note that Terminix has dependencies on components that are only present in very new distros
-# which we are not bundling here (e.g., GTK3 and VTE). Do not expect this to run on 
+# which we are not bundling here (e.g., GTK3 and VTE). Do not expect this to run on
 # distributions before 2015-16ish.
 
 wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
 
 APP=Terminix
-LOWERAPP=${APP,,} 
+LOWERAPP=${APP,,}
 
 VERSION=$(wget -q "https://github.com/gnunn1/terminix/releases" -O - | grep "/releases/tag" | head -n 1 | cut -d ">" -f 2 | cut -d "<" -f 1 | sed 's|Beta ||g' | sed 's|Stable ||g')
 ZIP_PATH=$(wget -q "https://github.com/gnunn1/terminix/releases" -O - | grep terminix.zip | grep href | head -n 1 | cut -d '"' -f 2)

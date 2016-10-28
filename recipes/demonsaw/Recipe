@@ -1,4 +1,5 @@
-# Upstream, please keep providing debian oldstable compatible debs, 
+#!/bin/bash
+# Upstream, please keep providing debian oldstable compatible debs,
 # this makes generating an AppImage that runs almost everywhere easier
 
 APP=Demonsaw
@@ -66,7 +67,7 @@ wget -c "https://www.demonsaw.com/img/logo_1024.png" -O $LOWERAPP.png
 sudo apt-get -y install imagemagick
 mogrify -resize 256x256 $LOWERAPP.png
 
-get_apprun 
+get_apprun
 
 mv opt/demonsaw usr/bin
 sed -i -e 's|/opt/demonsaw|bin/|g' usr/bin/start

@@ -1,3 +1,4 @@
+#!/bin/bash
 # The project provides binaries built with Ubuntu 12.04, that is great
 
 DLD=$(wget -q "http://fritzing.org/download/?donation=0" -O - | grep AMD | head -n 1 | cut -d '"' -f 2)

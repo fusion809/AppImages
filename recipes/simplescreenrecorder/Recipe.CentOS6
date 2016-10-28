@@ -1,3 +1,4 @@
+#!/bin/bash
 # Example for a Qt4 application
 
 # Now we are inside CentOS 6
@@ -61,7 +62,7 @@ cd ssr/
 git_pull_rebase_helper
 
 # We build as root
-sed -i -e 's/root/xroot/g' simple-build-and-install 
+sed -i -e 's/root/xroot/g' simple-build-and-install
 
 # We want another prefix, /app
 sed -i -e 's|prefix=/usr|prefix=/app/usr|g' simple-build-and-install
@@ -125,7 +126,7 @@ cd ..
 
 if [ -z "$NO_DOWNLOAD" ] ; then
   wget -c https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant # 64-bit
-  chmod a+x AppImageAssistant 
+  chmod a+x AppImageAssistant
 fi # if [ -z "$NO_DOWNLOAD" ] ; then
 
 APP=SimpleScreenRecorder

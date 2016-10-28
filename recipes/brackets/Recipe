@@ -1,3 +1,4 @@
+#!/bin/bash
 # We don't have to build this one from source
 # because upstream is providing binaries that seem to be usable for
 # creating an AppImage; hence this recipe is very short and quick

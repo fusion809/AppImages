@@ -1,3 +1,4 @@
+#!/bin/bash
 # This is a generic recipe that can build electron-builder apps
 # thanks to the AppImage support built into electron-builder
 

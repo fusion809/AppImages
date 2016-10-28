@@ -1,3 +1,4 @@
+#!/bin/bash
 # Work in progress. Not picking up texlive yet despite its bin/ being on the $PATH.
 # Despite usr/share/lyx2.2/configure.py 2>&1 | grep pdf
 # saying

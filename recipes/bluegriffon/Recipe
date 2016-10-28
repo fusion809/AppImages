@@ -1,3 +1,4 @@
+#!/bin/bash
 # On Travis CI:
 # The job exceeded the maximum time limit for jobs, and has been terminated.
 
@@ -22,7 +23,7 @@ export NO_MERCURIAL_SETUP_CHECK=1
 
 # https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/Build_Instructions/Linux_Prerequisites
 # Install all system prerequisites
-wget -O bootstrap.py https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py 
+wget -O bootstrap.py https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py
 
 python bootstrap.py --application-choice=browser --no-interactive
 

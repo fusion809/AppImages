@@ -1,3 +1,4 @@
+#!/bin/bash
 # This recipe takes the official deb and converts it into an AppImage
 # that should run on most not-too-outdated Linux distributions (not just
 # debian-derived ones).

@@ -1,3 +1,4 @@
+#!/bin/bash
 # In this example, we use non-repo .deb
 # Some projects provide raw .deb files without a repository
 # hence we create our own local repository as part of
@@ -64,7 +65,7 @@ cd ./$APP.AppDir/
 find ../*.deb -exec dpkg -x {} . \; || true
 
 cp ./usr/share/applications/$LOWERAPP.desktop .
-sed -i -e 's|/usr/bin/||g' $LOWERAPP.desktop 
+sed -i -e 's|/usr/bin/||g' $LOWERAPP.desktop
 
 cp ./usr/share/icons/hicolor/48x48/apps/$LOWERAPP.png .
 # Unfortunately no higher-res icon available

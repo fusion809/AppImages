@@ -1,3 +1,4 @@
+#!/bin/bash
 # This runs on Travis-CI Ubuntu
 # Inspired by https://github.com/HOST-Oman/scribus/blob/ctl/.travis.yml
 
@@ -17,13 +18,13 @@ libcdr-dev libvisio-dev
 
   # Upgrade autoconf to 2.65 for librevenge-0.0.1
   wget http://ftp.gnu.org/gnu/autoconf/autoconf-2.65.tar.bz2
-  tar xf autoconf-2.65.tar.bz2 
+  tar xf autoconf-2.65.tar.bz2
   cd autoconf-*
   ./configure --prefix=/usr
   make
   sudo make install
   cd ..
-  
+
   sudo ln -sf /usr/share/pkgconfig /usr/lib/pkgconfig
 
   # Workaround for:

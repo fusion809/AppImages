@@ -1,10 +1,11 @@
+#!/bin/bash
 # See http://sigrok.org/wiki/Linux#PulseView
 # The project does continuous builds on Jenkins
 # this script bundles the build products as an AppImage
 # FIXME: This recipe currently runs on Xenial but not trusty
 
 APP=PulseView
-LOWERAPP=${APP,,} 
+LOWERAPP=${APP,,}
 
 mkdir -p ./$APP/$APP.AppDir/usr/bin ./$APP/$APP.AppDir/usr/lib
 cd ./$APP

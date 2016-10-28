@@ -1,3 +1,4 @@
+#!/bin/bash
 # In this example, we use a Precise PPA - keep providing these!
 
 APP=SimpleScreenRecorder

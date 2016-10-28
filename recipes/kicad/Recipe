@@ -1,3 +1,4 @@
+#!/bin/bash
 # Might be necessary to bundle Python - to be investigated
 ###############################################################
 
@@ -26,7 +27,7 @@ rm -rf ./usr/share/icons/hicolor/48x48/
 
 patch_usr
 
-# Workaround until 
+# Workaround until
 # AppRun.c exports rather than just sets environment variables
 cat > ./AppRun <<\EOF
 #!/bin/sh

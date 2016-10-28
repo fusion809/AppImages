@@ -1,9 +1,10 @@
+#!/bin/bash
 # In response to https://plus.google.com/+AlanPope/posts/UYfkp4GfVwb
 
 sudo apt-get -y install sdl1.2
 
 APP=OpenTTD
-LOWERAPP=${APP,,} 
+LOWERAPP=${APP,,}
 
 DLD=$(wget -q "https://www.openttd.org/en/download-stable" -O - |  grep -Poe "binaries.*linux-generic-amd64.tar.gz")
 URL="https://$DLD"

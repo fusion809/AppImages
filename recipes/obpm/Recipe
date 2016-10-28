@@ -1,3 +1,4 @@
+#!/bin/bash
 # https://github.com/LazyT/obpm
 # Example of a really lean Qt application that comes with an Installer and bundled Qt files.
 # To get the payload files out of the Qt installer is somewhat tricky but doable.
@@ -109,7 +110,7 @@ cd $APP.AppDir
 export DISPLAY=:99.0
 sh -e /etc/init.d/xvfb start
 sleep 3 # give xvfb some time to start
-  
+
 ../extract-qt-installer ../*.run "$(dirname $(readlink -e ./usr/bin))/$(basename ./usr/bin)" &
 sleep 15 # The action above must be completed within that time or gets killed
 sh -e /etc/init.d/xvfb stop

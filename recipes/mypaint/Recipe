@@ -1,3 +1,4 @@
+#!/bin/bash
 # Not working on non-Ubuntu systems smoothly yet (crashing due to missing icons and/or libs)
 # TO BE WORKED ON
 ##################################################################################################

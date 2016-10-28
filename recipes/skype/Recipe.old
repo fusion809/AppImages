@@ -1,3 +1,4 @@
+#!/bin/bash
 # WORK IN PROGRESS
 # The result is still too large and I get no sound on Ubuntu 12.04
 # In this example, we bundle so many libraries (down to glibc)
@@ -7,7 +8,7 @@
 # Note the special usr/bin/skype that is used to pull this magic
 
 APP=Skype
-LOWERAPP=${APP,,} 
+LOWERAPP=${APP,,}
 
 mkdir -p ./$APP/$APP.AppDir/usr/lib
 
@@ -119,7 +120,7 @@ rm -rf ./usr/lib/x86_64-linux-gnu/dri
 
 # The following does the magic of running the bundled ld-linux-x86-64.so.2
 # so that it can load a newer glibc than what is present on the host system.
-# Crashes if GCONV_PATH is not set to match, and if its location 
+# Crashes if GCONV_PATH is not set to match, and if its location
 # is not on the --library-path.
 
 mv usr/bin/skype usr/bin/skype.bin

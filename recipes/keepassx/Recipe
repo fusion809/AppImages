@@ -1,3 +1,4 @@
+#!/bin/bash
 # This is an example on how to convert a Canonical Snap to an AppImage
 # The result currently segfaults on Fedora 23
 # and refuses to run on some distributions

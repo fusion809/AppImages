@@ -1,3 +1,4 @@
+#!/bin/bash
 APP=Sublime-Text
 LOWERAPP=sublime_text # ${APP,,}
 
@@ -22,7 +23,7 @@ rm -rf ./usr/share/icons/hicolor/48x48/apps
 cp ./usr/share/icons/hicolor/256x256/apps/sublime-text.png .
 
 cp ./usr/share/applications/$LOWERAPP.desktop .
-sed -i -e 's|/opt/sublime_text/||g' $LOWERAPP.desktop 
+sed -i -e 's|/opt/sublime_text/||g' $LOWERAPP.desktop
 
 get_apprun
 

@@ -1,3 +1,4 @@
+#!/bin/bash
 # This is a Qt app that is compiled by upstream in a portable way
 # including everything Qt needs to run. It would be great if all
 # upstreams did it that way... would save us from having to compile
@@ -34,10 +35,10 @@ wget -O ./usr/bin/$XAPP.wrapper https://raw.githubusercontent.com/probonopd/AppI
 chmod a+x ./usr/bin/$XAPP.wrapper
 sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $XAPP.desktop
 
-# If built in portable mode (default), configuration 
+# If built in portable mode (default), configuration
 # is stored in the 'config' directory next to the binary.
 # If not writable, launching fails.
-# This behavior may be overriden by passing a folder path 
+# This behavior may be overriden by passing a folder path
 # as the first argument.
 sed -i -e 's|exec $BIN "$@"|exec $BIN $HOME/.ricochet|g' usr/bin/ricochet.wrapper
 

@@ -1,3 +1,4 @@
+#!/bin/bash
 # CentOS 6.7
 # Does not work currently because
 # compilation of glib2 fails (FIXME)

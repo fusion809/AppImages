@@ -1,0 +1,43 @@
+app: netbeans
+
+ingredients:
+  script:
+    - URL=http://download.netbeans.org/netbeans/8.2/final/zip/netbeans-8.2-201609300101.zip
+    - wget -c "$URL" --trust-server-names
+    - wget -c --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jre-8u66-linux-x64.tar.gz
+    - printf "8.2" > VERSION
+
+script:
+  - mkdir -p usr/lib/jvm/
+  - tar xf ../jre* -C usr/lib/jvm/
+  - mkdir -p bin
+  - ( cd ./bin; ln -sf ../usr/lib/jvm/jre*/bin/java . )
+  - unzip ../netbeans*zip -d usr/
+  - rm -rf usr/bin
+  - mv ./usr/netbeans ./usr/bin
+  - ( cd ./usr/bin; ln -sf bin/netbeans . )
+  - find . -name *.exe -exec rm {} \;
+  - rm -rf ./usr/bin/cnd/bin/SunOS*
+  - rm -rf ./usr/bin/cnd/bin/MacOSX*
+  - rm -rf ./usr/bin/cnd/bin/Linux-x86
+  - rm -rf ./usr/bin/cnd/bin/Linux-sparc_64
+  - rm -rf ./usr/bin/dlight/bin/SunOS*
+  - rm -rf ./usr/bin/dlight/bin/Linux-arm
+  - rm -rf ./usr/bin/dlight/bin/Linux-sparc
+  - rm -rf ./usr/bin/dlight/bin/Linux-x86
+  - rm -rf ./usr/bin/dlight/bin/MacOS*
+  - rm -rf ./usr/bin/ide/bin/nativeexecution/SunOS*
+  - rm -rf ./usr/bin/ide/bin/nativeexecution/Windows*
+  - rm -rf ./usr/bin/ide/bin/nativeexecution/MacOS*
+  - rm -rf ./usr/bin/ide/bin/nativeexecution/Linux-x86
+  - rm -rf ./usr/bin/ide/bin/nativeexecution/Linux-sparc_64
+  - cat > netbeans.desktop <<\EOF
+  - [Desktop Entry]
+  - Name=NetBeans
+  - Exec=netbeans
+  - Icon=netbeans
+  - Type=Application
+  - Categories=IDE;Development;
+  - Comment=NetBeans IDE
+  - EOF
+  - cp ./usr/bin/nb/netbeans.png netbeans.png

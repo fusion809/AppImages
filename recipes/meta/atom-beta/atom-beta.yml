@@ -19,5 +19,5 @@ script:
   - Icon=atom-beta
   - Exec=atom %u
   - Categories=Development;TextEditor;GTK;
-  - Comment=The hackable text editor for the 21st century - beta channel.
+  - Comment=The hackable text editor for the 21st Century - beta channel.
   - EOF

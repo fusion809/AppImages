@@ -5,7 +5,7 @@ ingredients:
     - TAR=$(wget -q https://github.com/atom/atom/releases/ -O - | grep "tar.gz" | grep beta | grep href |  head -n 1 | cut -d '"' -f 2)
     - VERSION=$(echo $TAR | sed 's|/atom/atom/releases/download/v||g' | sed 's|/atom-amd64.tar.gz||g' | sed 's/-beta/./g')
     - wget -c https://github.com/$TAR
-    - echo $TAR | cut -d/ -f8 > VERSION
+    - echo $VERSION > VERSION
     - tar zxvf atom*tar.gz
 
 
@@ -17,7 +17,7 @@ script:
   - Type=Application
   - Name=Atom Beta
   - Icon=atom-beta
-  - Exec=atom-beta %u
+  - Exec=atom %u
   - Categories=Development;TextEditor;GTK;
   - Comment=The hackable text editor for the 21st century - beta channel.
   - EOF

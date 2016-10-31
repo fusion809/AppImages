@@ -1,0 +1,23 @@
+app: Atom-Beta
+
+ingredients:
+  script:
+    - TAR=$(wget -q https://github.com/atom/atom/releases/ -O - | grep "tar.gz" | grep beta | grep href |  head -n 1 | cut -d '"' -f 2)
+    - VERSION=$(echo $TAR | sed 's|/atom/atom/releases/download/v||g' | sed 's|/atom-amd64.tar.gz||g' | sed 's/-beta/./g')
+    - wget -c https://github.com/$TAR
+    - echo $TAR | cut -d/ -f8 > VERSION
+    - tar zxvf atom*tar.gz
+
+
+script:
+  - cp -r ../atom-*/* usr/bin/
+  - find . -name atom.png -exec cp {} atom-beta.png \;
+  - cat > atom-beta.desktop <<EOF
+  - [Desktop Entry]
+  - Type=Application
+  - Name=Atom Beta
+  - Icon=atom-beta
+  - Exec=atom-beta %u
+  - Categories=Development;TextEditor;GTK;
+  - Comment=The hackable text editor for the 21st century - beta channel.
+  - EOF

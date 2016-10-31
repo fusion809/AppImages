@@ -1,0 +1,21 @@
+app: Atom-Beta
+
+ingredients:
+  dist: trusty
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main restricted
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted
+    - deb http://archive.ubuntu.com/ubuntu/ trusty universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-updates universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security multiverse
+  script:
+    - DEB=$(wget -q https://github.com/atom/atom/releases/ -O - | grep deb | grep beta | grep href |  head -n 1 | cut -d '"' -f 2)
+    - VERSION=$(echo $DEB | sed 's|/atom/atom/releases/download/v||g' | sed 's|/atom-amd64.deb||g' | sed 's/-beta/./g')
+    - wget -c https://github.com/$DEB
+    - cp atom-amd64.deb atom-beta_${VERSION}_amd64.deb
+
+
+script:
+  - sed -i -e "s/Exec=.*/Exec=atom-beta/g" atom-beta.desktop

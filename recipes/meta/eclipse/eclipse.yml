@@ -1,0 +1,23 @@
+app: eclipse-cpp
+
+ingredients:
+  script:
+    - URL="http://mirror.internode.on.net/pub/eclipse/technology/epp/downloads/release/neon/R/eclipse-cpp-neon-R-linux-gtk-x86_64.tar.gz"
+    - wget -c "$URL" --trust-server-names
+    - VERSION="4.6.0"
+    - echo $VERSION > VERSION
+    - tar zxvf eclipse*.gz
+
+script:
+  - cp -r ../eclipse/* usr/bin/
+  - cp ../../eclipse.png .
+  - cat > eclipse-cpp.desktop <<EOF
+  - [Desktop Entry]
+  - Version=1.0
+  - Type=Application
+  - Name=Eclipse C/C++ IDE
+  - Icon=eclipse
+  - Exec=eclipse
+  - Categories=Development;IDE;C;C++
+  - Terminal=false
+  - EOF

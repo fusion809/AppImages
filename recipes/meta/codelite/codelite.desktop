@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=CodeLite
-Exec=codelite.wrapper %f
+Exec=codelite %f
 Icon=codelite
 Terminal=false
 Type=Application

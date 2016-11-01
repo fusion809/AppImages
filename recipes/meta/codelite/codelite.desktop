@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=CodeLite
+Exec=codelite.wrapper %f
+Icon=codelite
+Terminal=false
+Type=Application
+Categories=Development;
+StartupNotify=true
+Keywords=IDE;development;programming;
+Comment=Lightweight, open-source C++/Node.js/PHP IDE.

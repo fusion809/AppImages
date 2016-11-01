@@ -15,3 +15,6 @@ ingredients:
 
 script:
   - cp ../../codelite.desktop .
+  - rm *AppRun
+  - wget -c https://github.com/fusion809/AppImages/raw/master/recipes/meta/codelite/codelite.AppRun -O AppRun
+  - chmod a+x AppRun

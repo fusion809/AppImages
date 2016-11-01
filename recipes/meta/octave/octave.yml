@@ -1,0 +1,13 @@
+app: Octave
+
+ingredients:
+  package: octave
+  dist:    trusty
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+  ppas:
+    - octave/stable
+
+script:
+  - sed -i -e 's|/usr/bin/||g' www.octave.org-octave.desktop
+  - mv www.octave.org-octave.desktop octave.desktop

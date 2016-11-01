@@ -63,7 +63,8 @@ supertux2
 qBittorrent
 gvim-gtk2
 gvim-gtk3
-recipes/meta/netbeans/netbeans
+recipes/meta/*/netbeans
 recipes/meta/*/Recipe
 recipes/meta/*/Atom-Beta
 recipes/meta/*/SuperTux2
+recipes/meta/*/Octave

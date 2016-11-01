@@ -68,3 +68,5 @@ recipes/meta/*/Recipe
 recipes/meta/*/Atom-Beta
 recipes/meta/*/SuperTux2
 recipes/meta/*/Octave
+debian1.6.1
+recipes/meta/code-oss/code-oss

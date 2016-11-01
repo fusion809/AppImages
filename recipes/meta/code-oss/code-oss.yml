@@ -6,7 +6,8 @@ ingredients:
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
   script:
-    - wget -c "https://github.com/fusion809/code-oss/releases/download/debian1.6.1/code-oss_1.6.1-1476392002_amd64.deb"
+    - DEB=$(wget -q https://github.com/fusion809/code-oss/releases/ -O - | grep "\.deb" | grep href |  head -n 1 | cut -d '"' -f 2)
+    - wget -c https://github.com/$DEB
     - VERSION=$(ls code-oss-*.deb | cut -d '-' -f 2 | sed -e 's|.deb||g')
 
 script:

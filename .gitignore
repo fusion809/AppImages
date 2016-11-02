@@ -45,7 +45,6 @@ recipes/netbeans/netbeans
 Emacs
 *.deb
 App*
-excludedeblist
 functions.sh
 sources.list
 status

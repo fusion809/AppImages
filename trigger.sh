@@ -2,13 +2,13 @@
 
 # Trigger builds on travis using GitHub username and password
 # https://docs.travis-ci.com/api?http#creating-a-temporary-github-token
-# 
+#
 # For example, to build arduino:
-# bash <(curl -s https://raw.githubusercontent.com/probonopd/AppImages/master/trigger.sh) arduino
+# bash <(curl -s https://raw.githubusercontent.com/fusion809/AppImages/master/trigger.sh) arduino
 
 set +e
 
-USERNAME=probonopd
+USERNAME=fusion809
 PROJECT=AppImages
 
 USER_AGENT='Travis/1.8.0 (Compatible; curl '$(curl --version | head -n 1 | cut -d " " -f 1-4)')'
@@ -34,7 +34,7 @@ echo "Delete the GitHub authorization at the end"
 trap atexit EXIT
 
 atexit()
-{    
+{
   set +e
 
   RESL=$(curl -u $USERNAME:$PASSWORD -k -s -X DELETE \

@@ -112,7 +112,7 @@ libuuid.so.1
 libwind.so.0
 libz.so.1
 
-# Remove these libraries, we need to use the system versions; 
+# Remove these libraries, we need to use the system versions;
 # this means that Ubuntu 11.04 is not supported (making 12.04 is our baseline)
 libGL.so.1
 libdrm.so.2
@@ -122,7 +122,7 @@ libgobject-2.0.so.0
 
 # Workaround for:
 # e.g., Spotify
-# relocation error: /lib/x86_64-linux-gnu/libgcrypt.so.20: 
+# relocation error: /lib/x86_64-linux-gnu/libgcrypt.so.20:
 # symbol gpgrt_lock_lock, version GPG_ERROR_1.0 not defined
 # in file libgpg-error.so.0 with link time reference
 libgpg-error.so.0

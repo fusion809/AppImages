@@ -17,8 +17,8 @@ BINTRAY_API_KEY="$BINTRAY_API_KEY" # env
 BINTRAY_REPO="${BINTRAY_REPO:-AppImages}"
 BINTRAY_REPO_OWNER="${BINTRAY_REPO_OWNER:-$BINTRAY_USER}" # owner and user not always the same
 WEBSITE_URL="${WEBSITE_URL:-http://appimage.org}"
-ISSUE_TRACKER_URL="${ISSUE_TRACKER_URL:-https://github.com/probonopd/AppImages/issues}"
-VCS_URL="${VCS_URL:-https://github.com/probonopd/AppImages.git}" # Mandatory for packages in free Bintray repos
+ISSUE_TRACKER_URL="${ISSUE_TRACKER_URL:-https://github.com/fusion809/AppImages/issues}"
+VCS_URL="${VCS_URL:-https://github.com/fusion809/AppImages.git}" # Mandatory for packages in free Bintray repos
 
 # Figure out whether we should use sudo
 SUDO=''
@@ -73,15 +73,15 @@ if [ "$IS_AN_APPIMAGE" ] ; then
   # Extract the description from the desktop file
 
   echo "* DESKTOP $DESKTOP"
-  
+
   PCK_NAME=$(bsdtar -f "$FILE" -O -x ./"${DESKTOP}" | grep -e "^Name=" | head -n 1 | sed s/Name=//g | cut -d " " -f 1 | xargs)
   if [ "$PCK_NAME" == "" ] ; then
     bsdtar -f "$FILE" -O -x ./"${DESKTOP}"
     echo "PCK_NAME missing in ${DESKTOP}"
   fi
-  
+
   DESCRIPTION=$(bsdtar -f "$FILE" -O -x ./"${DESKTOP}" | grep -e "^Comment=" | sed s/Comment=//g)
-  
+
   # Check if there is appstream data and use it
   APPDATANAME=$(echo "${DESKTOP}" | sed 's/.desktop/.appdata.xml/g' | sed 's|./||'  )
   APPDATAFILE=$(bsdtar -tf "$FILE" | grep "${APPDATANAME}$" | head -n 1 || true)
@@ -93,7 +93,7 @@ if [ "$IS_AN_APPIMAGE" ] ; then
     DESCRIPTION=$(echo "$APPDATA" | grep -o -e "<description.*description>" | sed -e 's/<[^>]*>//g')
     WEBSITE_URL=$(echo "$APPDATA" | grep "homepage" | head -n 1 | cut -d ">" -f 2 | cut -d "<" -f 1)
   fi
-  
+
   if [ "$DESCRIPTION" == "" ] ; then
     bsdtar -f "$FILE" -O -x ./"${DESKTOP}"
     echo "DESCRIPTION missing and no Comment= in ${DESKTOP}"
@@ -112,16 +112,16 @@ if [ "$IS_TYPE2_APPIMAGE" ] ; then
   DESKTOP=$(find "$AIMOUNTPOINT" -maxdepth 1 -name '*.desktop' | head -n 1)
   # Extract the description from the desktop file
   echo "* DESKTOP $DESKTOP"
-  
+
   PCK_NAME=$(cat "${DESKTOP}" | grep -e "^Name=" | head -n 1 | sed s/Name=//g | cut -d " " -f 1 | xargs)
   if [ "$PCK_NAME" == "" ] ; then
     echo "PCK_NAME missing in ${DESKTOP}"
   fi
   echo "* PCK_NAME PCK_NAME"
-  
+
   DESCRIPTION=$(cat "${DESKTOP}" | grep -e "^Comment=" | sed s/Comment=//g)
   echo "* DESCRIPTION $DESCRIPTION"
-  
+
   # Check if there is appstream data and use it
   APPDATA=$(echo "${DESKTOP}" | sed 's/.desktop/.appdata.xml/g' | sed 's|./||')
   if [ ! -e "$APPDATA" ] ; then
@@ -131,7 +131,7 @@ if [ "$IS_TYPE2_APPIMAGE" ] ; then
     DESCRIPTION=$(cat "$APPDATA" | grep -o -e "<description.*description>" | sed -e 's/<[^>]*>//g')
     WEBSITE_URL=$(cat "$APPDATA" | grep "homepage" | head -n 1 | cut -d ">" -f 2 | cut -d "<" -f 1)
   fi
-  
+
   if [ "$DESCRIPTION" == "" ] ; then
     echo "No AppStream data and no Comment= in ${DESKTOP}"
   fi
@@ -184,7 +184,7 @@ if [ "$IS_AN_APPIMAGE" ] ; then
   if which zsyncmake > /dev/null 2>&1; then
     echo ""
     echo "Embedding update information into ${FILE}..."
-    # Clear ISO 9660 Volume Descriptor #1 field "Application Used" 
+    # Clear ISO 9660 Volume Descriptor #1 field "Application Used"
     # (contents not defined by ISO 9660) and write URL there
     dd if=/dev/zero of="$FILE" bs=1 seek=33651 count=512 conv=notrunc
     # Example for next line: Subsurface-_latestVersion-x86_64.AppImage

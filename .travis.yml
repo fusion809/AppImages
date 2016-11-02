@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=atom-beta
+  - RECIPE=code-oss
 
 script:
 - bash -e travis.sh $RECIPE

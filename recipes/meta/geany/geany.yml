@@ -3,7 +3,7 @@ binpatch: true
 
 ingredients:
   package: geany-*
-  dist: trusty
+  dist:    trusty
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
   ppas:

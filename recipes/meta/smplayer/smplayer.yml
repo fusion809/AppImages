@@ -1,0 +1,9 @@
+app: smplayer
+
+ingredients:
+  package: smplayer
+  dist:    jessie
+  source:
+    - deb http://download.opensuse.org/repositories/home:/smplayerdev/Debian_8.0/ /
+    - deb http://debian.mirror.serversaustralia.com.au/debian/ jessie main
+    - deb http://debian.mirror.serversaustralia.com.au/debian/ jessie-backports main

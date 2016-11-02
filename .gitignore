@@ -59,8 +59,7 @@ recipes/meta/blockify/blockify
 SuperTux
 supertux2
 qBittorrent
-gvim-gtk2
-gvim-gtk3
+recipes/meta/*/gvim-gtk2
 recipes/meta/*/netbeans
 recipes/meta/*/Recipe
 recipes/meta/*/Atom-Beta

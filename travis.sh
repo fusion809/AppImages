@@ -18,7 +18,7 @@ if [ -f recipes/$RECIPE/Dockerfile ] && [ -f recipes/$RECIPE/Recipe ] ; then
   # There is a Dockerfile, hence build using Docker
   mv recipes/$RECIPE/Recipe ./out/Recipe
   sed -i -e 's|sudo ||g' ./out/Recipe # For subsurface recipe
-  docker run -i -v ${PWD}/out:/out probonopd/appimages:$DOCKER /bin/bash -ex /out/Recipe
+  docker run -i -v ${PWD}/out:/out fusion809/appimages:$DOCKER /bin/bash -ex /out/Recipe
 elif [ -f recipes/meta/$RECIPE.yml ] ; then
   # There is no Dockerfile but a YAML file for the meta Recipe
   bash -ex recipes/meta/Recipe recipes/meta/$RECIPE.yml

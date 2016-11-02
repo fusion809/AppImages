@@ -13,11 +13,10 @@ ingredients:
     - deb http://archive.ubuntu.com/ubuntu/ trusty-security universe
   ppas:
     - jonathonf/vim
-  script:
-    - VERSION=$(ls vim-gtk*.deb | cut -d '-' -f 2 | sed -e 's|.deb||g' | sed -e 's/gtk_//g')
-    - cp "vim-gtk_${VERSION}-0york1~14.04_amd64.deb" "gvim_${VERSION}_amd64.deb"
 
 script:
+  - VERSION=$(ls ../vim-gtk*.deb | cut -d '-' -f 2 | sed -e 's|.deb||g' | sed -e 's/gtk_//g')
+  - cp "../vim-gtk_${VERSION}-0york1~14.04_amd64.deb" "../gvim_${VERSION}_amd64.deb"
   # Needed due to missing icon file for gvim
   - cp ./usr/share/icons/hicolor/scalable/apps/gvim.svg .
   # Needed due to missing gvim binary that is mentioned in gvim.desktop file

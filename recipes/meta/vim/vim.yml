@@ -13,6 +13,9 @@ ingredients:
     - deb http://archive.ubuntu.com/ubuntu/ trusty-security universe
   ppas:
     - jonathonf/vim
+  script:
+    - VERSION=$(ls gvim-gtk2*.deb | cut -d '-' -f 2 | sed -e 's|.deb||g')
+    - echo $VERSION > VERSION
 
 script:
   # Needed due to missing icon file for gvim

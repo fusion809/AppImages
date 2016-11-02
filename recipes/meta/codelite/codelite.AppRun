@@ -1,5 +1,6 @@
 #!/bin/bash
 HERE="$(dirname "$(readlink -f "${0}")")"
 export LD_LIBRARY_PATH=${HERE}/usr/lib/x86_64-linux-gnu/:${HERE}/usr/lib/x86_64-linux-gnu/codelite:$HERE/lib/x86_64-linux-gnu/:$HERE/usr/lib/:${HERE}/lib/:$LD_LIBRARY_PATH
+export XDG_DATA_DIRS=${HERE}/usr/share/:${HERE}/usr/share/xsessions
 export PATH=${HERE}/usr/sbin:${HERE}/usr/bin:$PATH
 "${HERE}"/usr/bin/codelite.wrapper "$@"

@@ -45,7 +45,6 @@ recipes/netbeans/netbeans
 Emacs
 *.deb
 App*
-functions.sh
 sources.list
 status
 tmp

@@ -14,8 +14,8 @@ ingredients:
   ppas:
     - jonathonf/vim
   script:
-    - echo $PWD
-    - VERSION=$(ls gvim-gtk2/vim-gtk*.deb | cut -d '-' -f 2 | sed -e 's|.deb||g' | sed -e 's/gtk_//g')
+    - cd gvim-gtk2
+    - VERSION=$(ls vim-gtk*.deb | cut -d '-' -f 2 | sed -e 's|.deb||g' | sed -e 's/gtk_//g')
     - cp "vim-gtk_${VERSION}-0york1~14.04_amd64.deb" "gvim-gtk2_${VERSION}_amd64.deb"
 
 script:

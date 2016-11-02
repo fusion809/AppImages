@@ -16,6 +16,7 @@ ingredients:
   script:
     - VERSION=$(ls vim-gtk*.deb | cut -d '-' -f 2 | sed -e 's|.deb||g' | sed -e 's/gtk_//g')
     - echo $VERSION > VERSION
+    - mv vim-gtk_${VERSION}-0york1~14.04_amd64.deb gvim-gtk2_${VERSION}_amd64.deb
 
 script:
   # Needed due to missing icon file for gvim

@@ -15,6 +15,7 @@ ingredients:
     - jonathonf/vim
   script:
     - VERSION="8.0.0055"
+    - echo $VERSION > VERSION
 
 script:
   # Needed due to missing icon file for gvim

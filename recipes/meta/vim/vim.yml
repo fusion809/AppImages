@@ -14,9 +14,7 @@ ingredients:
   ppas:
     - jonathonf/vim
   script:
-    - cd gvim-gtk2
-    - VERSION=$(ls vim-gtk*.deb | cut -d '-' -f 2 | sed -e 's|.deb||g' | sed -e 's/gtk_//g')
-    - cp "vim-gtk_${VERSION}-0york1~14.04_amd64.deb" "gvim-gtk2_${VERSION}_amd64.deb"
+    - VERSION="8.0.0055"
 
 script:
   # Needed due to missing icon file for gvim

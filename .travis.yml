@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=leafpad
+  - RECIPE=atom
 
 script:
 - bash -e travis.sh $RECIPE

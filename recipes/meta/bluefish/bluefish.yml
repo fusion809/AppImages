@@ -1,0 +1,19 @@
+app: bluefish
+
+ingredients:
+  package: bluefish
+  dist: precise
+  source:
+    - deb http://us.archive.ubuntu.com/ubuntu/ precise main restricted
+    - deb http://us.archive.ubuntu.com/ubuntu/ precise-updates main restricted
+    - deb http://us.archive.ubuntu.com/ubuntu/ precise universe
+    - deb http://us.archive.ubuntu.com/ubuntu/ precise-updates universe
+    - deb http://us.archive.ubuntu.com/ubuntu/ precise multiverse
+    - deb http://us.archive.ubuntu.com/ubuntu/ precise-updates multiverse
+    - deb http://us.archive.ubuntu.com/ubuntu/ precise-backports main restricted universe multiverse
+    - deb http://security.ubuntu.com/ubuntu precise-security main restricted
+    - deb http://security.ubuntu.com/ubuntu precise-security universe
+    - deb http://security.ubuntu.com/ubuntu precise-security multiverse
+    - deb http://extras.ubuntu.com/ubuntu precise main
+  ppas:
+    - klaus-vormweg/bluefish-gtk2

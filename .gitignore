@@ -66,3 +66,4 @@ recipes/meta/*/SuperTux2
 recipes/meta/*/Octave
 debian1.6.1
 recipes/meta/code-oss/code-oss
+recipes/meta/bluefish/bluefish

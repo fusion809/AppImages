@@ -61,7 +61,6 @@ supertux2
 qBittorrent
 recipes/meta/*/gvim-gtk2
 recipes/meta/*/netbeans
-recipes/meta/*/Recipe
 recipes/meta/*/Atom-Beta
 recipes/meta/*/SuperTux2
 recipes/meta/*/Octave

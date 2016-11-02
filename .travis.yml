@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=vim
+  - RECIPE=gvim
 
 script:
 - bash -e travis.sh $RECIPE

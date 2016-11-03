@@ -1,5 +1,5 @@
-# Doesn't work; AppImage can't find dejavu font
 app: manaplus
+union: true
 
 ingredients:
   package: manaplus

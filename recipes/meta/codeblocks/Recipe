@@ -74,7 +74,7 @@ cd ./$APP/
 
 if [ -d "./$APP.AppDir/" ] ; then
   rm -rf ./$APP.AppDir/
-fi 
+fi
 
 if [ ! -e functions.sh ] ; then
   wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh

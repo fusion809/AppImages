@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=warzone2100
+  - RECIPE=manaplus
 
 script:
 - bash -e travis.sh $RECIPE

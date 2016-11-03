@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=manaplus
+  - RECIPE=libreoffice
 
 script:
 - bash -e travis.sh $RECIPE

@@ -1,0 +1,7 @@
+app: Freecol
+
+ingredients:
+  script:
+    - wget -q "https://sourceforge.net/projects/freecol/files/freecol/" -O - | grep installer.jar | head -n 1 | cut -d '"' -f 4 |  cut -d "/" -f 3 | cut -d "-" -f 2 > VERSION
+    - VERSION=$(cat VERSION)
+    - wget -c https://sourceforge.net/projects/freecol/files/freecol/freecol-$VERSION/freecol-$VERSION-installer.jar/download

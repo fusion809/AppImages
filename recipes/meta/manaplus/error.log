@@ -1,0 +1,403 @@
+/bin/bash: ../lib/x86_64-linux-gnu/libtinfo.so.5: no version information available (required by /bin/bash)
+/home/fusion809/.cache/thumbnails/normal/8f3cd63f437a87676145332dbd3a3fce.png is missing. Probably not running ./bin//manaplus.wrapper from within an AppImage.
+Hence falling back to using .DirIcon
+[04:40:24.68] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:24.68] init 1
+[04:40:24.69] init 2
+[04:40:24.69] init 3
+[04:40:24.69] configPath: /home/fusion809//.config/mana/mana/config.xml
+[04:40:24.69] Warning: Failed to load features.xml: Path not found
+[04:40:24.69] init 2
+[04:40:24.69] Couldn't open configuration file: features.xml
+[04:40:24.69] init 4
+[04:40:24.69] Configuration::write() writing configuration...
+[04:40:24.69] Initializing resource manager...
+[04:40:24.69] bindtextdomain: /usr/share/locale
+[04:40:24.69] locale: en_AU.UTF-8
+[04:40:24.75] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:24.75] init 1
+[04:40:24.75] init 2
+[04:40:24.75] init 3
+[04:40:24.75] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:24.75] Warning: Failed to load features.xml: Path not found
+[04:40:24.75] init 2
+[04:40:24.75] Couldn't open configuration file: features.xml
+[04:40:24.75] init 4
+[04:40:24.75] Initializing resource manager...
+[04:40:24.75] bindtextdomain: /usr/share/locale
+[04:40:24.75] locale: en_AU.UTF-8
+Error: Font::Font: Couldn't open /usr/share/games/manaplus/data/fonts/dejavusans.ttf
+[04:40:27.63] 1: 0
+[04:40:27.68] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:27.68] bindtextdomain: /usr/share/locale
+[04:40:27.68] locale: en_AU.UTF-8
+[04:40:27.68] start detecting best mode...
+[04:40:27.68] enable opengl mode
+[04:40:27.70] Detected gl version: 3.0
+[04:40:27.70] Detected glsl version: 1.30
+[04:40:27.70] opengl extensions: 
+[04:40:27.70] assigned function: glGetStringi
+[04:40:27.70] GL_3DFX_texture_compression_FXT1 GL_AMD_conservative_depth GL_AMD_draw_buffers_blend GL_AMD_performance_monitor GL_AMD_seamless_cubemap_per_texture GL_AMD_shader_trinary_minmax GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_APPLE_object_purgeable GL_APPLE_packed_pixels GL_APPLE_vertex_array_object GL_ARB_ES2_compatibility GL_ARB_ES3_compatibility GL_ARB_arrays_of_arrays GL_ARB_blend_func_extended GL_ARB_buffer_storage GL_ARB_clear_buffer_object GL_ARB_clear_texture GL_ARB_clip_control GL_ARB_color_buffer_float GL_ARB_compressed_texture_pixel_storage GL_ARB_conditional_render_inverted GL_ARB_conservative_depth GL_ARB_copy_buffer GL_ARB_copy_image GL_ARB_debug_output GL_ARB_depth_buffer_float GL_ARB_depth_clamp GL_ARB_depth_texture GL_ARB_derivative_control GL_ARB_draw_buffers GL_ARB_draw_buffers_blend GL_ARB_draw_elements_base_vertex GL_ARB_draw_instanced GL_ARB_explicit_attrib_location GL_ARB_explicit_uniform_location GL_ARB_fragment_coord_conventions GL_ARB_fragment_program GL_ARB_fragment_program_shadow GL_ARB_fragment_shader GL_ARB_framebuffer_no_attachments GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_get_program_binary GL_ARB_get_texture_sub_image GL_ARB_half_float_pixel GL_ARB_half_float_vertex GL_ARB_instanced_arrays GL_ARB_internalformat_query GL_ARB_invalidate_subdata GL_ARB_map_buffer_alignment GL_ARB_map_buffer_range GL_ARB_multi_bind GL_ARB_multisample GL_ARB_multitexture GL_ARB_occlusion_query GL_ARB_occlusion_query2 GL_ARB_pipeline_statistics_query GL_ARB_pixel_buffer_object GL_ARB_point_parameters GL_ARB_point_sprite GL_ARB_program_interface_query GL_ARB_provoking_vertex GL_ARB_robustness GL_ARB_sample_shading GL_ARB_sampler_objects GL_ARB_seamless_cube_map GL_ARB_seamless_cubemap_per_texture GL_ARB_separate_shader_objects GL_ARB_shader_atomic_counters GL_ARB_shader_bit_encoding GL_ARB_shader_clock GL_ARB_shader_draw_parameters GL_ARB_shader_image_load_store GL_ARB_shader_image_size GL_ARB_shader_objects GL_ARB_shader_storage_buffer_object GL_ARB_shader_texture_image_samples GL_ARB_shader_texture_lod GL_ARB_shading_language_100 GL_ARB_shading_language_420pack GL_ARB_shading_language_packing GL_ARB_shadow GL_ARB_sync GL_ARB_texture_barrier GL_ARB_texture_border_clamp GL_ARB_texture_compression GL_ARB_texture_compression_bptc GL_ARB_texture_compression_rgtc GL_ARB_texture_cube_map GL_ARB_texture_cube_map_array GL_ARB_texture_env_add GL_ARB_texture_env_combine GL_ARB_texture_env_crossbar GL_ARB_texture_env_dot3 GL_ARB_texture_float GL_ARB_texture_gather GL_ARB_texture_mirror_clamp_to_edge GL_ARB_texture_mirrored_repeat GL_ARB_texture_multisample GL_ARB_texture_non_power_of_two GL_ARB_texture_query_levels GL_ARB_texture_query_lod GL_ARB_texture_rectangle GL_ARB_texture_rg GL_ARB_texture_rgb10_a2ui GL_ARB_texture_storage GL_ARB_texture_storage_multisample GL_ARB_texture_swizzle GL_ARB_texture_view GL_ARB_timer_query GL_ARB_transform_feedback2 GL_ARB_transform_feedback3 GL_ARB_transform_feedback_instanced GL_ARB_transpose_matrix GL_ARB_uniform_buffer_object GL_ARB_vertex_array_bgra GL_ARB_vertex_array_object GL_ARB_vertex_attrib_binding GL_ARB_vertex_buffer_object GL_ARB_vertex_program GL_ARB_vertex_shader GL_ARB_vertex_type_10f_11f_11f_rev GL_ARB_vertex_type_2_10_10_10_rev GL_ARB_window_pos GL_ATI_blend_equation_separate GL_ATI_draw_buffers GL_ATI_separate_stencil GL_ATI_texture_env_combine3 GL_ATI_texture_float GL_EXT_abgr GL_EXT_bgra GL_EXT_blend_color GL_EXT_blend_equation_separate GL_EXT_blend_func_separate GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_compiled_vertex_array GL_EXT_copy_texture GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_draw_range_elements GL_EXT_fog_coord GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXT_framebuffer_multisample_blit_scaled GL_EXT_framebuffer_object GL_EXT_framebuffer_sRGB GL_EXT_gpu_program_parameters GL_EXT_multi_draw_arrays GL_EXT_packed_depth_stencil GL_EXT_packed_float GL_EXT_packed_pixels GL_EXT_pixel_buffer_object GL_EXT_point_parameters GL_EXT_polygon_offset GL_EXT_polygon_offset_clamp GL_EXT_provoking_vertex GL_EXT_rescale_normal GL_EXT_secondary_color GL_EXT_separate_specular_color GL_EXT_shader_integer_mix GL_EXT_shader_samples_identical GL_EXT_shadow_funcs GL_EXT_stencil_two_side GL_EXT_stencil_wrap GL_EXT_subtexture GL_EXT_texture GL_EXT_texture3D GL_EXT_texture_array GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc GL_EXT_texture_cube_map GL_EXT_texture_edge_clamp GL_EXT_texture_env_add GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_EXT_texture_filter_anisotropic GL_EXT_texture_integer GL_EXT_texture_lod_bias GL_EXT_texture_object GL_EXT_texture_rectangle GL_EXT_texture_sRGB GL_EXT_texture_sRGB_decode GL_EXT_texture_shared_exponent GL_EXT_texture_snorm GL_EXT_texture_swizzle GL_EXT_timer_query GL_EXT_transform_feedback GL_EXT_vertex_array GL_EXT_vertex_array_bgra GL_IBM_multimode_draw_arrays GL_IBM_rasterpos_clip GL_IBM_texture_mirrored_repeat GL_INGR_blend_func_separate GL_INTEL_performance_query GL_KHR_context_flush_control GL_KHR_debug GL_MESA_pack_invert GL_MESA_texture_signed_rgba GL_MESA_window_pos GL_NV_blend_square GL_NV_conditional_render GL_NV_depth_clamp GL_NV_light_max_exponent GL_NV_packed_depth_stencil GL_NV_primitive_restart GL_NV_texgen_reflection GL_NV_texture_barrier GL_NV_texture_env_combine4 GL_NV_texture_rectangle GL_OES_EGL_image GL_OES_read_format GL_S3_s3tc GL_SGIS_generate_mipmap GL_SGIS_texture_border_clamp GL_SGIS_texture_edge_clamp GL_SGIS_texture_lod GL_SUN_multi_draw_arrays 
+[04:40:27.70] found GL_ARB_sampler_objects
+[04:40:27.70] assigned function: glGenSamplers
+[04:40:27.70] assigned function: glDeleteSamplers
+[04:40:27.70] assigned function: glBindSampler
+[04:40:27.70] assigned function: glSamplerParameteri
+[04:40:27.70] GL_EXT_direct_state_access not found
+[04:40:27.70] GL_ARB_direct_state_access not found
+[04:40:27.70] emulated function: glTextureSubImage2DEXT
+[04:40:27.70] found GL_ARB_texture_storage
+[04:40:27.70] assigned function: glTexStorage2D
+[04:40:27.70] found GL_ARB_multitexture or OpenGL 1.3
+[04:40:27.70] assigned function: glActiveTexture
+[04:40:27.70] found GL_ARB_explicit_attrib_location or OpenGL 2.0
+[04:40:27.70] assigned function: glBindAttribLocation
+[04:40:27.70] found GL_ARB_framebuffer_object
+[04:40:27.70] assigned function: glGenRenderbuffers
+[04:40:27.70] assigned function: glBindRenderbuffer
+[04:40:27.70] assigned function: glRenderbufferStorage
+[04:40:27.70] assigned function: glGenFramebuffers
+[04:40:27.70] assigned function: glBindFramebuffer
+[04:40:27.70] assigned function: glFramebufferTexture2D
+[04:40:27.70] assigned function: glFramebufferRenderbuffer
+[04:40:27.70] assigned function: glDeleteFramebuffers
+[04:40:27.70] assigned function: glDeleteRenderbuffers
+[04:40:27.70] assigned function: glCheckFramebufferStatus
+[04:40:27.70] found GL_KHR_debug
+[04:40:27.70] assigned function: glDebugMessageControl
+[04:40:27.70] assigned function: glDebugMessageCallback
+[04:40:27.70] assigned function: glPushDebugGroup
+[04:40:27.70] assigned function: glPopDebugGroup
+[04:40:27.70] assigned function: glObjectLabel
+[04:40:27.70] GL_GREMEDY_frame_terminator not found
+[04:40:27.70] GL_EXT_debug_label not found
+[04:40:27.70] GL_GREMEDY_string_marker not found
+[04:40:27.70] GL_EXT_debug_marker not found
+[04:40:27.70] found GL_EXT_timer_query
+[04:40:27.70] assigned function: glGenQueries
+[04:40:27.70] assigned function: glBeginQuery
+[04:40:27.70] assigned function: glEndQuery
+[04:40:27.70] assigned function: glDeleteQueries
+[04:40:27.70] assigned function: glGetQueryObjectiv
+[04:40:27.70] assigned function: glGetQueryObjectui64vEXT
+[04:40:27.70] found GL_ARB_invalidate_subdata
+[04:40:27.70] assigned function: glInvalidateTexImage
+[04:40:27.70] found GL_ARB_vertex_array_object
+[04:40:27.70] assigned function: glGenVertexArrays
+[04:40:27.70] assigned function: glBindVertexArray
+[04:40:27.70] assigned function: glDeleteVertexArrays
+[04:40:27.70] assigned function: glVertexAttribPointer
+[04:40:27.70] assigned function: glEnableVertexAttribArray
+[04:40:27.70] assigned function: glDisableVertexAttribArray
+[04:40:27.70] assigned function: glVertexAttribIPointer
+[04:40:27.70] assigned function: glGenBuffers
+[04:40:27.70] assigned function: glDeleteBuffers
+[04:40:27.70] assigned function: glBindBuffer
+[04:40:27.70] assigned function: glBufferData
+[04:40:27.70] assigned function: glIsBuffer
+[04:40:27.70] found GL_ARB_copy_image
+[04:40:27.70] assigned function: glCopyImageSubData
+[04:40:27.70] found GL_ARB_clear_texture
+[04:40:27.70] assigned function: glClearTexImage
+[04:40:27.70] assigned function: glClearTexSubImage
+[04:40:27.70] found GL_ARB_shader_objects
+[04:40:27.70] assigned function: glCreateShader
+[04:40:27.70] assigned function: glDeleteShader
+[04:40:27.70] assigned function: glGetShaderiv
+[04:40:27.70] assigned function: glGetShaderInfoLog
+[04:40:27.70] assigned function: glGetShaderSource
+[04:40:27.70] assigned function: glShaderSource
+[04:40:27.70] assigned function: glCompileShader
+[04:40:27.70] assigned function: glLinkProgram
+[04:40:27.70] assigned function: glGetProgramInfoLog
+[04:40:27.70] assigned function: glDeleteProgram
+[04:40:27.70] assigned function: glCreateProgram
+[04:40:27.70] assigned function: glAttachShader
+[04:40:27.70] assigned function: glDetachShader
+[04:40:27.70] assigned function: glGetAttachedShaders
+[04:40:27.70] assigned function: glGetUniformLocation
+[04:40:27.70] assigned function: glGetActiveUniform
+[04:40:27.70] assigned function: glGetProgramiv
+[04:40:27.70] assigned function: glUseProgram
+[04:40:27.70] assigned function: glValidateProgram
+[04:40:27.70] assigned function: glGetAttribLocation
+[04:40:27.70] assigned function: glUniform1f
+[04:40:27.70] assigned function: glUniform2f
+[04:40:27.70] assigned function: glUniform3f
+[04:40:27.71] assigned function: glUniform4f
+[04:40:27.71] found GL_EXT_gpu_shader4
+[04:40:27.71] assigned function: glBindFragDataLocation
+[04:40:27.71] found GL_ARB_separate_shader_objects
+[04:40:27.71] assigned function: glProgramUniform1f
+[04:40:27.71] assigned function: glProgramUniform2f
+[04:40:27.71] assigned function: glProgramUniform3f
+[04:40:27.71] assigned function: glProgramUniform4f
+[04:40:27.71] found GL_ARB_vertex_attrib_binding
+[04:40:27.71] assigned function: glBindVertexBuffer
+[04:40:27.71] assigned function: glVertexAttribBinding
+[04:40:27.71] assigned function: glVertexAttribFormat
+[04:40:27.71] assigned function: glVertexAttribIFormat
+[04:40:27.71] found GL_ARB_multi_bind
+[04:40:27.71] assigned function: glBindVertexBuffers
+[04:40:27.71] glx extensions:
+[04:40:27.71] GLX_ARB_create_context GLX_ARB_create_context_profile GLX_ARB_create_context_robustness GLX_ARB_fbconfig_float GLX_ARB_framebuffer_sRGB GLX_ARB_get_proc_address GLX_ARB_multisample GLX_EXT_import_context GLX_EXT_visual_info GLX_EXT_visual_rating GLX_EXT_fbconfig_packed_float GLX_EXT_framebuffer_sRGB GLX_EXT_create_context_es2_profile GLX_EXT_create_context_es_profile GLX_MESA_copy_sub_buffer GLX_MESA_multithread_makecurrent GLX_MESA_query_renderer GLX_MESA_swap_control GLX_OML_swap_method GLX_OML_sync_control GLX_SGI_make_current_read GLX_SGI_swap_control GLX_SGI_video_sync GLX_SGIS_multisample GLX_SGIX_fbconfig GLX_SGIX_pbuffer GLX_SGIX_visual_select_group GLX_EXT_texture_from_pixmap GLX_INTEL_swap_event 
+[04:40:27.71] glx server vendor: SGI
+[04:40:27.71] glx server version: 1.4
+[04:40:27.71] glx server extensions:
+[04:40:27.71] GLX_ARB_create_context GLX_ARB_create_context_profile GLX_ARB_create_context_robustness GLX_ARB_fbconfig_float GLX_ARB_framebuffer_sRGB GLX_ARB_multisample GLX_EXT_create_context_es_profile GLX_EXT_create_context_es2_profile GLX_EXT_fbconfig_packed_float GLX_EXT_framebuffer_sRGB GLX_EXT_import_context GLX_EXT_texture_from_pixmap GLX_EXT_visual_info GLX_EXT_visual_rating GLX_MESA_copy_sub_buffer GLX_OML_swap_method GLX_SGI_swap_control GLX_SGIS_multisample GLX_SGIX_fbconfig GLX_SGIX_pbuffer GLX_SGIX_visual_select_group GLX_INTEL_swap_event 
+[04:40:27.71] glx client vendor: Mesa Project and SGI
+[04:40:27.71] glx client version: 1.4
+[04:40:27.71] glx client extensions:
+[04:40:27.71] GLX_ARB_create_context GLX_ARB_create_context_profile GLX_ARB_create_context_robustness GLX_ARB_fbconfig_float GLX_ARB_framebuffer_sRGB GLX_ARB_get_proc_address GLX_ARB_multisample GLX_EXT_import_context GLX_EXT_visual_info GLX_EXT_visual_rating GLX_EXT_fbconfig_packed_float GLX_EXT_framebuffer_sRGB GLX_EXT_create_context_es2_profile GLX_EXT_create_context_es_profile GLX_MESA_copy_sub_buffer GLX_MESA_multithread_makecurrent GLX_MESA_query_renderer GLX_MESA_swap_control GLX_OML_swap_method GLX_OML_sync_control GLX_SGI_make_current_read GLX_SGI_swap_control GLX_SGI_video_sync GLX_SGIS_multisample GLX_SGIX_fbconfig GLX_SGIX_pbuffer GLX_SGIX_visual_select_group GLX_EXT_texture_from_pixmap GLX_INTEL_swap_event GLX_EXT_buffer_age 
+[04:40:27.71] width=1600
+[04:40:27.71] GL_MAX_ELEMENTS_VERTICES: 3000
+[04:40:27.71] GL_MAX_ELEMENTS_INDICES: 3000
+[04:40:27.71] Max FBO size: 8192
+[04:40:27.71] gl vendor: Intel Open Source Technology Center
+[04:40:27.71] gl renderer: Mesa DRI Intel(R) Haswell Mobile 
+[04:40:27.71] gl version: 3.0 Mesa 11.2.0
+[04:40:27.71] glsl version: 1.30
+[04:40:27.71] detection complete
+[04:40:27.71] Quitting1
+[04:40:27.71] Unloading chars database...
+[04:40:27.71] Unloading stat database...
+[04:40:27.71] Unloading color database...
+[04:40:27.71] Unloading item database...
+[04:40:27.71] Unloading item database...
+[04:40:27.71] Unloading npcdialog database...
+[04:40:27.71] Quitting2
+[04:40:27.71] Quitting3
+[04:40:27.71] Quitting4
+[04:40:27.71] Quitting5
+[04:40:27.71] Quitting6
+[04:40:27.71] --- Assert: Detected false value --------------------------------------------
+[04:40:27.71] being/actorsprite.cpp:508: '!loaded' in function `unload'
+[04:40:27.71] /tmp/.mount_5VhXap/usr/games/manaplus(_Z17reportAssertStackPKcjS0_S0_S0_+0x5f) [0x5c09cf]
+[04:40:27.71] /tmp/.mount_5VhXap/usr/games/manaplus(_ZN6Client9gameClearEv+0x3a0) [0x6878d0]
+[04:40:27.71] /tmp/.mount_5VhXap/usr/games/manaplus(_ZN6ClientD0Ev+0x46) [0x688056]
+[04:40:27.71] /tmp/.mount_5VhXap/usr/games/manaplus(_Z7mainGuiiPPc+0x96) [0x6170e6]
+[04:40:27.71] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf0) [0x7fb2d0936830]
+[04:40:27.71] /tmp/.mount_5VhXap/usr/games/manaplus() [0x536afc]
+[04:40:27.71] Quitting8
+[04:40:27.71] Quitting9
+[04:40:27.71] Quitting10
+[04:40:27.71] Quitting11
+[04:40:27.72] value for 99 = 1
+[04:40:27.77] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:27.77] init 1
+[04:40:27.77] init 2
+[04:40:27.77] init 3
+[04:40:27.77] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:27.77] Warning: Failed to load features.xml: Path not found
+[04:40:27.77] init 2
+[04:40:27.77] Couldn't open configuration file: features.xml
+[04:40:27.77] init 4
+[04:40:27.77] Initializing resource manager...
+[04:40:27.77] bindtextdomain: /usr/share/locale
+[04:40:27.77] locale: en_AU.UTF-8
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+Error: Font::Font: Couldn't open /usr/share/games/manaplus/data/fonts/dejavusans.ttf
+[04:40:28.44] 2: 0
+[04:40:28.49] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:28.49] init 1
+[04:40:28.49] init 2
+[04:40:28.49] init 3
+[04:40:28.49] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:28.49] Warning: Failed to load features.xml: Path not found
+[04:40:28.49] init 2
+[04:40:28.49] Couldn't open configuration file: features.xml
+[04:40:28.49] init 4
+[04:40:28.49] Initializing resource manager...
+[04:40:28.49] bindtextdomain: /usr/share/locale
+[04:40:28.49] locale: en_AU.UTF-8
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+Error: Font::Font: Couldn't open /usr/share/games/manaplus/data/fonts/dejavusans.ttf
+[04:40:29.07] 3: 0
+[04:40:29.11] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:29.11] init 1
+[04:40:29.11] init 2
+[04:40:29.11] init 3
+[04:40:29.11] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:29.11] Warning: Failed to load features.xml: Path not found
+[04:40:29.11] init 2
+[04:40:29.11] Couldn't open configuration file: features.xml
+[04:40:29.11] init 4
+[04:40:29.11] Initializing resource manager...
+[04:40:29.11] bindtextdomain: /usr/share/locale
+[04:40:29.11] locale: en_AU.UTF-8
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+Error: Shader creation error. See manaplus.log.
+[04:40:30.45] 19: 0
+[04:40:30.49] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:30.49] init 1
+[04:40:30.49] init 2
+[04:40:30.49] init 3
+[04:40:30.49] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:30.49] Warning: Failed to load features.xml: Path not found
+[04:40:30.49] init 2
+[04:40:30.49] Couldn't open configuration file: features.xml
+[04:40:30.49] init 4
+[04:40:30.49] Initializing resource manager...
+[04:40:30.49] bindtextdomain: /usr/share/locale
+[04:40:30.49] locale: en_AU.UTF-8
+Error: Font::Font: Couldn't open /usr/share/games/manaplus/data/fonts/dejavusans.ttf
+[04:40:31.32] 8: 0
+[04:40:31.32] value for 8 = 0
+[04:40:31.36] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:31.36] init 1
+[04:40:31.36] init 2
+[04:40:31.36] init 3
+[04:40:31.36] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:31.36] Warning: Failed to load features.xml: Path not found
+[04:40:31.36] init 2
+[04:40:31.36] Couldn't open configuration file: features.xml
+[04:40:31.36] init 4
+[04:40:31.36] Initializing resource manager...
+[04:40:31.36] bindtextdomain: /usr/share/locale
+[04:40:31.36] locale: en_AU.UTF-8
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+Error: Shader creation error. See manaplus.log.
+[04:40:44.78] 17: 0
+[04:40:44.78] value for 17 = 0
+[04:40:44.82] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:44.82] init 1
+[04:40:44.82] init 2
+[04:40:44.82] init 3
+[04:40:44.82] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:44.82] Warning: Failed to load features.xml: Path not found
+[04:40:44.82] init 2
+[04:40:44.82] Couldn't open configuration file: features.xml
+[04:40:44.82] init 4
+[04:40:44.82] Initializing resource manager...
+[04:40:44.82] bindtextdomain: /usr/share/locale
+[04:40:44.82] locale: en_AU.UTF-8
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+Error: Font::Font: Couldn't open /usr/share/games/manaplus/data/fonts/dejavusans.ttf
+[04:40:45.30] 9: 0
+[04:40:45.30] value for 9 = 0
+[04:40:45.35] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:45.35] init 1
+[04:40:45.35] init 2
+[04:40:45.35] init 3
+[04:40:45.35] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:45.35] Warning: Failed to load features.xml: Path not found
+[04:40:45.35] init 2
+[04:40:45.35] Couldn't open configuration file: features.xml
+[04:40:45.35] init 4
+[04:40:45.35] Initializing resource manager...
+[04:40:45.35] bindtextdomain: /usr/share/locale
+[04:40:45.35] locale: en_AU.UTF-8
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+Error: Font::Font: Couldn't open /usr/share/games/manaplus/data/fonts/dejavusans.ttf
+[04:40:45.96] 10: 0
+[04:40:45.96] value for 10 = 0
+[04:40:46.00] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:46.00] init 1
+[04:40:46.00] init 2
+[04:40:46.00] init 3
+[04:40:46.00] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:46.00] Warning: Failed to load features.xml: Path not found
+[04:40:46.00] init 2
+[04:40:46.00] Couldn't open configuration file: features.xml
+[04:40:46.00] init 4
+[04:40:46.00] Initializing resource manager...
+[04:40:46.00] bindtextdomain: /usr/share/locale
+[04:40:46.00] locale: en_AU.UTF-8
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+Error: Font::Font: Couldn't open /usr/share/games/manaplus/data/fonts/dejavusans.ttf
+[04:40:46.51] value for 11 = 0
+[04:40:46.55] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:46.56] init 1
+[04:40:46.56] init 2
+[04:40:46.56] init 3
+[04:40:46.56] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:46.56] Warning: Failed to load features.xml: Path not found
+[04:40:46.56] init 2
+[04:40:46.56] Couldn't open configuration file: features.xml
+[04:40:46.56] init 4
+[04:40:46.56] Initializing resource manager...
+[04:40:46.56] bindtextdomain: /usr/share/locale
+[04:40:46.56] locale: en_AU.UTF-8
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+Error: Font::Font: Couldn't open /usr/share/games/manaplus/data/fonts/dejavusans.ttf
+[04:40:47.10] value for 14 = 0
+[04:40:47.14] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:47.15] init 1
+[04:40:47.15] init 2
+[04:40:47.15] init 3
+[04:40:47.15] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:47.15] Warning: Failed to load features.xml: Path not found
+[04:40:47.15] init 2
+[04:40:47.15] Couldn't open configuration file: features.xml
+[04:40:47.15] init 4
+[04:40:47.15] Initializing resource manager...
+[04:40:47.15] bindtextdomain: /usr/share/locale
+[04:40:47.15] locale: en_AU.UTF-8
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+Error: Shader creation error. See manaplus.log.
+[04:40:47.70] value for 15 = 0
+[04:40:47.76] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:47.76] init 1
+[04:40:47.76] init 2
+[04:40:47.76] init 3
+[04:40:47.76] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:47.76] Warning: Failed to load features.xml: Path not found
+[04:40:47.76] init 2
+[04:40:47.76] Couldn't open configuration file: features.xml
+[04:40:47.76] init 4
+[04:40:47.76] Initializing resource manager...
+[04:40:47.76] bindtextdomain: /usr/share/locale
+[04:40:47.76] locale: en_AU.UTF-8
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+Error: Font::Font: Couldn't open /usr/share/games/manaplus/data/fonts/dejavusans.ttf
+[04:40:48.37] value for 16 = 0
+[04:40:48.41] Generating config dir: /home/fusion809//.config/mana/mana
+[04:40:48.41] init 1
+[04:40:48.41] init 2
+[04:40:48.41] init 3
+[04:40:48.41] configPath: /home/fusion809//.config/mana/mana/test.xml
+[04:40:48.41] Warning: Failed to load features.xml: Path not found
+[04:40:48.41] init 2
+[04:40:48.41] Couldn't open configuration file: features.xml
+[04:40:48.41] init 4
+[04:40:48.41] Initializing resource manager...
+[04:40:48.41] bindtextdomain: /usr/share/locale
+[04:40:48.41] locale: en_AU.UTF-8
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+ATTENTION: default value of option vblank_mode overridden by environment.
+Error: Font::Font: Couldn't open /usr/share/games/manaplus/data/fonts/dejavusans.ttf
+[04:40:49.04] value for 20 = 0
+[04:40:49.04] set mode to 0
+Error: Font::Font: Couldn't open /usr/share/games/manaplus/data/fonts/dejavusans.ttf

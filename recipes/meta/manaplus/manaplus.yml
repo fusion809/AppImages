@@ -2,12 +2,24 @@ app: manaplus
 union: true
 
 ingredients:
-  package: manaplus
-  dist:    trusty
-  sources:
-    - deb http://repo.evolonline.org/manaplus trusty main
-    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+  script:
+    - VERSION=$(wget -cqO- http://download.evolonline.org/manaplus/download/latest/ | grep "tar\.xz" | head -n 1 | cut -d '"' -f 4 |  cut -d "/" -f 3 | cut -d "-" -f 2 | sed "s/.tar.xz//g")
+    - echo $VERSION > VERSION
+    - wget -c http://download.evolonline.org/manaplus/download/latest/linux/manaplus-${VERSION}-linux.tar.bz2
 
 script:
-  - cp ./usr/share/pixmaps/manaplus.xpm .
-  - ( cd usr/bin ; ln -sf ../games/manaplus . )
+  - tar -xjf ../manaplus*.tar.bz2 -C usr
+  - cp ./usr/data/icons/manaplus.png .
+  - cat > manaplus.desktop <<EOF
+  - [Desktop Entry]
+  - Version=1.0
+  - Name=ManaPlus
+  - Comment=A 2D MMORPG client
+  - Exec=manaplus
+  - StartupNotify=false
+  - Terminal=false
+  - Type=Application
+  - Icon=manaplus
+  - Categories=Game;AdventureGame;
+  - Keywords=MMORPG;game;RPG;adventure;multiplayer;online;
+  - EOF

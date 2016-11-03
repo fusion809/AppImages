@@ -1,0 +1,15 @@
+app: freeciv-gtk2
+
+ingredients:
+  dist:    trusty
+  package: freeciv-client-gtk
+  sources:
+    - deb http://archive.getdeb.net/ubuntu trusty-getdeb games
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+  script:
+    - VERSION=$(wget -q "https://sourceforge.net/projects/freeciv/files" -O - | grep bz2 | head -n 1 | cut -d '"' -f 4 | cut -d "/" -f 3)
+    - echo $VERSION > VERSION
+
+script:
+  - cp ./usr/share/pixmaps/freeciv-client.png .
+  - ( cd usr/bin ; ln -sf ../games/freeciv-gtk2 . )

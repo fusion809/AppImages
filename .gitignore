@@ -72,3 +72,6 @@ recipes/meta/smplayer/smplayer
 recipes/meta/freecol/freecol
 recipes/meta/freecol/Freecol
 recipes/meta/manaplus/manaplus
+recipes/meta/freeciv/freeciv
+recipes/meta/freeciv/freeciv-gtk2
+recipes/meta/freeciv/freeciv-client-gtk

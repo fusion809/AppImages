@@ -1,0 +1,11 @@
+app: warzone2100
+
+ingredients:
+  package: warzone2100
+  dist:    trusty
+  sources:
+    - deb http://archive.getdeb.net/ubuntu trusty-getdeb games
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+
+script:
+  - ( cd usr/bin ; ln -sf ../games/warzone2100 . )

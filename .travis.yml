@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=atom-beta
+  - RECIPE=warzone2100
 
 script:
 - bash -e travis.sh $RECIPE

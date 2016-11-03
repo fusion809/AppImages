@@ -1,0 +1,10 @@
+Hi,
+
+I have created an AppImage (a type of distribution-agnostic packaging format for Linux) for Warzone 2100. It can be found at https://bintray.com/fusion809/AppImages/Warzone_2100#files. It should run on any Linux distribution with glibc 2.15 or later. All that is needed to run it is to mark it as executable (with chmod +x) and then run it (like with ./<AppImage>, where <AppImage> is the filename of the AppImage, including its file extension). You do not need to install any additional software to run it! Unfortunately as the latest version of Warzone 2100 provided by playdeb for Ubuntu 14.04 is 3.15, the latest version of Warzone 2100 I can provide with an AppImage is also 3.15. If someone has a Debian package for Warzone 2100 >3.15 that is suitable for 14.04, I will be more than willing to build a new AppImage using it.
+
+Just to be clear, this AppImage will work on both Debian and non-Debian based distributions! The fact I used a Debian package to build it is irrelevant when it comes to which distributions it will run on!
+
+If someone encounters a bug with my AppImage please report it at its bugtracker, https://github.com/fusion809/AppImages/issues.
+
+Thanks for your time,
+Brenton

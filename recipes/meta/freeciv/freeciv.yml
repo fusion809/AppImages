@@ -14,3 +14,4 @@ ingredients:
 script:
   - cp ./usr/share/pixmaps/freeciv-client.png .
   - ( cd usr/bin ; ln -sf ../games/freeciv-gtk2 . )
+  - sed -i -e 's/ (gtk2)//g' freeciv-gtk2.desktop

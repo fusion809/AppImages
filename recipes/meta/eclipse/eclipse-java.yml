@@ -2,9 +2,14 @@ app: eclipse-java
 
 ingredients:
   script:
-    - VERSION="$(wget -q https://www.eclipse.org/downloads/ -O - | grep "64" | head -n 1 | cut -d '"' -f 4 | cut -d '/' -f 8)"
-    - echo $VERSION > VERSION
+    - VERSION="$(wget -q https://www.eclipse.org/downloads/eclipse-packages/ -O - | grep "eclipse-java.*gtk.tar.gz" | head -n 1 | cut -d '"' -f 4 | cut -d '/' -f 10 | sed 's/eclipse-java-//g' | sed 's/-linux-gtk.tar.gz//g')"
+    - REV=$(printf $VERSION | cut -d '-' -f 2)
+    - if [[ -n $REV ]]; then
+    - URL="http://mirror.internode.on.net/pub/eclipse/technology/epp/downloads/release/${VERSION/-$REV/}/$REV/eclipse-java-$VERSION-linux-gtk-x86_64.tar.gz"
+    - else
     - URL="http://mirror.internode.on.net/pub/eclipse/technology/epp/downloads/release/$VERSION/R/eclipse-java-$VERSION-R-linux-gtk-x86_64.tar.gz"
+    - fi
+    - echo $VERSION > VERSION
     - wget -c "$URL" --trust-server-names
     - tar zxvf eclipse*.gz
     - JDK_URL=$(wget -q http://www.oracle.com/technetwork/java/javase/downloads/index.html -O - | grep "[0-9]u[0-9]" | head -n 1 | cut -d '"' -f 20)
@@ -17,13 +22,13 @@ script:
   - tar xf ../jre*.gz -C usr/lib/jvm/
   - mkdir -p bin
   - ( cd ./bin; ln -sf ../usr/lib/jvm/jre*/bin/java . )
-  - cp ../../eclipse.png .
+  - cp ../../eclipse-java.png .
   - cat > eclipse-java.desktop <<EOF
   - [Desktop Entry]
   - Version=1.0
   - Type=Application
   - Name=Eclipse Java IDE
-  - Icon=eclipse
+  - Icon=eclipse-java
   - Exec=eclipse
   - Categories=Development;IDE;Java
   - Terminal=false

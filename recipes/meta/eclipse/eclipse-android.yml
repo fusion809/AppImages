@@ -1,13 +1,13 @@
-app: eclipse-javascript
+app: eclipse-android
 
 ingredients:
   script:
-    - VERSION="$(wget -q https://www.eclipse.org/downloads/eclipse-packages/ -O - | grep "eclipse-javascript.*gtk.tar.gz" | head -n 1 | cut -d '"' -f 4 | cut -d '/' -f 10 | sed 's/eclipse-javascript-//g' | sed 's/-linux-gtk.tar.gz//g')"
+    - VERSION="$(wget -q https://www.eclipse.org/downloads/eclipse-packages/ -O - | grep "eclipse-android.*gtk.tar.gz" | head -n 1 | cut -d '"' -f 4 | cut -d '/' -f 10 | sed 's/eclipse-android-//g' | sed 's/-linux-gtk.tar.gz//g')"
     - REV=$(printf $VERSION | cut -d '-' -f 2)
     - if [[ -n $REV ]]; then
-    - URL="http://mirror.internode.on.net/pub/eclipse/technology/epp/downloads/release/${VERSION/-$REV/}/$REV/eclipse-javascript-$VERSION-linux-gtk-x86_64.tar.gz"
+    - URL="http://mirror.internode.on.net/pub/eclipse/technology/epp/downloads/release/${VERSION/-$REV/}/$REV/eclipse-android-$VERSION-linux-gtk-x86_64.tar.gz"
     - else
-    - URL="http://mirror.internode.on.net/pub/eclipse/technology/epp/downloads/release/$VERSION/R/eclipse-javascript-$VERSION-R-linux-gtk-x86_64.tar.gz"
+    - URL="http://mirror.internode.on.net/pub/eclipse/technology/epp/downloads/release/$VERSION/R/eclipse-android-$VERSION-R-linux-gtk-x86_64.tar.gz"
     - fi
     - echo $VERSION > VERSION
     - wget -c "$URL" --trust-server-names
@@ -22,14 +22,14 @@ script:
   - tar xf ../jre*.gz -C usr/lib/jvm/
   - mkdir -p bin
   - ( cd ./bin; ln -sf ../usr/lib/jvm/jre*/bin/java . )
-  - cp ../../eclipse-javascript.png .
-  - cat > eclipse-javascript.desktop <<EOF
+  - cp ../../eclipse-android.png .
+  - cat > eclipse-android.desktop <<EOF
   - [Desktop Entry]
   - Version=1.0
   - Type=Application
-  - Name=Eclipse JavaScript IDE
-  - Icon=eclipse-javascript
+  - Name=Eclipse Android IDE
+  - Icon=eclipse-android
   - Exec=eclipse
-  - Categories=Development;IDE;JavaScript
+  - Categories=Development;IDE;Android
   - Terminal=false
   - EOF

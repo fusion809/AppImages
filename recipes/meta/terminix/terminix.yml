@@ -3,6 +3,7 @@ app: Terminix
 ingredients:
   script:
     - VERSION=$(wget -q "https://github.com/gnunn1/terminix/releases" -O - | grep "/releases/tag" | head -n 1 | cut -d ">" -f 2 | cut -d "<" -f 1 | sed 's|Beta ||g' | sed 's|Stable ||g')
+    - echo $VERSION > VERSION
 
 script:
   - ZIP_PATH=$(wget -q "https://github.com/gnunn1/terminix/releases" -O - | grep terminix.zip | grep href | head -n 1 | cut -d '"' -f 2)

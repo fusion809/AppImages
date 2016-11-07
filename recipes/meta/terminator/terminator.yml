@@ -1,0 +1,15 @@
+app: Terminator
+
+ingredients:
+  package: terminator
+  dist:    trusty
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main restricted
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted
+    - deb http://archive.ubuntu.com/ubuntu/ trusty universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-updates universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security multiverse
+  ppas:
+    - gnome-terminator/ppa

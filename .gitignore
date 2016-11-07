@@ -81,3 +81,5 @@ recipes/meta/spotify/Spotify
 recipes/meta/terminix/Terminix
 recipes/terminix/Terminix
 *.zip
+*.tar.gz
+recipes/meta/terminator/Terminator

@@ -1,0 +1,30 @@
+app: eclipse-jee
+
+ingredients:
+  script:
+    - VERSION="$(wget -q https://www.eclipse.org/downloads/ -O - | grep "64" | head -n 1 | cut -d '"' -f 4 | cut -d '/' -f 8)"
+    - echo $VERSION > VERSION
+    - URL="http://mirror.internode.on.net/pub/eclipse/technology/epp/downloads/release/$VERSION/R/eclipse-jee-$VERSION-R-linux-gtk-x86_64.tar.gz"
+    - wget -c "$URL" --trust-server-names
+    - tar zxvf eclipse*.gz
+    - JDK_URL=$(wget -q http://www.oracle.com/technetwork/java/javase/downloads/index.html -O - | grep "[0-9]u[0-9]" | head -n 1 | cut -d '"' -f 20)
+    - JDK_VERSION=$(wget -q http://www.oracle.com/$JDK_URL -O - | grep "linux-x64.tar.gz" | tail -n 1 | cut -d '"' -f 12 | cut -d '/' -f 7)
+    - wget -c --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/$JDK_VERSION/jre-${JDK_VERSION/-*/}-linux-x64.tar.gz
+
+script:
+  - cp -r ../eclipse/* usr/bin/
+  - mkdir -p usr/lib/jvm/
+  - tar xf ../jre*.gz -C usr/lib/jvm/
+  - mkdir -p bin
+  - ( cd ./bin; ln -sf ../usr/lib/jvm/jre*/bin/java . )
+  - cp ../../eclipse.png .
+  - cat > eclipse-jee.desktop <<EOF
+  - [Desktop Entry]
+  - Version=1.0
+  - Type=Application
+  - Name=Eclipse Java EE IDE
+  - Icon=eclipse
+  - Exec=eclipse
+  - Categories=Development;IDE;Java
+  - Terminal=false
+  - EOF

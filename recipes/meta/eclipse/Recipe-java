@@ -1,0 +1,5 @@
+#!/bin/bash
+filename=$(basename $0)
+suffix=${filename/Recipe-/}
+printf $suffix
+./Recipe ./eclipse-${suffix}.yml

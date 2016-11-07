@@ -7,7 +7,9 @@ ingredients:
     - URL="http://mirror.internode.on.net/pub/eclipse/technology/epp/downloads/release/$VERSION/R/eclipse-cpp-$VERSION-R-linux-gtk-x86_64.tar.gz"
     - wget -c "$URL" --trust-server-names
     - tar zxvf eclipse*.gz
-    - wget -c --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jre-8u66-linux-x64.tar.gz
+    - JDK_URL=$(wget -q http://www.oracle.com/technetwork/java/javase/downloads/index.html -O - | grep "[0-9]u[0-9]" | head -n 1 | cut -d '"' -f 20)
+    - JDK_VERSION=$(wget -q http://www.oracle.com/$JDK_URL -O - | grep "linux-x64.tar.gz" | tail -n 1 | cut -d '"' -f 12 | cut -d '/' -f 7)
+    - wget -c --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/$JDK_VERSION/jre-${JDK_VERSION/-*/}-linux-x64.tar.gz
 
 script:
   - cp -r ../eclipse/* usr/bin/

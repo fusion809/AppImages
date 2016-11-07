@@ -83,3 +83,8 @@ recipes/terminix/Terminix
 *.zip
 *.tar.gz
 recipes/meta/terminator/Terminator
+recipes/meta/eclipse/eclipse-java
+recipes/meta/eclipse/eclipse-javascript
+recipes/meta/eclipse/eclipse-jee
+recipes/meta/eclipse/eclipse-php
+recipes/meta/eclipse/eclipse-testing

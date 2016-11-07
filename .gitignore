@@ -80,3 +80,4 @@ recipes/meta/warzone2100/warzone2100
 recipes/meta/spotify/Spotify
 recipes/meta/terminix/Terminix
 recipes/terminix/Terminix
+*.zip

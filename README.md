@@ -1,16 +1,22 @@
 # AppImages [![discourse](https://img.shields.io/badge/forum-discourse-orange.svg)](http://discourse.appimage.org) [![Build Status](https://travis-ci.org/fusion809/AppImages.svg)](https://travis-ci.org/fusion809/AppImages)
 
-| Application |  |
+## Table of Bintray AppImages provided by fusion809
+| Application<sup>1</sup> |  |
 |--:|---|
 | Atom | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Atom/images/download.svg)](https://bintray.com/fusion809/AppImages/Atom/_latestVersion#files)  |
-| Eclipse-CPP | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Eclipse-CPP/images/download.svg)](https://bintray.com/fusion809/AppImages/Eclipse-CPP/_latestVersion#files)  |
-| NetBeans | [![Download](https://api.bintray.com/packages/fusion809/AppImages/NetBeans/images/download.svg)](https://bintray.com/fusion809/AppImages/NetBeans/_latestVersion#files)  |
+| Atom_Beta | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Atom_Beta/images/download.svg)](https://bintray.com/fusion809/AppImages/Atom_Beta/_latestVersion#files)  |
+| Brackets | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Brackets/images/download.svg)](https://bintray.com/fusion809/AppImages/Brackets/_latestVersion#files)  |
+| code-oss | [![Download](https://api.bintray.com/packages/fusion809/AppImages/code-oss/images/download.svg)](https://bintray.com/fusion809/AppImages/code-oss/_latestVersion#files)  |
+| Geany | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Geany/images/download.svg)](https://bintray.com/fusion809/AppImages/Geany/_latestVersion#files)  |
+| LibreOffice | [![Download](https://api.bintray.com/packages/fusion809/AppImages/LibreOffice/images/download.svg)](https://bintray.com/fusion809/AppImages/LibreOffice/_latestVersion#files)  |
+| Terminix | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Terminix/images/download.svg)](https://bintray.com/fusion809/AppImages/Terminix/_latestVersion#files)  |
 
+1. As it appears on Bintray.
+
+## Introduction
 Significant upstream projects have started providing their own AppImages of releases and/or nightly/continuous builds, see this [list of upstream-provided AppImages](https://github.com/probonopd/AppImageKit/wiki/AppImages#upstream-appimages).
 
-This repository contains some recipes to generate __AppImages__ (portable Linux apps) using [AppImageKit](https://github.com/probonopd/appimagekit). See the [Bintray page](https://bintray.com/fusion809/AppImages) tab for downloads of the generated AppImages.
-
-__Recipes__ are the scripts used to create the AppImages.
+This repository contains some recipes to generate **AppImages** (portable Linux apps) using [AppImageKit](https://github.com/probonopd/appimagekit). See the [Bintray page](https://bintray.com/fusion809/AppImages) tab for downloads of the generated AppImages. **Recipes** are the shell scripts (specifically designed to be run by Bash) used to create the AppImages. This repository also contains some yaml files, which can be read by a type of specialized recipe to generate an AppImage. 
 
 ## Motivation
 
@@ -75,7 +81,7 @@ But we also target 32-bit systems like
 
 > Or actually you don't make binaries for debian stable because debian stable has libraries that are so old that anything that was built in the last century doesn't work. But you might make binaries for debian... whatever the codename is for unstable. And even that is a major pain because (...) debian has those rules that you are supposed to use shared libraries. Right.
 
-Note that the AppImage runs not only on debian stable, but even on debian __oldstable__ (which is wheezy at this time).
+Note that the AppImage runs not only on debian stable, but even on debian **oldstable** (which is wheezy at this time).
 
 Most likely it will run on others, too - and with some fine-tuning of the [recipe](https://github.com/fusion809/AppImages/blob/master/recipes/subsurface/Recipe) (i.e., bundling additional dependencies) even more.
 

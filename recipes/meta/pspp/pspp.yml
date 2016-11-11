@@ -1,0 +1,15 @@
+app: pspp
+
+ingredients:
+  dist:    precise
+  package: pspp
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ precise universe
+    - deb http://archive.ubuntu.com/ubuntu/ precise-updates universe
+  ppas:
+    - adamzammit/pspp
+
+script:
+  - rm *AppRun
+  - cp ../../pspp.AppRun .
+  - chmod a+x pspp.AppRun

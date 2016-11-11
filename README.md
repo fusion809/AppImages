@@ -10,6 +10,7 @@
 | Brackets | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Brackets/images/download.svg)](https://bintray.com/fusion809/AppImages/Brackets/_latestVersion#files)  |
 | code-oss | [![Download](https://api.bintray.com/packages/fusion809/AppImages/code-oss/images/download.svg)](https://bintray.com/fusion809/AppImages/code-oss/_latestVersion#files)  |
 | Geany | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Geany/images/download.svg)](https://bintray.com/fusion809/AppImages/Geany/_latestVersion#files)  |
+| gvim | [![Download](https://api.bintray.com/packages/fusion809/AppImages/gvim/images/download.svg)](https://bintray.com/fusion809/AppImages/gvim/_latestVersion#files)  |
 | LibreOffice | [![Download](https://api.bintray.com/packages/fusion809/AppImages/LibreOffice/images/download.svg)](https://bintray.com/fusion809/AppImages/LibreOffice/_latestVersion#files)  |
 | Terminix | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Terminix/images/download.svg)](https://bintray.com/fusion809/AppImages/Terminix/_latestVersion#files)  |
 

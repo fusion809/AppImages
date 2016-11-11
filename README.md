@@ -14,7 +14,7 @@
 | LibreOffice | [![Download](https://api.bintray.com/packages/fusion809/AppImages/LibreOffice/images/download.svg)](https://bintray.com/fusion809/AppImages/LibreOffice/_latestVersion#files)  |
 | Terminix | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Terminix/images/download.svg)](https://bintray.com/fusion809/AppImages/Terminix/_latestVersion#files)  |
 
-1. As it appears on Bintray.
+1. As its name appears on Bintray.
 
 ## Introduction
 Significant upstream projects have started providing their own AppImages of releases and/or nightly/continuous builds, see this [list of upstream-provided AppImages](https://github.com/probonopd/AppImageKit/wiki/AppImages#upstream-appimages).

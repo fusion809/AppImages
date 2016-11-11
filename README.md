@@ -7,6 +7,7 @@
 |--:|---|
 | Atom | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Atom/images/download.svg)](https://bintray.com/fusion809/AppImages/Atom/_latestVersion#files)  |
 | Atom_Beta | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Atom_Beta/images/download.svg)](https://bintray.com/fusion809/AppImages/Atom_Beta/_latestVersion#files)  |
+| Bluefish_Editor | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Bluefish_Editor/images/download.svg)](https://bintray.com/fusion809/AppImages/Bluefish_Editor/_latestVersion#files)  |
 | Brackets | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Brackets/images/download.svg)](https://bintray.com/fusion809/AppImages/Brackets/_latestVersion#files)  |
 | code-oss | [![Download](https://api.bintray.com/packages/fusion809/AppImages/code-oss/images/download.svg)](https://bintray.com/fusion809/AppImages/code-oss/_latestVersion#files)  |
 | Geany | [![Download](https://api.bintray.com/packages/fusion809/AppImages/Geany/images/download.svg)](https://bintray.com/fusion809/AppImages/Geany/_latestVersion#files)  |

@@ -1,5 +1,7 @@
 # AppImages [![discourse](https://img.shields.io/badge/forum-discourse-orange.svg)](http://discourse.appimage.org) [![Build Status](https://travis-ci.org/fusion809/AppImages.svg)](https://travis-ci.org/fusion809/AppImages)
 
+<i>**Note**: much of this README have been borrowed from the [upstream repository](https://github.com/probonopd/AppImages) from which this repository was forked.</i>
+
 ## Table of Bintray AppImages provided by fusion809
 | Application<sup>1</sup> |  |
 |--:|---|
@@ -16,7 +18,7 @@
 ## Introduction
 Significant upstream projects have started providing their own AppImages of releases and/or nightly/continuous builds, see this [list of upstream-provided AppImages](https://github.com/probonopd/AppImageKit/wiki/AppImages#upstream-appimages).
 
-This repository contains some recipes to generate **AppImages** (portable Linux apps) using [AppImageKit](https://github.com/probonopd/appimagekit). See the [Bintray page](https://bintray.com/fusion809/AppImages) tab for downloads of the generated AppImages. **Recipes** are the shell scripts (specifically designed to be run by Bash) used to create the AppImages. This repository also contains some yaml files, which can be read by a type of specialized recipe to generate an AppImage. 
+This repository contains some recipes to generate **AppImages** (portable Linux apps) using [AppImageKit](https://github.com/probonopd/appimagekit). See the [Bintray page](https://bintray.com/fusion809/AppImages) tab for downloads of the generated AppImages. **Recipes** are the shell scripts (specifically designed to be run by Bash) used to create the AppImages. This repository also contains some yaml files, which can be read by a type of specialized recipe to generate an AppImage.
 
 ## Motivation
 

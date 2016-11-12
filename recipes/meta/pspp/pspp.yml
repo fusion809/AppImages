@@ -1,15 +1,13 @@
 app: pspp
+union: true
 
 ingredients:
-  dist:    precise
-  package: pspp
+  dist: precise
   sources:
-    - deb http://archive.ubuntu.com/ubuntu/ precise universe
-    - deb http://archive.ubuntu.com/ubuntu/ precise-updates universe
+    - deb http://archive.ubuntu.com/ubuntu/ precise main universe
   ppas:
     - adamzammit/pspp
 
 script:
-  - rm *AppRun
-  - cp ../../pspp.AppRun .
-  - chmod a+x pspp.AppRun
+  - mv usr/lib/x86_64-linux-gnu/pspp/* usr/lib/x86_64-linux-gnu/
+  - mv usr/share/pspp/* usr/share/icons/hicolor

@@ -10,4 +10,6 @@ ingredients:
 
 script:
   - mv usr/lib/x86_64-linux-gnu/pspp/* usr/lib/x86_64-linux-gnu/
-  - mv usr/share/pspp/* usr/share/icons/hicolor
+  - rm *AppRun
+  - cp ../../pspp.AppRun .
+  - chmod a+x *AppRun

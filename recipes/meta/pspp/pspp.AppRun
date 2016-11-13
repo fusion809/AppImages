@@ -1,5 +1,6 @@
 #!/bin/bash
 HERE="$(dirname "$(readlink -f "${0}")")"
-export LD_LIBRARY_PATH=${HERE}/usr/lib/x86_64-linux-gnu/:${HERE}/usr/lib/x86_64-linux-gnu/pspp:$HERE/usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines:${HERE}/usr/lib/x86_64-linux-gnu/sasl2:$HERE/lib/x86_64-linux-gnu/:$HERE/usr/lib/:${HERE}/lib/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${HERE}/usr/lib/x86_64-linux-gnu/:$HERE/usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines:${HERE}/usr/lib/x86_64-linux-gnu/sasl2:$HERE/lib/x86_64-linux-gnu/:$HERE/usr/lib/:${HERE}/lib/:$LD_LIBRARY_PATH
 export PATH=${HERE}/usr/sbin:${HERE}/usr/bin:/bin:/sbin:$PATH
+export XDG_DATA_DIRS=$XDG_DATA_DIRS:/usr/share/pspp
 "${HERE}"/usr/bin/psppire.wrapper "$@"

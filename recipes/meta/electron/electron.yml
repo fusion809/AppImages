@@ -1,0 +1,24 @@
+app: electron
+
+ingredients:
+  script:
+    - URL=$(wget -q https://github.com/electron/electron/releases -O - | grep "linux-x64.zip" | head -n 1 | cut -d '"' -f 2)
+    - VER=$(echo $URL | cut -d '/' -f 6 | sed 's/v//g')
+    - echo $VER > VERSION
+    - wget -c https://github.com$URL
+    - rm -rf electron
+    - mkdir electron
+    - bsdtar -xf electron-v$VER-linux-x64.zip -C electron
+
+script:
+  - cp -r ../electron/* usr/bin/
+  - find . -name electron.png -exec cp {} electron.png \;
+  - cat > electron.desktop <<EOF
+  - [Desktop Entry]
+  - Type=Application
+  - Name=Electron
+  - Icon=electron
+  - Exec=electron %u
+  - Categories=Development;
+  - Comment=A framework on which desktop applications written in web languages can be built with a Chromium backbone.
+  - EOF

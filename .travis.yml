@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=atom
+  - RECIPE=gimp
 
 script:
 - bash -e travis.sh $RECIPE

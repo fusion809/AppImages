@@ -92,3 +92,5 @@ recipes/meta/scribus/Scribus
 recipes/meta/gchempaint/gchempaint
 recipes/meta/pspp/pspp
 recipes/meta/jmol/jmol
+recipes/meta/gimp/gimp
+recipes/gimp/GIMP

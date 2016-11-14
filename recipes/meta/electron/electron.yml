@@ -22,3 +22,4 @@ script:
   - Categories=Development;
   - Comment=A framework on which desktop applications written in web languages can be built with a Chromium backbone.
   - EOF
+  - wget -cq https://github.com/electron/electron/raw/master/default_app/icon.png -O electron.png

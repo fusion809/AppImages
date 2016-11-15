@@ -3,7 +3,6 @@ binpatch: true
 
 ingredients:
   packages:
-    - geany-plugins
     - geany
   dist:    jessie
   sources:

@@ -3,11 +3,12 @@ binpatch: true
 
 ingredients:
   package: geany-*
-  dist:    trusty
+  dist:    jessie
   sources:
-    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
-  ppas:
-    - geany-dev/ppa
+    - deb http://deb.debian.org/debian jessie main
+    - deb http://deb.debian.org/debian jessie-updates main
+    - deb http://security.debian.org jessie/updates main
+    - deb http://ftp.debian.org/debian jessie-backports main
 
 script:
   - cp ./usr/share/icons/hicolor/scalable/apps/geany.svg .

@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=electron
+  - RECIPE=geany
 
 script:
 - bash -e travis.sh $RECIPE

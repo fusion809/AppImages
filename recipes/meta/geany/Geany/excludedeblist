@@ -7,6 +7,7 @@
 # of these packages than what can safely be assumed to be part
 # of the base system. This is why we recommend oldstable
 # ingredients for AppImages
+apt
 apt-transport-https
 dbus
 debconf
@@ -17,6 +18,7 @@ fontconfig-config
 # gconf2 # elementary OS 0.4 Loki does NOT have libgconf-2-4
 # gconf2-common # elementary OS 0.4 Loki does NOT have libgconf-2-4
 # gconf-service # elementary OS 0.4 Loki does NOT have libgconf-2-4
+gvfs-backends # e.g., for Bluefish
 gksu
 glib-networking
 gstreamer1.0-plugins-base
@@ -51,7 +53,7 @@ libglu1-mesa
 # libgnutls26 cannot be expected to be eveywhere, e.g., KDE neon
 # libgpg-error0 gives non-fatal errors on many systems and is low-level, can it be expected to be everywhere?
 libgpg-error0
-___libgstreamer1.0-0
+# libgstreamer1.0-0
 libgtk2.0-0
 libgtk-3-0
 libnss3
@@ -63,6 +65,7 @@ libstdc++6
 libtasn1-6
 libwayland-egl1-mesa # e.g., OpenRA
 lsb-base
+libxcb1 # Workaround for: Fedora 25: undefined symbol: xcb_send_request_with_fds, https://github.com/probonopd/AppImages/issues/128 
 mime-support
 passwd
 udev

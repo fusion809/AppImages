@@ -4,6 +4,7 @@ binpatch: true
 ingredients:
   packages:
     - geany
+    - geany-plugins
   dist:    jessie
   sources:
     - deb http://deb.debian.org/debian jessie main

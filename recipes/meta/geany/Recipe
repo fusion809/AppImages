@@ -147,6 +147,10 @@ if [ ! -z "${_ingredients_dist}" ] ; then
 
   apt-get $OPTIONS update || true
   URLS=$(apt-get $OPTIONS -y install -t jessie-backports --print-uris $INSTALL | cut -d "'" -f 2 | grep -e "^http")
+  PANGOFT=$(wget -q http://cdn-fastly.deb.debian.org/debian/pool/main/p/pango1.0/ -O - | grep "libpangoft2" | head -n 1 | cut -d '"' -f 8)
+  PANGOC=$(wget -q http://cdn-fastly.deb.debian.org/debian/pool/main/p/pango1.0/ -O - | grep "libpangocairo" | head -n 1 | cut -d '"' -f 8)
+  wget -c http://cdn-fastly.deb.debian.org/debian/pool/main/p/pango1.0/$PANGOFT
+  wget -c http://cdn-fastly.deb.debian.org/debian/pool/main/p/pango1.0/$PANGOC
   for URL in $URLS ; do
     if [ ! -f $(basename "$URL") ] ; then
       wget -c $URL

@@ -1,0 +1,15 @@
+app: Geany
+binpatch: true
+
+ingredients:
+  packages:
+    - geany
+    - geany-plugins
+  dist:     trusty
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+  ppas:
+    - brentonhorne/geany2
+    
+script:
+  - cp ./usr/share/icons/hicolor/scalable/apps/geany.svg .

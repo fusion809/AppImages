@@ -2,7 +2,9 @@ app: Geany
 binpatch: true
 
 ingredients:
-  package: geany-*
+  packages:
+    - geany-plugins
+    - geany
   dist:    jessie
   sources:
     - deb http://deb.debian.org/debian jessie main

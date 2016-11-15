@@ -2,6 +2,7 @@
 
 # Halt on errors
 set -e
+set -x
 
 # Check dependencies
 which wget >/dev/null 2>&1 || ( echo wget missing && exit 1 )
@@ -74,7 +75,7 @@ cd ./$APP/
 
 if [ -d "./$APP.AppDir/" ] ; then
   rm -rf ./$APP.AppDir/
-fi 
+fi
 
 if [ ! -e functions.sh ] ; then
   wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
@@ -139,8 +140,13 @@ if [ ! -z "${_ingredients_dist}" ] ; then
     INSTALL="${_ingredients_package}"
   fi
 
+  # If packages are specifically listed, only install these, not a package with the name of the app
+  if [ ! -z "${_ingredients_packages[0]}" ] ; then
+    INSTALL=${_ingredients_packages[@]}
+  fi
+
   apt-get $OPTIONS update || true
-  URLS=$(apt-get $OPTIONS -y install --print-uris "$INSTALL" ${_ingredients_packages[@]} | cut -d "'" -f 2 | grep -e "^http")
+  URLS=$(apt-get $OPTIONS -y install -t jessie-backports --print-uris $INSTALL | cut -d "'" -f 2 | grep -e "^http")
   for URL in $URLS ; do
     if [ ! -f $(basename "$URL") ] ; then
       wget -c $URL
@@ -166,7 +172,28 @@ find . -path *icons* -path *256* -name "*$LOWERAPP*" -exec cp {} usr/share/icons
 find . -path *icons* -path *512* -name "*$LOWERAPP*" -exec cp {} usr/share/icons/hicolor/512x512/apps/ \; || true
 
 get_icon
-get_apprun
+
+if [ -z "${_union}" ] ; then
+  get_apprun
+else
+cat > AppRun <<\EOF
+#!/bin/sh
+HERE="$(dirname "$(readlink -f "${0}")")"
+export UNION_PRELOAD="${HERE}"
+export LD_PRELOAD="${HERE}/libunionpreload.so"
+export PATH="${HERE}"/usr/bin/:"${HERE}"/usr/sbin/:"${HERE}"/usr/games/:"${HERE}"/bin/:"${HERE}"/sbin/:"${PATH}"
+export LD_LIBRARY_PATH="${HERE}"/usr/lib/:"${HERE}"/usr/lib/i386-linux-gnu/:"${HERE}"/usr/lib/x86_64-linux-gnu/:"${HERE}"/usr/lib32/:"${HERE}"/usr/lib64/:"${HERE}"/lib/:"${HERE}"/lib/i386-linux-gnu/:"${HERE}"/lib/x86_64-linux-gnu/:"${HERE}"/lib32/:"${HERE}"/lib64/:"${LD_LIBRARY_PATH}"
+export PYTHONPATH="${HERE}"/usr/share/pyshared/:"${PYTHONPATH}"
+export XDG_DATA_DIRS="${HERE}"/usr/share/:"${XDG_DATA_DIRS}"
+export PERLLIB="${HERE}"/usr/share/perl5/:"${HERE}"/usr/lib/perl5/:"${PERLLIB}"
+export GSETTINGS_SCHEMA_DIR="${HERE}"/usr/share/glib-2.0/schemas/:"${GSETTINGS_SCHEMA_DIR}"
+export QT_PLUGIN_PATH="${HERE}"/usr/lib/qt4/plugins/:"${HERE}"/usr/lib/i386-linux-gnu/qt4/plugins/:"${HERE}"/usr/lib/x86_64-linux-gnu/qt4/plugins/:"${HERE}"/usr/lib32/qt4/plugins/:"${HERE}"/usr/lib64/qt4/plugins/:"${HERE}"/usr/lib/qt5/plugins/:"${HERE}"/usr/lib/i386-linux-gnu/qt5/plugins/:"${HERE}"/usr/lib/x86_64-linux-gnu/qt5/plugins/:"${HERE}"/usr/lib32/qt5/plugins/:"${HERE}"/usr/lib64/qt5/plugins/:"${QT_PLUGIN_PATH}"
+EXEC=$(grep -e '^Exec=.*' "${HERE}"/*.desktop | head -n 1 | cut -d "=" -f 2 | cut -d " " -f 1)
+exec "${EXEC}" $@
+EOF
+chmod a+x AppRun
+fi
+
 get_desktop
 
 # Prevent Qt from loading plugins from the system
@@ -196,13 +223,13 @@ fi
 
 # Some non-distribution provided applications have an absolute
 # path in the Exec= line which we remove for relocateability
-DESKTOP=$(find . -name *.desktop | head -n 1)
+DESKTOP=$(find . -name '*.desktop' | head -n 1)
 if [ -z "$DESKTOP" ] ; then
   echo "desktop file not found, aborting"
   exit 1
 else
-  ORIG=$(grep -o "^Exec=.*$" "${DESKTOP}" | cut -d " " -f 1)
-  REPL=$(basename $(grep -o "^Exec=.*$" "${DESKTOP}" | cut -d " " -f 1 | sed -e 's|Exec=||g'))
+  ORIG=$(grep -o "^Exec=.*$" "${DESKTOP}" | head -n 1| cut -d " " -f 1)
+  REPL=$(basename $(grep -o "^Exec=.*$" "${DESKTOP}" | head -n 1 | cut -d " " -f 1 | sed -e 's|Exec=||g'))
   sed -i -e 's|'"${ORIG}"'|Exec='"${REPL}"'|g' "${DESKTOP}"
 fi
 
@@ -225,6 +252,16 @@ if [ ! -z "${_binpatch}" ] ; then
   find usr/ -type f -exec sed -i -e 's@././/bin/env@/usr/bin/env@g' {} \;
 fi
 
+# Don't suffer from NIH; use LD_PRELOAD to override calls to /usr paths
+if [ ! -z "${_union}" ] ; then
+  mkdir -p usr/src/
+  wget -q "https://raw.githubusercontent.com/mikix/deb2snap/master/src/preload.c" -O - | \
+  sed -e 's|SNAPPY|UNION|g' | sed -e 's|SNAPP|UNION|g' | sed  -e 's|SNAP|UNION|g' | \
+  sed -e 's|snappy|union|g' > usr/src/libunionpreload.c
+  gcc -shared -fPIC usr/src/libunionpreload.c -o libunionpreload.so -ldl -DUNION_LIBNAME=\"libunionpreload.so\"
+  strip libunionpreload.so
+fi
+
 delete_blacklisted
 get_desktopintegration $LOWERAPP
 
@@ -242,5 +279,17 @@ fi
 # Go out of AppImage
 cd ..
 
-generate_type2_appimage
+# Get the ID of the last successful build on Travis CI
+ID=$(wget -q https://api.travis-ci.org/repos/probonopd/appimagetool/builds -O - | head -n 1 | sed -e 's|}|\n|g' | grep '"result":0' | head -n 1 | sed -e 's|,|\n|g' | grep '"id"' | cut -d ":" -f 2)
+# Get the transfer.sh URL from the logfile of the last successful build on Travis CI
+# Only Travis knows why build ID and job ID don't match and why the above doesn't give both...
+URL=$(wget -q "https://s3.amazonaws.com/archive.travis-ci.org/jobs/$((ID+1))/log.txt" -O - | grep "https://transfer.sh/.*/appimagetool" | tail -n 1 | sed -e 's|\r||g')
+if [ -z "$URL" ] ; then
+  URL=$(wget -q "https://s3.amazonaws.com/archive.travis-ci.org/jobs/$((ID+2))/log.txt" -O - | grep "https://transfer.sh/.*/appimagetool" | tail -n 1 | sed -e 's|\r||g')
+fi
+wget -c "$URL" -O appimagetool
+chmod a+x ./appimagetool
+VERSION=$VERSION ./appimagetool -n --bintray-user $BINTRAY_USER --bintray-repo $BINTRAY_REPO -v ./$APP.AppDir/
+mkdir -p ../out/
+mv *.AppImage* ../out/
 ls -lh ../out/*.AppImage

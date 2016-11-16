@@ -1,0 +1,19 @@
+app: CodeBlocks
+binpatch: true
+
+ingredients:
+  package: codeblocks
+  dist:    precise
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ precise main universe
+  ppas:
+    - damien-moore/codeblocks-stable
+
+script:
+  - cat > AppRun <<\EOF
+  - #!/bin/bash
+  - HERE="$(dirname "$(readlink -f "${0}")")"
+  - export LD_LIBRARY_PATH=${HERE}/usr/lib:${HERE}/usr/lib/x86_64-linux-gnu/:${HERE}/usr/lib/codeblocks:${HERE}/lib:${HERE}/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
+  - cd "${HERE}/usr"
+  - CODEBLOCKS_DATA_DIR="${HERE}/usr" "${HERE}/usr/bin/codeblocks.wrapper" "$@"
+  - EOF

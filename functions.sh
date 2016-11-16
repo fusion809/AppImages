@@ -1,7 +1,7 @@
 # This file is supposed to be sourced by each Recipe
 # that wants to use the functions contained herein
 # like so:
-# wget -q https://github.com/fusion809/AppImages/raw/master/functions.sh -O ./functions.sh
+# wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
 # . ./functions.sh
 
 # RECIPE=$(realpath "$0")
@@ -39,8 +39,8 @@ patch_usr()
 # Download AppRun and make it executable
 get_apprun()
 {
-  # wget -c https://github.com/fusion809/AppImageKit/releases/download/5/AppRun -O ./AppRun # 64-bit
-  wget -c https://github.com/fusion809/AppImageKit/releases/download/6/AppRun_6-x86_64 -O AppRun # 64-bit
+  # wget -c https://github.com/probonopd/AppImageKit/releases/download/5/AppRun -O ./AppRun # 64-bit
+  wget -c https://github.com/probonopd/AppImageKit/releases/download/6/AppRun_6-x86_64 -O AppRun # 64-bit
   chmod a+x AppRun
 }
 
@@ -71,7 +71,7 @@ move_lib()
 # Delete blacklisted files
 delete_blacklisted()
 {
-  BLACKLISTED_FILES=$(wget -q https://github.com/fusion809/AppImages/raw/master/excludelist -O - | sed '/^\s*$/d' | sed '/^#.*$/d')
+  BLACKLISTED_FILES=$(wget -q https://github.com/probonopd/AppImages/raw/master/excludelist -O - | sed '/^\s*$/d' | sed '/^#.*$/d')
   echo $BLACKLISTED_FILES
   for FILE in $BLACKLISTED_FILES ; do
     FOUND=$(find . -type f -name "${FILE}" 2>/dev/null)
@@ -98,7 +98,7 @@ glibc_needed()
 get_desktopintegration()
 {
   REALBIN=$(grep -o "^Exec=.*" *.desktop | sed -e 's|Exec=||g' | cut -d " " -f 1 | head -n 1)
-  wget -O ./usr/bin/$REALBIN.wrapper https://raw.githubusercontent.com/fusion809/AppImageKit/master/desktopintegration
+  wget -O ./usr/bin/$REALBIN.wrapper https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration
   chmod a+x ./usr/bin/$REALBIN.wrapper
 
   sed -i -e "s|^Exec=$REALBIN|Exec=$REALBIN.wrapper|g" $1.desktop
@@ -132,7 +132,7 @@ generate_appimage()
      exit 1
     fi
   fi
-  wget -c "https://github.com/fusion809/AppImageKit/releases/download/6/AppImageAssistant_6-x86_64.AppImage" -O  AppImageAssistant # (64-bit)
+  wget -c "https://github.com/probonopd/AppImageKit/releases/download/6/AppImageAssistant_6-x86_64.AppImage" -O  AppImageAssistant # (64-bit)
   chmod a+x ./AppImageAssistant
   mkdir -p ../out
   rm ../out/$APP"-"$VERSION"-x86_64.AppImage" 2>/dev/null || true
@@ -143,16 +143,28 @@ generate_appimage()
 generate_type2_appimage()
 {
   # Get the ID of the last successful build on Travis CI
-  ID=$(wget -q https://api.travis-ci.org/repos/fusion809/appimagetool/builds -O - | head -n 1 | sed -e 's|}|\n|g' | grep '"result":0' | head -n 1 | sed -e 's|,|\n|g' | grep '"id"' | cut -d ":" -f 2)
+  # ID=$(wget -q https://api.travis-ci.org/repos/probonopd/appimagetool/builds -O - | head -n 1 | sed -e 's|}|\n|g' | grep '"result":0' | head -n 1 | sed -e 's|,|\n|g' | grep '"id"' | cut -d ":" -f 2)
   # Get the transfer.sh URL from the logfile of the last successful build on Travis CI
   # Only Travis knows why build ID and job ID don't match and why the above doesn't give both...
-  URL=$(wget -q "https://s3.amazonaws.com/archive.travis-ci.org/jobs/$((ID+1))/log.txt" -O - | grep "https://transfer.sh/.*/appimagetool" | tail -n 1 | sed -e 's|\r||g')
-  if [ -z "$URL" ] ; then
-    URL=$(wget -q "https://s3.amazonaws.com/archive.travis-ci.org/jobs/$((ID+2))/log.txt" -O - | grep "https://transfer.sh/.*/appimagetool" | tail -n 1 | sed -e 's|\r||g')
-  fi
+  # URL=$(wget -q "https://s3.amazonaws.com/archive.travis-ci.org/jobs/$((ID+1))/log.txt" -O - | grep "https://transfer.sh/.*/appimagetool" | tail -n 1 | sed -e 's|\r||g')
+  # if [ -z "$URL" ] ; then
+  #   URL=$(wget -q "https://s3.amazonaws.com/archive.travis-ci.org/jobs/$((ID+2))/log.txt" -O - | grep "https://transfer.sh/.*/appimagetool" | tail -n 1 | sed -e 's|\r||g')
+  # fi
+  URL="https://github.com/probonopd/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
   wget -c "$URL" -O appimagetool
   chmod a+x ./appimagetool
-  VERSION=$VERSION ./appimagetool --bintray-user $BINTRAY_USER --bintray-repo $BINTRAY_REPO -v ./$APP.AppDir/
+  set +x
+  if ( [ ! -z "$KEY" ] ) && ( ! -z "$TRAVIS" ) ; then
+    wget https://github.com/probonopd/AppImageKit/files/584665/data.zip -O data.tar.gz.gpg
+    ( set +x ; echo $KEY | gpg2 --batch --passphrase-fd 0 --no-tty --skip-verify --output data.tar.gz --decrypt data.tar.gz.gpg )
+    tar xf data.tar.gz
+    sudo chown -R $USER .gnu*
+    mv $HOME/.gnu* $HOME/.gnu_old ; mv .gnu* $HOME/
+    VERSION=$VERSION ./appimagetool -s --bintray-user $BINTRAY_USER --bintray-repo $BINTRAY_REPO -v ./$APP.AppDir/
+  else
+    VERSION=$VERSION ./appimagetool --bintray-user $BINTRAY_USER --bintray-repo $BINTRAY_REPO -v ./$APP.AppDir/
+  fi
+  set -x
   mkdir -p ../out/
   mv *.AppImage* ../out/
 }
@@ -165,7 +177,7 @@ generate_status()
   mkdir -p ./tmp/archives/
   mkdir -p ./tmp/lists/partial
   touch tmp/pkgcache.bin tmp/srcpkgcache.bin
-  wget -q -c "https://github.com/fusion809/AppImages/raw/master/excludedeblist"
+  wget -q -c "https://github.com/probonopd/AppImages/raw/master/excludedeblist"
   rm status 2>/dev/null || true
   for PACKAGE in $(cat excludedeblist | cut -d "#" -f 1) ; do
     printf "Package: $PACKAGE\nStatus: install ok installed\nArchitecture: all\nVersion: 9:999.999.999\n\n" >> status

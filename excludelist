@@ -100,7 +100,7 @@ libkrb5.so.3
 libkrb5support.so.0
 libm.so.6
 libp11-kit.so.0
-libpcre.so.3
+# libpcre.so.3 # Missing on Fedora 24
 libpthread.so.0
 libresolv.so.2
 libroken.so.18
@@ -136,3 +136,9 @@ libgpg-error.so.0
 # https://github.com/probonopd/linuxdeployqt/issues/35#issuecomment-256213517
 # and https://github.com/probonopd/AppImages/pull/114
 # libnss3.so
+
+# Workaround for:
+# Fedora 25:
+# undefined symbol: xcb_send_request_with_fds
+# https://github.com/probonopd/AppImages/issues/128
+libxcb.so.1

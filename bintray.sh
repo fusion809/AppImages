@@ -12,7 +12,7 @@ FILE="$1"
 [ -f "$FILE" ] || { echo "File '$FILE' doesn't exist"; exit; }
 
 PCK_NAME="$(basename "$1")"
-BINTRAY_USER="${BINTRAY_USER:-probono}"
+BINTRAY_USER="${BINTRAY_USER:-fusion809}"
 BINTRAY_API_KEY="$BINTRAY_API_KEY" # env
 BINTRAY_REPO="${BINTRAY_REPO:-AppImages}"
 BINTRAY_REPO_OWNER="${BINTRAY_REPO_OWNER:-$BINTRAY_USER}" # owner and user not always the same

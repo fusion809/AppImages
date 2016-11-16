@@ -1,7 +1,7 @@
 #!/bin/bash
 # Octave recipe
 
-yum -y install wget git
+yum -y install wget
 wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
 
@@ -14,20 +14,6 @@ git_pull_rebase_helper
 cd ..
 
 yum -y install binutils fuse glibc-devel glib2-devel fuse-devel gcc zlib-devel libpng12 cmake
-
-# Build AppImageKit
-if [ ! -d AppImageKit ] ; then
-  git clone https://github.com/probonopd/AppImageKit.git
-fi
-cd AppImageKit/
-git_pull_rebase_helper
-cmake .
-make clean
-make
-cd ..
-
-
-#end
 
 APP=Octave
 mkdir -p /$APP/$APP.AppDir/
@@ -128,6 +114,7 @@ rm -f ../out/*.AppImage || true
 
 # Convert the AppDir into an AppImage
 rm -rf $APPIMAGE
-../AppImageKit/AppImageAssistant.AppDir/package ./$APP.AppDir/ ../out/$APPIMAGE
+wget -c "https://github.com/probonopd/AppImageKit/releases/download/5/AppImageAssistant" # (64-bit)
+chmod a+x ./AppImageAssistant ./$APP.AppDir/ ../out/$APPIMAGE
 
 chmod a+rwx ../out/$APPIMAGE # So that we can edit the AppImage outside of the Docker container

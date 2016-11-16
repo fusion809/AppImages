@@ -24,12 +24,12 @@ VER1=4.2.0
 
 yum -y install epel-release gcc-gfortran pcre-devel blas-devel lapack-devel readline-devel fftw-devel zlib-devel \
 gnuplot-devel qhull-devel glpk-devel curl-devel qrupdate-devel suitesparse-devel \
-arpack-devel mesa-libGLU-devel mesa-libGL-devel bsdtar mesa-libOSMesa-devel freetype-devel fontconfig-devel \
+arpack-devel mesa-libGLU-devel mesa-libGL-devel lzip tar mesa-libOSMesa-devel freetype-devel fontconfig-devel \
 hdf5-devel gnuplot texinfo java-1.8.0-openjdk-devel fltk-devel qt-devel \
 gperf flex bison ghostscript texinfo-text texinfo-tex icoutils librsvg2 gl2ps-devel qscintilla-devel desktop-file-utils fuse-libs \
 
 wget -c "$URL"
-bsdtar -xf octave-*.tar.lz
+tar --lzip -xvf octave-*.tar.lz
 
 cd octave-*
 

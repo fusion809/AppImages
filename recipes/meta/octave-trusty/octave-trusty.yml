@@ -7,13 +7,14 @@ ingredients:
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
   ppas:
-    - octave/stable
+    - brentonhorne/octave
 
 script:
   - sed -i -e 's|/usr/bin/||g' www.octave.org-octave.desktop
   - mv www.octave.org-octave.desktop octave.desktop
-  - mv usr/lib/x86_64-linux-gnu/octave/* usr/lib/x86_64-linux-gnu/
-  - mv usr/lib/x86_64-linux-gnu/4.0.2/exec/x86_64-pc-linux-gnu/* usr/lib/x86_64-linux-gnu/
-  - mv usr/lib/x86_64-linux-gnu/4.0.2/oct/x86_64-pc-linux-gnu/* usr/lib/x86_64-linux-gnu/
-  - mkdir -p usr/lib/x86_64-linux-gnu/octave/4.0.2/exec/x86_64-pc-linux-gnu/
-  - ln -sf usr/lib/x86_64-linux-gnu/octave-gui usr/lib/x86_64-linux-gnu/octave/4.0.2/exec/x86_64-pc-linux-gnu/octave-gui
+#  - mv usr/lib/x86_64-linux-gnu/octave/* usr/lib/x86_64-linux-gnu/
+#  - mv usr/lib/x86_64-linux-gnu/4.*/exec/x86_64-pc-linux-gnu/* usr/lib/x86_64-linux-gnu/
+#  - mv usr/lib/x86_64-linux-gnu/4.*/oct/x86_64-pc-linux-gnu/* usr/lib/x86_64-linux-gnu/
+#  - mkdir -p usr/lib/x86_64-linux-gnu/octave/4.*/exec/x86_64-pc-linux-gnu/
+#  - ln -sf usr/lib/x86_64-linux-gnu/octave-gui usr/lib/x86_64-linux-gnu/octave/4.*/exec/x86_64-pc-linux-gnu/octave-gui
+  - cp ./usr/share/octave/4.*/imagelib/octave-logo.svg octave.svg

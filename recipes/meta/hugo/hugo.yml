@@ -1,0 +1,22 @@
+app: hugo
+
+ingredients:
+  script:
+    - TAR=$(wget -q https://github.com/spf13/hugo/releases/ -O - | grep "Linux-64bit.tar.gz" | grep href |  head -n 1 | cut -d '"' -f 2)
+    - VERSION=$(echo $TAR | cut -d '/' -f 6 | sed 's/v//g')
+    - wget -c https://github.com/$TAR
+    - echo $VERSION > VERSION
+    - tar zxvf hugo*.tar.gz
+
+script:
+  - cp -r ../hugo-*/* usr/bin/
+  - find . -name hugo.png -exec cp {} hugo.png \;
+  - cat > hugo.desktop <<EOF
+  - [Desktop Entry]
+  - Type=Application
+  - Name=Hugo
+  - Icon=hugo
+  - Exec=hugo %u
+  - Categories=SSG;Network;
+  - Comment=A fast and flexible static site generator written in Go.
+  - EOF

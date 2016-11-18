@@ -97,3 +97,5 @@ recipes/gimp/GIMP
 recipes/meta/electron/electron
 recipes/meta/geany-trusty/Geany
 recipes/meta/codeblocks-precise/CodeBlocks
+recipes/meta/jekyll/jekyll
+recipes/meta/hugo/hugo

@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=codeblocks-precise
+  - RECIPE=calibre
 
 script:
 - bash -e travis.sh $RECIPE

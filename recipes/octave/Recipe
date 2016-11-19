@@ -31,7 +31,7 @@ http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/x86_64/rpmforge/RPMS/lzip-
 
 yum-builddep octave
 
-wget http://ftpmirror.gnu.org/gcc/gcc-5.2.0/gcc-5.2.0.tar.bz2
+wget ftp://ftp.gnu.org/gnu/gcc/gcc-5.4.0/gcc-5.4.0.tar.bz2
 tar xf gcc-5.2.0.tar.bz2
 
 wget https://gmplib.org/download/gmp/gmp-6.0.0a.tar.xz

@@ -37,14 +37,23 @@ tar xf gcc-5.2.0.tar.bz2
 wget https://gmplib.org/download/gmp/gmp-6.0.0a.tar.xz
 tar xf gmp-6.0.0a.tar.xz
 mv gmp-6.0.0 gcc-5.2.0/gmp
+cd gcc-5.2.0/gmp
+./configure --prefix=/usr && make && make install
+cd ../..
 
 wget ftp://ftp.gnu.org/gnu/mpc/mpc-1.0.3.tar.gz
 tar xf mpc-1.0.3.tar.gz
 mv mpc-1.0.3 gcc-5.2.0/mpc
+cd gcc-5.2.0/mpc
+./configure --prefix=/usr && make && make install
+cd ../..
 
 wget http://www.mpfr.org/mpfr-current/mpfr-3.1.5.tar.xz
 tar xf mpfr-3.1.5.tar.xz
 mv mpfr-3.1.5 gcc-5.2.0/mpfr
+cd gcc-5.2.0/mpfr
+./configure --prefix=/usr && make && make install
+cd ../..
 
 mkdir gcc-5.2.0/gcc-build && cd gcc-5.2.0/gcc-build
 

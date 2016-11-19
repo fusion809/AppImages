@@ -49,17 +49,17 @@ mv mpfr-3.1.3 gcc-5.2.0/mpfr
 mkdir gcc-5.2.0/gcc-build && cd gcc-5.2.0/gcc-build
 
 # I don't have root privilege, so install to a subdir in my home directory
-../configure --prefix=$HOME/gcc5 </span>
-             --disable-multilib </span>
-             --enable-languages=c,c++ </span>
-             --enable-libstdcxx-threads </span>
-             --enable-libstdcxx-time </span>
-             --enable-shared </span>
-             --enable-__cxa_atexit </span>
-             --disable-libunwind-exceptions </span>
-             --disable-libada </span>
-             --host x86_64-redhat-linux-gnu </span>
-             --build x86_64-redhat-linux-gnu </span>
+../configure --prefix=$HOME/gcc5 \
+             --disable-multilib \
+             --enable-languages=c,c++ \
+             --enable-libstdcxx-threads \
+             --enable-libstdcxx-time \
+             --enable-shared \
+             --enable-__cxa_atexit \
+             --disable-libunwind-exceptions \
+             --disable-libada \
+             --host x86_64-redhat-linux-gnu \
+             --build x86_64-redhat-linux-gnu \
              --with-default-libstdcxx-abi=gcc4-compatible
 
 # For clusters, you should request a compute node in slurm to do the compilation. Don't do these in head node

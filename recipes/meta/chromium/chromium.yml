@@ -1,0 +1,17 @@
+app: Chromium
+
+ingredients:
+  dist: trusty
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ trusty-security universe
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+  packages:
+    - chromium-browser
+  script:
+    - VERSION=$(wget -c http://archive.ubuntu.com/ubuntu/pool/universe/c/chromium-browser/ -qO- | grep "chromium-browser_"  | cut -d '"' -f 8 | tail -n 1 | sed 's/chromium-browser_//g' | sed 's/.orig.tar.xz//g')
+    - echo $VERSION > VERSION
+
+script:
+  - cp ./usr/share/applications/chromium-browser.desktop chromium.desktop
+  - sed -i -e 's/Icon=chromium-browser/Icon=chromium/g' chromium.desktop
+  - cp ./usr/share/pixmaps/chromium-browser.png chromium.png

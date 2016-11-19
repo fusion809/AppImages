@@ -1,4 +1,5 @@
 app: Chromium
+binpatch: true
 
 ingredients:
   dist: trusty

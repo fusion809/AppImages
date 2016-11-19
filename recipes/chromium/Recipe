@@ -54,7 +54,7 @@ EOF
 VERSION=$(strings ./chrome-linux/chrome | grep -e Chrome_Linux -C 5 | grep -e "^[0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+")
 
 mkdir -p usr/share/metainfo/
-wget -c --trust-server-names https://github.com/hughsie/fedora-appstream/raw/master/appdata-extra/desktop/chromium.appdata.xml -O usr/share/metainfo/chromium.appdata.xml
+wget -c --trust-server-names https://github.com/hughsie/fedora-appstream/raw/61570fa1809055074dfaf7a760d768ab074a0d56/appdata-extra/desktop/chromium.appdata.xml -O usr/share/metainfo/chromium.appdata.xml
 
 cd ..
 

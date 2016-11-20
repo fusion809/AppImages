@@ -10,6 +10,8 @@ ingredients:
     - autoconf
     - ./configure --enable-64 --enable-native-build --enable-pic-flag host_alias=gnu-linux --enable-openblas --enable-jit
     - make
+    - make openblas
+    - (cd ./usr/lib && mv libblas.so libblas.so.reference && ln -s libopenblas.so libblas.so)
 
 script:
   - cp -a ../octave*/usr .

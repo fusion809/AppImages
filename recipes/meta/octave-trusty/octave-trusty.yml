@@ -2,7 +2,9 @@ app: Octave
 union: true
 
 ingredients:
-  package: octave
+  packages:
+    - octave
+    - libcurl3-gnutls
   dist:    trusty
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
@@ -12,4 +14,9 @@ ingredients:
 script:
   - sed -i -e 's|/usr/bin/||g' www.octave.org-octave.desktop
   - mv www.octave.org-octave.desktop octave.desktop
-  - cp ./usr/share/octave/4.*/imagelib/octave-logo.svg octave.svg
+  - mv ./usr/lib/x86_64-linux-gnu/octave/*/*.so* ./usr/lib/x86_64-linux-gnu/
+  - mv ./usr/lib/lapack/*.so* ./usr/lib/ # Why don't they put it there?
+  - mv ./usr/lib/libblas/*.so* ./usr/lib/ # Why don't they put it there?
+  - ( cd usr/lib/ ; ln -s libblas.so.3 libblas.so.3gf ) # What stupidity is this?
+  - ( cd usr/lib/ ; ln -s liblapack.so.3 liblapack.so.3gf ) # What stupidity is this?
+  - cp ./usr/share/octave/4.2.0/imagelib/octave-logo.svg octave.svg

@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=chromium
+  - RECIPE=octave-trusty
 
 script:
 - bash -e travis.sh $RECIPE

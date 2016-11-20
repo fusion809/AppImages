@@ -1,0 +1,15 @@
+app: Octave
+
+ingredients:
+  script:
+    - apt-get install -y apt-get install autoconf automake autopoint bash bison bzip2 flex gettext git g++ gperf intltool libffi-dev \
+    - libgdk-pixbuf2.0-dev libtool libltdl-dev libssl-dev libxml-parser-perl make openssl p7zip-full patch perl pkg-config python \
+    - ruby scons sed unzip wget xz-utils g++-multilib libc6-dev-i386
+    - wget -cqO- http://hg.octave.org/mxe-octave/archive/tip.tar.bz2 | tar xj
+    - cd mxe-octave*
+    - autoconf
+    - ./configure --enable-64 --enable-native-build --enable-pic-flag host_alias=gnu-linux --enable-openblas --enable-jit
+    - make
+
+script:
+  - cp -a ../octave*/usr .

@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=octave-trusty
+  - RECIPE=geany-centos7
 
 script:
 - bash -e travis.sh $RECIPE

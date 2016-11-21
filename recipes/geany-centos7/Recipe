@@ -19,7 +19,7 @@ if [ ! -d AppImageKit ] ; then
   git clone https://github.com/probonopd/AppImageKit.git
 fi
 cd AppImageKit/
-./build.sh
+#./build.sh
 cd ..
 
 ############################### Determine Geany version ################################

@@ -1,0 +1,103 @@
+#!/bin/bash
+
+yum install -y git gcc gcc-c++ xz libtool make bzip2 perl wget sudo squashfs-tools fuse fuse-libs fuseiso lzma \
+               yum-utils gtk-doc epel-release libffi-devel # yum-utils provides yum-builddep; gtk-doc required by glib build; libffi-devel is required for glib's build
+
+yum-builddep -y geany geany-plugins
+
+wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+. ./functions.sh
+
+# Build AppImageKit
+if [ ! -d AppImageKit ] ; then
+  git clone https://github.com/probonopd/AppImageKit.git
+fi
+cd AppImageKit/
+./build.sh
+cd ..
+
+GEANY_VERSION=$(curl -sL https://github.com/geany/geany/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g')
+
+# Get geany and build it
+curl -sL https://github.com/geany/geany/archive/$GEANY_VERSION.tar.gz | tar xz --transform="s/geany-$GEANY_VERSION/geany/"
+cd geany
+./autogen.sh --prefix=/AppDir/usr --enable-binreloc --disable-html-docs
+make
+make install
+cd ..
+
+# Get geany plugins and build them
+curl -sL https://github.com/geany/geany-plugins/archive/$GEANY_VERSION.tar.gz | tar xz --transform="s/geany-plugins-$GEANY_VERSION/geany-plugins/"
+cd geany-plugins
+./autogen.sh --prefix=/AppDir/usr --enable-binreloc --disable-html-docs
+make
+make install
+cd ..
+
+
+############## Compilation and installation succeeded ##############
+
+cd /AppDir/
+
+cp ./usr/share/applications/geany.desktop .
+cp ./usr/share/icons/hicolor/scalable/apps/geany.svg .
+
+# Strip executables; greatly reduces AppImage size
+find . -type f -executable -exec strip {} \;
+
+# Copy dependency libraries
+mkdir -p ./usr/lib
+ldd usr/bin/geany | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./usr/lib || true
+
+# Delete blacklisted files; TODO: Move to a library function
+BLACKLISTED_FILES=$(curl -sL https://github.com/probonopd/AppImages/raw/master/excludelist | sed '/^\s*$/d' | sed '/^#.*$/d')
+echo $BLACKLISTED_FILES
+for FILE in $BLACKLISTED_FILES ; do
+  FOUND=$(find . -type f -name "${FILE}" 2>/dev/null)
+  if [ ! -z "$FOUND" ] ; then
+    echo "Deleting blacklisted ${FOUND}"
+    rm -f "${FOUND}"
+  fi
+done
+
+curl -OL "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
+chmod a+x ./AppRun
+
+VER1=$(./usr/bin/geany --version | cut -d " " -f 2)
+VER2=$(./usr/bin/geany --version | cut -d " " -f 3)
+GLIBC_NEEDED=$(find . -type f -executable -exec strings {} \; | grep ^GLIBC_2 | sed s/GLIBC_//g | sort --version-sort | uniq | tail -n 1)
+VERSION=$VER1.$VER2.glibc$GLIBC_NEEDED
+echo $VERSION
+
+cp ./usr/share/icons/hicolor/256x256/apps/geany.png .
+
+# AppImageAssistant picks up too small icon if we leave these in (FIXME)
+rm -rf usr/share/icons/hicolor/16x16/ usr/share/icons/hicolor/22x22/ usr/share/icons/hicolor/24x24/ usr/share/icons/hicolor/32x32/ usr/share/icons/hicolor/48x48/
+
+APP=geany
+
+# Add desktop integration
+XAPP=geany
+curl -L https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration > ./usr/bin/$XAPP.wrapper
+chmod a+x ./usr/bin/$XAPP.wrapper
+sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $XAPP.desktop
+
+# Go out of AppImage
+cd ..
+
+if [[ "$ARCH" = "x86_64" ]] ; then
+	APPIMAGE=$APP"-"$VERSION"-x86_64.AppImage"
+fi
+if [[ "$ARCH" = "i686" ]] ; then
+	APPIMAGE=$APP"-"$VERSION"-i386.AppImage"
+fi
+
+# Put this script into the AppImage for debugging
+# FIXME: The follwing line does not work
+# cp $(readlink --canonicalize $0) ./$APP.AppDir/$APP.recipe
+
+mkdir -p ../out
+
+rm -f ../out/*.AppImage || true
+
+generate_appimage

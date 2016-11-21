@@ -15,12 +15,12 @@ wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./func
 . ./functions.sh
 
 ############################## Get and build AppImageKit ###############################
-if [ ! -d AppImageKit ] ; then
-  git clone https://github.com/probonopd/AppImageKit.git
-fi
-cd AppImageKit/
+#if [ ! -d AppImageKit ] ; then
+#  git clone https://github.com/probonopd/AppImageKit.git
+#fi
+#cd AppImageKit/
 #./build.sh
-cd ..
+#cd ..
 
 ############################### Determine Geany version ################################
 GEANY_VERSION=$(curl -sL https://github.com/geany/geany/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g')

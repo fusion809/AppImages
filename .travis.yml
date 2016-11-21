@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=geany-centos7
+  - RECIPE=atom
 
 script:
 - bash -e travis.sh $RECIPE

@@ -76,11 +76,6 @@ GLIBC_NEEDED=$(find . -type f -executable -exec strings {} \; | grep ^GLIBC_2 | 
 VERSION=$VER1.$VER2.glibc$GLIBC_NEEDED
 echo $VERSION
 
-cp ./usr/share/icons/hicolor/256x256/apps/geany.png .
-
-# AppImageAssistant picks up too small icon if we leave these in (FIXME)
-rm -rf usr/share/icons/hicolor/16x16/ usr/share/icons/hicolor/22x22/ usr/share/icons/hicolor/24x24/ usr/share/icons/hicolor/32x32/ usr/share/icons/hicolor/48x48/
-
 APP=geany
 
 # Add desktop integration

@@ -41,3 +41,4 @@ script:
   - Comment=NetBeans IDE
   - EOF
   - cp ./usr/bin/nb/netbeans.png netbeans.png
+  - ldd usr/bin/netbeans | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./usr/lib || true

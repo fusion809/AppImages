@@ -8,19 +8,7 @@ yum install -y git gcc gcc-c++ xz libtool make bzip2 perl wget sudo lzma # base 
 yum install -y squashfs-tools fuse fuse-devel fuse-libs fuseiso          # tools for building and using AppImageKit
 yum install -y yum-utils epel-release                                    # yum-utils provides yum-builddep;
 
-yum-builddep -y geany geany-plugins # install build dependencies for geany and geany-plugins
-
-############################## Get and load functions.sh ###############################
-wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
-. ./functions.sh
-
-############################## Get and build AppImageKit ###############################
-#if [ ! -d AppImageKit ] ; then
-#  git clone https://github.com/probonopd/AppImageKit.git
-#fi
-#cd AppImageKit/
-#./build.sh
-#cd ..
+yum-builddep -y geany geany-plugins                                      # install build dependencies for geany and geany-plugins
 
 ############################### Determine Geany version ################################
 GEANY_VERSION=$(curl -sL https://github.com/geany/geany/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g')
@@ -70,11 +58,9 @@ done
 curl -OL "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
 chmod a+x ./AppRun
 
-VER1=$(./usr/bin/geany --version | cut -d " " -f 2)
-VER2=$(./usr/bin/geany --version | cut -d " " -f 3)
 GLIBC_NEEDED=$(find . -type f -executable -exec strings {} \; | grep ^GLIBC_2 | sed s/GLIBC_//g | sort --version-sort | uniq | tail -n 1)
-VERSION=$VER1.$VER2.glibc$GLIBC_NEEDED
-echo $VERSION
+VERSION=$GEANY_VERSION.glibc$GLIBC_NEEDED
+echo "VERSION is $VERSION"
 
 APP=geany
 
@@ -95,12 +81,10 @@ if [[ "$ARCH" = "i686" ]] ; then
 	APPIMAGE=$APP"-"$VERSION"-i386.AppImage"
 fi
 
-# Put this script into the AppImage for debugging
-# FIXME: The follwing line does not work
-# cp $(readlink --canonicalize $0) ./$APP.AppDir/$APP.recipe
+mkdir -p /out
 
-mkdir -p ../out
+rm -f /out/*.AppImage || true
 
-rm -f ../out/*.AppImage || true
-
-generate_appimage
+curl -sL "https://github.com/probonopd/AppImageKit/releases/download/6/AppImageAssistant_6-x86_64.AppImage" > AppImageAssistant
+chmod a+x AppImageAssistant
+./AppImageAssistant ./AppDir/ /out/$APP"-"$VERSION"-"$ARCH".AppImage"

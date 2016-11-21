@@ -1,14 +1,20 @@
 #!/bin/bash
 
-yum install -y git gcc gcc-c++ xz libtool make bzip2 perl wget sudo squashfs-tools fuse fuse-libs fuseiso lzma \
-               yum-utils gtk-doc epel-release libffi-devel # yum-utils provides yum-builddep; gtk-doc required by glib build; libffi-devel is required for glib's build
+# Exit on errors
+set -e
 
-yum-builddep -y geany geany-plugins
+################################### Get Dependencies ###################################
+yum install -y git gcc gcc-c++ xz libtool make bzip2 perl wget sudo lzma # base building tools
+yum install -y squashfs-tools fuse fuse-devel fuse-libs fuseiso          # tools for building and using AppImageKit
+yum install -y yum-utils epel-release                                    # yum-utils provides yum-builddep;
 
+yum-builddep -y geany geany-plugins # install build dependencies for geany and geany-plugins
+
+############################## Get and load functions.sh ###############################
 wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
 
-# Build AppImageKit
+############################## Get and build AppImageKit ###############################
 if [ ! -d AppImageKit ] ; then
   git clone https://github.com/probonopd/AppImageKit.git
 fi
@@ -16,6 +22,7 @@ cd AppImageKit/
 ./build.sh
 cd ..
 
+############################### Determine Geany version ################################
 GEANY_VERSION=$(curl -sL https://github.com/geany/geany/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g')
 
 # Get geany and build it
@@ -85,6 +92,7 @@ sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $XAPP.desktop
 # Go out of AppImage
 cd ..
 
+ARCH=x86_64
 if [[ "$ARCH" = "x86_64" ]] ; then
 	APPIMAGE=$APP"-"$VERSION"-x86_64.AppImage"
 fi

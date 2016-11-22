@@ -33,7 +33,7 @@ cd ..
 
 cd /AppDir/
 
-cat > inkscape.desktop <<\EOF
+cat > gvim.desktop <<\EOF
 [Desktop Entry]
 Version=1.0
 Name=gVim

@@ -15,9 +15,19 @@ yum-builddep -y transmission                                             # get t
 
 VERSION=$(wget -q https://github.com/transmission/transmission-releases -O - | grep "tar.xz" | cut -d '"' -f 4 | tail -n 1 | cut -d '/' -f 6 | sed 's/[a-z-]//g' | sed 's/\.\.//g')
 
-if [[ -d /transmission ]]; then
+if ! [[ -d /transmission ]]; then
   wget -cO- https://github.com/transmission/transmission-releases/raw/master/transmission-$VERSION.tar.xz | tar xz --transform="s/transmission-$VERSION/transmission/"
 fi
+
+if [[ -d /AppDir/usr ]]; then
+  rm -rf /AppDir/usr
+fi
+
+mkdir -p /AppDir/usr
+cd transmission
+./configure --prefix=/AppDir/usr
+make
+make install
 
 # Determine which architecture should be built
 if [[ "$(/bin/arch)" = "i686" ||  "$(/bin/arch)" = "x86_64" ]] ; then

@@ -44,7 +44,7 @@ cat > $APP.desktop <<\EOF
 Version=1.0
 Name=Transmission
 Icon=transmission
-Exec=transmission %U
+Exec=transmission-gtk %U
 Type=Application
 MimeType=application/x-bittorrent;x-scheme-handler/magnet;
 Categories=Network;FileTransfer;P2P;GTK;

@@ -8,7 +8,7 @@ yum install -y git gcc gcc-c++ xz libtool make bzip2 perl wget lzma # base build
 yum install -y squashfs-tools fuse fuse-devel fuse-libs fuseiso          # tools for building and using AppImageKit
 yum install -y yum-utils epel-release                                    # yum-utils provides yum-builddep;
 
-yum-builddep -y gvim                                                     # install build dependencies for gvim
+yum-builddep -y vim                                                      # install build dependencies for gvim
 
 ################################ Determine Vim version #################################
 VIM_VERSION=$(curl -sL https://github.com/vim/vim/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g' | sed 's|v||g')

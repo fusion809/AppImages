@@ -39,8 +39,6 @@ fi
 
 cd /AppDir/
 
-cd usr/bin && ln -sf transmission-gtk transmission && cd ../..
-
 cat > $XAPP.desktop <<\EOF
 [Desktop Entry]
 Version=1.0

@@ -39,12 +39,14 @@ fi
 
 cd /AppDir/
 
+cd usr/bin && ln -sf transmission-gtk transmission && cd ../..
+
 cat > $APP.desktop <<\EOF
 [Desktop Entry]
 Version=1.0
 Name=Transmission
 Icon=transmission
-Exec=transmission-gtk %U
+Exec=transmission %U
 Type=Application
 MimeType=application/x-bittorrent;x-scheme-handler/magnet;
 Categories=Network;FileTransfer;P2P;GTK;

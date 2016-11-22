@@ -11,17 +11,17 @@ yum install -y yum-utils epel-release                                    # yum-u
 yum-builddep -y emacs                                                    # install build dependencies for emacs
 
 ################################ Determine Vim version #################################
-EMACS_VERSION=$(curl -sL https://github.com/emacs-mirror/emacs/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g' | sed 's|v||g')
+EMACS_VERSION=$(curl -sL https://github.com/emacs-mirror/emacs/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g' | sed 's|emacs-||g')
 
 # Get emacs and build it
-curl -sL https://github.com/emacs-mirror/emacs/archive/v$EMACS_VERSION.tar.gz | tar xz --transform="s/emacs-${EMACS_VERSION}/emacs/"
+curl -sL https://github.com/emacs-mirror/emacs/archive/emacs-$EMACS_VERSION.tar.gz | tar xz --transform="s/emacs-emacs-${EMACS_VERSION}/emacs/"
 rm -rf /AppDir
 mkdir -p /AppDir/usr
 cd vim
 ./configure \
   --prefix=/AppDir/usr --enable-fail-if-missing \
   --with-compiledby='Brenton Horne' \
-  --enable-gtk2 \
+  --enable-gt \
   --with-features=huge \
   --enable-cscope \
   --enable-multibyte

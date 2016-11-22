@@ -7,7 +7,7 @@ set -u
 APP=transmission
 XAPP=$APP
 
-yum install -y git gcc gcc-c++ xz libtool make bzip2 perl wget lzma      # base building tools
+yum install -y git gcc gcc-c++ xz libtool make bzip2 perl wget xz        # base building tools
 yum install -y squashfs-tools fuse fuse-devel fuse-libs fuseiso          # tools for building and using AppImageKit
 yum install -y yum-utils epel-release                                    # yum-utils provides yum-builddep;
 

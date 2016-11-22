@@ -18,7 +18,7 @@ curl -sL https://github.com/vim/vim/archive/v$VIM_VERSION.tar.gz | tar xz --tran
 rm -rf /AppDir
 mkdir -p /AppDir/usr
 cd vim
-./configure
+./configure \
   --prefix=/AppDir/usr --enable-fail-if-missing \
   --with-compiledby='Brenton Horne' \
   --enable-gui=gtk2 \

@@ -10,7 +10,7 @@ yum install -y yum-utils epel-release                                    # yum-u
 
 yum-builddep -y emacs                                                    # install build dependencies for emacs
 
-################################ Determine Vim version #################################
+############################### Determine Emacs version ################################
 EMACS_VERSION=$(curl -sL https://github.com/emacs-mirror/emacs/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g' | sed 's|emacs-||g')
 
 # Get emacs and build it
@@ -68,7 +68,7 @@ curl -OL "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" #
 chmod a+x ./AppRun
 
 GLIBC_NEEDED=$(find . -type f -executable -exec strings {} \; | grep ^GLIBC_2 | sed s/GLIBC_//g | sort --version-sort | uniq | tail -n 1)
-VERSION=${VIM_VERSION}.glibc$GLIBC_NEEDED
+VERSION=${EMACS_VERSION}.glibc$GLIBC_NEEDED
 echo "VERSION is $VERSION"
 
 APP=emacs

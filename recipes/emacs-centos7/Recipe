@@ -23,7 +23,17 @@ cd emacs
 ./autogen.sh
 ./configure \
   --prefix=/AppDir/usr \
-  --with-x-toolkit=gtk2
+  --with-x-toolkit=gtk2 \
+  --sysconfdir=/etc \
+  --libexecdir=/usr/lib \
+  --localstatedir=/var \
+  --mandir=/usr/share/man \
+  --with-gameuser=:games \
+  --with-sound=alsa \
+  --with-xft \
+  --with-modules \
+  --with-gconf \
+  --without-gsettings
 make
 make install
 cd ..

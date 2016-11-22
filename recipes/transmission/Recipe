@@ -57,7 +57,7 @@ find . -type f -executable -exec strip {} \;
 
 # Copy dependency libraries
 mkdir -p ./usr/lib
-ldd usr/bin/$APP | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./usr/lib || true
+ldd usr/bin/$APP-gtk | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./usr/lib || true
 
 # Delete blacklisted files; TODO: Move to a library function
 BLACKLISTED_FILES=$(curl -sL https://github.com/fusion809/AppImages/raw/master/excludelist | sed '/^\s*$/d' | sed '/^#.*$/d')

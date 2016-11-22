@@ -20,13 +20,10 @@ fi
 rm -rf /AppDir
 mkdir -p /AppDir/usr
 cd emacs
-./autogen.sh \
-  --prefix=/AppDir/usr --enable-fail-if-missing \
-  --with-compiledby='Brenton Horne' \
-  --enable-gt \
-  --with-features=huge \
-  --enable-cscope \
-  --enable-multibyte
+./autogen.sh
+./configure \
+  --prefix=/AppDir/usr \
+  --with-x-toolkit=gtk2
 make
 make install
 cd ..

@@ -24,7 +24,7 @@ cd ..
 # Get geany plugins and build them
 curl -sL https://github.com/geany/geany-plugins/archive/$GEANY_VERSION.tar.gz | tar xz --transform="s/geany-plugins-$GEANY_VERSION/geany-plugins/"
 cd geany-plugins
-./autogen.sh --prefix=/AppDir/usr --enable-binreloc --disable-html-docs
+./autogen.sh --prefix=/AppDir/usr --enable-binreloc --disable-html-docs --with-geany-libdir="/AppDir/usr/lib/geany"
 make
 make install
 cd ..

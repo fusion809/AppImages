@@ -142,3 +142,29 @@ libgpg-error.so.0
 # undefined symbol: xcb_send_request_with_fds
 # https://github.com/probonopd/AppImages/issues/128
 libxcb.so.1
+
+# per probonopd/AppImages#145 btn's comment
+libX11-xcb.so.1
+libXau.so.6
+libXcomposite.so.1
+libXcursor.so.1
+libXdamage.so.1
+libXext.so.6
+libXfixes.so.3
+libXi.so.6
+libXinerama.so.1
+libXrandr.so.2
+libXrender.so.1
+libXxf86vm.so.1
+
+# xcb
+libxcb-dri2.so.0
+libxcb-dri3.so.0
+libxcb-glx.so.0
+libxcb-present.so.0
+libxcb-randr.so.0
+libxcb-render.so.0
+libxcb-shape.so.0
+libxcb-shm.so.0
+libxcb-sync.so.1
+libxcb-xfixes.so.0

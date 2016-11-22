@@ -1,16 +1,20 @@
 #!/bin/bash
+#################################################################################
 # Fails to build, gives the error:
-Dumping under the name emacs
-**************************************************
-Warning: Your system has a gap between BSS and the
-heap (29013983 bytes).  This usually means that exec-shield
-or something similar is in effect.  The dump may
-fail because of this.  See the section about
-exec-shield in etc/PROBLEMS for more information.
-**************************************************
-make[1]: *** [bootstrap-emacs] Segmentation fault (core dumped)
-make[1]: Leaving directory `/emacs/src'
-make: *** [src] Error 2
+#Dumping under the name emacs
+#**************************************************
+#Warning: Your system has a gap between BSS and the
+#heap (29013983 bytes).  This usually means that exec-shield
+#or something similar is in effect.  The dump may
+#fail because of this.  See the section about
+#exec-shield in etc/PROBLEMS for more information.
+#**************************************************
+#make[1]: *** [bootstrap-emacs] Segmentation fault (core dumped)
+#make[1]: Leaving directory `/emacs/src'
+#make: *** [src] Error 2
+#Workaround is run echo 0 > /proc/sys/kernel/randomize_va_space as root per
+#http://stackoverflow.com/q/37544423/1876983
+#################################################################################
 # Exit on errors
 set -e
 

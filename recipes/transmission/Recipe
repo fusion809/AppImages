@@ -39,17 +39,7 @@ fi
 
 cd /AppDir/
 
-cat > $APP.desktop <<\EOF
-[Desktop Entry]
-Version=1.0
-Name=Transmission
-Icon=transmission
-Exec=transmission-gtk %U
-Type=Application
-MimeType=application/x-bittorrent;x-scheme-handler/magnet;
-Categories=Network;FileTransfer;P2P;GTK;
-EOF
-
+cp ./usr/share/applications/$XAPP.desktop .
 cp ./usr/share/pixmaps/$APP.png .
 
 # Strip executables; greatly reduces AppImage size

@@ -45,8 +45,8 @@ cat > $XAPP.desktop <<\EOF
 [Desktop Entry]
 Version=1.0
 Name=Transmission
-Icon=$APP
-Exec=$XAPP %U
+Icon=transmission
+Exec=transmission-gtk %U
 Type=Application
 MimeType=application/x-bittorrent;x-scheme-handler/magnet;
 Categories=Network;FileTransfer;P2P;GTK;

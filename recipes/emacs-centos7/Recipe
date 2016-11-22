@@ -17,8 +17,8 @@ EMACS_VERSION=$(curl -sL https://github.com/emacs-mirror/emacs/releases | grep "
 curl -sL https://github.com/emacs-mirror/emacs/archive/emacs-$EMACS_VERSION.tar.gz | tar xz --transform="s/emacs-emacs-${EMACS_VERSION}/emacs/"
 rm -rf /AppDir
 mkdir -p /AppDir/usr
-cd vim
-./configure \
+cd emacs
+./autogen.sh \
   --prefix=/AppDir/usr --enable-fail-if-missing \
   --with-compiledby='Brenton Horne' \
   --enable-gt \

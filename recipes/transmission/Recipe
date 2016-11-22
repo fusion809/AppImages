@@ -39,7 +39,7 @@ fi
 
 cd /AppDir/
 
-cat > $XAPP.desktop <<\EOF
+cat > $APP.desktop <<\EOF
 [Desktop Entry]
 Version=1.0
 Name=Transmission
@@ -80,7 +80,7 @@ echo "VERSION is $VERSION"
 # Add desktop integration
 curl -L https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration > ./usr/bin/$XAPP.wrapper
 chmod a+x ./usr/bin/$XAPP.wrapper
-sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $XAPP.desktop
+sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $APP.desktop
 
 # Go out of AppImage
 cd ..

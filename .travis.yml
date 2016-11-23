@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=bluefish
+  - RECIPE=geany-trusty
 
 script:
 - bash -e travis.sh $RECIPE

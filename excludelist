@@ -185,3 +185,7 @@ libEGL.so.1
 libharfbuzz.so.0.927.0
 libharfbuzz-icu.so.0.927.0
 libharfbuzz-icu.so.0
+libwayland-client.so.0
+libwayland-client.so.0.2.0
+libwayland-cursor.so.0.0.0
+libwayland-cursor.so.0

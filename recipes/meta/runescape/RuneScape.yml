@@ -3,7 +3,7 @@ app: runescape-launcher
 ingredients:
   packages:
     - runescape-launcher
-    - libharfbuzz-bin
+    - curl
   dist: trusty
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ trusty main universe

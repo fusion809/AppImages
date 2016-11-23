@@ -163,8 +163,8 @@ libXrender.so.1
 libXrender.so.1.3.0
 libXRes.so.1
 libXRes.so.1.0.0
-libXss.so.1
-libXss.so.1.0.0
+#libXss.so.1
+#libXss.so.1.0.0
 libXt.so.6
 libXt.so.6.0.0
 libXtst.so.6

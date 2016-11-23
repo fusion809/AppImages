@@ -21,7 +21,7 @@ script:
   - rm -rf ./usr/share/gconf ./usr/share/bug ./usr/share/debhelper ./usr/share/perl5 ./usr/share/dbus-1 ./usr/share/applications ./usr/share/lintian ./usr/share/X11 ./usr/share/readline ./usr/share/sgml ./usr/share/gnupg ./usr/lib/gnupg ./usr/bin/gpg*
   - rm -rf ./etc/gconf ./etc/python3.4 ./etc/X11
   - rm -rf ./usr/sbin ./usr/lib/sasl2 ./usr/lib/coreutils ./usr/lib/X11 ./usr/lib/x86_64-linux-gnu/enchant ./usr/lib/x86_64-linux-gnu/gconf ./usr/lib/x86_64-linux-gnu/openssl-1.0.0 ./usr/lib/x86_64-linux-gnu/sasl2
-  - rm ./usr/lib/x86_64-linux-gnu/*dbus* ./usr/lib/x86_64-linux-gnu/*enchant* ./usr/lib/x86_64-linux-gnu/libgpgme* ./usr/lib/x86_64-linux-gnu/libgraphite* ./usr/lib/x86_64-linux-gnu/libhunspell* ./usr/lib/x86_64-linux-gnu/libpython3.4* ./usr/lib/x86_64-linux-gnu/*sasl2* ./usr/lib/x86_64-linux-gnu/*xslt* ./usr/lib/x86_64-linux-gnu/liblua5.1-c++.so.0 ./usr/lib/x86_64-linux-gnu/liblua5.1-c++.so.0.0.0 ./usr/lib/x86_64-linux-gnu/libsecret-1*
+  - rm ./usr/lib/x86_64-linux-gnu/*dbus* ./usr/lib/x86_64-linux-gnu/*enchant* ./usr/lib/x86_64-linux-gnu/libgpgme* ./usr/lib/x86_64-linux-gnu/libgraphite* ./usr/lib/x86_64-linux-gnu/libhunspell* ./usr/lib/x86_64-linux-gnu/libpython3.4* ./usr/lib/x86_64-linux-gnu/*sasl2* ./usr/lib/x86_64-linux-gnu/*xslt* ./usr/lib/x86_64-linux-gnu/liblua5.1-c++.so.0 ./usr/lib/x86_64-linux-gnu/liblua5.1-c++.so.0.0.0 ./usr/lib/x86_64-linux-gnu/libsecret-1* ./usr/lib/x86_64-linux-gnu/libX* ./usr/lib/x86_64-linux-gnu/libxcb-util* ./usr/lib/x86_64-linux-gnu/libharfbuzz* ./usr/lib/x86_64-linux-gnu/libfreetype* ./usr/lib/x86_64-linux-gnu/libgconf*
   - rm ./usr/lib/*spell*
   - rm -rf ./var/lib/dictionaries-common ./var/lib/gconf
   - rm ./lib/x86_64-linux-gnu/libreadline*

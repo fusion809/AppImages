@@ -1,6 +1,11 @@
 app: Atom-Beta
 
 ingredients:
+  packages:
+    - libxss1
+  dist: trusty
+  sources:
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
   script:
     - TAR=$(wget -q https://github.com/atom/atom/releases/ -O - | grep "tar.gz" | grep beta | grep href |  head -n 1 | cut -d '"' -f 2)
     - VERSION=$(echo $TAR | sed 's|/atom/atom/releases/download/v||g' | sed 's|/atom-amd64.tar.gz||g' | sed 's/-beta/./g')

@@ -78,7 +78,7 @@ if [ -d "./$APP.AppDir/" ] ; then
 fi
 
 if [ ! -e functions.sh ] ; then
-  wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+  wget -q https://github.com/fusion809/AppImages/raw/master/functions.sh -O ./functions.sh
 fi
 . ./functions.sh
 

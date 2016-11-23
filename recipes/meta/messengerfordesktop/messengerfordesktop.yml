@@ -15,8 +15,6 @@ ingredients:
     - wget -c "https://github.com/$DEB"
     - VERSION=$(ls messengerfordesktop-*.deb | cut -d '-' -f 2 | sed -e 's|.deb||g')
     - cp "messengerfordesktop-${VERSION}-linux-amd64.deb" "messengerfordesktop_${VERSION}_amd64.deb"
-    - rm coreutils*.deb
-    - rm gconf*.deb libxss1*.deb libxtst*.deb libxext*.deb libxdmcp*.deb libxcb*.deb libxau*.deb libx11*.deb libselinux*.deb libp11*.deb libgconf*.deb
 
 script:
   - cp ./usr/share/applications/messengerfordesktop.desktop messengerfordesktop.desktop

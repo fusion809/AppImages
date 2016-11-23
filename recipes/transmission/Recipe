@@ -39,7 +39,7 @@ fi
 
 cd /AppDir/
 
-cp ./usr/share/applications/$XAPP.desktop .
+cp ./usr/share/applications/$XAPP.desktop transmission.desktop
 cp ./usr/share/pixmaps/$APP.png .
 
 # Strip executables; greatly reduces AppImage size

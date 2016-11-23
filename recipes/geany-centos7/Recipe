@@ -100,7 +100,7 @@ function url {
   yumdownloader --resolve $@
 }
 
-url vte vte-devel
+url vte vte-devel || true
 ############## Compilation and installation succeeded ##############
 
 cd /AppDir/

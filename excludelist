@@ -207,9 +207,9 @@ libwayland-client.so.0
 libwayland-client.so.0.2.0
 libwayland-cursor.so.0.0.0
 libwayland-cursor.so.0
-libgnutls.so.26
-libgnutls.so.26.22.6
-libgnutls-extra.so.26
-libgnutls-extra.so.26.22.6
+#libgnutls.so.26
+#libgnutls.so.26.22.6
+#libgnutls-extra.so.26
+#libgnutls-extra.so.26.22.6
 libp11-kit.so.0
 libp11-kit.so.0.0.0

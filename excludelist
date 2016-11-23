@@ -182,3 +182,6 @@ libharfbuzz.so.0
 libatk-1.0.so.0
 libcairo.so.2
 libEGL.so.1
+libharfbuzz.so.0.927.0
+libharfbuzz-icu.so.0.927.0
+libharfbuzz-icu.so.0

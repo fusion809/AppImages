@@ -4,17 +4,19 @@
 set -e
 
 ################################### Get Dependencies ###################################
-yum install -y git gcc gcc-c++ xz libtool make bzip2 perl wget lzma gtk-doc # base building tools
-yum install -y squashfs-tools fuse fuse-devel fuse-libs fuseiso             # tools for building and using AppImageKit
-yum install -y yum-utils epel-release                                       # yum-utils provides yum-builddep;
+yum install -y git gcc gcc-c++ xz libtool make bzip2 perl wget lzma gtk-doc autopoint # base building tools
+yum install -y squashfs-tools fuse fuse-devel fuse-libs fuseiso                       # tools for building and using AppImageKit
+yum install -y yum-utils epel-release gtk-doc                                         # yum-utils provides yum-builddep;
 
-yum-builddep -y geany geany-plugins python vte ctpl libgit2                 # install build dependencies for geany and geany-plugins
+yum-builddep -y geany geany-plugins python vte ctpl libgit2                           # install build dependencies for geany, geany-plugins and deps
 
 ############################### Determine Geany version ################################
 GEANY_VERSION=$(curl -sL https://github.com/geany/geany/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g')
 LIBGIT2_VERSION=$(wget -q https://github.com/libgit2/libgit2/releases/ -O - | grep "\.tar\.gz" | grep -v "\-rc" | cut -d '"' -f 2 | cut -d '/' -f 5 | head -n 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
+LUA_VERSION=$(wget -q https://www.lua.org/ftp/ -O - | grep "tar.gz" | cut -d '"' -f 4 | grep "lua" | head -n 1 | sed 's/lua\-//g' | sed 's/\.tar.gz//g')
 VTE_VERSION=$(wget -q https://github.com/GNOME/vte/releases -O - | grep "\.tar\.gz" | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g' | head -n 1)
 CTPL_VERSION=$(wget -q http://download.tuxfamily.org/ctpl/releases/ -O - | grep "tar.gz" | cut -d '"' -f 4 | sed 's/ctpl\-//g' | sed 's|.tar.gz||g' | grep -v "sig" | sort -u | tail -n 1)
+PARSER_VERSION=$(wget -q https://github.com/nodejs/http-parser/releases -O - | grep "\.tar\.gz" | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's/[a-z]//g' | sed 's/\.\.$//g' | head -n 1)
 PYTHON_URL=$(wget -q https://www.python.org/downloads/ -O - | grep "tar.xz" | cut -d '"' -f 4 | grep "2.7")
 PYTHON_VERSION=$(echo $PYTHON_URL | cut -d '/' -f 6)
 
@@ -54,16 +56,55 @@ cd ../..
 
 # Getting ctpl and building it
 curl -sL http://download.tuxfamily.org/ctpl/releases/ctpl-${CTPL_VERSION}.tar.gz | tar xz --transform="s/ctpl-${CTPL_VERSION}/ctpl/"
+cd ctpl
+./configure --prefix=/AppDir/usr
+make
+make install
+cd ..
+
+# Getting VTE and building it
+#curl -sL https://github.com/GNOME/vte/archive/$VTE_VERSION.tar.gz | tar xz --transform="s/vte-$VTE_VERSION/vte/"
+#cd vte
+#wget -c http://pkgs.fedoraproject.org/cgit/rpms/vte.git/plain/vte-0.28.2-paste-fix.diff http://pkgs.fedoraproject.org/cgit/rpms/vte.git/plain/vte-0.28.2-paste-fix.diff
+#./configure --prefix=/AppDir/usr
+#make
+#make install
+#cd ..
+# fails with error ./configure: line 15276: syntax error near unexpected token `0.9.0'
+# ./configure: line 15276: `GOBJECT_INTROSPECTION_CHECK(0.9.0)'
+
+
+# Get Lua and build it
+curl -sL https://www.lua.org/ftp/lua-$LUA_VERSION.tar.gz | tar xz --transform="s/lua-$LUA_VERSION/lua/"
+cd lua
+make
+cd src
+install -pm0755 lua luac /AppDir/usr/bin
+install -pm0644 lua.h luaconf.h lualib.h lauxlib.h lua.hpp /AppDir/usr/include
+install -pm0644 liblua.a /AppDir/usr/lib
+install -pm0644 lua.1 luac.1 /AppDir/usr/man/man1
+cd ../..
+
+# http-parser
+curl -sL https://github.com/nodejs/http-parser/archive/v${PARSER_VERSION}.tar.gz | tar xz --transform="s/http-parser-${PARSER_VERSION}/http-parser/"
+cd http-parser
+make
+make install DESTDIR=/AppDir
+cd /AppDir/usr/local
+ln -sf lib/libhttp_parser.so.2.7.1 ../lib/libhttp_parser.so.2.7.1
+ln -sf lib/libhttp_parser.so.2.7.1 ../lib/libhttp_parser.so
+ln -sf include/http_parser.h ../include/http_parser.h
+cd /
 
 function url {
   yumdownloader --resolve $@
 }
 
-url python-libs python lua http-parser
+url vte vte-devel
 ############## Compilation and installation succeeded ##############
 
 cd /AppDir/
-rpm2cpio ../*.rpm | cpio -idmv
+rpm2cpio ../*.rpm | cpio -idmv  # extract contents from RPM packages
 
 cp ./usr/share/applications/geany.desktop .
 cp ./usr/share/icons/hicolor/scalable/apps/geany.svg .

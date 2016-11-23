@@ -6,9 +6,6 @@ ingredients:
     - geany
     - geany-plugins
     - python-gtk2
-    - gcc
-    - g++
-    - make
   dist:     trusty
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ trusty main universe

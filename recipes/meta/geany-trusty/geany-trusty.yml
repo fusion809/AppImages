@@ -6,12 +6,16 @@ ingredients:
     - geany
     - geany-plugins
     - python-gtk2
-    - build-essential
+    - gcc
+    - g++
+    - make
   dist:     trusty
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
   ppas:
     - brentonhorne/geany2
+  script:
+    - rm binutils*.deb
 
 script:
   - cp ./usr/share/icons/hicolor/scalable/apps/geany.svg .

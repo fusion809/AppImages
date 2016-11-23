@@ -30,19 +30,10 @@ make install
 cd ..
 
 function url {
-  yumdownloader --urls $1 | tail -n 1
+  yumdownloader --resolve $@
 }
 
-URL1=$(url python-libs)
-URL2=$(url python)
-URL3=$(url lua)
-URL4=$(url ctlp-libs)
-URL5=$(url ctlp)
-URL6=$(url vte)
-URL7=$(url gtkspell)
-URL8=$(url http-parser)
-URL9=$(url libgit2)
-wget -c $URL1 $URL2 $URL3 $URL4 $URL5 $URL6 $URL7 $URL8 $URL9
+url python-libs python lua ctlp-libs ctlp vte gtkspell http-parser libgit2
 ############## Compilation and installation succeeded ##############
 
 cd /AppDir/

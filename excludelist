@@ -41,12 +41,14 @@ libdrm.so.2
 # Unrecognized OpenGL version
 
 libxcb.so.1
+libxcb.so.1.1.0
 # Workaround for:
 # Fedora 23
 # symbol lookup error: /lib64/libxcb-dri3.so.0: undefined symbol: xcb_send_fd
 # Uncertain if this is required to be bundled for some distributions - if so we need to write a version check script and use LD_PRELOAD to load the system version if it is newer
 
 libX11.so.6
+libX11.so.6.3.0
 # Workaround for:
 # Fedora 23
 # symbol lookup error: ./lib/libX11.so.6: undefined symbol: xcb_wait_for_reply64
@@ -137,24 +139,26 @@ libgpg-error.so.0
 # and https://github.com/probonopd/AppImages/pull/114
 # libnss3.so
 
-# Workaround for:
-# Fedora 25:
-# undefined symbol: xcb_send_request_with_fds
-# https://github.com/probonopd/AppImages/issues/128
-libxcb.so.1
-
 # per probonopd/AppImages#145 btn's comment
 libX11-xcb.so.1
 libXau.so.6
+libXau.so.6.0.0
 libXcomposite.so.1
 libXcursor.so.1
 libXdamage.so.1
+libXdmcp.so.6
+libXdmcp.so.6.4.0
 libXext.so.6
+libXext.so.6.4.0
 libXfixes.so.3
 libXi.so.6
 libXinerama.so.1
 libXrandr.so.2
 libXrender.so.1
+libXss.so.1
+libXss.so.1.0.0
+libXtst.so.6
+libXtst.so.6.1.0
 libXxf86vm.so.1
 
 # xcb
@@ -170,6 +174,8 @@ libxcb-sync.so.1
 libxcb-xfixes.so.0
 
 libxshmfence.so.1
+libgconf-2.so.4
+libgconf-2.so.4.1.5
 libpixman-1.so.0
 libpng15.so.15
 libpango-1.0.so.0

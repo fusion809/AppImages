@@ -80,9 +80,7 @@ cd lua
 make linux
 cd src
 install -pm0755 lua luac /AppDir/usr/bin
-install -pm0644 lua.h luaconf.h lualib.h lauxlib.h lua.hpp /AppDir/usr/include
 install -pm0644 liblua.a /AppDir/usr/lib
-install -pm0644 lua.1 luac.1 /AppDir/usr/man/man1
 cd ../..
 
 # http-parser

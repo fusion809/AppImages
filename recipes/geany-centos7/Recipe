@@ -77,7 +77,7 @@ cd ..
 # Get Lua and build it
 curl -sL https://www.lua.org/ftp/lua-$LUA_VERSION.tar.gz | tar xz --transform="s/lua-$LUA_VERSION/lua/"
 cd lua
-make
+make linux
 cd src
 install -pm0755 lua luac /AppDir/usr/bin
 install -pm0644 lua.h luaconf.h lualib.h lauxlib.h lua.hpp /AppDir/usr/include

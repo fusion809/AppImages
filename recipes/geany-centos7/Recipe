@@ -8,10 +8,15 @@ yum install -y git gcc gcc-c++ xz libtool make bzip2 perl wget lzma # base build
 yum install -y squashfs-tools fuse fuse-devel fuse-libs fuseiso          # tools for building and using AppImageKit
 yum install -y yum-utils epel-release                                    # yum-utils provides yum-builddep;
 
-yum-builddep -y geany geany-plugins                                      # install build dependencies for geany and geany-plugins
+yum-builddep -y geany geany-plugins python vte ctpl libgit2              # install build dependencies for geany and geany-plugins
 
 ############################### Determine Geany version ################################
 GEANY_VERSION=$(curl -sL https://github.com/geany/geany/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g')
+LIBGIT2_VERSION=$(wget -q https://github.com/libgit2/libgit2/releases/ -O - | grep "\.tar\.gz" | grep -v "\-rc" | cut -d '"' -f 2 | cut -d '/' -f 5 | head -n 1 | sed 's/v//g' | sed 's/\.tar\.gz//g')
+VTE_VERSION=$(wget -q https://github.com/GNOME/vte/releases -O - | grep "\.tar\.gz" | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g' | head -n 1)
+CTPL_VERSION=$(wget -q http://download.tuxfamily.org/ctpl/releases/ -O - | grep "tar.gz" | cut -d '"' -f 4 | sed 's/ctpl\-//g' | sed 's|.tar.gz||g' | grep -v "sig" | sort -u | tail -n 1)
+PYTHON_URL=$(wget -q https://www.python.org/downloads/ -O - | grep "tar.xz" | cut -d '"' -f 4 | grep "2.7")
+PYTHON_VERSION=$(echo $PYTHON_URL | cut -d '/' -f 6)
 
 # Get geany and build it
 curl -sL https://github.com/geany/geany/archive/$GEANY_VERSION.tar.gz | tar xz --transform="s/geany-$GEANY_VERSION/geany/"
@@ -29,11 +34,29 @@ make
 make install
 cd ..
 
+# Getting and building Python2
+curl -sL $PYTHON_URL | tar xJ --transform="s/Python-$PYTHON_VERSION/Python/"
+cd Python
+./configure --prefix=/AppDir/usr
+make
+make install
+cd ..
+
+# Getting libgit2 and building it
+curl -sL https://github.com/libgit2/libgit2/archive/v${LIBGIT2_VERSION}.tar.gz | tar xz --transform="s/libgit2-${LIBGIT2_VERSION}/libgit2/"
+cd libgit2
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/AppDir/usr
+make
+make install
+cd ..
+
 function url {
   yumdownloader --resolve $@
 }
 
-url python-libs python lua ctlp-libs ctlp vte vte-devel gtkspell http-parser libgit2 geany geany-plugins
+url python-libs python lua http-parser
 ############## Compilation and installation succeeded ##############
 
 cd /AppDir/

@@ -14,8 +14,6 @@ ingredients:
     - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
   ppas:
     - brentonhorne/geany2
-  script:
-    - rm binutils*.deb
 
 script:
   - cp ./usr/share/icons/hicolor/scalable/apps/geany.svg .

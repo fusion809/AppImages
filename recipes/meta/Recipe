@@ -277,7 +277,7 @@ if [ ! -z "${_union}" ] ; then
   strip libunionpreload.so
 fi
 
-ldd usr/bin/$LOWERAPP | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./usr/lib || true
+#ldd usr/bin/$LOWERAPP | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./usr/lib || true
 
 delete_blacklisted
 get_desktopintegration $LOWERAPP

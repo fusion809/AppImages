@@ -33,7 +33,7 @@ function url {
   yumdownloader --resolve $@
 }
 
-url python-libs python lua ctlp-libs ctlp vte vte-devel gtkspell http-parser libgit2
+url python-libs python lua ctlp-libs ctlp vte vte-devel gtkspell http-parser libgit2 geany geany-plugins
 ############## Compilation and installation succeeded ##############
 
 cd /AppDir/

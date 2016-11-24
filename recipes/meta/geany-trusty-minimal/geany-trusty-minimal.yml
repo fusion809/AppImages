@@ -34,7 +34,7 @@ script:
   - DIR="usr/lib/x86_64-linux-gnu" && rm -rf ./$DIR/enchant ./$DIR/gconf ./$DIR/openssl-1.0.0 ./$DIR/sasl2
 
   # Remove unneeded config folders
-  - rm -rf ./etc/gconf ./etc/init.d ./etc/python3.4 ./etc/X11
+  - rm -rf ./etc/gconf ./etc/gdb ./etc/init.d ./etc/python3.4 ./etc/X11
 
   # Remove unneeded other folders
   - rm -rf ./usr/sbin ./var

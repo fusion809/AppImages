@@ -43,4 +43,4 @@ script:
   - DIR="usr/lib/x86_64-linux-gnu" && rm ./$DIR/*dbus* ./$DIR/*enchant* ./$DIR/*gtk* ./$DIR/libfreetype* ./$DIR/libgconf* ./$DIR/libgpgme* ./$DIR/libgraphite* ./$DIR/libharfbuzz* ./$DIR/libhunspell* ./$DIR/libICE* ./$DIR/libicu* ./$DIR/liblua5.1-c++.so.0 ./$DIR/liblua5.1-c++.so.0.0.0 ./$DIR/libpython3.4* ./$DIR/libsecret-1* ./$DIR/libX* ./$DIR/libxcb-util* ./$DIR/*sasl2* ./$DIR/*xslt*
 
   # Removing other unneeded library
-  - rm ./usr/lib/*spell* ./lib/x86_64-linux-gnu/libreadline* ./lib/x86_64-linux-gnu/*ssl*
+  - LIR="lib/x86_64-linux-gnu" && rm ./usr/lib/*spell* ./$LIR/*crypt* ./$LIR/*history* ./$LIR/libacl* ./$LIR/libattr* ./$LIR/libbz2* ./$LIR/liblzma* ./$LIR/libreadline* ./$LIR/libz* ./$LIR/*ssl*

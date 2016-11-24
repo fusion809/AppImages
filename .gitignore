@@ -95,8 +95,8 @@ recipes/meta/jmol/jmol
 recipes/meta/gimp/gimp
 recipes/gimp/GIMP
 recipes/meta/electron/electron
-recipes/meta/geany-trusty/Geany
+recipes/meta/geany-trusty*/Geany
 recipes/meta/codeblocks-precise/CodeBlocks
 recipes/meta/jekyll/jekyll
 recipes/meta/hugo/hugo
-recipes/meta/chromium/Chromium
+recipes/meta/chromium-trusty/Chromium

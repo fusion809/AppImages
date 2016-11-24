@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=geany-trusty
+  - RECIPE=geany-trusty-minimal
 
 script:
 - bash -e travis.sh $RECIPE

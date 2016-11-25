@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=qbittorrent
+  - RECIPE=transmission
 
 script:
 - bash -e travis.sh $RECIPE

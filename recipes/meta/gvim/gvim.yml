@@ -1,4 +1,4 @@
-app: gvim
+app: gvim-gtk2
 binpatch: true
 
 ingredients:
@@ -17,11 +17,22 @@ ingredients:
 script:
   - VERSION=$(ls ../vim-gtk*.deb | cut -d '-' -f 2 | sed -e 's|.deb||g' | sed -e 's/gtk_//g')
   - cp "../vim-gtk_${VERSION}-0york1~14.04_amd64.deb" "../gvim_${VERSION}_amd64.deb"
+  - echo $VERSION > ../VERSION
   # Needed due to missing icon file for gvim
   - cp ./usr/share/icons/hicolor/scalable/apps/gvim.svg .
   # Needed due to missing gvim binary that is mentioned in gvim.desktop file
   - cd ./usr/bin
   - ln -sf vim.gtk gvim
   - cd -
-  - cp ./usr/share/applications/gvim.desktop gvim.desktop
-  - sed -i -e 's/Name=GVim/Name=gvim/g' gvim.desktop
+  - cp ./usr/share/applications/gvim.desktop gvim-gtk2.desktop
+  - sed -i -e 's/Name=GVim/Name=gvim-gtk2/g' gvim-gtk2.desktop
+  # Delete unneeded config folders
+  - rm -rf ./etc/ca-certificates ./etc/ssl ./etc/init.d ./etc/X11
+  # Delete unneeded libs
+  - LIB="lib/x86_64-linux-gnu" && rm ./$LIB/*acl* ./$LIB/*attr* ./$LIB/*bz2* ./$LIB/*crypto* ./$LIB/*history* ./$LIB/*lzma* ./$LIB/*readline* ./$LIB/*ssl* ./$LIB/*z.so*
+  # Other libs
+  - rm -rf ./usr/lib/ssl ./usr/lib/X11 && LIB="usr/lib/x86_64-linux-gnu" && rm -rf ./$LIB/openssl* ./$LIB/libxcb* ./$LIB/libX*
+  # Share dirs
+  - rm -rf ./usr/share/applications ./usr/share/ca-certificates ./usr/share/doc ./usr/share/info ./usr/share/lintian ./usr/share/man ./usr/share/readline ./usr/share/X11 ./usr/share/zoneinfo
+  # sbin dir
+  - rm -rf ./usr/sbin

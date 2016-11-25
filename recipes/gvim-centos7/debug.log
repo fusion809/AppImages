@@ -1,0 +1,3004 @@
+     30855:	find library=libfuse.so.2 [0]; searching
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libfuse.so.2
+     30855:	
+     30855:	find library=libpthread.so.0 [0]; searching
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libpthread.so.0
+     30855:	
+     30855:	find library=libglib-2.0.so.0 [0]; searching
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libglib-2.0.so.0
+     30855:	
+     30855:	find library=libz.so.1 [0]; searching
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libz.so.1
+     30855:	
+     30855:	find library=libc.so.6 [0]; searching
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30855:	
+     30855:	find library=libdl.so.2 [0]; searching
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libdl.so.2
+     30855:	
+     30855:	find library=libpcre.so.3 [0]; searching
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libpcre.so.3
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libpthread.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libpcre.so.3
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libdl.so.2
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libz.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libglib-2.0.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libfuse.so.2
+     30855:	
+     30855:	
+     30855:	initialize program: out/gvim-8.0.0101.glibc2.17-x86_64.AppImage
+     30855:	
+     30855:	
+     30855:	transferring control: out/gvim-8.0.0101.glibc2.17-x86_64.AppImage
+     30855:	
+     30863:	find library=libc.so.6 [0]; searching
+     30863:	 search cache=/etc/ld.so.cache
+     30863:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30863:	
+     30863:	
+     30863:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30863:	
+     30863:	
+     30863:	initialize program: sh
+     30863:	
+     30863:	
+     30863:	transferring control: sh
+     30863:	
+     30864:	find library=libselinux.so.1 [0]; searching
+     30864:	 search cache=/etc/ld.so.cache
+     30864:	  trying file=/lib/x86_64-linux-gnu/libselinux.so.1
+     30864:	
+     30864:	find library=libc.so.6 [0]; searching
+     30864:	 search cache=/etc/ld.so.cache
+     30864:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30864:	
+     30864:	find library=libpcre.so.3 [0]; searching
+     30864:	 search cache=/etc/ld.so.cache
+     30864:	  trying file=/lib/x86_64-linux-gnu/libpcre.so.3
+     30864:	
+     30864:	find library=libdl.so.2 [0]; searching
+     30864:	 search cache=/etc/ld.so.cache
+     30864:	  trying file=/lib/x86_64-linux-gnu/libdl.so.2
+     30864:	
+     30864:	find library=libpthread.so.0 [0]; searching
+     30864:	 search cache=/etc/ld.so.cache
+     30864:	  trying file=/lib/x86_64-linux-gnu/libpthread.so.0
+     30864:	
+     30864:	
+     30864:	calling init: /lib/x86_64-linux-gnu/libpthread.so.0
+     30864:	
+     30864:	
+     30864:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30864:	
+     30864:	
+     30864:	calling init: /lib/x86_64-linux-gnu/libdl.so.2
+     30864:	
+     30864:	
+     30864:	calling init: /lib/x86_64-linux-gnu/libpcre.so.3
+     30864:	
+     30864:	
+     30864:	calling init: /lib/x86_64-linux-gnu/libselinux.so.1
+     30864:	
+     30864:	
+     30864:	initialize program: mkdir
+     30864:	
+     30864:	
+     30864:	transferring control: mkdir
+     30864:	
+     30855:	find library=libc.so.6 [0]; searching
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30855:	
+     30855:	
+     30855:	initialize program: out/gvim-8.0.0101.glibc2.17-x86_64.AppImage
+     30855:	
+     30855:	
+     30855:	transferring control: out/gvim-8.0.0101.glibc2.17-x86_64.AppImage
+     30855:	
+     30855:	find library=libtinfo.so.5 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libtinfo.so.5
+     30855:	  trying file=./lib/tls/libtinfo.so.5
+     30855:	  trying file=./lib/x86_64/libtinfo.so.5
+     30855:	  trying file=./lib/libtinfo.so.5
+     30855:	
+     30855:	find library=libdl.so.2 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libdl.so.2
+     30855:	  trying file=./lib/tls/libdl.so.2
+     30855:	  trying file=./lib/x86_64/libdl.so.2
+     30855:	  trying file=./lib/libdl.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libdl.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libdl.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libdl.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/libdl.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libdl.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libdl.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libdl.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/libdl.so.2
+     30855:	  trying file=./lib32/tls/x86_64/libdl.so.2
+     30855:	  trying file=./lib32/tls/libdl.so.2
+     30855:	  trying file=./lib32/x86_64/libdl.so.2
+     30855:	  trying file=./lib32/libdl.so.2
+     30855:	  trying file=./lib64/tls/x86_64/libdl.so.2
+     30855:	  trying file=./lib64/tls/libdl.so.2
+     30855:	  trying file=./lib64/x86_64/libdl.so.2
+     30855:	  trying file=./lib64/libdl.so.2
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libdl.so.2
+     30855:	
+     30855:	find library=libc.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libc.so.6
+     30855:	  trying file=./lib/tls/libc.so.6
+     30855:	  trying file=./lib/x86_64/libc.so.6
+     30855:	  trying file=./lib/libc.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30855:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30855:	  trying file=./lib32/tls/libc.so.6
+     30855:	  trying file=./lib32/x86_64/libc.so.6
+     30855:	  trying file=./lib32/libc.so.6
+     30855:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30855:	  trying file=./lib64/tls/libc.so.6
+     30855:	  trying file=./lib64/x86_64/libc.so.6
+     30855:	  trying file=./lib64/libc.so.6
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30855:	
+     30855:	./lib/libtinfo.so.5: error: version lookup error: no version information available (required by /bin/bash) (continued)
+/bin/bash: ./lib/libtinfo.so.5: no version information available (required by /bin/bash)
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libdl.so.2
+     30855:	
+     30855:	
+     30855:	calling init: ./lib/libtinfo.so.5
+     30855:	
+     30855:	
+     30855:	initialize program: /bin/bash
+     30855:	
+     30855:	
+     30855:	transferring control: /bin/bash
+     30855:	
+     30865:	find library=libc.so.6 [0]; searching
+     30865:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30865:	  trying file=./lib/tls/x86_64/libc.so.6
+     30865:	  trying file=./lib/tls/libc.so.6
+     30865:	  trying file=./lib/x86_64/libc.so.6
+     30865:	  trying file=./lib/libc.so.6
+     30865:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30865:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30865:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30865:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30865:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30865:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30865:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30865:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30865:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30865:	  trying file=./lib32/tls/libc.so.6
+     30865:	  trying file=./lib32/x86_64/libc.so.6
+     30865:	  trying file=./lib32/libc.so.6
+     30865:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30865:	  trying file=./lib64/tls/libc.so.6
+     30865:	  trying file=./lib64/x86_64/libc.so.6
+     30865:	  trying file=./lib64/libc.so.6
+     30865:	 search cache=/etc/ld.so.cache
+     30865:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30865:	
+     30865:	
+     30865:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30865:	
+     30865:	
+     30865:	initialize program: readlink
+     30865:	
+     30865:	
+     30865:	transferring control: readlink
+     30865:	
+     30867:	
+     30867:	calling fini: /bin/bash [0]
+     30867:	
+     30867:	
+     30867:	calling fini: ./lib/libtinfo.so.5 [0]
+     30867:	
+     30867:	
+     30867:	calling fini: /lib/x86_64-linux-gnu/libdl.so.2 [0]
+     30867:	
+     30868:	find library=libselinux.so.1 [0]; searching
+     30868:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30868:	  trying file=./lib/tls/x86_64/libselinux.so.1
+     30868:	  trying file=./lib/tls/libselinux.so.1
+     30868:	  trying file=./lib/x86_64/libselinux.so.1
+     30868:	  trying file=./lib/libselinux.so.1
+     30868:	
+     30868:	find library=libc.so.6 [0]; searching
+     30868:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30868:	  trying file=./lib/tls/x86_64/libc.so.6
+     30868:	  trying file=./lib/tls/libc.so.6
+     30868:	  trying file=./lib/x86_64/libc.so.6
+     30868:	  trying file=./lib/libc.so.6
+     30868:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30868:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30868:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30868:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30868:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30868:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30868:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30868:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30868:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30868:	  trying file=./lib32/tls/libc.so.6
+     30868:	  trying file=./lib32/x86_64/libc.so.6
+     30868:	  trying file=./lib32/libc.so.6
+     30868:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30868:	  trying file=./lib64/tls/libc.so.6
+     30868:	  trying file=./lib64/x86_64/libc.so.6
+     30868:	  trying file=./lib64/libc.so.6
+     30868:	 search cache=/etc/ld.so.cache
+     30868:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30868:	
+     30868:	find library=libpcre.so.1 [0]; searching
+     30868:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30868:	  trying file=./lib/tls/x86_64/libpcre.so.1
+     30868:	  trying file=./lib/tls/libpcre.so.1
+     30868:	  trying file=./lib/x86_64/libpcre.so.1
+     30868:	  trying file=./lib/libpcre.so.1
+     30868:	
+     30868:	find library=liblzma.so.5 [0]; searching
+     30868:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30868:	  trying file=./lib/tls/x86_64/liblzma.so.5
+     30868:	  trying file=./lib/tls/liblzma.so.5
+     30868:	  trying file=./lib/x86_64/liblzma.so.5
+     30868:	  trying file=./lib/liblzma.so.5
+     30868:	  trying file=./lib/i386-linux-gnu/tls/x86_64/liblzma.so.5
+     30868:	  trying file=./lib/i386-linux-gnu/tls/liblzma.so.5
+     30868:	  trying file=./lib/i386-linux-gnu/x86_64/liblzma.so.5
+     30868:	  trying file=./lib/i386-linux-gnu/liblzma.so.5
+     30868:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/liblzma.so.5
+     30868:	  trying file=./lib/x86_64-linux-gnu/tls/liblzma.so.5
+     30868:	  trying file=./lib/x86_64-linux-gnu/x86_64/liblzma.so.5
+     30868:	  trying file=./lib/x86_64-linux-gnu/liblzma.so.5
+     30868:	  trying file=./lib32/tls/x86_64/liblzma.so.5
+     30868:	  trying file=./lib32/tls/liblzma.so.5
+     30868:	  trying file=./lib32/x86_64/liblzma.so.5
+     30868:	  trying file=./lib32/liblzma.so.5
+     30868:	  trying file=./lib64/tls/x86_64/liblzma.so.5
+     30868:	  trying file=./lib64/tls/liblzma.so.5
+     30868:	  trying file=./lib64/x86_64/liblzma.so.5
+     30868:	  trying file=./lib64/liblzma.so.5
+     30868:	 search cache=/etc/ld.so.cache
+     30868:	  trying file=/lib/x86_64-linux-gnu/liblzma.so.5
+     30868:	
+     30868:	find library=libdl.so.2 [0]; searching
+     30868:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30868:	  trying file=./lib/tls/x86_64/libdl.so.2
+     30868:	  trying file=./lib/tls/libdl.so.2
+     30868:	  trying file=./lib/x86_64/libdl.so.2
+     30868:	  trying file=./lib/libdl.so.2
+     30868:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libdl.so.2
+     30868:	  trying file=./lib/i386-linux-gnu/tls/libdl.so.2
+     30868:	  trying file=./lib/i386-linux-gnu/x86_64/libdl.so.2
+     30868:	  trying file=./lib/i386-linux-gnu/libdl.so.2
+     30868:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libdl.so.2
+     30868:	  trying file=./lib/x86_64-linux-gnu/tls/libdl.so.2
+     30868:	  trying file=./lib/x86_64-linux-gnu/x86_64/libdl.so.2
+     30868:	  trying file=./lib/x86_64-linux-gnu/libdl.so.2
+     30868:	  trying file=./lib32/tls/x86_64/libdl.so.2
+     30868:	  trying file=./lib32/tls/libdl.so.2
+     30868:	  trying file=./lib32/x86_64/libdl.so.2
+     30868:	  trying file=./lib32/libdl.so.2
+     30868:	  trying file=./lib64/tls/x86_64/libdl.so.2
+     30868:	  trying file=./lib64/tls/libdl.so.2
+     30868:	  trying file=./lib64/x86_64/libdl.so.2
+     30868:	  trying file=./lib64/libdl.so.2
+     30868:	 search cache=/etc/ld.so.cache
+     30868:	  trying file=/lib/x86_64-linux-gnu/libdl.so.2
+     30868:	
+     30868:	find library=libpthread.so.0 [0]; searching
+     30868:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30868:	  trying file=./lib/tls/x86_64/libpthread.so.0
+     30868:	  trying file=./lib/tls/libpthread.so.0
+     30868:	  trying file=./lib/x86_64/libpthread.so.0
+     30868:	  trying file=./lib/libpthread.so.0
+     30868:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libpthread.so.0
+     30868:	  trying file=./lib/i386-linux-gnu/tls/libpthread.so.0
+     30868:	  trying file=./lib/i386-linux-gnu/x86_64/libpthread.so.0
+     30868:	  trying file=./lib/i386-linux-gnu/libpthread.so.0
+     30868:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libpthread.so.0
+     30868:	  trying file=./lib/x86_64-linux-gnu/tls/libpthread.so.0
+     30868:	  trying file=./lib/x86_64-linux-gnu/x86_64/libpthread.so.0
+     30868:	  trying file=./lib/x86_64-linux-gnu/libpthread.so.0
+     30868:	  trying file=./lib32/tls/x86_64/libpthread.so.0
+     30868:	  trying file=./lib32/tls/libpthread.so.0
+     30868:	  trying file=./lib32/x86_64/libpthread.so.0
+     30868:	  trying file=./lib32/libpthread.so.0
+     30868:	  trying file=./lib64/tls/x86_64/libpthread.so.0
+     30868:	  trying file=./lib64/tls/libpthread.so.0
+     30868:	  trying file=./lib64/x86_64/libpthread.so.0
+     30868:	  trying file=./lib64/libpthread.so.0
+     30868:	 search cache=/etc/ld.so.cache
+     30868:	  trying file=/lib/x86_64-linux-gnu/libpthread.so.0
+     30868:	
+     30868:	
+     30868:	calling init: /lib/x86_64-linux-gnu/libpthread.so.0
+     30868:	
+     30868:	
+     30868:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30868:	
+     30868:	
+     30868:	calling init: /lib/x86_64-linux-gnu/libdl.so.2
+     30868:	
+     30868:	
+     30868:	calling init: /lib/x86_64-linux-gnu/liblzma.so.5
+     30868:	
+     30868:	
+     30868:	calling init: ./lib/libpcre.so.1
+     30868:	
+     30868:	
+     30868:	calling init: ./lib/libselinux.so.1
+     30868:	
+     30868:	
+     30868:	initialize program: sed
+     30868:	
+     30868:	
+     30868:	transferring control: sed
+     30868:	
+     30866:	
+     30866:	calling fini: /bin/bash [0]
+     30866:	
+     30866:	
+     30866:	calling fini: ./lib/libtinfo.so.5 [0]
+     30866:	
+     30866:	
+     30866:	calling fini: /lib/x86_64-linux-gnu/libdl.so.2 [0]
+     30866:	
+     30870:	find library=libc.so.6 [0]; searching
+     30870:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30870:	  trying file=./lib/tls/x86_64/libc.so.6
+     30870:	  trying file=./lib/tls/libc.so.6
+     30870:	  trying file=./lib/x86_64/libc.so.6
+     30870:	  trying file=./lib/libc.so.6
+     30870:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30870:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30870:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30870:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30870:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30870:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30870:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30870:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30870:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30870:	  trying file=./lib32/tls/libc.so.6
+     30870:	  trying file=./lib32/x86_64/libc.so.6
+     30870:	  trying file=./lib32/libc.so.6
+     30870:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30870:	  trying file=./lib64/tls/libc.so.6
+     30870:	  trying file=./lib64/x86_64/libc.so.6
+     30870:	  trying file=./lib64/libc.so.6
+     30870:	 search cache=/etc/ld.so.cache
+     30870:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30870:	
+     30870:	
+     30870:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30870:	
+     30870:	
+     30870:	initialize program: dirname
+     30870:	
+     30870:	
+     30870:	transferring control: dirname
+     30870:	
+     30871:	find library=libc.so.6 [0]; searching
+     30871:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30871:	  trying file=./lib/tls/x86_64/libc.so.6
+     30871:	  trying file=./lib/tls/libc.so.6
+     30871:	  trying file=./lib/x86_64/libc.so.6
+     30871:	  trying file=./lib/libc.so.6
+     30871:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30871:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30871:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30871:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30871:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30871:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30871:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30871:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30871:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30871:	  trying file=./lib32/tls/libc.so.6
+     30871:	  trying file=./lib32/x86_64/libc.so.6
+     30871:	  trying file=./lib32/libc.so.6
+     30871:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30871:	  trying file=./lib64/tls/libc.so.6
+     30871:	  trying file=./lib64/x86_64/libc.so.6
+     30871:	  trying file=./lib64/libc.so.6
+     30871:	 search cache=/etc/ld.so.cache
+     30871:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30871:	
+     30871:	
+     30871:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30871:	
+     30871:	
+     30871:	initialize program: /bin/sh
+     30871:	
+     30871:	
+     30871:	transferring control: /bin/sh
+     30871:	
+     30872:	find library=libc.so.6 [0]; searching
+     30872:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30872:	  trying file=./lib/tls/x86_64/libc.so.6
+     30872:	  trying file=./lib/tls/libc.so.6
+     30872:	  trying file=./lib/x86_64/libc.so.6
+     30872:	  trying file=./lib/libc.so.6
+     30872:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30872:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30872:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30872:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30872:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30872:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30872:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30872:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30872:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30872:	  trying file=./lib32/tls/libc.so.6
+     30872:	  trying file=./lib32/x86_64/libc.so.6
+     30872:	  trying file=./lib32/libc.so.6
+     30872:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30872:	  trying file=./lib64/tls/libc.so.6
+     30872:	  trying file=./lib64/x86_64/libc.so.6
+     30872:	  trying file=./lib64/libc.so.6
+     30872:	 search cache=/etc/ld.so.cache
+     30872:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30872:	
+     30872:	
+     30872:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30872:	
+     30872:	
+     30872:	initialize program: /bin/sh
+     30872:	
+     30872:	
+     30872:	transferring control: /bin/sh
+     30872:	
+     30873:	find library=libc.so.6 [0]; searching
+     30873:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30873:	  trying file=./lib/tls/x86_64/libc.so.6
+     30873:	  trying file=./lib/tls/libc.so.6
+     30873:	  trying file=./lib/x86_64/libc.so.6
+     30873:	  trying file=./lib/libc.so.6
+     30873:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30873:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30873:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30873:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30873:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30873:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30873:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30873:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30873:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30873:	  trying file=./lib32/tls/libc.so.6
+     30873:	  trying file=./lib32/x86_64/libc.so.6
+     30873:	  trying file=./lib32/libc.so.6
+     30873:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30873:	  trying file=./lib64/tls/libc.so.6
+     30873:	  trying file=./lib64/x86_64/libc.so.6
+     30873:	  trying file=./lib64/libc.so.6
+     30873:	 search cache=/etc/ld.so.cache
+     30873:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30873:	
+     30873:	
+     30873:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30873:	
+     30873:	
+     30873:	initialize program: /bin/sh
+     30873:	
+     30873:	
+     30873:	transferring control: /bin/sh
+     30873:	
+     30874:	find library=libc.so.6 [0]; searching
+     30874:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30874:	  trying file=./lib/tls/x86_64/libc.so.6
+     30874:	  trying file=./lib/tls/libc.so.6
+     30874:	  trying file=./lib/x86_64/libc.so.6
+     30874:	  trying file=./lib/libc.so.6
+     30874:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30874:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30874:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30874:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30874:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30874:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30874:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30874:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30874:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30874:	  trying file=./lib32/tls/libc.so.6
+     30874:	  trying file=./lib32/x86_64/libc.so.6
+     30874:	  trying file=./lib32/libc.so.6
+     30874:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30874:	  trying file=./lib64/tls/libc.so.6
+     30874:	  trying file=./lib64/x86_64/libc.so.6
+     30874:	  trying file=./lib64/libc.so.6
+     30874:	 search cache=/etc/ld.so.cache
+     30874:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30874:	
+     30874:	
+     30874:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30874:	
+     30874:	
+     30874:	initialize program: /bin/sh
+     30874:	
+     30874:	
+     30874:	transferring control: /bin/sh
+     30874:	
+     30875:	find library=libc.so.6 [0]; searching
+     30875:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30875:	  trying file=./lib/tls/x86_64/libc.so.6
+     30875:	  trying file=./lib/tls/libc.so.6
+     30875:	  trying file=./lib/x86_64/libc.so.6
+     30875:	  trying file=./lib/libc.so.6
+     30875:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30875:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30875:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30875:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30875:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30875:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30875:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30875:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30875:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30875:	  trying file=./lib32/tls/libc.so.6
+     30875:	  trying file=./lib32/x86_64/libc.so.6
+     30875:	  trying file=./lib32/libc.so.6
+     30875:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30875:	  trying file=./lib64/tls/libc.so.6
+     30875:	  trying file=./lib64/x86_64/libc.so.6
+     30875:	  trying file=./lib64/libc.so.6
+     30875:	 search cache=/etc/ld.so.cache
+     30875:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30875:	
+     30875:	
+     30875:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30875:	
+     30875:	
+     30875:	initialize program: /bin/sh
+     30875:	
+     30875:	
+     30875:	transferring control: /bin/sh
+     30875:	
+     30876:	find library=libc.so.6 [0]; searching
+     30876:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30876:	  trying file=./lib/tls/x86_64/libc.so.6
+     30876:	  trying file=./lib/tls/libc.so.6
+     30876:	  trying file=./lib/x86_64/libc.so.6
+     30876:	  trying file=./lib/libc.so.6
+     30876:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30876:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30876:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30876:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30876:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30876:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30876:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30876:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30876:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30876:	  trying file=./lib32/tls/libc.so.6
+     30876:	  trying file=./lib32/x86_64/libc.so.6
+     30876:	  trying file=./lib32/libc.so.6
+     30876:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30876:	  trying file=./lib64/tls/libc.so.6
+     30876:	  trying file=./lib64/x86_64/libc.so.6
+     30876:	  trying file=./lib64/libc.so.6
+     30876:	 search cache=/etc/ld.so.cache
+     30876:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30876:	
+     30876:	
+     30876:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30876:	
+     30876:	
+     30876:	initialize program: /bin/sh
+     30876:	
+     30876:	
+     30876:	transferring control: /bin/sh
+     30876:	
+     30879:	find library=libc.so.6 [0]; searching
+     30879:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30879:	  trying file=./lib/tls/x86_64/libc.so.6
+     30879:	  trying file=./lib/tls/libc.so.6
+     30879:	  trying file=./lib/x86_64/libc.so.6
+     30879:	  trying file=./lib/libc.so.6
+     30879:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30879:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30879:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30879:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30879:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30879:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30879:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30879:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30879:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30879:	  trying file=./lib32/tls/libc.so.6
+     30878:	find library=libselinux.so.1 [0]; searching
+     30878:	 search path=     30879:	  trying file=./lib32/x86_64/libc.so.6
+./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls     30879:	  trying file=./lib32/libc.so.6
+:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64     30879:	  trying file=./lib64/tls/x86_64/libc.so.6
+:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64     30879:	  trying file=./lib64/tls/libc.so.6
+:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30878:	  trying file=./lib/tls/x86_64/libselinux.so.1
+     30879:	  trying file=./lib64/x86_64/libc.so.6
+     30879:	  trying file=./lib64/libc.so.6
+     30878:	  trying file=./lib/tls/libselinux.so.1
+     30879:	 search cache=/etc/ld.so.cache
+     30878:	  trying file=./lib/x86_64/libselinux.so.1
+     30878:	  trying file=./lib/libselinux.so.1
+     30879:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30879:	
+     30879:	
+     30879:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30879:	
+     30879:	
+     30879:	initialize program: head
+     30879:	
+     30879:	
+     30879:	transferring control: head
+     30879:	
+     30878:	
+     30878:	find library=libm.so.6 [0]; searching
+     30878:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30878:	  trying file=./lib/tls/x86_64/libm.so.6
+     30878:	  trying file=./lib/tls/libm.so.6
+     30878:	  trying file=./lib/x86_64/libm.so.6
+     30878:	  trying file=./lib/libm.so.6
+     30878:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libm.so.6
+     30878:	  trying file=./lib/i386-linux-gnu/tls/libm.so.6
+     30878:	  trying file=./lib/i386-linux-gnu/x86_64/libm.so.6
+     30878:	  trying file=./lib/i386-linux-gnu/libm.so.6
+     30878:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libm.so.6
+     30878:	  trying file=./lib/x86_64-linux-gnu/tls/libm.so.6
+     30878:	  trying file=./lib/x86_64-linux-gnu/x86_64/libm.so.6
+     30878:	  trying file=./lib/x86_64-linux-gnu/libm.so.6
+     30878:	  trying file=./lib32/tls/x86_64/libm.so.6
+     30878:	  trying file=./lib32/tls/libm.so.6
+     30878:	  trying file=./lib32/x86_64/libm.so.6
+     30878:	  trying file=./lib32/libm.so.6
+     30878:	  trying file=./lib64/tls/x86_64/libm.so.6
+     30878:	  trying file=./lib64/tls/libm.so.6
+     30878:	  trying file=./lib64/x86_64/libm.so.6
+     30878:	  trying file=./lib64/libm.so.6
+     30878:	 search cache=/etc/ld.so.cache
+     30878:	  trying file=/lib/x86_64-linux-gnu/libm.so.6
+     30878:	
+     30878:	find library=libc.so.6 [0]; searching
+     30878:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30878:	  trying file=./lib/tls/x86_64/libc.so.6
+     30878:	  trying file=./lib/tls/libc.so.6
+     30878:	  trying file=./lib/x86_64/libc.so.6
+     30878:	  trying file=./lib/libc.so.6
+     30878:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30878:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30878:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30878:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30878:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30878:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30878:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30878:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30878:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30878:	  trying file=./lib32/tls/libc.so.6
+     30878:	  trying file=./lib32/x86_64/libc.so.6
+     30878:	  trying file=./lib32/libc.so.6
+     30878:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30878:	  trying file=./lib64/tls/libc.so.6
+     30878:	  trying file=./lib64/x86_64/libc.so.6
+     30878:	  trying file=./lib64/libc.so.6
+     30878:	 search cache=/etc/ld.so.cache
+     30878:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30878:	
+     30878:	find library=libpcre.so.1 [0]; searching
+     30878:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30878:	  trying file=./lib/tls/x86_64/libpcre.so.1
+     30878:	  trying file=./lib/tls/libpcre.so.1
+     30878:	  trying file=./lib/x86_64/libpcre.so.1
+     30878:	  trying file=./lib/libpcre.so.1
+     30878:	
+     30878:	find library=liblzma.so.5 [0]; searching
+     30878:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30878:	  trying file=./lib/tls/x86_64/liblzma.so.5
+     30878:	  trying file=./lib/tls/liblzma.so.5
+     30878:	  trying file=./lib/x86_64/liblzma.so.5
+     30878:	  trying file=./lib/liblzma.so.5
+     30878:	  trying file=./lib/i386-linux-gnu/tls/x86_64/liblzma.so.5
+     30878:	  trying file=./lib/i386-linux-gnu/tls/liblzma.so.5
+     30878:	  trying file=./lib/i386-linux-gnu/x86_64/liblzma.so.5
+     30878:	  trying file=./lib/i386-linux-gnu/liblzma.so.5
+     30878:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/liblzma.so.5
+     30878:	  trying file=./lib/x86_64-linux-gnu/tls/liblzma.so.5
+     30878:	  trying file=./lib/x86_64-linux-gnu/x86_64/liblzma.so.5
+     30878:	  trying file=./lib/x86_64-linux-gnu/liblzma.so.5
+     30878:	  trying file=./lib32/tls/x86_64/liblzma.so.5
+     30878:	  trying file=./lib32/tls/liblzma.so.5
+     30878:	  trying file=./lib32/x86_64/liblzma.so.5
+     30878:	  trying file=./lib32/liblzma.so.5
+     30878:	  trying file=./lib64/tls/x86_64/liblzma.so.5
+     30878:	  trying file=./lib64/tls/liblzma.so.5
+     30878:	  trying file=./lib64/x86_64/liblzma.so.5
+     30878:	  trying file=./lib64/liblzma.so.5
+     30878:	 search cache=/etc/ld.so.cache
+     30878:	  trying file=/lib/x86_64-linux-gnu/liblzma.so.5
+     30878:	
+     30878:	find library=libdl.so.2 [0]; searching
+     30878:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30878:	  trying file=./lib/tls/x86_64/libdl.so.2
+     30878:	  trying file=./lib/tls/libdl.so.2
+     30878:	  trying file=./lib/x86_64/libdl.so.2
+     30878:	  trying file=./lib/libdl.so.2
+     30878:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libdl.so.2
+     30878:	  trying file=./lib/i386-linux-gnu/tls/libdl.so.2
+     30878:	  trying file=./lib/i386-linux-gnu/x86_64/libdl.so.2
+     30878:	  trying file=./lib/i386-linux-gnu/libdl.so.2
+     30878:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libdl.so.2
+     30878:	  trying file=./lib/x86_64-linux-gnu/tls/libdl.so.2
+     30878:	  trying file=./lib/x86_64-linux-gnu/x86_64/libdl.so.2
+     30878:	  trying file=./lib/x86_64-linux-gnu/libdl.so.2
+     30878:	  trying file=./lib32/tls/x86_64/libdl.so.2
+     30878:	  trying file=./lib32/tls/libdl.so.2
+     30878:	  trying file=./lib32/x86_64/libdl.so.2
+     30878:	  trying file=./lib32/libdl.so.2
+     30878:	  trying file=./lib64/tls/x86_64/libdl.so.2
+     30878:	  trying file=./lib64/tls/libdl.so.2
+     30878:	  trying file=./lib64/x86_64/libdl.so.2
+     30878:	  trying file=./lib64/libdl.so.2
+     30878:	 search cache=/etc/ld.so.cache
+     30878:	  trying file=/lib/x86_64-linux-gnu/libdl.so.2
+     30878:	
+     30878:	find library=libpthread.so.0 [0]; searching
+     30878:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30878:	  trying file=./lib/tls/x86_64/libpthread.so.0
+     30878:	  trying file=./lib/tls/libpthread.so.0
+     30878:	  trying file=./lib/x86_64/libpthread.so.0
+     30878:	  trying file=./lib/libpthread.so.0
+     30878:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libpthread.so.0
+     30878:	  trying file=./lib/i386-linux-gnu/tls/libpthread.so.0
+     30878:	  trying file=./lib/i386-linux-gnu/x86_64/libpthread.so.0
+     30878:	  trying file=./lib/i386-linux-gnu/libpthread.so.0
+     30878:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libpthread.so.0
+     30878:	  trying file=./lib/x86_64-linux-gnu/tls/libpthread.so.0
+     30878:	  trying file=./lib/x86_64-linux-gnu/x86_64/libpthread.so.0
+     30878:	  trying file=./lib/x86_64-linux-gnu/libpthread.so.0
+     30878:	  trying file=./lib32/tls/x86_64/libpthread.so.0
+     30878:	  trying file=./lib32/tls/libpthread.so.0
+     30878:	  trying file=./lib32/x86_64/libpthread.so.0
+     30878:	  trying file=./lib32/libpthread.so.0
+     30878:	  trying file=./lib64/tls/x86_64/libpthread.so.0
+     30878:	  trying file=./lib64/tls/libpthread.so.0
+     30878:	  trying file=./lib64/x86_64/libpthread.so.0
+     30878:	  trying file=./lib64/libpthread.so.0
+     30878:	 search cache=/etc/ld.so.cache
+     30878:	  trying file=/lib/x86_64-linux-gnu/libpthread.so.0
+     30878:	
+     30878:	
+     30878:	calling init: /lib/x86_64-linux-gnu/libpthread.so.0
+     30878:	
+     30878:	
+     30878:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30878:	
+     30878:	
+     30878:	calling init: /lib/x86_64-linux-gnu/libdl.so.2
+     30878:	
+     30878:	
+     30878:	calling init: /lib/x86_64-linux-gnu/liblzma.so.5
+     30878:	
+     30878:	
+     30878:	calling init: ./lib/libpcre.so.1
+     30878:	
+     30878:	
+     30878:	calling init: /lib/x86_64-linux-gnu/libm.so.6
+     30878:	
+     30878:	
+     30878:	calling init: ./lib/libselinux.so.1
+     30878:	
+     30878:	
+     30878:	initialize program: find
+     30878:	
+     30878:	
+     30878:	transferring control: find
+     30878:	
+     30877:	
+     30877:	calling fini: /bin/bash [0]
+     30877:	
+     30877:	
+     30877:	calling fini: ./lib/libtinfo.so.5 [0]
+     30877:	
+     30877:	
+     30877:	calling fini: /lib/x86_64-linux-gnu/libdl.so.2 [0]
+     30877:	
+     30882:	find library=libc.so.6 [0]; searching
+     30882:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30882:	  trying file=./lib/tls/x86_64/libc.so.6
+     30882:	  trying file=./lib/tls/libc.so.6
+     30882:	  trying file=./lib/x86_64/libc.so.6
+     30882:	  trying file=./lib/libc.so.6
+     30882:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30882:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30882:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30882:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30882:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30882:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30882:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30882:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30882:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30882:	  trying file=./lib32/tls/libc.so.6
+     30882:	  trying file=./lib32/x86_64/libc.so.6
+     30882:	  trying file=./lib32/libc.so.6
+     30882:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30882:	  trying file=./lib64/tls/libc.so.6
+     30882:	  trying file=./lib64/x86_64/libc.so.6
+     30882:	  trying file=./lib64/libc.so.6
+     30882:	 search cache=/etc/ld.so.cache
+     30882:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30882:	
+     30882:	
+     30882:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30882:	
+     30882:	
+     30882:	initialize program: basename
+     30882:	
+     30882:	
+     30882:	transferring control: basename
+     30882:	
+     30855:	find library=libgtk-x11-2.0.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib/tls/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib/x86_64/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib32/tls/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib32/x86_64/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib32/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib64/tls/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib64/x86_64/libgtk-x11-2.0.so.0
+     30855:	  trying file=./lib64/libgtk-x11-2.0.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0
+     30855:	
+     30855:	find library=libgdk-x11-2.0.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib/tls/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib/x86_64/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib32/tls/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib32/x86_64/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib32/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib64/tls/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib64/x86_64/libgdk-x11-2.0.so.0
+     30855:	  trying file=./lib64/libgdk-x11-2.0.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0
+     30855:	
+     30855:	find library=libgio-2.0.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libgio-2.0.so.0
+     30855:	  trying file=./lib/tls/libgio-2.0.so.0
+     30855:	  trying file=./lib/x86_64/libgio-2.0.so.0
+     30855:	  trying file=./lib/libgio-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libgio-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libgio-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libgio-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libgio-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libgio-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libgio-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libgio-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libgio-2.0.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libgio-2.0.so.0
+     30855:	  trying file=./lib32/tls/libgio-2.0.so.0
+     30855:	  trying file=./lib32/x86_64/libgio-2.0.so.0
+     30855:	  trying file=./lib32/libgio-2.0.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libgio-2.0.so.0
+     30855:	  trying file=./lib64/tls/libgio-2.0.so.0
+     30855:	  trying file=./lib64/x86_64/libgio-2.0.so.0
+     30855:	  trying file=./lib64/libgio-2.0.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libgio-2.0.so.0
+     30855:	
+     30855:	find library=libgdk_pixbuf-2.0.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib/tls/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib/x86_64/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib32/tls/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib32/x86_64/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib32/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib64/tls/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib64/x86_64/libgdk_pixbuf-2.0.so.0
+     30855:	  trying file=./lib64/libgdk_pixbuf-2.0.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0
+     30855:	
+     30855:	find library=libpango-1.0.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libpango-1.0.so.0
+     30855:	  trying file=./lib/tls/libpango-1.0.so.0
+     30855:	  trying file=./lib/x86_64/libpango-1.0.so.0
+     30855:	  trying file=./lib/libpango-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libpango-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libpango-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libpango-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libpango-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libpango-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libpango-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libpango-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libpango-1.0.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libpango-1.0.so.0
+     30855:	  trying file=./lib32/tls/libpango-1.0.so.0
+     30855:	  trying file=./lib32/x86_64/libpango-1.0.so.0
+     30855:	  trying file=./lib32/libpango-1.0.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libpango-1.0.so.0
+     30855:	  trying file=./lib64/tls/libpango-1.0.so.0
+     30855:	  trying file=./lib64/x86_64/libpango-1.0.so.0
+     30855:	  trying file=./lib64/libpango-1.0.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libpango-1.0.so.0
+     30855:	
+     30855:	find library=libgobject-2.0.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libgobject-2.0.so.0
+     30855:	  trying file=./lib/tls/libgobject-2.0.so.0
+     30855:	  trying file=./lib/x86_64/libgobject-2.0.so.0
+     30855:	  trying file=./lib/libgobject-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libgobject-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libgobject-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libgobject-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libgobject-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libgobject-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libgobject-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libgobject-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libgobject-2.0.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libgobject-2.0.so.0
+     30855:	  trying file=./lib32/tls/libgobject-2.0.so.0
+     30855:	  trying file=./lib32/x86_64/libgobject-2.0.so.0
+     30855:	  trying file=./lib32/libgobject-2.0.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libgobject-2.0.so.0
+     30855:	  trying file=./lib64/tls/libgobject-2.0.so.0
+     30855:	  trying file=./lib64/x86_64/libgobject-2.0.so.0
+     30855:	  trying file=./lib64/libgobject-2.0.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0
+     30855:	
+     30855:	find library=libglib-2.0.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libglib-2.0.so.0
+     30855:	  trying file=./lib/tls/libglib-2.0.so.0
+     30855:	  trying file=./lib/x86_64/libglib-2.0.so.0
+     30855:	  trying file=./lib/libglib-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libglib-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libglib-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libglib-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libglib-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libglib-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libglib-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libglib-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libglib-2.0.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libglib-2.0.so.0
+     30855:	  trying file=./lib32/tls/libglib-2.0.so.0
+     30855:	  trying file=./lib32/x86_64/libglib-2.0.so.0
+     30855:	  trying file=./lib32/libglib-2.0.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libglib-2.0.so.0
+     30855:	  trying file=./lib64/tls/libglib-2.0.so.0
+     30855:	  trying file=./lib64/x86_64/libglib-2.0.so.0
+     30855:	  trying file=./lib64/libglib-2.0.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libglib-2.0.so.0
+     30855:	
+     30855:	find library=libSM.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libSM.so.6
+     30855:	  trying file=./lib/tls/libSM.so.6
+     30855:	  trying file=./lib/x86_64/libSM.so.6
+     30855:	  trying file=./lib/libSM.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libSM.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libSM.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libSM.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/libSM.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libSM.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libSM.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libSM.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/libSM.so.6
+     30855:	  trying file=./lib32/tls/x86_64/libSM.so.6
+     30855:	  trying file=./lib32/tls/libSM.so.6
+     30855:	  trying file=./lib32/x86_64/libSM.so.6
+     30855:	  trying file=./lib32/libSM.so.6
+     30855:	  trying file=./lib64/tls/x86_64/libSM.so.6
+     30855:	  trying file=./lib64/tls/libSM.so.6
+     30855:	  trying file=./lib64/x86_64/libSM.so.6
+     30855:	  trying file=./lib64/libSM.so.6
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libSM.so.6
+     30855:	
+     30855:	find library=libICE.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libICE.so.6
+     30855:	  trying file=./lib/tls/libICE.so.6
+     30855:	  trying file=./lib/x86_64/libICE.so.6
+     30855:	  trying file=./lib/libICE.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libICE.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libICE.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libICE.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/libICE.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libICE.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libICE.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libICE.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/libICE.so.6
+     30855:	  trying file=./lib32/tls/x86_64/libICE.so.6
+     30855:	  trying file=./lib32/tls/libICE.so.6
+     30855:	  trying file=./lib32/x86_64/libICE.so.6
+     30855:	  trying file=./lib32/libICE.so.6
+     30855:	  trying file=./lib64/tls/x86_64/libICE.so.6
+     30855:	  trying file=./lib64/tls/libICE.so.6
+     30855:	  trying file=./lib64/x86_64/libICE.so.6
+     30855:	  trying file=./lib64/libICE.so.6
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libICE.so.6
+     30855:	
+     30855:	find library=libXt.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libXt.so.6
+     30855:	  trying file=./lib/tls/libXt.so.6
+     30855:	  trying file=./lib/x86_64/libXt.so.6
+     30855:	  trying file=./lib/libXt.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libXt.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libXt.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libXt.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/libXt.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libXt.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libXt.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libXt.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/libXt.so.6
+     30855:	  trying file=./lib32/tls/x86_64/libXt.so.6
+     30855:	  trying file=./lib32/tls/libXt.so.6
+     30855:	  trying file=./lib32/x86_64/libXt.so.6
+     30855:	  trying file=./lib32/libXt.so.6
+     30855:	  trying file=./lib64/tls/x86_64/libXt.so.6
+     30855:	  trying file=./lib64/tls/libXt.so.6
+     30855:	  trying file=./lib64/x86_64/libXt.so.6
+     30855:	  trying file=./lib64/libXt.so.6
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libXt.so.6
+     30855:	
+     30855:	find library=libX11.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libX11.so.6
+     30855:	  trying file=./lib/tls/libX11.so.6
+     30855:	  trying file=./lib/x86_64/libX11.so.6
+     30855:	  trying file=./lib/libX11.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libX11.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libX11.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libX11.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/libX11.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libX11.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libX11.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libX11.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/libX11.so.6
+     30855:	  trying file=./lib32/tls/x86_64/libX11.so.6
+     30855:	  trying file=./lib32/tls/libX11.so.6
+     30855:	  trying file=./lib32/x86_64/libX11.so.6
+     30855:	  trying file=./lib32/libX11.so.6
+     30855:	  trying file=./lib64/tls/x86_64/libX11.so.6
+     30855:	  trying file=./lib64/tls/libX11.so.6
+     30855:	  trying file=./lib64/x86_64/libX11.so.6
+     30855:	  trying file=./lib64/libX11.so.6
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libX11.so.6
+     30855:	
+     30855:	find library=libm.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libm.so.6
+     30855:	  trying file=./lib/tls/libm.so.6
+     30855:	  trying file=./lib/x86_64/libm.so.6
+     30855:	  trying file=./lib/libm.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libm.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libm.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libm.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/libm.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libm.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libm.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libm.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/libm.so.6
+     30855:	  trying file=./lib32/tls/x86_64/libm.so.6
+     30855:	  trying file=./lib32/tls/libm.so.6
+     30855:	  trying file=./lib32/x86_64/libm.so.6
+     30855:	  trying file=./lib32/libm.so.6
+     30855:	  trying file=./lib64/tls/x86_64/libm.so.6
+     30855:	  trying file=./lib64/tls/libm.so.6
+     30855:	  trying file=./lib64/x86_64/libm.so.6
+     30855:	  trying file=./lib64/libm.so.6
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libm.so.6
+     30855:	
+     30855:	find library=libtinfo.so.5 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libtinfo.so.5
+     30855:	  trying file=./lib/tls/libtinfo.so.5
+     30855:	  trying file=./lib/x86_64/libtinfo.so.5
+     30855:	  trying file=./lib/libtinfo.so.5
+     30855:	
+     30855:	find library=libselinux.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libselinux.so.1
+     30855:	  trying file=./lib/tls/libselinux.so.1
+     30855:	  trying file=./lib/x86_64/libselinux.so.1
+     30855:	  trying file=./lib/libselinux.so.1
+     30855:	
+     30855:	find library=libacl.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libacl.so.1
+     30855:	  trying file=./lib/tls/libacl.so.1
+     30855:	  trying file=./lib/x86_64/libacl.so.1
+     30855:	  trying file=./lib/libacl.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libacl.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libacl.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libacl.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libacl.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libacl.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libacl.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libacl.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libacl.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libacl.so.1
+     30855:	  trying file=./lib32/tls/libacl.so.1
+     30855:	  trying file=./lib32/x86_64/libacl.so.1
+     30855:	  trying file=./lib32/libacl.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libacl.so.1
+     30855:	  trying file=./lib64/tls/libacl.so.1
+     30855:	  trying file=./lib64/x86_64/libacl.so.1
+     30855:	  trying file=./lib64/libacl.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libacl.so.1
+     30855:	
+     30855:	find library=libgpm.so.2 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libgpm.so.2
+     30855:	  trying file=./lib/tls/libgpm.so.2
+     30855:	  trying file=./lib/x86_64/libgpm.so.2
+     30855:	  trying file=./lib/libgpm.so.2
+     30855:	
+     30855:	find library=libdl.so.2 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libdl.so.2
+     30855:	  trying file=./lib/tls/libdl.so.2
+     30855:	  trying file=./lib/x86_64/libdl.so.2
+     30855:	  trying file=./lib/libdl.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libdl.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libdl.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libdl.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/libdl.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libdl.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libdl.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libdl.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/libdl.so.2
+     30855:	  trying file=./lib32/tls/x86_64/libdl.so.2
+     30855:	  trying file=./lib32/tls/libdl.so.2
+     30855:	  trying file=./lib32/x86_64/libdl.so.2
+     30855:	  trying file=./lib32/libdl.so.2
+     30855:	  trying file=./lib64/tls/x86_64/libdl.so.2
+     30855:	  trying file=./lib64/tls/libdl.so.2
+     30855:	  trying file=./lib64/x86_64/libdl.so.2
+     30855:	  trying file=./lib64/libdl.so.2
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libdl.so.2
+     30855:	
+     30855:	find library=libc.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libc.so.6
+     30855:	  trying file=./lib/tls/libc.so.6
+     30855:	  trying file=./lib/x86_64/libc.so.6
+     30855:	  trying file=./lib/libc.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libc.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libc.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libc.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/libc.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libc.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libc.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libc.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/libc.so.6
+     30855:	  trying file=./lib32/tls/x86_64/libc.so.6
+     30855:	  trying file=./lib32/tls/libc.so.6
+     30855:	  trying file=./lib32/x86_64/libc.so.6
+     30855:	  trying file=./lib32/libc.so.6
+     30855:	  trying file=./lib64/tls/x86_64/libc.so.6
+     30855:	  trying file=./lib64/tls/libc.so.6
+     30855:	  trying file=./lib64/x86_64/libc.so.6
+     30855:	  trying file=./lib64/libc.so.6
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+     30855:	
+     30855:	find library=libgmodule-2.0.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libgmodule-2.0.so.0
+     30855:	  trying file=./lib/tls/libgmodule-2.0.so.0
+     30855:	  trying file=./lib/x86_64/libgmodule-2.0.so.0
+     30855:	  trying file=./lib/libgmodule-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libgmodule-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libgmodule-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libgmodule-2.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libgmodule-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libgmodule-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libgmodule-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libgmodule-2.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libgmodule-2.0.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libgmodule-2.0.so.0
+     30855:	  trying file=./lib32/tls/libgmodule-2.0.so.0
+     30855:	  trying file=./lib32/x86_64/libgmodule-2.0.so.0
+     30855:	  trying file=./lib32/libgmodule-2.0.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libgmodule-2.0.so.0
+     30855:	  trying file=./lib64/tls/libgmodule-2.0.so.0
+     30855:	  trying file=./lib64/x86_64/libgmodule-2.0.so.0
+     30855:	  trying file=./lib64/libgmodule-2.0.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0
+     30855:	
+     30855:	find library=libpangocairo-1.0.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib/tls/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib/x86_64/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib32/tls/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib32/x86_64/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib32/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib64/tls/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib64/x86_64/libpangocairo-1.0.so.0
+     30855:	  trying file=./lib64/libpangocairo-1.0.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0
+     30855:	
+     30855:	find library=libXfixes.so.3 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libXfixes.so.3
+     30855:	  trying file=./lib/tls/libXfixes.so.3
+     30855:	  trying file=./lib/x86_64/libXfixes.so.3
+     30855:	  trying file=./lib/libXfixes.so.3
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libXfixes.so.3
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libXfixes.so.3
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libXfixes.so.3
+     30855:	  trying file=./lib/i386-linux-gnu/libXfixes.so.3
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libXfixes.so.3
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libXfixes.so.3
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libXfixes.so.3
+     30855:	  trying file=./lib/x86_64-linux-gnu/libXfixes.so.3
+     30855:	  trying file=./lib32/tls/x86_64/libXfixes.so.3
+     30855:	  trying file=./lib32/tls/libXfixes.so.3
+     30855:	  trying file=./lib32/x86_64/libXfixes.so.3
+     30855:	  trying file=./lib32/libXfixes.so.3
+     30855:	  trying file=./lib64/tls/x86_64/libXfixes.so.3
+     30855:	  trying file=./lib64/tls/libXfixes.so.3
+     30855:	  trying file=./lib64/x86_64/libXfixes.so.3
+     30855:	  trying file=./lib64/libXfixes.so.3
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libXfixes.so.3
+     30855:	
+     30855:	find library=libatk-1.0.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libatk-1.0.so.0
+     30855:	  trying file=./lib/tls/libatk-1.0.so.0
+     30855:	  trying file=./lib/x86_64/libatk-1.0.so.0
+     30855:	  trying file=./lib/libatk-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libatk-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libatk-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libatk-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libatk-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libatk-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libatk-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libatk-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libatk-1.0.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libatk-1.0.so.0
+     30855:	  trying file=./lib32/tls/libatk-1.0.so.0
+     30855:	  trying file=./lib32/x86_64/libatk-1.0.so.0
+     30855:	  trying file=./lib32/libatk-1.0.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libatk-1.0.so.0
+     30855:	  trying file=./lib64/tls/libatk-1.0.so.0
+     30855:	  trying file=./lib64/x86_64/libatk-1.0.so.0
+     30855:	  trying file=./lib64/libatk-1.0.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libatk-1.0.so.0
+     30855:	
+     30855:	find library=libcairo.so.2 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libcairo.so.2
+     30855:	  trying file=./lib/tls/libcairo.so.2
+     30855:	  trying file=./lib/x86_64/libcairo.so.2
+     30855:	  trying file=./lib/libcairo.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libcairo.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libcairo.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libcairo.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/libcairo.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libcairo.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libcairo.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libcairo.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/libcairo.so.2
+     30855:	  trying file=./lib32/tls/x86_64/libcairo.so.2
+     30855:	  trying file=./lib32/tls/libcairo.so.2
+     30855:	  trying file=./lib32/x86_64/libcairo.so.2
+     30855:	  trying file=./lib32/libcairo.so.2
+     30855:	  trying file=./lib64/tls/x86_64/libcairo.so.2
+     30855:	  trying file=./lib64/tls/libcairo.so.2
+     30855:	  trying file=./lib64/x86_64/libcairo.so.2
+     30855:	  trying file=./lib64/libcairo.so.2
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libcairo.so.2
+     30855:	
+     30855:	find library=libpangoft2-1.0.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib/tls/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib/x86_64/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib32/tls/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib32/x86_64/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib32/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib64/tls/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib64/x86_64/libpangoft2-1.0.so.0
+     30855:	  trying file=./lib64/libpangoft2-1.0.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0
+     30855:	
+     30855:	find library=libfontconfig.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libfontconfig.so.1
+     30855:	  trying file=./lib/tls/libfontconfig.so.1
+     30855:	  trying file=./lib/x86_64/libfontconfig.so.1
+     30855:	  trying file=./lib/libfontconfig.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libfontconfig.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libfontconfig.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libfontconfig.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libfontconfig.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libfontconfig.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libfontconfig.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libfontconfig.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libfontconfig.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libfontconfig.so.1
+     30855:	  trying file=./lib32/tls/libfontconfig.so.1
+     30855:	  trying file=./lib32/x86_64/libfontconfig.so.1
+     30855:	  trying file=./lib32/libfontconfig.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libfontconfig.so.1
+     30855:	  trying file=./lib64/tls/libfontconfig.so.1
+     30855:	  trying file=./lib64/x86_64/libfontconfig.so.1
+     30855:	  trying file=./lib64/libfontconfig.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libfontconfig.so.1
+     30855:	
+     30855:	find library=libpthread.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libpthread.so.0
+     30855:	  trying file=./lib/tls/libpthread.so.0
+     30855:	  trying file=./lib/x86_64/libpthread.so.0
+     30855:	  trying file=./lib/libpthread.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libpthread.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libpthread.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libpthread.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libpthread.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libpthread.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libpthread.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libpthread.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libpthread.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libpthread.so.0
+     30855:	  trying file=./lib32/tls/libpthread.so.0
+     30855:	  trying file=./lib32/x86_64/libpthread.so.0
+     30855:	  trying file=./lib32/libpthread.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libpthread.so.0
+     30855:	  trying file=./lib64/tls/libpthread.so.0
+     30855:	  trying file=./lib64/x86_64/libpthread.so.0
+     30855:	  trying file=./lib64/libpthread.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libpthread.so.0
+     30855:	
+     30855:	find library=libXrender.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libXrender.so.1
+     30855:	  trying file=./lib/tls/libXrender.so.1
+     30855:	  trying file=./lib/x86_64/libXrender.so.1
+     30855:	  trying file=./lib/libXrender.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libXrender.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libXrender.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libXrender.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libXrender.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libXrender.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libXrender.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libXrender.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libXrender.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libXrender.so.1
+     30855:	  trying file=./lib32/tls/libXrender.so.1
+     30855:	  trying file=./lib32/x86_64/libXrender.so.1
+     30855:	  trying file=./lib32/libXrender.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libXrender.so.1
+     30855:	  trying file=./lib64/tls/libXrender.so.1
+     30855:	  trying file=./lib64/x86_64/libXrender.so.1
+     30855:	  trying file=./lib64/libXrender.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libXrender.so.1
+     30855:	
+     30855:	find library=libXinerama.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libXinerama.so.1
+     30855:	  trying file=./lib/tls/libXinerama.so.1
+     30855:	  trying file=./lib/x86_64/libXinerama.so.1
+     30855:	  trying file=./lib/libXinerama.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libXinerama.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libXinerama.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libXinerama.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libXinerama.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libXinerama.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libXinerama.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libXinerama.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libXinerama.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libXinerama.so.1
+     30855:	  trying file=./lib32/tls/libXinerama.so.1
+     30855:	  trying file=./lib32/x86_64/libXinerama.so.1
+     30855:	  trying file=./lib32/libXinerama.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libXinerama.so.1
+     30855:	  trying file=./lib64/tls/libXinerama.so.1
+     30855:	  trying file=./lib64/x86_64/libXinerama.so.1
+     30855:	  trying file=./lib64/libXinerama.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libXinerama.so.1
+     30855:	
+     30855:	find library=libXi.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libXi.so.6
+     30855:	  trying file=./lib/tls/libXi.so.6
+     30855:	  trying file=./lib/x86_64/libXi.so.6
+     30855:	  trying file=./lib/libXi.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libXi.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libXi.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libXi.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/libXi.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libXi.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libXi.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libXi.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/libXi.so.6
+     30855:	  trying file=./lib32/tls/x86_64/libXi.so.6
+     30855:	  trying file=./lib32/tls/libXi.so.6
+     30855:	  trying file=./lib32/x86_64/libXi.so.6
+     30855:	  trying file=./lib32/libXi.so.6
+     30855:	  trying file=./lib64/tls/x86_64/libXi.so.6
+     30855:	  trying file=./lib64/tls/libXi.so.6
+     30855:	  trying file=./lib64/x86_64/libXi.so.6
+     30855:	  trying file=./lib64/libXi.so.6
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libXi.so.6
+     30855:	
+     30855:	find library=libXrandr.so.2 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libXrandr.so.2
+     30855:	  trying file=./lib/tls/libXrandr.so.2
+     30855:	  trying file=./lib/x86_64/libXrandr.so.2
+     30855:	  trying file=./lib/libXrandr.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libXrandr.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libXrandr.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libXrandr.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/libXrandr.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libXrandr.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libXrandr.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libXrandr.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/libXrandr.so.2
+     30855:	  trying file=./lib32/tls/x86_64/libXrandr.so.2
+     30855:	  trying file=./lib32/tls/libXrandr.so.2
+     30855:	  trying file=./lib32/x86_64/libXrandr.so.2
+     30855:	  trying file=./lib32/libXrandr.so.2
+     30855:	  trying file=./lib64/tls/x86_64/libXrandr.so.2
+     30855:	  trying file=./lib64/tls/libXrandr.so.2
+     30855:	  trying file=./lib64/x86_64/libXrandr.so.2
+     30855:	  trying file=./lib64/libXrandr.so.2
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libXrandr.so.2
+     30855:	
+     30855:	find library=libXcursor.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libXcursor.so.1
+     30855:	  trying file=./lib/tls/libXcursor.so.1
+     30855:	  trying file=./lib/x86_64/libXcursor.so.1
+     30855:	  trying file=./lib/libXcursor.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libXcursor.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libXcursor.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libXcursor.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libXcursor.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libXcursor.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libXcursor.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libXcursor.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libXcursor.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libXcursor.so.1
+     30855:	  trying file=./lib32/tls/libXcursor.so.1
+     30855:	  trying file=./lib32/x86_64/libXcursor.so.1
+     30855:	  trying file=./lib32/libXcursor.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libXcursor.so.1
+     30855:	  trying file=./lib64/tls/libXcursor.so.1
+     30855:	  trying file=./lib64/x86_64/libXcursor.so.1
+     30855:	  trying file=./lib64/libXcursor.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libXcursor.so.1
+     30855:	
+     30855:	find library=libXcomposite.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libXcomposite.so.1
+     30855:	  trying file=./lib/tls/libXcomposite.so.1
+     30855:	  trying file=./lib/x86_64/libXcomposite.so.1
+     30855:	  trying file=./lib/libXcomposite.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libXcomposite.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libXcomposite.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libXcomposite.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libXcomposite.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libXcomposite.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libXcomposite.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libXcomposite.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libXcomposite.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libXcomposite.so.1
+     30855:	  trying file=./lib32/tls/libXcomposite.so.1
+     30855:	  trying file=./lib32/x86_64/libXcomposite.so.1
+     30855:	  trying file=./lib32/libXcomposite.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libXcomposite.so.1
+     30855:	  trying file=./lib64/tls/libXcomposite.so.1
+     30855:	  trying file=./lib64/x86_64/libXcomposite.so.1
+     30855:	  trying file=./lib64/libXcomposite.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libXcomposite.so.1
+     30855:	
+     30855:	find library=libXdamage.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libXdamage.so.1
+     30855:	  trying file=./lib/tls/libXdamage.so.1
+     30855:	  trying file=./lib/x86_64/libXdamage.so.1
+     30855:	  trying file=./lib/libXdamage.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libXdamage.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libXdamage.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libXdamage.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libXdamage.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libXdamage.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libXdamage.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libXdamage.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libXdamage.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libXdamage.so.1
+     30855:	  trying file=./lib32/tls/libXdamage.so.1
+     30855:	  trying file=./lib32/x86_64/libXdamage.so.1
+     30855:	  trying file=./lib32/libXdamage.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libXdamage.so.1
+     30855:	  trying file=./lib64/tls/libXdamage.so.1
+     30855:	  trying file=./lib64/x86_64/libXdamage.so.1
+     30855:	  trying file=./lib64/libXdamage.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libXdamage.so.1
+     30855:	
+     30855:	find library=libXext.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libXext.so.6
+     30855:	  trying file=./lib/tls/libXext.so.6
+     30855:	  trying file=./lib/x86_64/libXext.so.6
+     30855:	  trying file=./lib/libXext.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libXext.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libXext.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libXext.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/libXext.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libXext.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libXext.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libXext.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/libXext.so.6
+     30855:	  trying file=./lib32/tls/x86_64/libXext.so.6
+     30855:	  trying file=./lib32/tls/libXext.so.6
+     30855:	  trying file=./lib32/x86_64/libXext.so.6
+     30855:	  trying file=./lib32/libXext.so.6
+     30855:	  trying file=./lib64/tls/x86_64/libXext.so.6
+     30855:	  trying file=./lib64/tls/libXext.so.6
+     30855:	  trying file=./lib64/x86_64/libXext.so.6
+     30855:	  trying file=./lib64/libXext.so.6
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libXext.so.6
+     30855:	
+     30855:	find library=libz.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libz.so.1
+     30855:	  trying file=./lib/tls/libz.so.1
+     30855:	  trying file=./lib/x86_64/libz.so.1
+     30855:	  trying file=./lib/libz.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libz.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libz.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libz.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libz.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libz.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libz.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libz.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libz.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libz.so.1
+     30855:	  trying file=./lib32/tls/libz.so.1
+     30855:	  trying file=./lib32/x86_64/libz.so.1
+     30855:	  trying file=./lib32/libz.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libz.so.1
+     30855:	  trying file=./lib64/tls/libz.so.1
+     30855:	  trying file=./lib64/x86_64/libz.so.1
+     30855:	  trying file=./lib64/libz.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libz.so.1
+     30855:	
+     30855:	find library=libresolv.so.2 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libresolv.so.2
+     30855:	  trying file=./lib/tls/libresolv.so.2
+     30855:	  trying file=./lib/x86_64/libresolv.so.2
+     30855:	  trying file=./lib/libresolv.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libresolv.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libresolv.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libresolv.so.2
+     30855:	  trying file=./lib/i386-linux-gnu/libresolv.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libresolv.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libresolv.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libresolv.so.2
+     30855:	  trying file=./lib/x86_64-linux-gnu/libresolv.so.2
+     30855:	  trying file=./lib32/tls/x86_64/libresolv.so.2
+     30855:	  trying file=./lib32/tls/libresolv.so.2
+     30855:	  trying file=./lib32/x86_64/libresolv.so.2
+     30855:	  trying file=./lib32/libresolv.so.2
+     30855:	  trying file=./lib64/tls/x86_64/libresolv.so.2
+     30855:	  trying file=./lib64/tls/libresolv.so.2
+     30855:	  trying file=./lib64/x86_64/libresolv.so.2
+     30855:	  trying file=./lib64/libresolv.so.2
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libresolv.so.2
+     30855:	
+     30855:	find library=libmount.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libmount.so.1
+     30855:	  trying file=./lib/tls/libmount.so.1
+     30855:	  trying file=./lib/x86_64/libmount.so.1
+     30855:	  trying file=./lib/libmount.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libmount.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libmount.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libmount.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libmount.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libmount.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libmount.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libmount.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libmount.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libmount.so.1
+     30855:	  trying file=./lib32/tls/libmount.so.1
+     30855:	  trying file=./lib32/x86_64/libmount.so.1
+     30855:	  trying file=./lib32/libmount.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libmount.so.1
+     30855:	  trying file=./lib64/tls/libmount.so.1
+     30855:	  trying file=./lib64/x86_64/libmount.so.1
+     30855:	  trying file=./lib64/libmount.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libmount.so.1
+     30855:	
+     30855:	find library=libthai.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libthai.so.0
+     30855:	  trying file=./lib/tls/libthai.so.0
+     30855:	  trying file=./lib/x86_64/libthai.so.0
+     30855:	  trying file=./lib/libthai.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libthai.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libthai.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libthai.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libthai.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libthai.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libthai.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libthai.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libthai.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libthai.so.0
+     30855:	  trying file=./lib32/tls/libthai.so.0
+     30855:	  trying file=./lib32/x86_64/libthai.so.0
+     30855:	  trying file=./lib32/libthai.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libthai.so.0
+     30855:	  trying file=./lib64/tls/libthai.so.0
+     30855:	  trying file=./lib64/x86_64/libthai.so.0
+     30855:	  trying file=./lib64/libthai.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libthai.so.0
+     30855:	
+     30855:	find library=libffi.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libffi.so.6
+     30855:	  trying file=./lib/tls/libffi.so.6
+     30855:	  trying file=./lib/x86_64/libffi.so.6
+     30855:	  trying file=./lib/libffi.so.6
+     30855:	
+     30855:	find library=libpcre.so.3 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libpcre.so.3
+     30855:	  trying file=./lib/tls/libpcre.so.3
+     30855:	  trying file=./lib/x86_64/libpcre.so.3
+     30855:	  trying file=./lib/libpcre.so.3
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libpcre.so.3
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libpcre.so.3
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libpcre.so.3
+     30855:	  trying file=./lib/i386-linux-gnu/libpcre.so.3
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libpcre.so.3
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libpcre.so.3
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libpcre.so.3
+     30855:	  trying file=./lib/x86_64-linux-gnu/libpcre.so.3
+     30855:	  trying file=./lib32/tls/x86_64/libpcre.so.3
+     30855:	  trying file=./lib32/tls/libpcre.so.3
+     30855:	  trying file=./lib32/x86_64/libpcre.so.3
+     30855:	  trying file=./lib32/libpcre.so.3
+     30855:	  trying file=./lib64/tls/x86_64/libpcre.so.3
+     30855:	  trying file=./lib64/tls/libpcre.so.3
+     30855:	  trying file=./lib64/x86_64/libpcre.so.3
+     30855:	  trying file=./lib64/libpcre.so.3
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libpcre.so.3
+     30855:	
+     30855:	find library=libuuid.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libuuid.so.1
+     30855:	  trying file=./lib/tls/libuuid.so.1
+     30855:	  trying file=./lib/x86_64/libuuid.so.1
+     30855:	  trying file=./lib/libuuid.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libuuid.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libuuid.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libuuid.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libuuid.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libuuid.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libuuid.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libuuid.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libuuid.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libuuid.so.1
+     30855:	  trying file=./lib32/tls/libuuid.so.1
+     30855:	  trying file=./lib32/x86_64/libuuid.so.1
+     30855:	  trying file=./lib32/libuuid.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libuuid.so.1
+     30855:	  trying file=./lib64/tls/libuuid.so.1
+     30855:	  trying file=./lib64/x86_64/libuuid.so.1
+     30855:	  trying file=./lib64/libuuid.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libuuid.so.1
+     30855:	
+     30855:	find library=libxcb.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libxcb.so.1
+     30855:	  trying file=./lib/tls/libxcb.so.1
+     30855:	  trying file=./lib/x86_64/libxcb.so.1
+     30855:	  trying file=./lib/libxcb.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libxcb.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libxcb.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libxcb.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libxcb.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libxcb.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libxcb.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libxcb.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libxcb.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libxcb.so.1
+     30855:	  trying file=./lib32/tls/libxcb.so.1
+     30855:	  trying file=./lib32/x86_64/libxcb.so.1
+     30855:	  trying file=./lib32/libxcb.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libxcb.so.1
+     30855:	  trying file=./lib64/tls/libxcb.so.1
+     30855:	  trying file=./lib64/x86_64/libxcb.so.1
+     30855:	  trying file=./lib64/libxcb.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libxcb.so.1
+     30855:	
+     30855:	find library=libpcre.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libpcre.so.1
+     30855:	  trying file=./lib/tls/libpcre.so.1
+     30855:	  trying file=./lib/x86_64/libpcre.so.1
+     30855:	  trying file=./lib/libpcre.so.1
+     30855:	
+     30855:	find library=liblzma.so.5 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/liblzma.so.5
+     30855:	  trying file=./lib/tls/liblzma.so.5
+     30855:	  trying file=./lib/x86_64/liblzma.so.5
+     30855:	  trying file=./lib/liblzma.so.5
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/liblzma.so.5
+     30855:	  trying file=./lib/i386-linux-gnu/tls/liblzma.so.5
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/liblzma.so.5
+     30855:	  trying file=./lib/i386-linux-gnu/liblzma.so.5
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/liblzma.so.5
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/liblzma.so.5
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/liblzma.so.5
+     30855:	  trying file=./lib/x86_64-linux-gnu/liblzma.so.5
+     30855:	  trying file=./lib32/tls/x86_64/liblzma.so.5
+     30855:	  trying file=./lib32/tls/liblzma.so.5
+     30855:	  trying file=./lib32/x86_64/liblzma.so.5
+     30855:	  trying file=./lib32/liblzma.so.5
+     30855:	  trying file=./lib64/tls/x86_64/liblzma.so.5
+     30855:	  trying file=./lib64/tls/liblzma.so.5
+     30855:	  trying file=./lib64/x86_64/liblzma.so.5
+     30855:	  trying file=./lib64/liblzma.so.5
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/liblzma.so.5
+     30855:	
+     30855:	find library=libattr.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libattr.so.1
+     30855:	  trying file=./lib/tls/libattr.so.1
+     30855:	  trying file=./lib/x86_64/libattr.so.1
+     30855:	  trying file=./lib/libattr.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libattr.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libattr.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libattr.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libattr.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libattr.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libattr.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libattr.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libattr.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libattr.so.1
+     30855:	  trying file=./lib32/tls/libattr.so.1
+     30855:	  trying file=./lib32/x86_64/libattr.so.1
+     30855:	  trying file=./lib32/libattr.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libattr.so.1
+     30855:	  trying file=./lib64/tls/libattr.so.1
+     30855:	  trying file=./lib64/x86_64/libattr.so.1
+     30855:	  trying file=./lib64/libattr.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libattr.so.1
+     30855:	
+     30855:	find library=libncurses.so.5 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libncurses.so.5
+     30855:	  trying file=./lib/tls/libncurses.so.5
+     30855:	  trying file=./lib/x86_64/libncurses.so.5
+     30855:	  trying file=./lib/libncurses.so.5
+     30855:	
+     30855:	find library=libfreetype.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libfreetype.so.6
+     30855:	  trying file=./lib/tls/libfreetype.so.6
+     30855:	  trying file=./lib/x86_64/libfreetype.so.6
+     30855:	  trying file=./lib/libfreetype.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libfreetype.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libfreetype.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libfreetype.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/libfreetype.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libfreetype.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libfreetype.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libfreetype.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/libfreetype.so.6
+     30855:	  trying file=./lib32/tls/x86_64/libfreetype.so.6
+     30855:	  trying file=./lib32/tls/libfreetype.so.6
+     30855:	  trying file=./lib32/x86_64/libfreetype.so.6
+     30855:	  trying file=./lib32/libfreetype.so.6
+     30855:	  trying file=./lib64/tls/x86_64/libfreetype.so.6
+     30855:	  trying file=./lib64/tls/libfreetype.so.6
+     30855:	  trying file=./lib64/x86_64/libfreetype.so.6
+     30855:	  trying file=./lib64/libfreetype.so.6
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libfreetype.so.6
+     30855:	
+     30855:	find library=libpixman-1.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libpixman-1.so.0
+     30855:	  trying file=./lib/tls/libpixman-1.so.0
+     30855:	  trying file=./lib/x86_64/libpixman-1.so.0
+     30855:	  trying file=./lib/libpixman-1.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libpixman-1.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libpixman-1.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libpixman-1.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libpixman-1.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libpixman-1.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libpixman-1.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libpixman-1.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libpixman-1.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libpixman-1.so.0
+     30855:	  trying file=./lib32/tls/libpixman-1.so.0
+     30855:	  trying file=./lib32/x86_64/libpixman-1.so.0
+     30855:	  trying file=./lib32/libpixman-1.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libpixman-1.so.0
+     30855:	  trying file=./lib64/tls/libpixman-1.so.0
+     30855:	  trying file=./lib64/x86_64/libpixman-1.so.0
+     30855:	  trying file=./lib64/libpixman-1.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libpixman-1.so.0
+     30855:	
+     30855:	find library=libpng12.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libpng12.so.0
+     30855:	  trying file=./lib/tls/libpng12.so.0
+     30855:	  trying file=./lib/x86_64/libpng12.so.0
+     30855:	  trying file=./lib/libpng12.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libpng12.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libpng12.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libpng12.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libpng12.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libpng12.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libpng12.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libpng12.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libpng12.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libpng12.so.0
+     30855:	  trying file=./lib32/tls/libpng12.so.0
+     30855:	  trying file=./lib32/x86_64/libpng12.so.0
+     30855:	  trying file=./lib32/libpng12.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libpng12.so.0
+     30855:	  trying file=./lib64/tls/libpng12.so.0
+     30855:	  trying file=./lib64/x86_64/libpng12.so.0
+     30855:	  trying file=./lib64/libpng12.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libpng12.so.0
+     30855:	
+     30855:	find library=libxcb-shm.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libxcb-shm.so.0
+     30855:	  trying file=./lib/tls/libxcb-shm.so.0
+     30855:	  trying file=./lib/x86_64/libxcb-shm.so.0
+     30855:	  trying file=./lib/libxcb-shm.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libxcb-shm.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libxcb-shm.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libxcb-shm.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libxcb-shm.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libxcb-shm.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libxcb-shm.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libxcb-shm.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libxcb-shm.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libxcb-shm.so.0
+     30855:	  trying file=./lib32/tls/libxcb-shm.so.0
+     30855:	  trying file=./lib32/x86_64/libxcb-shm.so.0
+     30855:	  trying file=./lib32/libxcb-shm.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libxcb-shm.so.0
+     30855:	  trying file=./lib64/tls/libxcb-shm.so.0
+     30855:	  trying file=./lib64/x86_64/libxcb-shm.so.0
+     30855:	  trying file=./lib64/libxcb-shm.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libxcb-shm.so.0
+     30855:	
+     30855:	find library=libxcb-render.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libxcb-render.so.0
+     30855:	  trying file=./lib/tls/libxcb-render.so.0
+     30855:	  trying file=./lib/x86_64/libxcb-render.so.0
+     30855:	  trying file=./lib/libxcb-render.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libxcb-render.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libxcb-render.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libxcb-render.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libxcb-render.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libxcb-render.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libxcb-render.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libxcb-render.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libxcb-render.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libxcb-render.so.0
+     30855:	  trying file=./lib32/tls/libxcb-render.so.0
+     30855:	  trying file=./lib32/x86_64/libxcb-render.so.0
+     30855:	  trying file=./lib32/libxcb-render.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libxcb-render.so.0
+     30855:	  trying file=./lib64/tls/libxcb-render.so.0
+     30855:	  trying file=./lib64/x86_64/libxcb-render.so.0
+     30855:	  trying file=./lib64/libxcb-render.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libxcb-render.so.0
+     30855:	
+     30855:	find library=librt.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/librt.so.1
+     30855:	  trying file=./lib/tls/librt.so.1
+     30855:	  trying file=./lib/x86_64/librt.so.1
+     30855:	  trying file=./lib/librt.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/librt.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/librt.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/librt.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/librt.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/librt.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/librt.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/librt.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/librt.so.1
+     30855:	  trying file=./lib32/tls/x86_64/librt.so.1
+     30855:	  trying file=./lib32/tls/librt.so.1
+     30855:	  trying file=./lib32/x86_64/librt.so.1
+     30855:	  trying file=./lib32/librt.so.1
+     30855:	  trying file=./lib64/tls/x86_64/librt.so.1
+     30855:	  trying file=./lib64/tls/librt.so.1
+     30855:	  trying file=./lib64/x86_64/librt.so.1
+     30855:	  trying file=./lib64/librt.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/librt.so.1
+     30855:	
+     30855:	find library=libharfbuzz.so.0 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libharfbuzz.so.0
+     30855:	  trying file=./lib/tls/libharfbuzz.so.0
+     30855:	  trying file=./lib/x86_64/libharfbuzz.so.0
+     30855:	  trying file=./lib/libharfbuzz.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libharfbuzz.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libharfbuzz.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libharfbuzz.so.0
+     30855:	  trying file=./lib/i386-linux-gnu/libharfbuzz.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libharfbuzz.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libharfbuzz.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libharfbuzz.so.0
+     30855:	  trying file=./lib/x86_64-linux-gnu/libharfbuzz.so.0
+     30855:	  trying file=./lib32/tls/x86_64/libharfbuzz.so.0
+     30855:	  trying file=./lib32/tls/libharfbuzz.so.0
+     30855:	  trying file=./lib32/x86_64/libharfbuzz.so.0
+     30855:	  trying file=./lib32/libharfbuzz.so.0
+     30855:	  trying file=./lib64/tls/x86_64/libharfbuzz.so.0
+     30855:	  trying file=./lib64/tls/libharfbuzz.so.0
+     30855:	  trying file=./lib64/x86_64/libharfbuzz.so.0
+     30855:	  trying file=./lib64/libharfbuzz.so.0
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libharfbuzz.so.0
+     30855:	
+     30855:	find library=libexpat.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libexpat.so.1
+     30855:	  trying file=./lib/tls/libexpat.so.1
+     30855:	  trying file=./lib/x86_64/libexpat.so.1
+     30855:	  trying file=./lib/libexpat.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libexpat.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libexpat.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libexpat.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libexpat.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libexpat.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libexpat.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libexpat.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libexpat.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libexpat.so.1
+     30855:	  trying file=./lib32/tls/libexpat.so.1
+     30855:	  trying file=./lib32/x86_64/libexpat.so.1
+     30855:	  trying file=./lib32/libexpat.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libexpat.so.1
+     30855:	  trying file=./lib64/tls/libexpat.so.1
+     30855:	  trying file=./lib64/x86_64/libexpat.so.1
+     30855:	  trying file=./lib64/libexpat.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libexpat.so.1
+     30855:	
+     30855:	find library=libblkid.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libblkid.so.1
+     30855:	  trying file=./lib/tls/libblkid.so.1
+     30855:	  trying file=./lib/x86_64/libblkid.so.1
+     30855:	  trying file=./lib/libblkid.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libblkid.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libblkid.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libblkid.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libblkid.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libblkid.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libblkid.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libblkid.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libblkid.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libblkid.so.1
+     30855:	  trying file=./lib32/tls/libblkid.so.1
+     30855:	  trying file=./lib32/x86_64/libblkid.so.1
+     30855:	  trying file=./lib32/libblkid.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libblkid.so.1
+     30855:	  trying file=./lib64/tls/libblkid.so.1
+     30855:	  trying file=./lib64/x86_64/libblkid.so.1
+     30855:	  trying file=./lib64/libblkid.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/lib/x86_64-linux-gnu/libblkid.so.1
+     30855:	
+     30855:	find library=libdatrie.so.1 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libdatrie.so.1
+     30855:	  trying file=./lib/tls/libdatrie.so.1
+     30855:	  trying file=./lib/x86_64/libdatrie.so.1
+     30855:	  trying file=./lib/libdatrie.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libdatrie.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libdatrie.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libdatrie.so.1
+     30855:	  trying file=./lib/i386-linux-gnu/libdatrie.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libdatrie.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libdatrie.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libdatrie.so.1
+     30855:	  trying file=./lib/x86_64-linux-gnu/libdatrie.so.1
+     30855:	  trying file=./lib32/tls/x86_64/libdatrie.so.1
+     30855:	  trying file=./lib32/tls/libdatrie.so.1
+     30855:	  trying file=./lib32/x86_64/libdatrie.so.1
+     30855:	  trying file=./lib32/libdatrie.so.1
+     30855:	  trying file=./lib64/tls/x86_64/libdatrie.so.1
+     30855:	  trying file=./lib64/tls/libdatrie.so.1
+     30855:	  trying file=./lib64/x86_64/libdatrie.so.1
+     30855:	  trying file=./lib64/libdatrie.so.1
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libdatrie.so.1
+     30855:	
+     30855:	find library=libXau.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libXau.so.6
+     30855:	  trying file=./lib/tls/libXau.so.6
+     30855:	  trying file=./lib/x86_64/libXau.so.6
+     30855:	  trying file=./lib/libXau.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libXau.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libXau.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libXau.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/libXau.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libXau.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libXau.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libXau.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/libXau.so.6
+     30855:	  trying file=./lib32/tls/x86_64/libXau.so.6
+     30855:	  trying file=./lib32/tls/libXau.so.6
+     30855:	  trying file=./lib32/x86_64/libXau.so.6
+     30855:	  trying file=./lib32/libXau.so.6
+     30855:	  trying file=./lib64/tls/x86_64/libXau.so.6
+     30855:	  trying file=./lib64/tls/libXau.so.6
+     30855:	  trying file=./lib64/x86_64/libXau.so.6
+     30855:	  trying file=./lib64/libXau.so.6
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libXau.so.6
+     30855:	
+     30855:	find library=libXdmcp.so.6 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libXdmcp.so.6
+     30855:	  trying file=./lib/tls/libXdmcp.so.6
+     30855:	  trying file=./lib/x86_64/libXdmcp.so.6
+     30855:	  trying file=./lib/libXdmcp.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libXdmcp.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libXdmcp.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libXdmcp.so.6
+     30855:	  trying file=./lib/i386-linux-gnu/libXdmcp.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libXdmcp.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libXdmcp.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libXdmcp.so.6
+     30855:	  trying file=./lib/x86_64-linux-gnu/libXdmcp.so.6
+     30855:	  trying file=./lib32/tls/x86_64/libXdmcp.so.6
+     30855:	  trying file=./lib32/tls/libXdmcp.so.6
+     30855:	  trying file=./lib32/x86_64/libXdmcp.so.6
+     30855:	  trying file=./lib32/libXdmcp.so.6
+     30855:	  trying file=./lib64/tls/x86_64/libXdmcp.so.6
+     30855:	  trying file=./lib64/tls/libXdmcp.so.6
+     30855:	  trying file=./lib64/x86_64/libXdmcp.so.6
+     30855:	  trying file=./lib64/libXdmcp.so.6
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libXdmcp.so.6
+     30855:	
+     30855:	find library=libgraphite2.so.3 [0]; searching
+     30855:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30855:	  trying file=./lib/tls/x86_64/libgraphite2.so.3
+     30855:	  trying file=./lib/tls/libgraphite2.so.3
+     30855:	  trying file=./lib/x86_64/libgraphite2.so.3
+     30855:	  trying file=./lib/libgraphite2.so.3
+     30855:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libgraphite2.so.3
+     30855:	  trying file=./lib/i386-linux-gnu/tls/libgraphite2.so.3
+     30855:	  trying file=./lib/i386-linux-gnu/x86_64/libgraphite2.so.3
+     30855:	  trying file=./lib/i386-linux-gnu/libgraphite2.so.3
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libgraphite2.so.3
+     30855:	  trying file=./lib/x86_64-linux-gnu/tls/libgraphite2.so.3
+     30855:	  trying file=./lib/x86_64-linux-gnu/x86_64/libgraphite2.so.3
+     30855:	  trying file=./lib/x86_64-linux-gnu/libgraphite2.so.3
+     30855:	  trying file=./lib32/tls/x86_64/libgraphite2.so.3
+     30855:	  trying file=./lib32/tls/libgraphite2.so.3
+     30855:	  trying file=./lib32/x86_64/libgraphite2.so.3
+     30855:	  trying file=./lib32/libgraphite2.so.3
+     30855:	  trying file=./lib64/tls/x86_64/libgraphite2.so.3
+     30855:	  trying file=./lib64/tls/libgraphite2.so.3
+     30855:	  trying file=./lib64/x86_64/libgraphite2.so.3
+     30855:	  trying file=./lib64/libgraphite2.so.3
+     30855:	 search cache=/etc/ld.so.cache
+     30855:	  trying file=/usr/lib/x86_64-linux-gnu/libgraphite2.so.3
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libpthread.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libgraphite2.so.3
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libXdmcp.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libXau.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libdatrie.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libuuid.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libblkid.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libexpat.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libpcre.so.3
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libglib-2.0.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libz.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libm.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libpng12.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libfreetype.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/librt.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libxcb.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libxcb-render.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libpixman-1.so.0
+     30855:	
+     30855:	
+     30855:	calling init: ./lib/libtinfo.so.5
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libdl.so.2
+     30855:	
+     30855:	
+     30855:	calling init: ./lib/libncurses.so.5
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libattr.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/liblzma.so.5
+     30855:	
+     30855:	
+     30855:	calling init: ./lib/libpcre.so.1
+     30855:	
+     30855:	
+     30855:	calling init: ./lib/libffi.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libthai.so.0
+     30855:	
+     30855:	
+     30855:	calling init: ./lib/libselinux.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libmount.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libresolv.so.2
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libX11.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libXext.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libXdamage.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libXcomposite.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libXfixes.so.3
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libXrender.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libXcursor.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libXrandr.so.2
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libXi.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libXinerama.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libfontconfig.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libcairo.so.2
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0
+     30855:	
+     30855:	
+     30855:	calling init: ./lib/libgpm.so.2
+     30855:	
+     30855:	
+     30855:	calling init: /lib/x86_64-linux-gnu/libacl.so.1
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libICE.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libSM.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libXt.so.6
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0
+     30855:	
+     30855:	
+     30855:	calling init: /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0
+     30855:	
+     30855:	
+     30855:	initialize program: /tmp/.mount_mjD6Js/usr/bin/gvim
+     30855:	
+     30855:	
+     30855:	transferring control: /tmp/.mount_mjD6Js/usr/bin/gvim
+     30855:	
+     30892:	/tmp/.mount_mjD6Js/usr/bin/gvim: error: symbol lookup error: undefined symbol: gtk_widget_device_is_shadowed (fatal)
+     30892:	
+     30892:	calling init: /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/liboverlay-scrollbar.so
+     30892:	
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/liboverlay-scrollbar.so: error: symbol lookup error: undefined symbol: g_module_check_init (fatal)
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/liboverlay-scrollbar.so: error: symbol lookup error: undefined symbol: g_module_unload (fatal)
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/liboverlay-scrollbar.so: error: symbol lookup error: undefined symbol: gtk_widget_device_is_shadowed (fatal)
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/liboverlay-scrollbar.so: error: symbol lookup error: undefined symbol: gtk_module_display_init (fatal)
+     30892:	find library=libgailutil.so.18 [0]; searching
+     30892:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30892:	  trying file=./lib/tls/x86_64/libgailutil.so.18
+     30892:	  trying file=./lib/tls/libgailutil.so.18
+     30892:	  trying file=./lib/x86_64/libgailutil.so.18
+     30892:	  trying file=./lib/libgailutil.so.18
+     30892:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libgailutil.so.18
+     30892:	  trying file=./lib/i386-linux-gnu/tls/libgailutil.so.18
+     30892:	  trying file=./lib/i386-linux-gnu/x86_64/libgailutil.so.18
+     30892:	  trying file=./lib/i386-linux-gnu/libgailutil.so.18
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libgailutil.so.18
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/libgailutil.so.18
+     30892:	  trying file=./lib/x86_64-linux-gnu/x86_64/libgailutil.so.18
+     30892:	  trying file=./lib/x86_64-linux-gnu/libgailutil.so.18
+     30892:	  trying file=./lib32/tls/x86_64/libgailutil.so.18
+     30892:	  trying file=./lib32/tls/libgailutil.so.18
+     30892:	  trying file=./lib32/x86_64/libgailutil.so.18
+     30892:	  trying file=./lib32/libgailutil.so.18
+     30892:	  trying file=./lib64/tls/x86_64/libgailutil.so.18
+     30892:	  trying file=./lib64/tls/libgailutil.so.18
+     30892:	  trying file=./lib64/x86_64/libgailutil.so.18
+     30892:	  trying file=./lib64/libgailutil.so.18
+     30892:	 search cache=/etc/ld.so.cache
+     30892:	  trying file=/usr/lib/x86_64-linux-gnu/libgailutil.so.18
+     30892:	
+     30892:	
+     30892:	calling init: /usr/lib/x86_64-linux-gnu/libgailutil.so.18
+     30892:	
+     30892:	
+     30892:	calling init: /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libgail.so
+     30892:	
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libgail.so: error: symbol lookup error: undefined symbol: g_module_unload (fatal)
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libgail.so: error: symbol lookup error: undefined symbol: gtk_widget_device_is_shadowed (fatal)
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libgail.so: error: symbol lookup error: undefined symbol: gtk_module_display_init (fatal)
+     30892:	find library=libatk-bridge-2.0.so.0 [0]; searching
+     30892:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30892:	  trying file=./lib/tls/x86_64/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib/tls/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib/x86_64/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/tls/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/x86_64/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/x86_64/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib32/tls/x86_64/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib32/tls/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib32/x86_64/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib32/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib64/tls/x86_64/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib64/tls/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib64/x86_64/libatk-bridge-2.0.so.0
+     30892:	  trying file=./lib64/libatk-bridge-2.0.so.0
+     30892:	 search cache=/etc/ld.so.cache
+     30892:	  trying file=/usr/lib/x86_64-linux-gnu/libatk-bridge-2.0.so.0
+     30892:	
+     30892:	find library=libatspi.so.0 [0]; searching
+     30892:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30892:	  trying file=./lib/tls/x86_64/libatspi.so.0
+     30892:	  trying file=./lib/tls/libatspi.so.0
+     30892:	  trying file=./lib/x86_64/libatspi.so.0
+     30892:	  trying file=./lib/libatspi.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libatspi.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/tls/libatspi.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/x86_64/libatspi.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/libatspi.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libatspi.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/libatspi.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/x86_64/libatspi.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/libatspi.so.0
+     30892:	  trying file=./lib32/tls/x86_64/libatspi.so.0
+     30892:	  trying file=./lib32/tls/libatspi.so.0
+     30892:	  trying file=./lib32/x86_64/libatspi.so.0
+     30892:	  trying file=./lib32/libatspi.so.0
+     30892:	  trying file=./lib64/tls/x86_64/libatspi.so.0
+     30892:	  trying file=./lib64/tls/libatspi.so.0
+     30892:	  trying file=./lib64/x86_64/libatspi.so.0
+     30892:	  trying file=./lib64/libatspi.so.0
+     30892:	 search cache=/etc/ld.so.cache
+     30892:	  trying file=/usr/lib/x86_64-linux-gnu/libatspi.so.0
+     30892:	
+     30892:	find library=libdbus-1.so.3 [0]; searching
+     30892:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30892:	  trying file=./lib/tls/x86_64/libdbus-1.so.3
+     30892:	  trying file=./lib/tls/libdbus-1.so.3
+     30892:	  trying file=./lib/x86_64/libdbus-1.so.3
+     30892:	  trying file=./lib/libdbus-1.so.3
+     30892:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libdbus-1.so.3
+     30892:	  trying file=./lib/i386-linux-gnu/tls/libdbus-1.so.3
+     30892:	  trying file=./lib/i386-linux-gnu/x86_64/libdbus-1.so.3
+     30892:	  trying file=./lib/i386-linux-gnu/libdbus-1.so.3
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libdbus-1.so.3
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/libdbus-1.so.3
+     30892:	  trying file=./lib/x86_64-linux-gnu/x86_64/libdbus-1.so.3
+     30892:	  trying file=./lib/x86_64-linux-gnu/libdbus-1.so.3
+     30892:	  trying file=./lib32/tls/x86_64/libdbus-1.so.3
+     30892:	  trying file=./lib32/tls/libdbus-1.so.3
+     30892:	  trying file=./lib32/x86_64/libdbus-1.so.3
+     30892:	  trying file=./lib32/libdbus-1.so.3
+     30892:	  trying file=./lib64/tls/x86_64/libdbus-1.so.3
+     30892:	  trying file=./lib64/tls/libdbus-1.so.3
+     30892:	  trying file=./lib64/x86_64/libdbus-1.so.3
+     30892:	  trying file=./lib64/libdbus-1.so.3
+     30892:	 search cache=/etc/ld.so.cache
+     30892:	  trying file=/lib/x86_64-linux-gnu/libdbus-1.so.3
+     30892:	
+     30892:	find library=libsystemd.so.0 [0]; searching
+     30892:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30892:	  trying file=./lib/tls/x86_64/libsystemd.so.0
+     30892:	  trying file=./lib/tls/libsystemd.so.0
+     30892:	  trying file=./lib/x86_64/libsystemd.so.0
+     30892:	  trying file=./lib/libsystemd.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libsystemd.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/tls/libsystemd.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/x86_64/libsystemd.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/libsystemd.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libsystemd.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/libsystemd.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/x86_64/libsystemd.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/libsystemd.so.0
+     30892:	  trying file=./lib32/tls/x86_64/libsystemd.so.0
+     30892:	  trying file=./lib32/tls/libsystemd.so.0
+     30892:	  trying file=./lib32/x86_64/libsystemd.so.0
+     30892:	  trying file=./lib32/libsystemd.so.0
+     30892:	  trying file=./lib64/tls/x86_64/libsystemd.so.0
+     30892:	  trying file=./lib64/tls/libsystemd.so.0
+     30892:	  trying file=./lib64/x86_64/libsystemd.so.0
+     30892:	  trying file=./lib64/libsystemd.so.0
+     30892:	 search cache=/etc/ld.so.cache
+     30892:	  trying file=/lib/x86_64-linux-gnu/libsystemd.so.0
+     30892:	
+     30892:	find library=libgcrypt.so.20 [0]; searching
+     30892:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30892:	  trying file=./lib/tls/x86_64/libgcrypt.so.20
+     30892:	  trying file=./lib/tls/libgcrypt.so.20
+     30892:	  trying file=./lib/x86_64/libgcrypt.so.20
+     30892:	  trying file=./lib/libgcrypt.so.20
+     30892:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libgcrypt.so.20
+     30892:	  trying file=./lib/i386-linux-gnu/tls/libgcrypt.so.20
+     30892:	  trying file=./lib/i386-linux-gnu/x86_64/libgcrypt.so.20
+     30892:	  trying file=./lib/i386-linux-gnu/libgcrypt.so.20
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libgcrypt.so.20
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/libgcrypt.so.20
+     30892:	  trying file=./lib/x86_64-linux-gnu/x86_64/libgcrypt.so.20
+     30892:	  trying file=./lib/x86_64-linux-gnu/libgcrypt.so.20
+     30892:	  trying file=./lib32/tls/x86_64/libgcrypt.so.20
+     30892:	  trying file=./lib32/tls/libgcrypt.so.20
+     30892:	  trying file=./lib32/x86_64/libgcrypt.so.20
+     30892:	  trying file=./lib32/libgcrypt.so.20
+     30892:	  trying file=./lib64/tls/x86_64/libgcrypt.so.20
+     30892:	  trying file=./lib64/tls/libgcrypt.so.20
+     30892:	  trying file=./lib64/x86_64/libgcrypt.so.20
+     30892:	  trying file=./lib64/libgcrypt.so.20
+     30892:	 search cache=/etc/ld.so.cache
+     30892:	  trying file=/lib/x86_64-linux-gnu/libgcrypt.so.20
+     30892:	
+     30892:	find library=libgpg-error.so.0 [0]; searching
+     30892:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30892:	  trying file=./lib/tls/x86_64/libgpg-error.so.0
+     30892:	  trying file=./lib/tls/libgpg-error.so.0
+     30892:	  trying file=./lib/x86_64/libgpg-error.so.0
+     30892:	  trying file=./lib/libgpg-error.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libgpg-error.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/tls/libgpg-error.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/x86_64/libgpg-error.so.0
+     30892:	  trying file=./lib/i386-linux-gnu/libgpg-error.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libgpg-error.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/libgpg-error.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/x86_64/libgpg-error.so.0
+     30892:	  trying file=./lib/x86_64-linux-gnu/libgpg-error.so.0
+     30892:	  trying file=./lib32/tls/x86_64/libgpg-error.so.0
+     30892:	  trying file=./lib32/tls/libgpg-error.so.0
+     30892:	  trying file=./lib32/x86_64/libgpg-error.so.0
+     30892:	  trying file=./lib32/libgpg-error.so.0
+     30892:	  trying file=./lib64/tls/x86_64/libgpg-error.so.0
+     30892:	  trying file=./lib64/tls/libgpg-error.so.0
+     30892:	  trying file=./lib64/x86_64/libgpg-error.so.0
+     30892:	  trying file=./lib64/libgpg-error.so.0
+     30892:	 search cache=/etc/ld.so.cache
+     30892:	  trying file=/lib/x86_64-linux-gnu/libgpg-error.so.0
+     30892:	
+     30892:	
+     30892:	calling init: /lib/x86_64-linux-gnu/libgpg-error.so.0
+     30892:	
+     30892:	
+     30892:	calling init: /lib/x86_64-linux-gnu/libgcrypt.so.20
+     30892:	
+     30892:	
+     30892:	calling init: /lib/x86_64-linux-gnu/libsystemd.so.0
+     30892:	
+     30892:	
+     30892:	calling init: /lib/x86_64-linux-gnu/libdbus-1.so.3
+     30892:	
+     30892:	
+     30892:	calling init: /usr/lib/x86_64-linux-gnu/libatspi.so.0
+     30892:	
+     30892:	
+     30892:	calling init: /usr/lib/x86_64-linux-gnu/libatk-bridge-2.0.so.0
+     30892:	
+     30892:	
+     30892:	calling init: /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libatk-bridge.so
+     30892:	
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libatk-bridge.so: error: symbol lookup error: undefined symbol: g_module_unload (fatal)
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libatk-bridge.so: error: symbol lookup error: undefined symbol: gtk_widget_device_is_shadowed (fatal)
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libatk-bridge.so: error: symbol lookup error: undefined symbol: gtk_module_display_init (fatal)
+     30892:	/tmp/.mount_mjD6Js/usr/bin/gvim: error: symbol lookup error: undefined symbol: qt_startup_hook (fatal)
+     30892:	
+     30892:	calling init: /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
+     30892:	
+     30892:	/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so: error: symbol lookup error: undefined symbol: g_module_check_init (fatal)
+     30892:	/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so: error: symbol lookup error: undefined symbol: g_module_unload (fatal)
+     30892:	
+     30892:	calling init: /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+     30892:	
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so: error: symbol lookup error: undefined symbol: g_module_unload (fatal)
+     30892:	
+     30892:	calling init: /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libadwaita.so
+     30892:	
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libadwaita.so: error: symbol lookup error: undefined symbol: g_module_check_init (fatal)
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libadwaita.so: error: symbol lookup error: undefined symbol: g_module_unload (fatal)
+     30892:	
+     30892:	calling init: /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xpm.so
+     30892:	
+     30892:	/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xpm.so: error: symbol lookup error: undefined symbol: g_module_check_init (fatal)
+     30892:	/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xpm.so: error: symbol lookup error: undefined symbol: g_module_unload (fatal)
+     30892:	
+     30892:	calling init: /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-xim.so
+     30892:	
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-xim.so: error: symbol lookup error: undefined symbol: g_module_check_init (fatal)
+     30892:	/usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-xim.so: error: symbol lookup error: undefined symbol: g_module_unload (fatal)
+     30892:	find library=libnss_compat.so.2 [0]; searching
+     30892:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30892:	  trying file=./lib/tls/x86_64/libnss_compat.so.2
+     30892:	  trying file=./lib/tls/libnss_compat.so.2
+     30892:	  trying file=./lib/x86_64/libnss_compat.so.2
+     30892:	  trying file=./lib/libnss_compat.so.2
+     30892:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libnss_compat.so.2
+     30892:	  trying file=./lib/i386-linux-gnu/tls/libnss_compat.so.2
+     30892:	  trying file=./lib/i386-linux-gnu/x86_64/libnss_compat.so.2
+     30892:	  trying file=./lib/i386-linux-gnu/libnss_compat.so.2
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libnss_compat.so.2
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/libnss_compat.so.2
+     30892:	  trying file=./lib/x86_64-linux-gnu/x86_64/libnss_compat.so.2
+     30892:	  trying file=./lib/x86_64-linux-gnu/libnss_compat.so.2
+     30892:	  trying file=./lib32/tls/x86_64/libnss_compat.so.2
+     30892:	  trying file=./lib32/tls/libnss_compat.so.2
+     30892:	  trying file=./lib32/x86_64/libnss_compat.so.2
+     30892:	  trying file=./lib32/libnss_compat.so.2
+     30892:	  trying file=./lib64/tls/x86_64/libnss_compat.so.2
+     30892:	  trying file=./lib64/tls/libnss_compat.so.2
+     30892:	  trying file=./lib64/x86_64/libnss_compat.so.2
+     30892:	  trying file=./lib64/libnss_compat.so.2
+     30892:	 search cache=/etc/ld.so.cache
+     30892:	  trying file=/lib/x86_64-linux-gnu/libnss_compat.so.2
+     30892:	
+     30892:	find library=libnsl.so.1 [0]; searching
+     30892:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30892:	  trying file=./lib/tls/x86_64/libnsl.so.1
+     30892:	  trying file=./lib/tls/libnsl.so.1
+     30892:	  trying file=./lib/x86_64/libnsl.so.1
+     30892:	  trying file=./lib/libnsl.so.1
+     30892:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libnsl.so.1
+     30892:	  trying file=./lib/i386-linux-gnu/tls/libnsl.so.1
+     30892:	  trying file=./lib/i386-linux-gnu/x86_64/libnsl.so.1
+     30892:	  trying file=./lib/i386-linux-gnu/libnsl.so.1
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libnsl.so.1
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/libnsl.so.1
+     30892:	  trying file=./lib/x86_64-linux-gnu/x86_64/libnsl.so.1
+     30892:	  trying file=./lib/x86_64-linux-gnu/libnsl.so.1
+     30892:	  trying file=./lib32/tls/x86_64/libnsl.so.1
+     30892:	  trying file=./lib32/tls/libnsl.so.1
+     30892:	  trying file=./lib32/x86_64/libnsl.so.1
+     30892:	  trying file=./lib32/libnsl.so.1
+     30892:	  trying file=./lib64/tls/x86_64/libnsl.so.1
+     30892:	  trying file=./lib64/tls/libnsl.so.1
+     30892:	  trying file=./lib64/x86_64/libnsl.so.1
+     30892:	  trying file=./lib64/libnsl.so.1
+     30892:	 search cache=/etc/ld.so.cache
+     30892:	  trying file=/lib/x86_64-linux-gnu/libnsl.so.1
+     30892:	
+     30892:	
+     30892:	calling init: /lib/x86_64-linux-gnu/libnsl.so.1
+     30892:	
+     30892:	
+     30892:	calling init: /lib/x86_64-linux-gnu/libnss_compat.so.2
+     30892:	
+     30892:	find library=libnss_nis.so.2 [0]; searching
+     30892:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30892:	  trying file=./lib/tls/x86_64/libnss_nis.so.2
+     30892:	  trying file=./lib/tls/libnss_nis.so.2
+     30892:	  trying file=./lib/x86_64/libnss_nis.so.2
+     30892:	  trying file=./lib/libnss_nis.so.2
+     30892:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libnss_nis.so.2
+     30892:	  trying file=./lib/i386-linux-gnu/tls/libnss_nis.so.2
+     30892:	  trying file=./lib/i386-linux-gnu/x86_64/libnss_nis.so.2
+     30892:	  trying file=./lib/i386-linux-gnu/libnss_nis.so.2
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libnss_nis.so.2
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/libnss_nis.so.2
+     30892:	  trying file=./lib/x86_64-linux-gnu/x86_64/libnss_nis.so.2
+     30892:	  trying file=./lib/x86_64-linux-gnu/libnss_nis.so.2
+     30892:	  trying file=./lib32/tls/x86_64/libnss_nis.so.2
+     30892:	  trying file=./lib32/tls/libnss_nis.so.2
+     30892:	  trying file=./lib32/x86_64/libnss_nis.so.2
+     30892:	  trying file=./lib32/libnss_nis.so.2
+     30892:	  trying file=./lib64/tls/x86_64/libnss_nis.so.2
+     30892:	  trying file=./lib64/tls/libnss_nis.so.2
+     30892:	  trying file=./lib64/x86_64/libnss_nis.so.2
+     30892:	  trying file=./lib64/libnss_nis.so.2
+     30892:	 search cache=/etc/ld.so.cache
+     30892:	  trying file=/lib/x86_64-linux-gnu/libnss_nis.so.2
+     30892:	
+     30892:	find library=libnss_files.so.2 [0]; searching
+     30892:	 search path=./lib/tls/x86_64:./lib/tls:./lib/x86_64:./lib:./lib/i386-linux-gnu/tls/x86_64:./lib/i386-linux-gnu/tls:./lib/i386-linux-gnu/x86_64:./lib/i386-linux-gnu:./lib/x86_64-linux-gnu/tls/x86_64:./lib/x86_64-linux-gnu/tls:./lib/x86_64-linux-gnu/x86_64:./lib/x86_64-linux-gnu:./lib32/tls/x86_64:./lib32/tls:./lib32/x86_64:./lib32:./lib64/tls/x86_64:./lib64/tls:./lib64/x86_64:./lib64		(LD_LIBRARY_PATH)
+     30892:	  trying file=./lib/tls/x86_64/libnss_files.so.2
+     30892:	  trying file=./lib/tls/libnss_files.so.2
+     30892:	  trying file=./lib/x86_64/libnss_files.so.2
+     30892:	  trying file=./lib/libnss_files.so.2
+     30892:	  trying file=./lib/i386-linux-gnu/tls/x86_64/libnss_files.so.2
+     30892:	  trying file=./lib/i386-linux-gnu/tls/libnss_files.so.2
+     30892:	  trying file=./lib/i386-linux-gnu/x86_64/libnss_files.so.2
+     30892:	  trying file=./lib/i386-linux-gnu/libnss_files.so.2
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/x86_64/libnss_files.so.2
+     30892:	  trying file=./lib/x86_64-linux-gnu/tls/libnss_files.so.2
+     30892:	  trying file=./lib/x86_64-linux-gnu/x86_64/libnss_files.so.2
+     30892:	  trying file=./lib/x86_64-linux-gnu/libnss_files.so.2
+     30892:	  trying file=./lib32/tls/x86_64/libnss_files.so.2
+     30892:	  trying file=./lib32/tls/libnss_files.so.2
+     30892:	  trying file=./lib32/x86_64/libnss_files.so.2
+     30892:	  trying file=./lib32/libnss_files.so.2
+     30892:	  trying file=./lib64/tls/x86_64/libnss_files.so.2
+     30892:	  trying file=./lib64/tls/libnss_files.so.2
+     30892:	  trying file=./lib64/x86_64/libnss_files.so.2
+     30892:	  trying file=./lib64/libnss_files.so.2
+     30892:	 search cache=/etc/ld.so.cache
+     30892:	  trying file=/lib/x86_64-linux-gnu/libnss_files.so.2
+     30892:	
+     30892:	
+     30892:	calling init: /lib/x86_64-linux-gnu/libnss_files.so.2
+     30892:	
+     30892:	
+     30892:	calling init: /lib/x86_64-linux-gnu/libnss_nis.so.2
+     30892:	
+     30892:	
+     30892:	calling fini: /tmp/.mount_mjD6Js/usr/bin/gvim [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libXt.so.6 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libSM.so.6 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libICE.so.6 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libacl.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: ./lib/libgpm.so.2 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libattr.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: ./lib/libncurses.so.5 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: ./lib/libtinfo.so.5 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/liboverlay-scrollbar.so [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libgail.so [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libgailutil.so.18 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libatk-bridge.so [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libatk-bridge-2.0.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libatspi.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libdbus-1.so.3 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libsystemd.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libgcrypt.so.20 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libgpg-error.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libadwaita.so [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-xpm.so [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/immodules/im-xim.so [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libXdamage.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libXcomposite.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libXcursor.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libXrandr.so.2 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libXi.so.6 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libXinerama.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libXfixes.so.3 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libgraphite2.so.3 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libcairo.so.2 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libxcb-render.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libpixman-1.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libXext.so.6 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libXrender.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libfontconfig.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libexpat.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libfreetype.so.6 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libpng12.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libX11.so.6 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libxcb.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libXdmcp.so.6 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libXau.so.6 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libthai.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libdatrie.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libm.so.6 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libmount.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libblkid.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libuuid.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/librt.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libresolv.so.2 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libz.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: ./lib/libselinux.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/liblzma.so.5 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: ./lib/libpcre.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libdl.so.2 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: ./lib/libffi.so.6 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libglib-2.0.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libpcre.so.3 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libpthread.so.0 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libnss_compat.so.2 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libnss_nis.so.2 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libnsl.so.1 [0]
+     30892:	
+     30892:	
+     30892:	calling fini: /lib/x86_64-linux-gnu/libnss_files.so.2 [0]
+     30892:	

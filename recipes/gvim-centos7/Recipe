@@ -79,6 +79,7 @@ curl -L https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopin
 chmod a+x ./usr/bin/$XAPP.wrapper
 sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $XAPP.desktop
 
+rm -rf ./usr/lib/*lzma* ./usr/lib/*attr* ./usr/lib/*acl* ./usr/share/man
 # Go out of AppImage
 cd ..
 
@@ -90,10 +91,10 @@ if [[ "$ARCH" = "i686" ]] ; then
 	APPIMAGE=$APP"-"$VERSION"-i386.AppImage"
 fi
 
-mkdir -p /out
+mkdir -p out
 
-rm -f /out/*.AppImage || true
+rm -f out/*.AppImage || true
 
 curl -sL "https://github.com/probonopd/AppImageKit/releases/download/6/AppImageAssistant_6-x86_64.AppImage" > AppImageAssistant
 chmod a+x AppImageAssistant
-./AppImageAssistant ./AppDir/ /out/$APP"-"$VERSION"-"$ARCH".AppImage"
+./AppImageAssistant ./AppDir/ out/$APP"-"$VERSION"-"$ARCH".AppImage"

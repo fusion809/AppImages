@@ -40,7 +40,8 @@ fi
 cd /AppDir/
 
 cp ./usr/share/applications/$XAPP.desktop transmission.desktop
-cp ./usr/share/pixmaps/$APP.png .
+cp ./usr/share/icons/hicolor/scalable/apps/$APP.svg ./usr/share/pixmaps
+cp ./usr/share/icons/hicolor/scalable/apps/$APP.svg .
 
 # Strip executables; greatly reduces AppImage size
 find . -type f -executable -exec strip {} \;
@@ -62,7 +63,7 @@ done
 
 mkdir -p ./usr/lib64 && cp /usr/lib64/libssl* ./usr/lib64
 rm -rf ./usr/lib/*cairo* ./usr/lib/*crypto* ./usr/lib/*dbus* ./usr/lib/*gdk* ./usr/lib/*gtk* ./usr/lib/*lzma*
-rm -rf ./usr/share/applications ./usr/share/icons ./usr/share/locale ./usr/share/man ./usr/share/pixmaps
+rm -rf ./usr/share/applications ./usr/share/icons ./usr/share/locale ./usr/share/man
 
 curl -OL "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
 chmod a+x ./AppRun

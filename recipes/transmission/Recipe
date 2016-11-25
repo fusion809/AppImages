@@ -60,7 +60,7 @@ for FILE in $BLACKLISTED_FILES ; do
   fi
 done
 
-rm -rf ./usr/lib/*cairo* ./usr/lib/*crypto* ./usr/lib/*dbus* ./usr/lib/*gdk* ./usr/lib/*gtk* ./usr/lib/*lzma* ./usr/lib/*ssl*
+rm -rf ./usr/lib/*cairo* ./usr/lib/*crypto* ./usr/lib/*dbus* ./usr/lib/*gdk* ./usr/lib/*gtk* ./usr/lib/*lzma*
 rm -rf ./usr/share/applications ./usr/share/icons ./usr/share/locale ./usr/share/man ./usr/share/pixmaps
 
 curl -OL "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)

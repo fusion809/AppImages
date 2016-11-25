@@ -1,14 +1,18 @@
 #!/bin/bash
 
+# Set up the AppDir
 docker build .
 
-ls AppDir
+ls /AppDir
 
-APP=transmission
-VERSION=$(wget -q https://github.com/transmission/transmission-releases -O - | grep "tar.xz" | cut -d '"' -f 4 | tail -n 1 | cut -d '/' -f 6 | sed 's/[a-z-]//g' | sed 's/\.\.//g')
-GLIBC_NEEDED=$(find . -type f -executable -exec strings {} \; | grep ^GLIBC_2 | sed s/GLIBC_//g | sort --version-sort | uniq | tail -n 1)
-VERSION=${VERSION}.glibc$GLIBC_NEEDED
+# Build the AppImage
+APP=codelite
 ARCH=$(uname -m)
+CODELITE_VERSION=$(curl -sL https://github.com/eranif/codelite/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g')
+GLIBC_NEEDED=$(find . -type f -executable -exec strings {} \; | grep ^GLIBC_2 | sed s/GLIBC_//g | sort --version-sort | uniq | tail -n 1)
+VERSION=${CODELITE_VERSION}.glibc${GLIBC_NEEDED}
+echo "VERSION is $VERSION"
+
 if [[ "$ARCH" = "x86_64" ]] ; then
 	APPIMAGE=$APP"-"$VERSION"-x86_64.AppImage"
 fi

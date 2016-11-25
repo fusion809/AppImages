@@ -11,7 +11,7 @@ yum install -y gtk2-devel clang-devel cmake hunspell-devel libssh-devel \
                lldb-devel sqlite-devel wxGTK3-devel
 
 ################################ Determine CodeLite version #################################
-CODELITE_VERSION=$(curl -sL https://github.com/eranif/codelite/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g')
+CODELITE_VERSION=$(curl -sL https://github.com/eranif/codelite/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 6 | sed 's|.tar.gz||g')
 
 # Get codelite and build it
 curl -sL https://github.com/eranif/codelite/archive/v$CODELITE_VERSION.tar.gz | tar xz --transform="s/codelite-${CODELITE_VERSION}/codelite/"
@@ -51,12 +51,6 @@ done
 curl -OL "https://github.com/probonopd/AppImageKit/releases/download/5/AppRun" # (64-bit)
 chmod a+x ./AppRun
 
-GLIBC_NEEDED=$(find . -type f -executable -exec strings {} \; | grep ^GLIBC_2 | sed s/GLIBC_//g | sort --version-sort | uniq | tail -n 1)
-VERSION=${CodeLite_VERSION}.glibc$GLIBC_NEEDED
-echo "VERSION is $VERSION"
-
-APP=codelite
-
 # Add desktop integration
 XAPP=codelite
 curl -L https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration > ./usr/bin/$XAPP.wrapper
@@ -65,19 +59,3 @@ sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $XAPP.desktop
 
 # Go out of AppImage
 cd ..
-
-ARCH=$(uname -m)
-if [[ "$ARCH" = "x86_64" ]] ; then
-	APPIMAGE=$APP"-"$VERSION"-x86_64.AppImage"
-fi
-if [[ "$ARCH" = "i686" ]] ; then
-	APPIMAGE=$APP"-"$VERSION"-i386.AppImage"
-fi
-
-mkdir -p /out
-
-rm -f /out/*.AppImage || true
-
-curl -sL "https://github.com/probonopd/AppImageKit/releases/download/6/AppImageAssistant_6-x86_64.AppImage" > AppImageAssistant
-chmod a+x AppImageAssistant
-./AppImageAssistant ./AppDir/ /out/$APP"-"$VERSION"-"$ARCH".AppImage"

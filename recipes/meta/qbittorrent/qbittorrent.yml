@@ -11,3 +11,5 @@ ingredients:
 script:
   - mv ./usr/share/applications/qBittorrent.desktop qbittorrent.desktop
   - rm qBittorrent.desktop
+  - rm ./lib/x86_64-linux-gnu/*bz2* ./lib/x86_64-linux-gnu/*crypto* ./lib/x86_64-linux-gnu/*history* ./lib/x86_64-linux-gnu/*lzma* ./lib/x86_64-linux-gnu/*readline* ./lib/x86_64-linux-gnu/*z.so*
+  - rm -rf ./etc/init.d ./etc/X11 ./usr/bin/X11 ./usr/lib/X11 ./usr/lib/openssl* ./usr/lib/libxcb* ./usr/lib/libX* ./usr/share/appdata ./usr/share/apps ./usr/share/debhelper ./usr/share/doc* ./usr/share/info ./usr/share/lintian ./usr/share/man ./usr/share/readline ./usr/share/X11

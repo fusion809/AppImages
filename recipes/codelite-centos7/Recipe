@@ -10,6 +10,8 @@ yum install -y yum-utils epel-release                                     # yum-
 yum install -y gtk2-devel clang-devel cmake hunspell-devel libssh-devel \
                lldb-devel sqlite-devel wxGTK3-devel
 
+ln -sf /usr/bin/wx-config-3.0 /usr/bin/wx-config
+
 ################################ Determine CodeLite version #################################
 CODELITE_VERSION=$(curl -sL https://github.com/eranif/codelite/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 6 | sed 's|.tar.gz||g')
 

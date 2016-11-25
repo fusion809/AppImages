@@ -77,19 +77,3 @@ sed -i -e "s|Exec=$XAPP|Exec=$XAPP.wrapper|g" $APP.desktop
 
 # Go out of AppImage
 cd ..
-
-ARCH=$(uname -m)
-if [[ "$ARCH" = "x86_64" ]] ; then
-	APPIMAGE=$APP"-"$VERSION"-x86_64.AppImage"
-fi
-if [[ "$ARCH" = "i686" ]] ; then
-	APPIMAGE=$APP"-"$VERSION"-i386.AppImage"
-fi
-
-mkdir -p /out
-
-rm -f /out/*.AppImage || true
-
-curl -sL "https://github.com/probonopd/AppImageKit/releases/download/6/AppImageAssistant_6-x86_64.AppImage" > AppImageAssistant
-chmod a+x AppImageAssistant
-./AppImageAssistant ./AppDir/ /out/$APP"-"$VERSION"-"$ARCH".AppImage"

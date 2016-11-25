@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir -p AppDir
 docker build .
 APP=transmission
 VERSION=$(wget -q https://github.com/transmission/transmission-releases -O - | grep "tar.xz" | cut -d '"' -f 4 | tail -n 1 | cut -d '/' -f 6 | sed 's/[a-z-]//g' | sed 's/\.\.//g')

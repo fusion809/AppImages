@@ -14,3 +14,6 @@ script:
   - sed -i -e 's|/usr/share/code-oss/||g' code-oss.desktop
   - sed -i -e 's|Code - OSS|code-oss|g' code-oss.desktop
   - ( cd ./usr/bin && ln -sf ../share/code-oss/code-oss .)
+
+  # Delete unneeded files
+  - rm -rf ./usr/share/applications ./usr/share/doc ./usr/share/icons ./usr/share/pixmaps

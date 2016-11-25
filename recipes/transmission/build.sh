@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir -p AppDir
 
 docker build .
 

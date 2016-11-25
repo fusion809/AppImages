@@ -17,3 +17,18 @@ script:
   - cd "${HERE}/usr"
   - CODEBLOCKS_DATA_DIR="${HERE}/usr" "${HERE}/usr/bin/codeblocks.wrapper" "$@"
   - EOF
+
+  # etc
+  - rm -rf ./etc
+
+  # lib
+  - rm -rf ./lib/x86_64-linux-gnu/libz*
+
+  # usr/bin
+  - rm ./usr/bin/addr2line ./usr/bin/ar ./usr/bin/as ./usr/bin/c++filt ./usr/bin/elfedit ./usr/bin/gold ./usr/bin/gprof ./usr/bin/ld ./usr/bin/ld.bfd ./usr/bin/ld.gold ./usr/bin/nm ./usr/bin/objcopy ./usr/bin/objdump ./usr/bin/ranlib ./usr/bin/readelf ./usr/bin/size ./usr/bin/strings ./usr/bin/strip ./usr/bin/*xterm ./usr/bin/file ./usr/bin/resize
+
+  # usr/sbin and other folders
+  - rm -rf ./usr/sbin ./usr/share/adduser ./usr/share/applications ./usr/share/bug ./usr/share/doc* ./usr/share/file ./usr/share/icons ./usr/share/lintian ./usr/share/locale ./usr/share/man ./usr/share/misc ./usr/share/pixmaps ./usr/share/X11
+
+  # usr/lib
+  - rm -rf ./usr/lib/X11 ./usr/lib/x86_64-linux-gnu/libX*

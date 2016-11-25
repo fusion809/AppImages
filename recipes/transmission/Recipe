@@ -60,6 +60,7 @@ for FILE in $BLACKLISTED_FILES ; do
   fi
 done
 
+mkdir -p ./usr/lib64 && cp /usr/lib64/libssl* ./usr/lib64
 rm -rf ./usr/lib/*cairo* ./usr/lib/*crypto* ./usr/lib/*dbus* ./usr/lib/*gdk* ./usr/lib/*gtk* ./usr/lib/*lzma*
 rm -rf ./usr/share/applications ./usr/share/icons ./usr/share/locale ./usr/share/man ./usr/share/pixmaps
 

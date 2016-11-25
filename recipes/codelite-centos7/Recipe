@@ -20,9 +20,9 @@ curl -sL https://github.com/eranif/codelite/archive/$CODELITE_VERSION.tar.gz | t
 cd codelite
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=/AppDir/usr
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr
 make
-make install
+make install DESTDIR=/AppDir
 cd ../..
 
 ############## Compilation and installation succeeded ##############
@@ -30,7 +30,7 @@ cd ../..
 cd /AppDir/
 
 cp ./usr/share/applications/codelite.desktop .
-cp ./usr/share/icons/hicolor/scalable/apps/codelite.svg .
+cp ./usr/share/icons/hicolor/256x256/apps/codelite.png .
 
 # Strip executables; greatly reduces AppImage size
 find . -type f -executable -exec strip {} \;

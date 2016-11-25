@@ -40,7 +40,7 @@ fi
 cd /AppDir/
 
 cp ./usr/share/applications/$XAPP.desktop transmission.desktop
-cp ./usr/share/icons/hicolor/scalable/apps/$APP.svg .
+cp ./usr/share/pixmaps/$APP.png .
 
 # Strip executables; greatly reduces AppImage size
 find . -type f -executable -exec strip {} \;

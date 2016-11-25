@@ -219,10 +219,10 @@ libdbus-1.so.3
 libenchant.so.1
 libgdk-3.so.0
 libgtk-3.so.0
-libicudata.so.50
-libicu18n.so.50
-libicuuc.so.50
-libjavascriptcoregtk-3.0.so.0
+#libicudata.so.50
+#libicu18n.so.50
+#libicuuc.so.50
+#libjavascriptcoregtk-3.0.so.0
 liblzma.so.5
-libwebkitgtk-3.0.so.0
+#libwebkitgtk-3.0.so.0
 libxslt.so.1

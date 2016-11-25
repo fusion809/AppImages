@@ -41,7 +41,6 @@ ldd usr/bin/codelite | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' .
 
 # Delete blacklisted files; TODO: Move to a library function
 BLACKLISTED_FILES=$(curl -sL https://github.com/fusion809/AppImages/raw/master/excludelist | sed '/^\s*$/d' | sed '/^#.*$/d')
-echo $BLACKLISTED_FILES
 for FILE in $BLACKLISTED_FILES ; do
   FOUND=$(find . -type f -name "${FILE}" 2>/dev/null)
   if [ ! -z "$FOUND" ] ; then

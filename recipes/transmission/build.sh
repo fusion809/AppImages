@@ -2,7 +2,8 @@
 docker build .
 APP=transmission
 VERSION=$(wget -q https://github.com/transmission/transmission-releases -O - | grep "tar.xz" | cut -d '"' -f 4 | tail -n 1 | cut -d '/' -f 6 | sed 's/[a-z-]//g' | sed 's/\.\.//g')
-VERSION=$VERSION.glibc2.17
+GLIBC_NEEDED=$(find . -type f -executable -exec strings {} \; | grep ^GLIBC_2 | sed s/GLIBC_//g | sort --version-sort | uniq | tail -n 1)
+VERSION=${VERSION}.glibc$GLIBC_NEEDED
 ARCH=$(uname -m)
 if [[ "$ARCH" = "x86_64" ]] ; then
 	APPIMAGE=$APP"-"$VERSION"-x86_64.AppImage"

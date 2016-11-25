@@ -16,7 +16,7 @@ mkdir -p ./out/
 
 if [ -f recipes/$RECIPE/Dockerfile ] && [ -f recipes/$RECIPE/Recipe ] ; then
   # There is a Dockerfile, hence build using Docker
-  bash -x recipes/$RECIPE/build.sh
+  cd recipes/$RECIPE && bash -ex build.sh && cd -
 elif [ -f recipes/meta/$RECIPE/$RECIPE.yml ] ; then
   # There is no Dockerfile but a YAML file for the meta Recipe
   bash -ex recipes/meta/$RECIPE/Recipe recipes/meta/$RECIPE/$RECIPE.yml

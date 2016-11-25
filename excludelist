@@ -217,7 +217,6 @@ libcairo-gobject.so.2
 libcrypto.so.10
 libdbus-1.so.3
 libenchant.so.1
-libgcrypt.so.11
 libgdk-3.so.0
 libgtk-3.so.0
 libicudata.so.50

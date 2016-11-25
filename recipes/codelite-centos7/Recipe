@@ -14,7 +14,7 @@ yum install -y gtk2-devel clang-devel cmake hunspell-devel libssh-devel \
 CODELITE_VERSION=$(curl -sL https://github.com/eranif/codelite/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 6 | sed 's|.tar.gz||g')
 
 # Get codelite and build it
-curl -sL https://github.com/eranif/codelite/archive/v$CODELITE_VERSION.tar.gz | tar xz --transform="s/codelite-${CODELITE_VERSION}/codelite/"
+curl -sL https://github.com/eranif/codelite/archive/$CODELITE_VERSION.tar.gz | tar xz --transform="s/codelite-${CODELITE_VERSION}/codelite/"
 cd codelite
 mkdir build
 cd build

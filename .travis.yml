@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=transmission
+  - RECIPE=bluefish
 
 script:
 - bash -e travis.sh $RECIPE

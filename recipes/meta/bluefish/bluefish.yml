@@ -7,3 +7,7 @@ ingredients:
     - deb http://us.archive.ubuntu.com/ubuntu/ precise main universe
   ppas:
     - klaus-vormweg/bluefish-gtk2
+
+script:
+  - rm -rf ./usr/bin/*aspell* ./usr/bin/pre* ./usr/lib/aspell ./usr/lib/enchant ./usr/lib/x86_64-linux-gnu/*ssl* ./usr/lib/x86_64-linux-gnu/*hunspell* ./usr/share/appdata ./usr/share/apps ./usr/share/aspell ./usr/share/debhelper ./usr/share/doc* ./usr/share/enchant ./usr/share/info ./usr/share/lintian ./usr/share/locale ./usr/share/man ./usr/share/readline ./var
+  - rm ./lib/x86_64-linux-gnu/*bz2* ./lib/x86_64-linux-gnu/*crypto* ./lib/x86_64-linux-gnu/*history* ./lib/x86_64-linux-gnu/*readline* ./lib/x86_64-linux-gnu/*ssl* ./lib/x86_64-linux-gnu/*libz*

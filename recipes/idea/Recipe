@@ -10,7 +10,7 @@ mkdir -p $APP/$APP.AppDir/usr/bin
 
 cd $APP/
 
-wget -c "https://download.jetbrains.com/idea/ideaIC-2016.2.5.tar.gz"
+wget -c "https://download.jetbrains.com/idea/ideaIC-2016.3.tar.gz"
 
 cd $APP.AppDir/
 

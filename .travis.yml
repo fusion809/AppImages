@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=codelite-centos7
+  - RECIPE=idea
 
 script:
 - bash -e travis.sh $RECIPE

@@ -1,0 +1,24 @@
+app: IDEA
+
+ingredients:
+  script:
+    - VERSION=2016.3
+    - wget -c "https://download.jetbrains.com/idea/ideaIC-$VERSION.tar.gz"
+    - echo $VERSION > VERSION
+
+script:
+  - tar xf ../ideaIC-*.tar.gz
+  - ( mkdir -p usr/bin/bin ; cd usr/bin; ln -s ../../*/bin/*.sh . )
+
+  - cat > idea.desktop <<EOF
+  - [Desktop Entry]
+  - Version=1.0
+  - Type=Application
+  - Name=IntelliJ IDEA Community Edition
+  - Icon=idea
+  - Exec=idea.sh
+  - Categories=Development;IDE;Java;
+  - Terminal=false
+  - EOF
+
+  - cp *.*/bin/idea.png .

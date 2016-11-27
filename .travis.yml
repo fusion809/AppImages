@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=idea
+  - RECIPE=pspp
 
 script:
 - bash -e travis.sh $RECIPE

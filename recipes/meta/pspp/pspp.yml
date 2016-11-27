@@ -1,4 +1,4 @@
-app: pspp
+app: PSPP
 union: true
 
 ingredients:
@@ -10,6 +10,4 @@ ingredients:
 
 script:
   - mv usr/lib/x86_64-linux-gnu/pspp/* usr/lib/x86_64-linux-gnu/
-  - rm *AppRun
-  - cp ../../pspp.AppRun .
-  - chmod a+x *AppRun
+  - rm -rf ./etc/emacs ./usr/lib/x86_64-linux-gnu/openssl* ./usr/share/doc* ./usr/share/emacs ./usr/share/lintian ./usr/share/locale ./usr/share/man ./usr/share/readline ./usr/lib/emacs* ./lib/x86_64-linux-gnu/*history* ./lib/x86_64-linux-gnu/libreadline* ./lib/x86_64-linux-gnu/libz.so.*

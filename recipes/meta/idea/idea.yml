@@ -22,4 +22,3 @@ script:
   - EOF
 
   - cp *.*/bin/idea.png .
-  - rm -rf idea-IC-.*

@@ -11,8 +11,8 @@ services:
 - docker
 
 env:
-  - RECIPE=pspp
-
+  - RECIPE=atom
+  
 script:
 - bash -e travis.sh $RECIPE
 - FILES=$(find out/ -name "*.AppImage")

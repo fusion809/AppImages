@@ -26,3 +26,4 @@ script:
   - Categories=Development;TextEditor;GTK;
   - Comment=The hackable text editor for the 21st Century - beta channel.
   - EOF
+  - ( cd usr/bin && ln -sf resources/app/apm/bin/apm apm )

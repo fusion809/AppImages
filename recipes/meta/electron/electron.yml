@@ -2,7 +2,7 @@ app: electron
 
 ingredients:
   script:
-    - URL=$(wget -q https://github.com/electron/electron/releases -O - | grep "href.*electron-.*linux-x64.zip" | head -n 4 | cut -d '"' -f 2 | sort -u | tail -n 1)
+    - URL=$(wget -q https://github.com/electron/electron/releases -O - | grep "href.*electron-.*linux-x64.zip" | head -n 4 | cut -d '"' -f 2 | sort -un)
     - VER=$(echo $URL | cut -d '/' -f 6 | sed 's/v//g')
     - echo $VER > VERSION
     - wget -c https://github.com$URL

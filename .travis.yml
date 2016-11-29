@@ -11,8 +11,8 @@ services:
 - docker
 
 env:
-  - RECIPE=atom
-  
+  - RECIPE=electron
+
 script:
 - bash -e travis.sh $RECIPE
 - FILES=$(find out/ -name "*.AppImage")

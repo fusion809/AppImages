@@ -1,0 +1,4 @@
+#!/bin/bash
+
+yum install -y yum-utils pygtk2 python-psutil epel-release
+yum-builddep -y terminator

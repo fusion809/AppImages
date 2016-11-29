@@ -3,7 +3,6 @@ app: runescape-launcher
 ingredients:
   packages:
     - runescape-launcher
-    - curl
   dist: trusty
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
@@ -14,6 +13,10 @@ ingredients:
 
 script:
   - sed -i -e 's|/usr/bin/||g' runescape-launcher.desktop
-  - cp ./usr/share/icons/hicolor/512x512/apps/runescape.png runescape.png
-  - cp ./usr/share/games/runescape-launcher/runescape ./usr/bin/runescape
+  - cp ./usr/share/games/runescape-launcher/runescape.png runescape.png
+  - mv ./usr/share/games/runescape-launcher/runescape ./usr/bin/runescape
   - sed -i -e 's|/usr/share/games/runescape-launcher/||g' ./usr/bin/runescape-launcher
+  - rm ./lib/x86_64-linux-gnu/liblzma* ./lib/x86_64-linux-gnu/libz*
+  - rm ./usr/lib/x86_64-linux-gnu/libXc* ./usr/lib/x86_64-linux-gnu/libXf* ./usr/lib/x86_64-linux-gnu/libXi* ./usr/lib/x86_64-linux-gnu/libxkb* ./usr/lib/x86_64-linux-gnu/libXr* ./usr/lib/x86_64-linux-gnu/libXx*
+  - rm -rf ./usr/lib/x86_64-linux-gnu/enchant ./usr/lib/X11 ./usr/lib/aspell
+  - rm -rf ./usr/share/games ./usr/share/aspell ./usr/share/doc* ./usr/share/enchant ./usr/share/lintian ./usr/share/locale ./usr/share/man ./usr/share/X11 ./etc/init.d ./etc/X11 ./var/lib

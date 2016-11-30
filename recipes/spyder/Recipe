@@ -1,0 +1,20 @@
+#!/bin/bash
+
+yum install -y yum-utils epel-release python-virtualenv wget
+
+URLS=$(yumdownloader --urls --resolve spyder pyqt4 | grep "http\:" | grep -v "spyder")
+
+mkdir -p /AppDir/usr
+cd /AppDir
+
+for URL in $URLS ; do
+  if [ ! -f $(basename "$URL") ] ; then
+    wget -c $URL
+  fi
+done
+
+rpm2cpio *.rpm | cpio -idmv
+pip install --upgrade pip setuptools
+virtualenv /AppDir/usr
+/AppDir/usr/bin/pip install -U spyder toUtf8
+sed -i -e 's|#!/AppDir/usr/bin/|/usr/bin/env |g' /AppDir/usr/bin/*

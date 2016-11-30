@@ -7,7 +7,6 @@ ingredients:
     - echo $DLD | cut -d/ -f8 | sed 's/v//g' > VERSION
     - tar zxvf atom*tar.gz
 
-
 script:
   - cp -r ../atom-*/* usr/bin/
   - find . -name atom.png -exec cp {} atom.png \;

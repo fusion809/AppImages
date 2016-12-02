@@ -62,8 +62,6 @@ get_desktop
 find "${SOURCE_DIR}" -name "vim48x48.png" -exec cp {} "${LOWERAPP}.png" \;
 
 mkdir -p ./usr/lib/x86_64-linux-gnu
-# copy custom libruby.so 1.9
-find $HOME/.rvm/ -name "libruby.so.1.9" -exec cp {} ./usr/lib/x86_64-linux-gnu/ \;
 # copy dynamically needed dlls
 #find /usr/lib -maxdepth 2 -type f  -name "libpython[23]*.so*" -exec cp {} ./usr/lib/x86_64-linux-gnu/ \;
 

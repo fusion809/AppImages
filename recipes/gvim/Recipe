@@ -1,0 +1,119 @@
+#!/bin/bash
+
+########################################################################
+# Package the baries built on Travis-CI as an AppImage
+# By Simon Peter 2016
+# For more information, see http://appimage.org/
+########################################################################
+
+export ARCH="$(uname -m)"
+
+APP=gvim
+LOWERAPP=${APP,,}
+
+apt-get update
+apt-get install -y wget curl gzip perl python python3 ruby lua5.2
+apt-get build-dep -y vim-gtk
+
+VIM_VERSION=$(wget -cq https://github.com/vim/vim/releases -O - | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g' | sed 's|v||g')
+echo "VERSION is $VIM_VERSION\n"
+
+wget -cqO- https://github.com/vim/vim/archive/v$VIM_VERSION.tar.gz | tar xz --transform="s/vim-${VIM_VERSION}/vim/"
+rm -rf /AppDir
+mkdir -p /AppDir/usr
+cd vim
+
+./configure \
+  --enable-perlinterp \
+  --enable-pythoninterp \
+  --enable-python3interp \
+  --enable-rubyinterp \
+  --enable-luainterp \
+  --prefix=/usr
+make
+make install DESTDIR=/AppDir
+
+cd /AppDir
+wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+. ./functions.sh
+rm functions.sh
+
+# Also needs grep for gvim.wrapper
+cp /bin/grep ./usr/bin
+
+# install additional dependencies for python
+#URL=$(apt-get install -qq --yes --no-download --reinstall --print-uris libpython2.7 libpython3.2 libperl5.14 liblua5.1-0 libruby1.9.1| cut -d' ' -f1 | tr -d "'")
+#URL=$(apt-get install -qq --yes --no-download --reinstall --print-uris libpython3.2 | cut -d' ' -f1 | tr -d "'")
+#wget -c $URL
+#for package in *.deb; do
+#    dpkg -x $package .
+#done
+#rm -f *.deb
+
+
+########################################################################
+# Copy desktop and icon file to AppDir for AppRun to pick them up
+########################################################################
+
+get_apprun
+
+get_desktop
+
+find "${SOURCE_DIR}" -name "vim48x48.png" -exec cp {} "${LOWERAPP}.png" \;
+
+mkdir -p ./usr/lib/x86_64-linux-gnu
+# copy custom libruby.so 1.9
+find $HOME/.rvm/ -name "libruby.so.1.9" -exec cp {} ./usr/lib/x86_64-linux-gnu/ \;
+# copy dynamically needed dlls
+#find /usr/lib -maxdepth 2 -type f  -name "libpython[23]*.so*" -exec cp {} ./usr/lib/x86_64-linux-gnu/ \;
+
+# copy dependencies
+copy_deps
+
+# Move the libraries to usr/bin
+move_lib
+
+########################################################################
+# Delete stuff that should not go into the AppImage
+########################################################################
+
+# if those libraries are present, there will be a pango problem
+find . -name "libpango*" -delete
+find . -name "libfreetype*" -delete
+find . -name "libX*" -delete
+
+# Delete dangerous libraries; see
+# https://github.com/probonopd/AppImages/blob/master/excludelist
+delete_blacklisted
+
+########################################################################
+# desktopintegration asks the user on first run to install a menu item
+########################################################################
+
+get_desktopintegration "$LOWERAPP"
+
+########################################################################
+# Determine the version of the app; also include needed glibc version
+########################################################################
+
+GLIBC_NEEDED=$(glibc_needed)
+VERSION=$VIM_VERSION.glibc$GLIBC_NEEDED
+
+########################################################################
+# Patch away absolute paths; it would be nice if they were relative
+########################################################################
+
+sed -i -e "s|/usr/share/|././/share/|g" usr/bin/vim
+sed -i -e "s|/usr/lib/|././/lib/|g" usr/bin/vim
+sed -i -e "s|/usr/share/doc/vim/|././/share/doc/vim/|g" usr/bin/vim
+
+# Possibly need to patch additional hardcoded paths away, replace
+# "/usr" with "././" which means "usr/ in the AppDir"
+
+# remove unneeded stuff
+rmdir ./usr/lib64 || true
+rm -rf ./usr/bin/*tutor* || true
+rm -rf ./usr/share/doc || true
+#rm -rf ./usr/bin/vim || true
+# remove unneded links
+find ./usr/bin -type l \! -name "gvim" -delete || true

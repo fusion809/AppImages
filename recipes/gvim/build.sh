@@ -1,5 +1,9 @@
 #!/bin/bash
+
+# Build Docker container
 docker build .
+
+# Package as AppImage
 APP=gvim
 VIM_VERSION=$(curl -sL https://github.com/vim/vim/releases | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g' | sed 's|v||g')
 GLIBC_NEEDED=$(find . -type f -executable -exec strings {} \; | grep ^GLIBC_2 | sed s/GLIBC_//g | sort --version-sort | uniq | tail -n 1)

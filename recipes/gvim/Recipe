@@ -16,7 +16,7 @@ apt-get install -y wget curl gzip perl python python3 ruby lua5.2
 apt-get build-dep -y vim-gtk
 
 VIM_VERSION=$(wget -cq https://github.com/vim/vim/releases -O - | grep ".tar.gz" | head -n 1 | cut -d '"' -f 2 | cut -d '/' -f 5 | sed 's|.tar.gz||g' | sed 's|v||g')
-echo "VERSION is $VIM_VERSION\n"
+printf "VERSION is $VIM_VERSION\n"
 
 wget -cqO- https://github.com/vim/vim/archive/v$VIM_VERSION.tar.gz | tar xz --transform="s/vim-${VIM_VERSION}/vim/"
 rm -rf /AppDir

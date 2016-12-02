@@ -14,7 +14,7 @@ DOCKER=$(echo "${RECIPE}" | cut -d "-" -f 1) # Allow e.g., a recipe called "inks
 
 mkdir -p ./out/
 
-if [ -f recipes/$RECIPE/Dockerfile ] && [ -f recipes/$RECIPE/Recipe ] ; then
+if [ -f recipes/$RECIPE/Dockerfile ] && [ -f recipes/$RECIPE/Recipe ] && [ -f recipes/$RECIPE/build.sh ] ; then
   # There is a Dockerfile, hence build using Docker
   cd recipes/$RECIPE && bash -ex build.sh && cd -
 elif [ -f recipes/meta/$RECIPE/$RECIPE.yml ] ; then

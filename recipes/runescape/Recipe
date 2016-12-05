@@ -1,0 +1,21 @@
+#!/bin/bash
+APP=runescape
+
+apt-get update
+apt-get install -y bsdtar dpkg-dev wget curl
+wget -O - https://content.runescape.com/downloads/ubuntu/runescape.gpg.key | apt-key add -
+mkdir -p /etc/apt/sources.list.d
+echo "deb https://content.runescape.com/downloads/ubuntu trusty non-free" > /etc/apt/sources.list.d/runescape.list
+apt-get update
+
+mkdir -p /AppDir
+URLS=$(apt-get -y install --print-uris runescape-launcher | cut -d "'" -f 2 | grep -e "^http")
+for URL in $URLS ; do
+  if [ ! -f $(basename "$URL") ] ; then
+    wget -c $URL
+  fi
+done
+cd /AppDir
+find ../*.deb -exec dpkg -x {} . \; || true
+
+ldd usr/bin/$APP | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./usr/lib || true

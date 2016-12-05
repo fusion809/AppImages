@@ -149,7 +149,7 @@ if [ ! -z "${_ingredients_dist}" ] ; then
     done
   fi
   dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
-  echo "deb file:$(readlink -e $PWD) ./" >> sources.list
+#  echo "deb file:$(readlink -e $PWD) ./" >> sources.list
 
   INSTALL=$LOWERAPP
   if [ ! -z "${_ingredients_package}" ] ; then

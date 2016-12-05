@@ -20,3 +20,4 @@ script:
   - rm ./usr/lib/x86_64-linux-gnu/libXc* ./usr/lib/x86_64-linux-gnu/libXf* ./usr/lib/x86_64-linux-gnu/libXi* ./usr/lib/x86_64-linux-gnu/libxkb* ./usr/lib/x86_64-linux-gnu/libXr* ./usr/lib/x86_64-linux-gnu/libXx*
   - rm -rf ./usr/lib/x86_64-linux-gnu/enchant ./usr/lib/X11 ./usr/lib/aspell
   - rm -rf ./usr/share/games ./usr/share/aspell ./usr/share/doc* ./usr/share/enchant ./usr/share/lintian ./usr/share/locale ./usr/share/man ./usr/share/X11 ./etc/init.d ./etc/X11 ./var/lib
+  - ldd usr/bin/runescape | grep "=>" | awk '{print $3}' | xargs -I '{}' cp -v '{}' ./usr/lib || true

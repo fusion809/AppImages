@@ -10,6 +10,8 @@ ingredients:
     - deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted
     - deb http://archive.ubuntu.com/ubuntu/ trusty-security universe
     - deb https://content.runescape.com/downloads/ubuntu trusty non-free
+  script:
+    - wget -c https://content.runescape.com/downloads/ubuntu/pool/non-free/r/runescape-launcher/runescape-launcher_2.2.2_amd64.deb
 
 script:
   - sed -i -e 's|/usr/bin/||g' runescape-launcher.desktop

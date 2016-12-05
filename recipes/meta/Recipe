@@ -9,7 +9,7 @@ which wget >/dev/null 2>&1 || ( echo wget missing && exit 1 )
 which grep >/dev/null 2>&1 || ( echo grep missing && exit 1 )
 which sed >/dev/null 2>&1 || ( echo sed missing && exit 1 )
 which cut >/dev/null 2>&1 || ( echo cut missing && exit 1 )
-which dpkg-scanpackages  >/dev/null 2>&1 || ( echo dpkg-scanpackages missing && exit 1 )
+which dpkg-scanpackages  >/dev/null 2>&1 || ( echo "dpkg-scanpackages missing; please install dpkg-dev" && exit 1 )
 
 # If the yaml file doesn't exist locally, get it from GitHub
 if [ ! -f "$1" ] ; then

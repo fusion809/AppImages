@@ -44,6 +44,7 @@ parse_yaml() {
 }
 
 # Read yaml file
+printf "$YAMLFILE"
 parse_yaml $YAMLFILE "_"
 eval $(parse_yaml $YAMLFILE "_")
 

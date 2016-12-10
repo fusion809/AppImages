@@ -174,6 +174,7 @@ libXxf86vm.so.1
 # xcb
 libxcb-dri2.so.0
 libxcb-dri3.so.0
+# gives runescape: symbol lookup error: /lib64/libxcb-dri3.so.0: undefined symbol: xcb_send_request_with_fds on F25; regardless of whether included or not!
 libxcb-glx.so.0
 libxcb-present.so.0
 libxcb-randr.so.0

@@ -31,7 +31,7 @@ script:
   - rm -rf ./usr/bin/X11
 
   # Removing other unneeded libraries
-  - LIR="lib/x86_64-linux-gnu" && rm ./$LIR/*history* ./$LIR/libacl* ./$LIR/libattr* ./$LIR/libbz2* ./$LIR/liblzma* ./$LIR/libreadline* ./$LIR/libz*
+  - LIR="lib/x86_64-linux-gnu" && rm ./$LIR/*history* ./$LIR/libacl* ./$LIR/libattr* ./$LIR/libreadline* ./$LIR/libz*
 
   - rm -rf ./usr/lib/coreutils ./usr/lib/gcc ./usr/lib/sasl2 ./usr/lib/x11 ./usr/lib/x86_64-linux-gnu/*sasl2* ./usr/lib/x86_64-linux-gnu/libX*
 

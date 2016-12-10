@@ -4,6 +4,7 @@ union: true
 ingredients:
   packages:
     - octave
+    - libcurl4-gnutls
   dist:    trusty
   sources:
     - deb http://archive.ubuntu.com/ubuntu/ trusty main universe

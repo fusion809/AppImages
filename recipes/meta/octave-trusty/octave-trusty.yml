@@ -33,7 +33,7 @@ script:
   # Removing other unneeded libraries
   - LIR="lib/x86_64-linux-gnu" && rm ./$LIR/*history* ./$LIR/libacl* ./$LIR/libattr* ./$LIR/libreadline* ./$LIR/libz*
 
-  - rm -rf ./usr/lib/coreutils ./usr/lib/gcc ./usr/lib/sasl2 ./usr/lib/x11 ./usr/lib/x86_64-linux-gnu/*sasl2* ./usr/lib/x86_64-linux-gnu/libX*
+  - rm -rf ./usr/lib/coreutils ./usr/lib/gcc ./usr/lib/x11 ./usr/lib/x86_64-linux-gnu/libX*
 
   # Other folders
   - rm -rf ./usr/sbin ./usr/share/doc* ./usr/share/info ./usr/share/lintian ./usr/share/man ./usr/share/readline ./usr/share/X11

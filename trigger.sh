@@ -20,11 +20,16 @@ for RECIPE in $@ ; do
 done
 MATRIX=$(echo -n $MATRIX | head -c -1 ) # Remove extra comma at the end
 
-read -s -p "GitHub Password: " PASSWORD
-if [ "$PASSWORD" == "" ] ; then
-  exit 1
+if [[ -f $HOME/.gitconfig.sh ]]; then
+  source $HOME/.gitconfig.sh
+  PASSWORD=$GITHUB_PASSWORD
 else
-  echo ""
+  read -s -p "GitHub Password: " PASSWORD
+  if [ "$PASSWORD" == "" ] ; then
+    exit 1
+  else
+    echo ""
+  fi
 fi
 
 #########################################################

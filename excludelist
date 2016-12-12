@@ -97,8 +97,8 @@ libICE.so.6
 libidn.so.11
 libk5crypto.so.3
 libkeyutils.so.1
-libkrb5.so.26
-libkrb5.so.3
+#libkrb5.so.26 #Needed for Gentoo with Code-OSS
+#libkrb5.so.3
 libkrb5support.so.0
 libm.so.6
 libp11-kit.so.0

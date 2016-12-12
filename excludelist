@@ -95,11 +95,11 @@ libhcrypto.so.4
 libhx509.so.5
 libICE.so.6
 libidn.so.11
-#libk5crypto.so.3 # Needed for Code-OSS
+libk5crypto.so.3 # Needed for Code-OSS
 libkeyutils.so.1
-#libkrb5.so.26 #Needed for Gentoo with Code-OSS
-#libkrb5.so.3
-#libkrb5support.so.0 # Needed by Code-OSS
+libkrb5.so.26 #Needed for Gentoo with Code-OSS
+libkrb5.so.3
+libkrb5support.so.0 # Needed by Code-OSS
 libm.so.6
 libp11-kit.so.0
 # libpcre.so.3 # Missing on Fedora 24

@@ -150,7 +150,8 @@ generate_type2_appimage()
   # if [ -z "$URL" ] ; then
   #   URL=$(wget -q "https://s3.amazonaws.com/archive.travis-ci.org/jobs/$((ID+2))/log.txt" -O - | grep "https://transfer.sh/.*/appimagetool" | tail -n 1 | sed -e 's|\r||g')
   # fi
-  URL="https://github.com/probonopd/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
+  BASE_URL=$(wget -cq https://github.com/probonopd/AppImageKit/releases/ -O - | grep "x86_64.AppImage" | grep "appimagetool" | cut -d '"' -f 2 | head -n 1)
+  URL="https://github.com$BASE_URL"
   wget -c "$URL" -O appimagetool
   chmod a+x ./appimagetool
   set +x

@@ -213,7 +213,7 @@ apt-get $OPTIONS update
 
 URLS=$(apt-get $OPTIONS -y install --print-uris mypaint-data-extras $LOWERAPP | cut -d "'" -f 2 | grep -e "^http")
 
-wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+wget -q https://github.com/fusion809/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
 
 wget -c $URLS

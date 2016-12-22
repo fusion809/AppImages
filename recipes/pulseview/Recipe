@@ -10,7 +10,7 @@ LOWERAPP=${APP,,}
 mkdir -p ./$APP/$APP.AppDir/usr/bin ./$APP/$APP.AppDir/usr/lib
 cd ./$APP
 
-wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+wget -q https://github.com/fusion809/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
 
 wget http://sigrok.org/jenkins/job/pulseview/buildtype=shared,compiler=gcc,platform=native-amd64/ws/_inst/bin/*zip*/bin.zip

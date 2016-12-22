@@ -2,12 +2,12 @@
 # Octave recipe
 
 yum -y install wget git
-wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+wget -q https://github.com/fusion809/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
 
 #begin
 if [ ! -d AppImages ] ; then
-  git clone https://github.com/probonopd/AppImages.git
+  git clone https://github.com/fusion809/AppImages.git
 fi
 cd AppImages/
 git_pull_rebase_helper

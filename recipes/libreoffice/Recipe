@@ -10,7 +10,7 @@ OOODOWNLOADLINK="http://download.documentfoundation.org/libreoffice/stable/"$VER
 mkdir -p ./$APP/$APP.AppDir
 cd ./$APP
 
-wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+wget -q https://github.com/fusion809/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
 
 wget -c "$OOODOWNLOADLINK"

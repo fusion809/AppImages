@@ -7,7 +7,7 @@
 # and let https://twitter.com/SpotifyCares
 #########################################################################################################################
 
-wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+wget -q https://github.com/fusion809/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
 
 DEB=$(wget http://repository.spotify.com/pool/non-free/s/spotify-client/ -O - | grep deb | cut -d ">" -f 2 | cut -d "<" -f 1 | grep amd64.deb | sort --version-sort -r | head -n 1)

@@ -150,7 +150,7 @@ apt-get $OPTIONS update
 
 URLS=$(apt-get $OPTIONS -y install --print-uris libbz2-1.0 libexpat1 libfribidi0 libqt4-network libqtcore4 libqtgui4 libsqlite3-0 zlib1g | cut -d "'" -f 2 | grep -e "^http")
 
-wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
+wget -q https://github.com/fusion809/AppImages/raw/master/functions.sh -O ./functions.sh
 . ./functions.sh
 
 wget -c $URLS

@@ -301,7 +301,8 @@ cd ..
 ID=$(wget -q https://api.travis-ci.org/repos/probonopd/appimagetool/builds -O - | head -n 1 | sed -e 's|}|\n|g' | grep '"result":0' | head -n 1 | sed -e 's|,|\n|g' | grep '"id"' | cut -d ":" -f 2)
 # Get the transfer.sh URL from the logfile of the last successful build on Travis CI
 # Only Travis knows why build ID and job ID don't match and why the above doesn't give both...
-URL=https://github.com/probonopd/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage
+BASE_URL=$(wget -cq https://github.com/probonopd/AppImageKit/releases/ -O - | grep "x86_64.AppImage" | grep "appimagetool" | cut -d '"' -f 2 | head -n 1)
+URL="https://github.com$BASE_URL"
 wget -c "$URL" -O appimagetool
 chmod a+x ./appimagetool
 VERSION=$VERSION ./appimagetool -n --bintray-user $BINTRAY_USER --bintray-repo $BINTRAY_REPO -v ./$APP.AppDir/

@@ -11,7 +11,7 @@ services:
 - docker
 
 env:
-  - RECIPE=octave-trusty
+  - RECIPE=electron
 
 script:
 - bash -e travis.sh $RECIPE

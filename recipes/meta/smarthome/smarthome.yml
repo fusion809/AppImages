@@ -1,0 +1,29 @@
+app: eclipse-smarthome
+
+ingredients:
+  script:
+    - URL1=$(wget -q http://www.eclipse.org/smarthome/documentation/community/downloads.html -O - | grep "linux64" | head -n 1 | cut -d '"' -f 2)
+    - VERSION=$(echo $URL1 | cut -d '/' -f 8)
+    - echo $VERSION > VERSION
+    - URL="http://mirror.internode.on.net/pub/eclipse/smarthome/releases/${VERSION}/eclipsesmarthome-incubation-${VERSION}-designer-linux64.zip"
+    - wget -c "$URL" --trust-server-names -O eclipsesmarthome-incubation-${VERSION}-designer-linux64.zip
+    - mkdir -p eclipse
+    - cd eclipse && unzip ../eclipse*.zip && cd -
+    - wget -c --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jre-8u121-linux-x64.tar.gz
+
+script:
+  - cp -r ../eclipse/* usr/bin/
+  - mkdir -p usr/lib/jvm/
+  - tar xf ../jre*.gz -C usr/lib/jvm/
+  - mkdir -p bin
+  - ( cd ./bin; ln -sf ../usr/lib/jvm/jre*/bin/java . )
+  - cat > eclipse-smarthome.desktop <<EOF
+  - [Desktop Entry]
+  - Version=1.0
+  - Type=Application
+  - Name=Eclipse smarthome IDE
+  - Icon=eclipse-smarthome
+  - Exec=SmartHome-Designer
+  - Categories=Development;IDE;smarthome
+  - Terminal=false
+  - EOF

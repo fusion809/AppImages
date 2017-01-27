@@ -27,3 +27,7 @@ script:
   - Categories=Development;IDE;smarthome
   - Terminal=false
   - EOF
+  - wget "https://pbs.twimg.com/profile_images/378800000699017975/a2f977db2b9ede29fabb70c501261d3f_400x400.png"
+  - sudo apt-get install -y imagemagick
+  - convert *400x400.png -resize 128x128 eclipse-smarthome.png
+  - cp eclipse-smarthome.png usr/share/pixmaps/

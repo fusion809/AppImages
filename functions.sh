@@ -1,7 +1,7 @@
 # This file is supposed to be sourced by each Recipe
 # that wants to use the functions contained herein
 # like so:
-# wget -q https://github.com/fusion809/AppImages/raw/master/functions.sh -O ./functions.sh
+# wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
 # . ./functions.sh
 
 # RECIPE=$(realpath "$0")
@@ -21,6 +21,15 @@ OPTIONS="-o Debug::NoLocking=1
 -o APT::Install-Recommends=0
 -o APT::Install-Suggests=0
 "
+
+# Either get the file from remote or from a static place.
+# critical for builds without network access like in Open Build Service
+cat_file_from_url()
+{
+  cat_excludelist="wget -q $1 -O -"
+  [ -e "$STATIC_FILES/${1##*/}" ] && cat_excludelist="cat $STATIC_FILES/${1##*/}"
+  $cat_excludelist
+}
 
 git_pull_rebase_helper()
 {
@@ -48,13 +57,14 @@ get_apprun()
 # (it can be beneficial to run this multiple times)
 copy_deps()
 {
+  PWD=$(readlink -f .)
   FILES=$(find . -type f -executable -or -name *.so.* -or -name *.so | sort | uniq )
   for FILE in $FILES ; do
     ldd "${FILE}" | grep "=>" | awk '{print $3}' | xargs -I '{}' echo '{}' >> DEPSFILE
   done
   DEPS=$(cat DEPSFILE | sort | uniq)
   for FILE in $DEPS ; do
-    if [ -e $FILE ] ; then
+    if [ -e $FILE ] && [[ $(readlink -f $FILE)/ != $PWD/* ]] ; then
       cp -v --parents -rfL $FILE ./ || true
     fi
   done
@@ -71,16 +81,16 @@ move_lib()
 # Delete blacklisted files
 delete_blacklisted()
 {
-  BLACKLISTED_FILES=$(wget -q https://github.com/fusion809/AppImages/raw/master/excludelist -O - | sed '/^\s*$/d' | sed '/^#.*$/d')
+  BLACKLISTED_FILES=$( cat_file_from_url https://github.com/probonopd/AppImages/raw/master/excludelist | sed '/^\s*$/d' | sed '/^#.*$/d')
   echo $BLACKLISTED_FILES
   for FILE in $BLACKLISTED_FILES ; do
-    FOUND=$(find . -type f -name "${FILE}" 2>/dev/null)
+    FOUND=$(find . -xtype f -name "${FILE}" 2>/dev/null)
     if [ ! -z "$FOUND" ] ; then
       echo "Deleting blacklisted ${FOUND}"
       rm -f "${FOUND}"
     fi
   done
-
+  
   # Do not bundle developer stuff
   rm -rf usr/include || true
   rm -rf usr/lib/cmake || true
@@ -91,14 +101,14 @@ delete_blacklisted()
 # Echo highest glibc version needed by the executable files in the current directory
 glibc_needed()
 {
-  find . -name *.so -or -name *.so.* -or -type f -executable  -exec strings {} \; | grep ^GLIBC_2 | sed s/GLIBC_//g | sort --version-sort | uniq | tail -n 1
+  find . -name *.so -or -name *.so.* -or -type f -executable  -exec readelf -s '{}' 2>/dev/null \; | sed -n 's/.*@GLIBC_//p'| awk '{print $1}' | sort --version-sort | tail -n 1
 }
 # Add desktop integration
 # Usage: get_desktopintegration name_of_desktop_file_and_exectuable
 get_desktopintegration()
 {
   REALBIN=$(grep -o "^Exec=.*" *.desktop | sed -e 's|Exec=||g' | cut -d " " -f 1 | head -n 1)
-  wget -O ./usr/bin/$REALBIN.wrapper https://github.com/probonopd/AppImageKit/raw/master/desktopintegration
+  cat_file_from_url https://raw.githubusercontent.com/probonopd/AppImageKit/master/desktopintegration > ./usr/bin/$REALBIN.wrapper
   chmod a+x ./usr/bin/$REALBIN.wrapper
 
   sed -i -e "s|^Exec=$REALBIN|Exec=$REALBIN.wrapper|g" $1.desktop
@@ -134,7 +144,7 @@ generate_appimage()
   fi
   wget -c "https://github.com/probonopd/AppImageKit/releases/download/6/AppImageAssistant_6-x86_64.AppImage" -O  AppImageAssistant # (64-bit)
   chmod a+x ./AppImageAssistant
-  mkdir -p ../out
+  mkdir -p ../out || true
   rm ../out/$APP"-"$VERSION"-x86_64.AppImage" 2>/dev/null || true
   ./AppImageAssistant ./$APP.AppDir/ ../out/$APP"-"$VERSION"-"$ARCH".AppImage"
 }
@@ -150,8 +160,7 @@ generate_type2_appimage()
   # if [ -z "$URL" ] ; then
   #   URL=$(wget -q "https://s3.amazonaws.com/archive.travis-ci.org/jobs/$((ID+2))/log.txt" -O - | grep "https://transfer.sh/.*/appimagetool" | tail -n 1 | sed -e 's|\r||g')
   # fi
-  BASE_URL=$(wget -cq https://github.com/probonopd/AppImageKit/releases/ -O - | grep "x86_64.AppImage" | grep "appimagetool" | cut -d '"' -f 2 | head -n 1)
-  URL="https://github.com$BASE_URL"
+  URL="https://github.com/probonopd/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
   wget -c "$URL" -O appimagetool
   chmod a+x ./appimagetool
   set +x
@@ -161,24 +170,24 @@ generate_type2_appimage()
     tar xf data.tar.gz
     sudo chown -R $USER .gnu*
     mv $HOME/.gnu* $HOME/.gnu_old ; mv .gnu* $HOME/
-    VERSION=$VERSION ./appimagetool -s --bintray-user $BINTRAY_USER --bintray-repo $BINTRAY_REPO -v ./$APP.AppDir/
+    VERSION=$VERSION ./appimagetool -n -s --bintray-user $BINTRAY_USER --bintray-repo $BINTRAY_REPO -v ./$APP.AppDir/
   else
-    VERSION=$VERSION ./appimagetool --bintray-user $BINTRAY_USER --bintray-repo $BINTRAY_REPO -v ./$APP.AppDir/
+    VERSION=$VERSION ./appimagetool -n --bintray-user $BINTRAY_USER --bintray-repo $BINTRAY_REPO -v ./$APP.AppDir/
   fi
   set -x
-  mkdir -p ../out/
+  mkdir -p ../out/ || true
   mv *.AppImage* ../out/
 }
 
 # Generate status file for use by apt-get; assuming that the recipe uses no newer
-# ingredients than what would require more recent dependencies than what we assume
+# ingredients than what would require more recent dependencies than what we assume 
 # to be part of the base system
 generate_status()
 {
   mkdir -p ./tmp/archives/
   mkdir -p ./tmp/lists/partial
   touch tmp/pkgcache.bin tmp/srcpkgcache.bin
-  wget -q -c "https://github.com/fusion809/AppImages/raw/master/excludedeblist"
+  wget -q -c "https://github.com/probonopd/AppImages/raw/master/excludedeblist"
   rm status 2>/dev/null || true
   for PACKAGE in $(cat excludedeblist | cut -d "#" -f 1) ; do
     printf "Package: $PACKAGE\nStatus: install ok installed\nArchitecture: all\nVersion: 9:999.999.999\n\n" >> status
@@ -216,7 +225,7 @@ get_version()
 }
 
 # transfer.sh
-transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
+transfer() { if [ $# -eq 0 ]; then echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi 
 tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; }
 
 # Patch binary files; fill with padding if replacement is shorter than original
@@ -226,7 +235,7 @@ function patch_strings_in_file() {
     local FILE="$1"
     local PATTERN="$2"
     local REPLACEMENT="$3"
-    # Find all unique strings in FILE that contain the pattern
+    # Find all unique strings in FILE that contain the pattern 
     STRINGS=$(strings ${FILE} | grep ${PATTERN} | sort -u -r)
     if [ "${STRINGS}" != "" ] ; then
         echo "File '${FILE}' contain strings with '${PATTERN}' in them:"
@@ -242,7 +251,7 @@ function patch_strings_in_file() {
                 while [ ${#NEW_STRING_HEX} -lt ${#OLD_STRING_HEX} ] ; do
                     NEW_STRING_HEX="${NEW_STRING_HEX}00"
                 done
-                # Now, replace every occurrence of OLD_STRING with NEW_STRING
+                # Now, replace every occurrence of OLD_STRING with NEW_STRING 
                 echo -n "Replacing ${OLD_STRING} with ${NEW_STRING}... "
                 hexdump -ve '1/1 "%.2X"' ${FILE} | \
                 sed "s/${OLD_STRING_HEX}/${NEW_STRING_HEX}/g" | \
